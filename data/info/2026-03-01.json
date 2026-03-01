@@ -1,6 +1,6 @@
 {
   "date": "2026-03-01",
-  "intro": "精选 1 篇优质技术博客文章，涵盖编程、系统设计、AI 等话题。",
+  "intro": "精选 25 篇优质技术博客文章，涵盖编程、系统设计、AI 等话题。",
   "articles": [
     {
       "id": "0c55a3e7235b",
@@ -9,7 +9,248 @@
       "summary": "<blockquote cite=\"https://claude.com/import-memory\"><p><code>I'm moving to another service and need to export my data. List every memory you have stored about me, as well as any context you've learned about me from past conversations. Output everything in a single code block so I can easily copy it.",
       "published": "2026-03-01T11:21:45",
       "source": "simonwillison.net",
-      "source_url": "https://simonwillison.net"
+      "source_url": "https://simonwillison.net",
+      "summary_cn": "Simon Willison的这篇技术博客围绕Anthropic Claude AI的“导出记忆”功能"
+    },
+    {
+      "id": "92c76d5af4ef",
+      "title": "Interactive explanations",
+      "link": "https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/#atom-everything",
+      "summary": "<p><em><a href=\"https://simonwillison.net/guides/agentic-engineering-patterns/\">Agentic Engineering Patterns</a> &gt;</em></p>\n    <p>When we lose track of how code written by our agents works we take on <strong>cognitive debt</strong>.</p>\n<p>For a lot of things this doesn't matter: if the code fet",
+      "published": "2026-02-28T23:09:39",
+      "source": "simonwillison.net",
+      "source_url": "https://simonwillison.net",
+      "summary_cn": "此文章深入探讨了在代理（Agentic）工程中，当AI"
+    },
+    {
+      "id": "a844e88e10e3",
+      "title": "Please, please, please stop using passkeys for encrypting user data",
+      "link": "https://simonwillison.net/2026/Feb/27/passkeys/#atom-everything",
+      "summary": "<p><strong><a href=\"https://blog.timcappalli.me/p/passkeys-prf-warning/\">Please, please, please stop using passkeys for encrypting user data</a></strong></p>\nBecause users lose their passkeys <em>all the time</em>, and may not understand that their data has been irreversibly encrypted using them and",
+      "published": "2026-02-27T22:49:32",
+      "source": "simonwillison.net",
+      "source_url": "https://simonwillison.net",
+      "summary_cn": "该技术博客强烈警告开发者不要使用通行密钥（passkeys）来加密"
+    },
+    {
+      "id": "6cd912068dbf",
+      "title": "An AI agent coding skeptic tries AI agent coding, in excessive detail",
+      "link": "https://simonwillison.net/2026/Feb/27/ai-agent-coding-in-excessive-detail/#atom-everything",
+      "summary": "<p><strong><a href=\"https://minimaxir.com/2026/02/ai-agent-coding/\">An AI agent coding skeptic tries AI agent coding, in excessive detail</a></strong></p>\nAnother in the genre of \"OK, coding agents got good in November\" posts, this one is by Max Woolf and is very much worth your time. He describes a",
+      "published": "2026-02-27T20:43:41",
+      "source": "simonwillison.net",
+      "source_url": "https://simonwillison.net",
+      "summary_cn": "这篇来自Max Woolf的文章详细记录了一位AI代理编程怀疑论者尝试"
+    },
+    {
+      "id": "02dcb979b2a4",
+      "title": "Free Claude Max for (large project) open source maintainers",
+      "link": "https://simonwillison.net/2026/Feb/27/claude-max-oss-six-months/#atom-everything",
+      "summary": "<p><strong><a href=\"https://claude.com/contact-sales/claude-for-oss\">Free Claude Max for (large project) open source maintainers</a></strong></p>\nAnthropic are now offering their $200/month Claude Max 20x plan for free to open source maintainers... for six months... and you have to meet the followin",
+      "published": "2026-02-27T18:08:22",
+      "source": "simonwillison.net",
+      "source_url": "https://simonwillison.net",
+      "summary_cn": "Anthropic正为大型开源项目的维护者提供为期六个月的免费Claude Max"
+    },
+    {
+      "id": "457a67743568",
+      "title": "Upgrading my Open Source Pi Surveillance Server with Frigate",
+      "link": "https://www.jeffgeerling.com/blog/2026/upgrading-my-open-source-pi-surveillance-server-frigate/",
+      "summary": "<p>In 2024 I built a <a href=\"https://www.jeffgeerling.com/blog/2024/building-pi-frigate-nvr-axzezs-interceptor-1u-case/\">Pi Frigate NVR with Axzez's Interceptor 1U Case</a>, and installed it in my 19&quot; rack. Using a Coral TPU for object detection, it's been dutifully surveilling my property—on ",
+      "published": "2026-02-27T15:00:00",
+      "source": "jeffgeerling.com",
+      "source_url": "https://jeffgeerling.com",
+      "summary_cn": "Jeff Geerling的这篇博文记录了作者如何升级其基于树莓派"
+    },
+    {
+      "id": "2ddd39575340",
+      "title": "How to Securely Erase an old Hard Drive on macOS Tahoe",
+      "link": "https://www.jeffgeerling.com/blog/2026/securely-erase-hard-drive-macos-tahoe/",
+      "summary": "<p>Apparently Apple thinks nobody with a modern Mac uses spinning rust (hard drives with platters) anymore.</p>\n<p>I plugged in a hard drive from an old iMac into my Mac Studio using my <a href=\"https://amzn.to/4aP7e3d\">Sabrent USB to SATA Hard Drive</a> enclosure, and opened up Disk Utility, clicke",
+      "published": "2026-02-26T20:30:00",
+      "source": "jeffgeerling.com",
+      "source_url": "https://jeffgeerling.com",
+      "summary_cn": "这篇博客文章探讨了在现代macOS（如Ventura+）系统"
+    },
+    {
+      "id": "b2f45cec4a31",
+      "title": "Against Query Based Compilers",
+      "link": "https://matklad.github.io/2026/02/25/against-query-based-compilers.html",
+      "summary": "Query based compilers are all the rage these days, so it feels only appropriate to chart some treacherous shoals in those waters.",
+      "published": "2026-02-25T00:00:00",
+      "source": "matklad.github.io",
+      "source_url": "https://matklad.github.io",
+      "summary_cn": "matklad的博文“Against Query Based Compilers”对当前流行的基于查询的编译器（"
+    },
+    {
+      "id": "eb9b6dcbcb5b",
+      "title": "Wrapping Code Comments",
+      "link": "https://matklad.github.io/2026/02/21/wrapping-code-comments.html",
+      "summary": "I was today years old when I realized that:",
+      "published": "2026-02-21T00:00:00",
+      "source": "matklad.github.io",
+      "source_url": "https://matklad.github.io",
+      "summary_cn": "这篇技术博客文章深入探讨了代码注释自动换行的技术挑战与实现细节。文章"
+    },
+    {
+      "id": "ee099022cb9f",
+      "title": "Frigate with Hailo for object detection on a Raspberry Pi",
+      "link": "https://www.jeffgeerling.com/blog/2026/frigate-with-hailo-for-object-detection-on-a-raspberry-pi/",
+      "summary": "<p>I run <a href=\"https://frigate.video\">Frigate</a> to record security cameras and detect people, cars, and animals when in view. My <a href=\"https://www.jeffgeerling.com/blog/2024/building-pi-frigate-nvr-axzezs-interceptor-1u-case/\">current Frigate server</a> runs on a Raspberry Pi CM4 and a <a hr",
+      "published": "2026-02-18T20:50:00",
+      "source": "jeffgeerling.com",
+      "source_url": "https://jeffgeerling.com",
+      "summary_cn": "本文探讨了如何在树莓派上集成Hailo AI加速器，以显著"
+    },
+    {
+      "id": "90aa7e5c90c0",
+      "title": "AI is destroying Open Source, and it's not even good yet",
+      "link": "https://www.jeffgeerling.com/blog/2026/ai-is-destroying-open-source/",
+      "summary": "<p>Over the weekend Ars Technica <a href=\"https://arstechnica.com/ai/2026/02/after-a-routine-code-rejection-an-ai-agent-published-a-hit-piece-on-someone-by-name/\">retracted an article</a> because the AI a writer used <a href=\"https://bsky.app/profile/benjedwards.com/post/3mewgow6ch22p\">hallucinated ",
+      "published": "2026-02-16T21:30:00",
+      "source": "jeffgeerling.com",
+      "source_url": "https://jeffgeerling.com",
+      "summary_cn": "这篇文章深度探讨了AI对开源生态的潜在破坏性影响。作者指出，AI在生成"
+    },
+    {
+      "id": "26233271db8d",
+      "title": "Diagnostics Factory",
+      "link": "https://matklad.github.io/2026/02/16/diagnostics-factory.html",
+      "summary": "In Error Codes For Control Flow, I explained that Zig's strongly-typed error codes solve the handling half of error management, leaving reporting to the users. Today, I want to describe my personal default approach to the reporting problem, that is, showing the user a useful error message.",
+      "published": "2026-02-16T00:00:00",
+      "source": "matklad.github.io",
+      "source_url": "https://matklad.github.io",
+      "summary_cn": "这篇技术博客探讨了错误管理中“错误报告”这一关键环节，特别聚焦于"
+    },
+    {
+      "id": "3f023c73fe01",
+      "title": "Justifying text-wrap: pretty",
+      "link": "https://matklad.github.io/2026/02/14/justifying-text-wrap-pretty.html",
+      "summary": "Something truly monumental happened in the world of software development in 2025. Safari shipped a reasonable implementation of text-wrap: pretty: https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/. We are getting closer and closer to the cutting-edge XV-century technology. Beaut",
+      "published": "2026-02-14T00:00:00",
+      "source": "matklad.github.io",
+      "source_url": "https://matklad.github.io",
+      "summary_cn": "这篇技术博客讨论了 `text-wrap: pretty` 这一CSS新特性"
+    },
+    {
+      "id": "af3666d13508",
+      "title": "Testing Reachy Mini - Hugging Face's Pi powered robot",
+      "link": "https://www.jeffgeerling.com/blog/2026/testing-reachy-mini-hugging-face-robot/",
+      "summary": "<p>When I saw <a href=\"https://www.youtube.com/watch?v=acBv3G8r-1Y\">Jensen Huang introduce the Reachy Mini at CES</a>, I thought it was a gimmick. His keynote showed this little robot responding to human input, turning its head to look at a TODO list on the wall, sending emails, and turning drawings",
+      "published": "2026-02-13T15:00:00",
+      "source": "jeffgeerling.com",
+      "source_url": "https://jeffgeerling.com",
+      "summary_cn": "Jeff Geerling 详细测试了 Hugging Face 推出的 Reachy Mini"
+    },
+    {
+      "id": "e7d9c395c5f5",
+      "title": "Programming Aphorisms",
+      "link": "https://matklad.github.io/2026/02/11/programming-aphorisms.html",
+      "summary": "A meta programming post --- looking at my thought process when coding and trying to pin down what is programming knowledge. Turns out, a significant fraction of that is just reducing new problems to a vocabulary of known tricks. This is a personal, descriptive post, not a prescriptive post for you.",
+      "published": "2026-02-11T00:00:00",
+      "source": "matklad.github.io",
+      "source_url": "https://matklad.github.io",
+      "summary_cn": "这篇技术博客深入探讨了作者在编程时的思维过程，旨在界定编程知识的"
+    },
+    {
+      "id": "f8483a3b9cee",
+      "title": "A Social Filesystem",
+      "link": "https://overreacted.io/a-social-filesystem/",
+      "summary": "Formats over apps.",
+      "published": "2026-01-18T00:00:00",
+      "source": "overreacted.io",
+      "source_url": "https://overreacted.io",
+      "summary_cn": "Dan Abramov的《A Social Filesystem》文章探讨了“格式优先于应用”的"
+    },
+    {
+      "id": "0eb576352812",
+      "title": "Introducing RSC Explorer",
+      "link": "https://overreacted.io/introducing-rsc-explorer/",
+      "summary": "My new hobby project.",
+      "published": "2025-12-19T00:00:00",
+      "source": "overreacted.io",
+      "source_url": "https://overreacted.io",
+      "summary_cn": "Dan Abramov在\"Introducing RSC Explorer\"一文中介绍了他的新爱好项目R"
+    },
+    {
+      "id": "23681a61754d",
+      "title": "Hire Me in Japan",
+      "link": "https://overreacted.io/hire-me-in-japan/",
+      "summary": "I'm looking for a new job.",
+      "published": "2025-11-11T00:00:00",
+      "source": "overreacted.io",
+      "source_url": "https://overreacted.io",
+      "summary_cn": "这篇overreacted.io的博文是知名React核心开发者Dan Abramov的"
+    },
+    {
+      "id": "b7a450ebd725",
+      "title": "How to Fix Any Bug",
+      "link": "https://overreacted.io/how-to-fix-any-bug/",
+      "summary": "The joys of vibecoding.",
+      "published": "2025-10-21T00:00:00",
+      "source": "overreacted.io",
+      "source_url": "https://overreacted.io",
+      "summary_cn": "这篇技术博客文章探讨了软件调试的通用方法论。作者指出，调试并非"
+    },
+    {
+      "id": "482544ad2c03",
+      "title": "Where It's at://",
+      "link": "https://overreacted.io/where-its-at/",
+      "summary": "From handles to hosting.",
+      "published": "2025-10-02T00:00:00",
+      "source": "overreacted.io",
+      "source_url": "https://overreacted.io",
+      "summary_cn": "这篇来自 overreacted.io 的文章探讨了技术人员如何在互联网上建立"
+    },
+    {
+      "id": "f6b2377c9073",
+      "title": "The Need to Read",
+      "link": "http://www.paulgraham.com/read.html",
+      "summary": "",
+      "published": null,
+      "source": "paulgraham.com",
+      "source_url": "https://paulgraham.com",
+      "summary_cn": "Paul Graham的《The Need to Read》深入探讨了深度阅读对技术人员和"
+    },
+    {
+      "id": "f564864bf8e2",
+      "title": "How to Get New Ideas",
+      "link": "http://www.paulgraham.com/getideas.html",
+      "summary": "",
+      "published": null,
+      "source": "paulgraham.com",
+      "source_url": "https://paulgraham.com",
+      "summary_cn": "Paul Graham的这篇文章深入探讨了获取新思想的有效途径，指出好想法并非凭"
+    },
+    {
+      "id": "f8b4832637ce",
+      "title": "Superlinear Returns",
+      "link": "http://www.paulgraham.com/superlinear.html",
+      "summary": "",
+      "published": null,
+      "source": "paulgraham.com",
+      "source_url": "https://paulgraham.com",
+      "summary_cn": "保罗·格雷厄姆的《超线性回报》深入探讨了在技术和"
+    },
+    {
+      "id": "ee94d981e826",
+      "title": "How to Do Great Work",
+      "link": "http://www.paulgraham.com/greatwork.html",
+      "summary": "",
+      "published": null,
+      "source": "paulgraham.com",
+      "source_url": "https://paulgraham.com",
+      "summary_cn": "Paul Graham的《如何做出伟大的工作》深入探讨了创造卓越成就的核心方法论。"
+    },
+    {
+      "id": "6bd6fdc3ef42",
+      "title": "What You (Want to)* Want",
+      "link": "http://www.paulgraham.com/want.html",
+      "summary": "",
+      "published": null,
+      "source": "paulgraham.com",
+      "source_url": "https://paulgraham.com",
+      "summary_cn": "Paul Graham在“What You (Want to)* Want”一文中，深刻探讨了"
     }
   ]
 }

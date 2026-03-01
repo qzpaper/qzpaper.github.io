@@ -5,5 +5,6 @@
   "summary": "<p>I run <a href=\"https://frigate.video\">Frigate</a> to record security cameras and detect people, cars, and animals when in view. My <a href=\"https://www.jeffgeerling.com/blog/2024/building-pi-frigate-nvr-axzezs-interceptor-1u-case/\">current Frigate server</a> runs on a Raspberry Pi CM4 and a <a hr",
   "published": "2026-02-18T20:50:00",
   "source": "jeffgeerling.com",
-  "source_url": "https://jeffgeerling.com"
+  "source_url": "https://jeffgeerling.com",
+  "summary_cn": "本文探讨了如何在树莓派上集成Hailo AI加速器，以显著"
 }

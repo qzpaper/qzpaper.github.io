@@ -5,5 +5,6 @@
   "summary": "<p>Apparently Apple thinks nobody with a modern Mac uses spinning rust (hard drives with platters) anymore.</p>\n<p>I plugged in a hard drive from an old iMac into my Mac Studio using my <a href=\"https://amzn.to/4aP7e3d\">Sabrent USB to SATA Hard Drive</a> enclosure, and opened up Disk Utility, clicke",
   "published": "2026-02-26T20:30:00",
   "source": "jeffgeerling.com",
-  "source_url": "https://jeffgeerling.com"
+  "source_url": "https://jeffgeerling.com",
+  "summary_cn": "这篇博客文章探讨了在现代macOS（如Ventura+）系统"
 }

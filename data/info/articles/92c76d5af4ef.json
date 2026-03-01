@@ -5,5 +5,6 @@
   "summary": "<p><em><a href=\"https://simonwillison.net/guides/agentic-engineering-patterns/\">Agentic Engineering Patterns</a> &gt;</em></p>\n    <p>When we lose track of how code written by our agents works we take on <strong>cognitive debt</strong>.</p>\n<p>For a lot of things this doesn't matter: if the code fet",
   "published": "2026-02-28T23:09:39",
   "source": "simonwillison.net",
-  "source_url": "https://simonwillison.net"
+  "source_url": "https://simonwillison.net",
+  "summary_cn": "此文章深入探讨了在代理（Agentic）工程中，当AI"
 }

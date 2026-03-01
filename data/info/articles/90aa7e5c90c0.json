@@ -5,5 +5,6 @@
   "summary": "<p>Over the weekend Ars Technica <a href=\"https://arstechnica.com/ai/2026/02/after-a-routine-code-rejection-an-ai-agent-published-a-hit-piece-on-someone-by-name/\">retracted an article</a> because the AI a writer used <a href=\"https://bsky.app/profile/benjedwards.com/post/3mewgow6ch22p\">hallucinated ",
   "published": "2026-02-16T21:30:00",
   "source": "jeffgeerling.com",
-  "source_url": "https://jeffgeerling.com"
+  "source_url": "https://jeffgeerling.com",
+  "summary_cn": "这篇文章深度探讨了AI对开源生态的潜在破坏性影响。作者指出，AI在生成"
 }

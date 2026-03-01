@@ -5,5 +5,6 @@
   "summary": "Something truly monumental happened in the world of software development in 2025. Safari shipped a reasonable implementation of text-wrap: pretty: https://webkit.org/blog/16547/better-typography-with-text-wrap-pretty/. We are getting closer and closer to the cutting-edge XV-century technology. Beaut",
   "published": "2026-02-14T00:00:00",
   "source": "matklad.github.io",
-  "source_url": "https://matklad.github.io"
+  "source_url": "https://matklad.github.io",
+  "summary_cn": "这篇技术博客讨论了 `text-wrap: pretty` 这一CSS新特性"
 }

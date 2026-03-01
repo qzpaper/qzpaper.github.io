@@ -5,5 +5,6 @@
   "summary": "In Error Codes For Control Flow, I explained that Zig's strongly-typed error codes solve the handling half of error management, leaving reporting to the users. Today, I want to describe my personal default approach to the reporting problem, that is, showing the user a useful error message.",
   "published": "2026-02-16T00:00:00",
   "source": "matklad.github.io",
-  "source_url": "https://matklad.github.io"
+  "source_url": "https://matklad.github.io",
+  "summary_cn": "这篇技术博客探讨了错误管理中“错误报告”这一关键环节，特别聚焦于"
 }

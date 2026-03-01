@@ -5,5 +5,6 @@
   "summary": "<blockquote cite=\"https://claude.com/import-memory\"><p><code>I'm moving to another service and need to export my data. List every memory you have stored about me, as well as any context you've learned about me from past conversations. Output everything in a single code block so I can easily copy it.",
   "published": "2026-03-01T11:21:45",
   "source": "simonwillison.net",
-  "source_url": "https://simonwillison.net"
+  "source_url": "https://simonwillison.net",
+  "summary_cn": "Simon Willison的这篇技术博客围绕Anthropic Claude AI的“导出记忆”功能"
 }

@@ -5,5 +5,6 @@
   "summary": "<p><strong><a href=\"https://blog.timcappalli.me/p/passkeys-prf-warning/\">Please, please, please stop using passkeys for encrypting user data</a></strong></p>\nBecause users lose their passkeys <em>all the time</em>, and may not understand that their data has been irreversibly encrypted using them and",
   "published": "2026-02-27T22:49:32",
   "source": "simonwillison.net",
-  "source_url": "https://simonwillison.net"
+  "source_url": "https://simonwillison.net",
+  "summary_cn": "该技术博客强烈警告开发者不要使用通行密钥（passkeys）来加密"
 }

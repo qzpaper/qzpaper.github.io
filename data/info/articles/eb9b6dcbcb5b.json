@@ -5,5 +5,6 @@
   "summary": "I was today years old when I realized that:",
   "published": "2026-02-21T00:00:00",
   "source": "matklad.github.io",
-  "source_url": "https://matklad.github.io"
+  "source_url": "https://matklad.github.io",
+  "summary_cn": "这篇技术博客文章深入探讨了代码注释自动换行的技术挑战与实现细节。文章"
 }

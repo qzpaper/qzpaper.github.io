@@ -5,5 +5,6 @@
   "summary": "<p>In 2024 I built a <a href=\"https://www.jeffgeerling.com/blog/2024/building-pi-frigate-nvr-axzezs-interceptor-1u-case/\">Pi Frigate NVR with Axzez's Interceptor 1U Case</a>, and installed it in my 19&quot; rack. Using a Coral TPU for object detection, it's been dutifully surveilling my property—on ",
   "published": "2026-02-27T15:00:00",
   "source": "jeffgeerling.com",
-  "source_url": "https://jeffgeerling.com"
+  "source_url": "https://jeffgeerling.com",
+  "summary_cn": "Jeff Geerling的这篇博文记录了作者如何升级其基于树莓派"
 }
