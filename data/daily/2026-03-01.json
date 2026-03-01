@@ -1,0 +1,31 @@
+{
+  "date": "2026-03-01",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选 5~10 篇高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2503.00001",
+      "title": "Scaling Laws for Neural Language Models: A Comprehensive Study",
+      "summary": "本文系统研究了大语言模型的缩放规律，提出了一种新的预测框架，能够准确预测不同规模模型的性能表现。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2503.00001"
+    },
+    {
+      "paperId": "2503.00002",
+      "title": "Visual Reasoning with Multi-Modal Transformers",
+      "summary": "提出了一种新型多模态 Transformer 架构，在视觉推理任务上实现了显著的性能提升。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2503.00002"
+    },
+    {
+      "paperId": "2503.00003",
+      "title": "Efficient Diffusion Models for High-Resolution Image Synthesis",
+      "summary": "提出了一种高效的扩散模型训练方法，大幅降低了高分辨率图像生成的计算成本。",
+      "category": "Diffusion",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2503.00003"
+    }
+  ]
+}

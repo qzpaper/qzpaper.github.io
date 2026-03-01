@@ -1,0 +1,19 @@
+{
+  "paperId": "2503.00001",
+  "date": "2026-03-01",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-01",
+  "title": "Scaling Laws for Neural Language Models: A Comprehensive Study",
+  "authors": ["Alice Zhang", "Bob Smith", "Carol Johnson"],
+  "summaryCn": "本文系统研究了大语言模型的缩放规律，提出了一种新的预测框架，能够准确预测不同规模模型的性能表现。研究发现，模型性能与参数量、数据量和计算量之间存在幂律关系，这一发现对未来大模型的高效训练具有重要指导意义。",
+  "keyContributions": [
+    "提出了统一的缩放规律预测框架",
+    "验证了参数-数据-计算三维度的幂律关系",
+    "给出了不同预算下的最优资源分配策略"
+  ],
+  "originalUrl": "https://arxiv.org/abs/2503.00001",
+  "figures": [],
+  "prevPaperId": null,
+  "nextPaperId": "2503.00002"
+}

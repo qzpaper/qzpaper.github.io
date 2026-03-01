@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"tMpB0fnl15rPYIgEaX2tm","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"not-found","children":[["$","h1",null,{"children":"页面未找到"}],["$","p",null,{"children":"你访问的页面不存在或已被移动。"}],["$","div",null,{"className":"not-found-links","children":[["$","$L2",null,{"href":"/","className":"text-link","children":"返回今日页 →"}],["$","$L2",null,{"href":"/archive","className":"text-link","children":"查看归档 →"}]]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

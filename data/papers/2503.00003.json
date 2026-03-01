@@ -1,0 +1,19 @@
+{
+  "paperId": "2503.00003",
+  "date": "2026-03-01",
+  "category": "Diffusion",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-01",
+  "title": "Efficient Diffusion Models for High-Resolution Image Synthesis",
+  "authors": ["Frank Chen", "Grace Kim", "Henry Wang"],
+  "summaryCn": "提出了一种高效的扩散模型训练方法，大幅降低了高分辨率图像生成的计算成本。通过改进的噪声调度策略和多尺度训练方案，在保持生成质量的同时将训练时间缩短了 60%。",
+  "keyContributions": [
+    "提出了改进的噪声调度策略",
+    "设计了多尺度渐进式训练方案",
+    "训练时间缩短 60% 且生成质量不降"
+  ],
+  "originalUrl": "https://arxiv.org/abs/2503.00003",
+  "figures": [],
+  "prevPaperId": "2503.00002",
+  "nextPaperId": null
+}

@@ -1,0 +1,19 @@
+{
+  "paperId": "2503.00002",
+  "date": "2026-03-01",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-01",
+  "title": "Visual Reasoning with Multi-Modal Transformers",
+  "authors": ["David Lee", "Emma Wilson"],
+  "summaryCn": "提出了一种新型多模态 Transformer 架构，在视觉推理任务上实现了显著的性能提升。该方法通过引入跨模态注意力机制，有效融合视觉和语言信息，在多个基准测试上取得了最优结果。",
+  "keyContributions": [
+    "设计了跨模态注意力融合机制",
+    "在 VQA 等基准上取得 SOTA 结果",
+    "提出了高效的多模态预训练策略"
+  ],
+  "originalUrl": "https://arxiv.org/abs/2503.00002",
+  "figures": [],
+  "prevPaperId": "2503.00001",
+  "nextPaperId": "2503.00003"
+}
