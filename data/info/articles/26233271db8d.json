@@ -1,0 +1,9 @@
+{
+  "id": "26233271db8d",
+  "title": "Diagnostics Factory",
+  "link": "https://matklad.github.io/2026/02/16/diagnostics-factory.html",
+  "summary": "In Error Codes For Control Flow, I explained that Zig's strongly-typed error codes solve the handling half of error management, leaving reporting to the users. Today, I want to describe my personal default approach to the reporting problem, that is, showing the user a useful error message.",
+  "published": "2026-02-16T00:00:00",
+  "source": "matklad.github.io",
+  "source_url": "https://matklad.github.io"
+}
