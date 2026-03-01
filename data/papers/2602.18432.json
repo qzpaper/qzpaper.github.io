@@ -1,0 +1,21 @@
+{
+  "paperId": "2602.18432",
+  "date": "2026-02-23",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-23",
+  "title": "SARAH: Spatially Aware Real-time Agentic Humans",
+  "authors": [
+    "Evonne Ng",
+    "Siwei Zhang",
+    "Zhang Chen",
+    "Michael Zollhoefer",
+    "Alexander Richard"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.18432",
+  "figures": [],
+  "prevPaperId": "2602.16742",
+  "nextPaperId": "2602.17807"
+}

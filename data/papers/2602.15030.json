@@ -1,0 +1,20 @@
+{
+  "paperId": "2602.15030",
+  "date": "2026-02-26",
+  "category": "Diffusion",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-26",
+  "title": "Image Generation with a Sphere Encoder",
+  "authors": [
+    "Kaiyu Yue",
+    "Menglin Jia",
+    "Ji Hou",
+    "Tom Goldstein"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.15030",
+  "figures": [],
+  "prevPaperId": "2602.19163",
+  "nextPaperId": null
+}

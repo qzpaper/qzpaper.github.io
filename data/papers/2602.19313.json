@@ -1,0 +1,25 @@
+{
+  "paperId": "2602.19313",
+  "date": "2026-02-24",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-24",
+  "title": "TOPReward: Token Probabilities as Hidden Zero-Shot Rewards for Robotics",
+  "authors": [
+    "Shirui Chen",
+    "Cole Harrison",
+    "Ying-Chun Lee",
+    "Angela Jin Yang",
+    "Zhongzheng Ren",
+    "Lillian J. Ratliff",
+    "Jiafei Duan",
+    "Dieter Fox",
+    "Ranjay Krishna"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.19313",
+  "figures": [],
+  "prevPaperId": "2602.20161",
+  "nextPaperId": "2602.16863"
+}

@@ -1,0 +1,87 @@
+{
+  "date": "2026-02-25",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选 10 篇高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2602.21193",
+      "title": "On Data Engineering for Scaling LLM Terminal Capabilities",
+      "summary": "Despite rapid recent progress in the terminal capabilities of large language models, the training data strategies behind state-of-the-art terminal agents remain largely undisclosed. We address this ga",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.21193"
+    },
+    {
+      "paperId": "2602.12192",
+      "title": "Query-focused and Memory-aware Reranker for Long Context Processing",
+      "summary": "Built upon the existing analysis of retrieval heads in large language models, we propose an alternative reranking framework that trains models to estimate passage-query relevance using the attention s",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.12192"
+    },
+    {
+      "paperId": "2602.21204",
+      "title": "Test-Time Training with KV Binding Is Secretly Linear Attention",
+      "summary": "Test-time training (TTT) with KV binding as sequence modeling layer is commonly interpreted as a form of online meta-learning that memorizes a key-value mapping at test time. However, our analysis rev",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.21204"
+    },
+    {
+      "paperId": "2602.20739",
+      "title": "PyVision-RL: Forging Open Agentic Vision Models via RL",
+      "summary": "Reinforcement learning for agentic multimodal models often suffers from interaction collapse, where models learn to reduce tool usage and multi-turn reasoning, limiting the benefits of agentic behavio",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.20739"
+    },
+    {
+      "paperId": "2602.21015",
+      "title": "From Perception to Action: An Interactive Benchmark for Vision Reasoning",
+      "summary": "Understanding the physical structure is essential for real-world applications such as embodied agents, interactive design, and long-horizon manipulation. Yet, prevailing Vision-Language Model (VLM) ev",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.21015"
+    },
+    {
+      "paperId": "2602.21202",
+      "title": "Multi-Vector Index Compression in Any Modality",
+      "summary": "We study efficient multi-vector retrieval for late interaction in any modality. Late interaction has emerged as a dominant paradigm for information retrieval in text, images, visual documents, and vid",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.21202"
+    },
+    {
+      "paperId": "2602.20309",
+      "title": "QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models",
+      "summary": "Vision-language-action (VLA) models unify perception, language, and control for embodied agents but face significant challenges in practical deployment due to rapidly increasing compute and memory dem",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.20309"
+    },
+    {
+      "paperId": "2602.18940",
+      "title": "DREAM: Deep Research Evaluation with Agentic Metrics",
+      "summary": "Deep Research Agents generate analyst-grade reports, yet evaluating them remains challenging due to the absence of a single ground truth and the multidimensional nature of research quality. Recent ben",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.18940"
+    },
+    {
+      "paperId": "2602.20951",
+      "title": "See and Fix the Flaws: Enabling VLMs and Diffusion Models to Comprehend Visual Artifacts via Agentic Data Synthesis",
+      "summary": "Despite recent advances in diffusion models, AI generated images still often contain visual artifacts that compromise realism. Although more thorough pre-training and bigger models might reduce artifa",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.20951"
+    },
+    {
+      "paperId": "2602.14337",
+      "title": "LongCLI-Bench: A Preliminary Benchmark and Study for Long-horizon Agentic Programming in Command-Line Interfaces",
+      "summary": "Recent advances in AI-assisted programming have empowered agents to execute complex workflows via command-line interfaces, however, existing benchmarks are limited by short task horizons, data contami",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.14337"
+    }
+  ]
+}

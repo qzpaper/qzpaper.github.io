@@ -1,0 +1,28 @@
+{
+  "paperId": "2602.19895",
+  "date": "2026-02-24",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-24",
+  "title": "DSDR: Dual-Scale Diversity Regularization for Exploration in LLM Reasoning",
+  "authors": [
+    "Zhongwei Wan",
+    "Yun Shen",
+    "Zhihao Dou",
+    "Donghao Zhou",
+    "Yu Zhang",
+    "Xin Wang",
+    "Hui Shen",
+    "Jing Xiong",
+    "Chaofan Tao",
+    "Zixuan Zhong",
+    "Peizhou Huang",
+    "Mi Zhang"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.19895",
+  "figures": [],
+  "prevPaperId": "2602.18996",
+  "nextPaperId": null
+}

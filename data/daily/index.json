@@ -3,7 +3,35 @@
     {
       "month": "2026-03",
       "days": [
-        { "date": "2026-03-01", "paperCount": 3 }
+        {
+          "date": "2026-03-01",
+          "paperCount": 10
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "days": [
+        {
+          "date": "2026-02-27",
+          "paperCount": 10
+        },
+        {
+          "date": "2026-02-26",
+          "paperCount": 10
+        },
+        {
+          "date": "2026-02-25",
+          "paperCount": 10
+        },
+        {
+          "date": "2026-02-24",
+          "paperCount": 10
+        },
+        {
+          "date": "2026-02-23",
+          "paperCount": 10
+        }
       ]
     }
   ]

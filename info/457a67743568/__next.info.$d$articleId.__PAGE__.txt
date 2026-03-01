@@ -1,26 +1,6 @@
 1:"$Sreact.fragment"
-3:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
-4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
-5:"$Sreact.suspense"
-2:Tae7,这篇文章介绍了作者对其基于树莓派的开源监控服务器（使用Frigate软件）进行升级的经历。作者在2024年曾搭建了一套利用Axzez Interceptor机箱和Coral TPU进行物体检测的Frigate NVR系统，该系统实现了100%本地化运行，无需云集成，高度注重隐私。此次升级的核心目标是将原有系统进行小型化，同时保留对廉价大容量硬盘的支持和强大的AI加速能力。为此，作者采用了Exaviz公司新推出的Cruiser主板，并搭配DeskPi专为其设计的2U Mini Rack Mount原型机箱，通过使用树莓派Compute Module 5 (CM5) 完成了此次升级。
-
-**核心主题：**
-本文的核心主题是升级基于树莓派的开源Frigate智能监控服务器，旨在实现系统的小型化和更高集成度，同时保持高性能的本地AI物体检测能力和大容量存储，并确保数据隐私。
-
-**主要观点：**
-1.  **本地化与隐私优先：** 作者强调其监控系统100%本地运行，无需云服务或账号，完全掌控数据，体现了对隐私的高度重视。
-2.  **性能与紧凑的平衡：** 升级的动力在于在缩小系统体积的同时，不牺牲大容量存储和AI加速器的性能。
-3.  **开源软硬件协同：** Frigate作为开源NVR软件与树莓派硬件、Coral TPU加速器结合，为构建经济高效且功能强大的监控方案提供了可能。
-
-**关键技术点：**
-1.  **Exaviz Cruiser CM5载板：** 这是本次升级的“明星硬件”，专为树莓派Compute Module 5设计。
-2.  **CM5 PCIe带宽限制的解决方案：** Cruiser主板巧妙地解决了CM5只有一个PCIe Gen 2 x1通道的限制，通过混合PCIe和USB的方式扩展I/O。
-    *   M.2 M-key NVMe插槽：直接连接到CM5的PCIe Gen 2 x1通道（理论上可运行Gen 3）。
-    *   2.5 Gbps WAN网口（RTL8156BG）：通过USB 3.0路由。
-    *   两个SATA连接（JMS561）：通过USB 3.0路由。
-3.  **DeskPi 2U Mini Rack Mount机箱：** 为Cruiser主板量身定制的原型迷你机架式外壳，有助于实现系统小型化和整洁部署。
-4.  **Coral TPU：** 继续沿用作为AI加速器，负责进行实时的物体检测，如识别人物、车辆等。
-
-**结论：**
-通过这次升级，作者成功地将一套功能强大、隐私优先的树莓派AI监控服务器进行了小型化，实现了在紧凑尺寸内集成高性能AI推理、大容量存储和高速网络的能力。Exaviz Cruiser主板在克服树莓派CM5硬件限制方面的创新设计，使其成为构建此类高效、本地化监控系统的理想平台。此次升级不仅达到了作者小型化的目标，也为其他追求高性能、高隐私和开源解决方案的用户提供了宝贵的实践经验和可行的硬件选择。0:{"buildId":"BKz-chKA0XI76Ab9o7R4q","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["jeffgeerling.com",[" · ","2026/2/27"]]}],["$","h1",null,{"children":"Upgrading my Open Source Pi Surveillance Server with Frigate"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"style":{"whiteSpace":"pre-wrap","lineHeight":"1.8"},"children":"$2"}]]}],["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://www.jeffgeerling.com/blog/2026/upgrading-my-open-source-pi-surveillance-server-frigate/","target":"_blank","rel":"noopener noreferrer","children":"阅读原文 →"}]}],["$","hr",null,{"className":"divider"}],["$","div",null,{"style":{"textAlign":"center"},"children":["$","$L3",null,{"href":"/info","children":"← 返回资讯列表"}]}]]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
-6:null
+2:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"zam12mzR0XCmHDeibn199","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["jeffgeerling.com",[" · ","2026/2/27"]]}],["$","h1",null,{"children":"Upgrading my Open Source Pi Surveillance Server with Frigate"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"style":{"whiteSpace":"pre-wrap","lineHeight":"1.8"},"children":"Jeff Geerling近期对其基于树莓派的开源监控服务器进行了升级，该服务器此前利用Frigate进行对象检测并配备了Coral TPU，以实现100%本地化、无需云集成的家庭监控。最初的系统安装在Axzez Interceptor 1U机箱中，现在他希望能将设备尺寸进一步缩小，但同时必须保留支持廉价大容量硬盘的能力以及AI加速功能。为了实现这一目标，他采用了Exaviz公司新推出的Cruiser主板，并搭配了DeskPi提供的一款原型迷你机架式外壳。\n\n此次升级的核心硬件是Exaviz Cruiser CM5载板，它巧妙地解决了树莓派Compute Module 5（CM5）在PCI Express带宽上的局限性。不同于采用昂贵的PCIe交换机来扩展有限的PCIe通道，Exaviz选择了一种混合PCIe和USB的方案。具体而言，M.2 M-key NVMe插槽被直接连接到CM5的PCIe Gen 2 x1通道（虽然理论上可运行在Gen 3但非官方规范），从而确保了高速存储的性能。而2.5 Gbps的WAN端口以及两个SATA接口则通过USB 3.0进行路由。这种设计思路对于那些需要在紧凑型设备中集成多种I/O功能的用户来说具有显著的实用价值，特别是在构建NVR系统时，能够经济高效地连接大容量存储设备，同时避免了过度依赖单个PCIe通道带来的性能瓶颈或高昂的扩展成本。\n\n此次升级不仅提供了更为紧凑的物理尺寸，还保持了原系统强大的本地对象检测能力和灵活的存储方案。通过Cruiser载板的设计，Jeff Geerling成功地在一个小巧的机箱内实现了高性能的NVMe存储、高速网络连接以及对多块SATA硬盘的支持，这对于寻求高性能、高隐私性且完全本地化的智能监控解决方案的技术爱好者而言，无疑提供了一个极具吸引力的参考范例。"}]]}],["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://www.jeffgeerling.com/blog/2026/upgrading-my-open-source-pi-surveillance-server-frigate/","target":"_blank","rel":"noopener noreferrer","children":"阅读原文 →"}]}],["$","hr",null,{"className":"divider"}],["$","div",null,{"style":{"textAlign":"center"},"children":["$","$L2",null,{"href":"/info","children":"← 返回资讯列表"}]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null

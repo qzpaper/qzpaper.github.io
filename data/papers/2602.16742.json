@@ -1,0 +1,24 @@
+{
+  "paperId": "2602.16742",
+  "date": "2026-02-23",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-23",
+  "title": "DeepVision-103K: A Visually Diverse, Broad-Coverage, and Verifiable Mathematical Dataset for Multimodal Reasoning",
+  "authors": [
+    "Haoxiang Sun",
+    "Lizhen Xu",
+    "Bing Zhao",
+    "Wotao Yin",
+    "Wei Wang",
+    "Boyu Yang",
+    "Rui Wang",
+    "Hu Wei"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.16742",
+  "figures": [],
+  "prevPaperId": "2602.18292",
+  "nextPaperId": "2602.18432"
+}

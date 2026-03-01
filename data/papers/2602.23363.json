@@ -1,0 +1,24 @@
+{
+  "paperId": "2602.23363",
+  "date": "2026-02-27",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-27",
+  "title": "MediX-R1: Open Ended Medical Reinforcement Learning",
+  "authors": [
+    "Sahal Shaji Mullappilly",
+    "Mohammed Irfan Kurpath",
+    "Omair Mohamed",
+    "Mohamed Zidan",
+    "Fahad Khan",
+    "Salman Khan",
+    "Rao Anwer",
+    "Hisham Cholakkal"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.23363",
+  "figures": [],
+  "prevPaperId": "2602.22675",
+  "nextPaperId": "2602.21760"
+}

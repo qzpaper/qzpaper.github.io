@@ -1,0 +1,21 @@
+{
+  "paperId": "2602.21204",
+  "date": "2026-02-25",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-02-25",
+  "title": "Test-Time Training with KV Binding Is Secretly Linear Attention",
+  "authors": [
+    "Junchen Liu",
+    "Sven Elflein",
+    "Or Litany",
+    "Zan Gojcic",
+    "Ruilong Li"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.21204",
+  "figures": [],
+  "prevPaperId": "2602.12192",
+  "nextPaperId": "2602.20739"
+}
