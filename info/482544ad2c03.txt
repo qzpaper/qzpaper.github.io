@@ -1,0 +1,33 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+3:I[39756,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+4:I[37457,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"default"]
+6:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+7:"$Sreact.suspense"
+9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"ViewportBoundary"]
+b:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"MetadataBoundary"]
+d:I[68027,[],"default"]
+:HL["/_next/static/chunks/0e826a48ac6fd355.css","style"]
+0:{"P":null,"b":"BKz-chKA0XI76Ab9o7R4q","c":["","info","482544ad2c03"],"q":"","i":false,"f":[[["",{"children":["info",{"children":[["articleId","482544ad2c03","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0e826a48ac6fd355.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/7c92e96509cd355e.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"children":[["$","header",null,{"className":"topnav","children":["$","nav",null,{"className":"container","children":[["$","$L2",null,{"href":"/","className":"logo","children":"PaperAgent"}],["$","div",null,{"className":"nav-links","children":[["$","$L2",null,{"href":"/","children":"Papers"}],["$","$L2",null,{"href":"/info","children":"Info"}],["$","$L2",null,{"href":"/archive","children":"Archive"}],["$","$L2",null,{"href":"/about","children":"About"}]]}]]}]}],["$","main",null,{"children":["$","div",null,{"className":"container","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"not-found","children":[["$","h1",null,{"children":"页面未找到"}],["$","p",null,{"children":"你访问的页面不存在或已被移动。"}],["$","div",null,{"className":"not-found-links","children":[["$","$L2",null,{"href":"/","className":"text-link","children":"返回今日页 →"}],["$","$L2",null,{"href":"/archive","className":"text-link","children":"查看归档 →"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}],["$","footer",null,{"className":"footer","children":["$","div",null,{"className":"container","children":["$","p",null,{"children":"© 2026 PaperAgent"}]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:Td18,这篇技术博客文章深入探讨了AT协议中 `at://` 统一资源标识符（URI）的解析机制，旨在帮助读者理解如何从一个 `at://` URI 准确找到其所代表的JSON数据。文章以清晰的步骤，揭示了这一去中心化协议在数据寻址上的独特之处。
+
+文章的核心主题是解释AT协议如何将数据的所有者与数据的托管服务分离。与传统的 `https://` URI不同，`https://` 中的“权威”（Authority）部分指向数据的托管者，而 `at://` URI则将数据**创建者**作为其“权威”。这意味着在 `at://ruuuuu.de/app.bsky.feed.post/3lzy2ji4nms2z` 这样的URI中，`ruuuuu.de` 代表的是数据创建者的身份（通常是一个用户），而非实际托管数据的服务器。这种设计确保了即便数据迁移到不同的托管服务，其 `at://` URI 也能保持不变，体现了数据所有权与托管解耦的理念。
+
+为了解析一个 `at://` URI 并获取其对应的JSON数据，文章指出需要经过一个三阶段的解析过程，而不是直接指向物理服务器：
+1.  **将句柄（Handle）解析为身份（Identity）：** 最初的 `at://` URI 中包含的是一个“句柄”（例如 `ruuuuu.de`）。第一步是将其解析为一个更稳定、更具体的“身份”，例如 `did:web:iam.ruuuuu.de`。文章提到，JSON响应中出现的 `did:web:` 格式暗示了去中心化标识符（DID）的应用，这代表了用户身份的去中心化管理。
+2.  **将身份解析为托管服务（Hosting）：** 明确了数据创建者的身份后，下一步是找出当前托管该身份数据的实际物理服务器地址。
+3.  **从托管服务请求JSON数据：** 最终，向解析出的托管服务发出请求，以获取该 `at://` URI 所指向的原始JSON数据。文章示例了一个JSON数据结构，其中包含 `uri`、`cid` 和 `value` 等字段，`$type` 字段（如 `app.bsky.feed.post`）则指明了数据的类型和格式，表明它代表的是纯粹的数据而非UI组件。
+
+这篇文章的独到之处在于其强调了“用户即权威”这一根本性转变，并详细阐述了通过句柄、身份和托管服务多层次解析 `at://` URI 的方法。这不仅是理解AT协议工作原理的关键，也为去中心化应用中的数据寻址和所有权管理提供了新的视角。
+
+对于技术人员而言，这篇文章的价值在于：
+1.  **深入理解AT协议：** 它是AT协议基础架构的核心组成部分，对开发基于或集成AT协议的应用至关重要。
+2.  **掌握去中心化数据寻址：** 学习 `at://` URI 的解析机制，有助于理解去中心化网络中如何实现数据与托管分离、强化用户数据主权的技术方案。
+3.  **洞察身份管理：** 文中提到的从“句柄”到“身份”（暗示DID）的解析过程，提供了去中心化身份（DID）在实际协议中应用的具体案例。
+4.  **启发设计思维：** 这种将数据所有者与数据托管解耦的设计理念，可以为其他去中心化系统或分布式架构的设计提供有益的借鉴。
+
+总之，这篇文章通过剖析 `at://` URI 的解析过程，揭示了AT协议在去中心化数据所有权、身份管理和寻址方面的创新设计，是技术人员深入了解未来网络基础设施的重要参考。5:["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["overreacted.io",[" · ","2025/10/2"]]}],["$","h1",null,{"children":"Where It's at://"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"style":{"whiteSpace":"pre-wrap","lineHeight":"1.8"},"children":"$e"}]]}],["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://overreacted.io/where-its-at/","target":"_blank","rel":"noopener noreferrer","children":"阅读原文 →"}]}],["$","hr",null,{"className":"divider"}],["$","div",null,{"style":{"textAlign":"center"},"children":["$","$L2",null,{"href":"/info","children":"← 返回资讯列表"}]}]]}]
+a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+f:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"IconMark"]
+8:null
+c:[["$","title","0",{"children":"PaperAgent - AI 论文日报"}],["$","meta","1",{"name":"description","content":"每日精选高价值 AI 论文，快速把握最新研究进展"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.1383ba39.ico","sizes":"341x341","type":"image/x-icon"}],["$","$Lf","3",{}]]

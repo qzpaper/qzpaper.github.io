@@ -1,0 +1,18 @@
+1:"$Sreact.fragment"
+3:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+2:Tcbe,React Server Components (RSC) 协议因近期披露的关键安全漏洞而受到广泛关注。该协议是React树序列化和反序列化的格式，作为React的内部实现细节，它允许React团队灵活地改进和增加新功能。然而，这也导致即使是RSC的活跃开发者也对其底层工作原理缺乏直观理解。为了填补这一空白，作者推出了RSC Explorer (rscexplorer.dev)，一个开源的在线工具，旨在通过可视化方式揭示RSC协议的运作机制。
+
+RSC Explorer是一个完全在浏览器中运行的单页应用（其服务器部分在Web Worker中模拟），它利用了React官方提供的RSC读写包，确保了协议输出的真实性。该工具通过一系列交互式示例，为开发者提供了深入了解RSC内部机制的窗口：
+
+1.  **“Hello World”**：展示了简单的JSX（如`<h1>Hello</h1>`）如何被序列化为RSC流中的JSON片段，并在客户端被重建为可渲染的UI。
+2.  **“异步组件”**：通过`Suspense`和`SlowComponent`的例子，演示了RSC的流式传输能力。在组件异步加载时，客户端会显示带有“Pending”标记的占位符，实现渐进式渲染，避免阻塞用户界面。
+3.  **“计数器”**：揭示了RSC并非传输HTML，而是传输“虚拟DOM”或组件引用。服务器发送如`<Counter initialCount={0} />`这样的React组件引用，客户端通过`["client",[],"Counter"]`这类客户端引用，配合打包工具加载并渲染相应的客户端模块。这展示了服务器如何指示客户端代码的执行。
+4.  **“表单动作”**：演示了带有`'use server'`标记的Server Action如何被客户端组件引用并调用。用户在客户端提交表单后，请求会被发送到服务器执行相应的操作，并返回结果，体现了客户端与服务器间的双向交互能力。
+5.  **“路由刷新”**：在无框架的环境下，RSC Explorer展示了RSC框架如何实现服务器内容的刷新。客户端通过调用一个自定义的“refresh Server Action”，接收服务器返回的新props。例如，一个计时器组件在接收到新的背景色props时，能够保持其内部状态不变，仅更新外观。这表明RSC的更新机制更接近于“虚拟DOM”更新，而非传统意义上的全页面重载，是现代RSC路由实现的核心原理，通过`renderPage()`函数在服务器和客户端的协同调用得以实现。
+
+此外，RSC Explorer还提供了分页、错误处理、二进制数据传输等高级示例，甚至包含针对特定RSC漏洞（CVE-2025-55182）的演示。该工具支持嵌入代码片段和生成分享链接，保持了其简洁和易用性。
+
+对于技术人员而言，RSC Explorer极具价值。它弥补了RSC协议文档不足的缺陷，提供了一个直观、可交互的学习平台。通过亲手操作这些示例，开发者能够深入理解RSC在流式传输、客户端-服务器通信、组件引用与状态管理等方面的底层细节，从而更好地设计、调试和优化RSC应用。它不仅能帮助开发者掌握RSC的实际应用，还能启发对RSC框架内部实现原理的思考，对于提升RSC开发效率和解决复杂问题具有重要的实践指导意义。0:{"buildId":"BKz-chKA0XI76Ab9o7R4q","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["overreacted.io",[" · ","2025/12/19"]]}],["$","h1",null,{"children":"Introducing RSC Explorer"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"style":{"whiteSpace":"pre-wrap","lineHeight":"1.8"},"children":"$2"}]]}],["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://overreacted.io/introducing-rsc-explorer/","target":"_blank","rel":"noopener noreferrer","children":"阅读原文 →"}]}],["$","hr",null,{"className":"divider"}],["$","div",null,{"style":{"textAlign":"center"},"children":["$","$L3",null,{"href":"/info","children":"← 返回资讯列表"}]}]]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null

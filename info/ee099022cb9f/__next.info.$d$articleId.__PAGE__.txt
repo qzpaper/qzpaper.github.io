@@ -1,0 +1,14 @@
+1:"$Sreact.fragment"
+3:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+2:Tba9,Jeff Geerling的这篇博客文章详细探讨了在树莓派上结合Frigate与Hailo加速器实现高效目标检测的方法，特别是在集成过程中遇到的技术难题及其解决方案。作者作为一名Frigate用户，此前使用树莓派CM4和Coral TPU进行安防监控的人员、车辆和动物检测。文章背景指出，随着树莓派5及CM5的AI HAT+引入内置Hailo-8或Hailo-8L AI协处理器，为树莓派带来了低功耗、高性能的图像目标检测能力。Frigate已支持Hailo，但作者在新构建中将其集成到Frigate时遇到了阻碍，因此撰文记录了详细过程和解决办法。
+
+文章的核心观点是Hailo加速器在树莓派上运行Frigate具有显著优势，但其配置过程并非一帆风顺。作者详细介绍了在全新安装的Pi OS（适用于Pi 5或CM5，且Hailo模块通过PCIe连接）上配置Hailo与Frigate的步骤。这包括：首先，按照Frigate的指南从源代码安装Hailo-8驱动；其次，根据Frigate的说明配置`frigate.yml`文件，将Hailo设置为目标检测器；然后启动Frigate。作者提醒，如果Frigate启动后显示“CPU detectors are not recommended...”警告，则表明检测器配置可能存在问题。
+
+文章的关键技术点在于解决了一个特定且棘手的PCIe驱动错误。当运行`docker logs frigate`时，作者遇到了`[HailoRT] [error] CHECK failed - max_desc_page_size given 16384 is bigger than hw max desc page size 4096`的错误，导致HailoRT推理线程停止。针对此问题，解决方案是创建一个`/etc/modprobe.d/hailo_pci.conf`文件，并添加一行配置：`options hailo_pci force_desc_page_size=4096`。完成修改后，需要重启树莓派，或通过`sudo modprobe -r hailo_pci`和`sudo modprobe hailo_pci`命令卸载并重新加载Hailo驱动。此操作后，Frigate日志应正确显示Hailo检测器正在使用中。
+
+文章的结论或核心启示是，通过解决上述PCIe参数配置问题，Hailo加速器能够在树莓派上与Frigate完美配合。修复后，系统仪表盘显示Hailo以约12毫秒的推理速度运行，且整体CPU使用率极低（作者使用两摄像头测试）。值得一提的是，这一方案在更经济的Hailo-8L芯片上也能良好工作，其成本通常远低于老旧的Google Coral TPU，尤其是在AI HAT+上搭载的“基础款”。作者对Google Coral TPU在一代产品后即被放弃表示遗憾，认为其本可主导边缘TPU市场。
+
+这篇文章对希望在树莓派5或CM5上利用Hailo加速器搭建高效、低功耗的Frigate目标检测系统的技术人员具有极高的实用价值。它不仅提供了详细的安装和配置指南，更关键的是，它揭示并解决了将Hailo集成到Frigate时可能遇到的一个特定且棘手的PCIe驱动错误，避免了读者在自行探索时耗费大量时间。同时，文章对Hailo与Coral TPU的性能及成本对比，也为硬件选择提供了有价值的参考。0:{"buildId":"BKz-chKA0XI76Ab9o7R4q","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["jeffgeerling.com",[" · ","2026/2/18"]]}],["$","h1",null,{"children":"Frigate with Hailo for object detection on a Raspberry Pi"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"style":{"whiteSpace":"pre-wrap","lineHeight":"1.8"},"children":"$2"}]]}],["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://www.jeffgeerling.com/blog/2026/frigate-with-hailo-for-object-detection-on-a-raspberry-pi/","target":"_blank","rel":"noopener noreferrer","children":"阅读原文 →"}]}],["$","hr",null,{"className":"divider"}],["$","div",null,{"style":{"textAlign":"center"},"children":["$","$L3",null,{"href":"/info","children":"← 返回资讯列表"}]}]]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null

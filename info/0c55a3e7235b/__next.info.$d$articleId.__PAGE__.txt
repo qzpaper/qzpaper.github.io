@@ -1,0 +1,25 @@
+1:"$Sreact.fragment"
+3:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+2:Tcb8,这篇来自 Simon Willison 博客的文章，标题为“Quoting claude.com/import-memory”，核心内容是引用了Anthropic公司大语言模型Claude一项名为“导入记忆（import your memories）”功能的提示语（prompt）。该博文发布于2026年3月1日，其主旨在于展示用户在使用LLM服务时，对个人数据管理、记忆导出和数据可移植性的具体需求和期望。
+
+文章没有深入探讨Claude的内部工作机制，而是通过一个高度结构化、详尽的用户提示语，揭示了LLM用户对于其存储的个人化“记忆”和上下文信息的强烈控制欲。这个提示语模拟了用户在决定迁移到其他LLM服务时，如何要求Claude导出其所有相关数据的场景。
+
+该提示语的具体要求包括：
+1.  **数据范围全面性**：要求列出所有关于用户的记忆以及从过往对话中学习到的所有上下文信息。
+2.  **严格格式化**：所有输出必须在一个单独的代码块中，每条记录格式为`[保存日期, 如果有] - 记忆内容`，以便用户轻松复制。
+3.  **内容详尽**：明确指定需涵盖的类别，包括：用户对LLM响应方式的指令（如语气、格式、风格、“总是做X”、“从不做Y”）、个人详细信息（姓名、地点、职业、家庭、兴趣）、项目、目标和重复性话题、使用的工具、语言和框架、对LLM行为的偏好和纠正，以及任何其他未覆盖的存储上下文。
+4.  **精确性与完整性**：强调在可能的情况下逐字保留用户的言语，且不能进行总结、分组或省略任何条目。
+5.  **确认机制**：在代码块后，要求LLM确认是否已提供完整的记忆集。
+
+这篇文章的关键技术点在于它提供了一个极佳的“提示工程（Prompt Engineering）”范例，展示了如何通过精心设计的提示语，从LLM中提取特定、结构化且完整的信息。它也深刻揭示了LLM记忆管理和数据可移植性在未来AI应用中的重要性。
+
+文章的结论或核心启示是，随着LLM在个人和专业生活中的深度融入，用户将越来越关注其与AI交互过程中产生的个性化数据的所有权和迁移能力。这个提示语实际上成为了一个关于“理想LLM记忆导出功能”的蓝图或规范。
+
+这篇文章值得技术人员阅读，原因如下：
+1.  **提示工程实践**：它提供了一个高级提示工程的实际案例，对于从事AI应用开发、LLM交互设计和提示工程的工程师具有重要的参考价值。
+2.  **LLM系统设计**：对于构建或优化LLM平台的工程师而言，该提示语揭示了未来LLM在记忆存储、检索和导出功能上需要满足的用户需求，有助于指导系统架构和功能设计。
+3.  **数据治理与隐私**：关注数据管理、隐私和合规性的技术人员可以从中看到AI时代下数据可移植性、用户控制权和“被遗忘权”等伦理和法律问题在技术实现层面的具体体现。
+4.  **未来趋势洞察**：它预示了AI服务发展的一个重要趋势：用户将不仅是AI的消费者，更是其个人化上下文的生产者和管理者，要求AI系统提供更强的透明度和可控性。0:{"buildId":"BKz-chKA0XI76Ab9o7R4q","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["simonwillison.net",[" · ","2026/3/1"]]}],["$","h1",null,{"children":"Quoting claude.com/import-memory"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"style":{"whiteSpace":"pre-wrap","lineHeight":"1.8"},"children":"$2"}]]}],["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://simonwillison.net/2026/Mar/1/claude-import-memory/#atom-everything","target":"_blank","rel":"noopener noreferrer","children":"阅读原文 →"}]}],["$","hr",null,{"className":"divider"}],["$","div",null,{"style":{"textAlign":"center"},"children":["$","$L3",null,{"href":"/info","children":"← 返回资讯列表"}]}]]}],null,["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null
