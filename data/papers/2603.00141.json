@@ -1,7 +1,7 @@
 {
   "paperId": "2603.00141",
   "date": "2026-03-03",
-  "category": "LLM",
+  "category": "Image Generation",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-03",
   "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
@@ -19,7 +19,7 @@
     "Gang Xiong",
     "Yujun Cai"
   ],
-  "summaryCn": "",
+  "summaryCn": "图像编辑是目标导向任务，将文本到图像生成中的Image Chain-of-Thought范式直接迁移至编辑场景会暴露三个核心问题：固定采样预算在简单编辑上浪费算力、通用验证器对早期去噪状态判断不可靠导致40%误剪枝、大规模采样产生大量冗余正确结果。ADE-CoT框架针对性地提出三项策略协同解决上述问题。难度感知资源分配策略首先生成单个候选并评分，以初始分数作为难度代理，通过非线性公式自适应分配后续采样预算，使简单编辑接近最小预算而困难编辑接近原始预算上限。编辑特定验证的早期剪枝包含三个组件：利用flow matching模型的单步估计生成清晰预览图，通过Grounded SAM2定位编辑区域并计算变化集中度分数，以及用MLLM生成目标描述后与CLIP计算指令一致性，三项分数加权融合实现编辑特定的候选筛选，将高分区域误判从235降至86。深度优先机会性停止策略按早期分数顺序串行处理候选，并设计实例特定验证器通过针对当前编辑生成5个yes/no问题来区分细微差异，累计4个意图对齐候选后即终止搜索。在GEdit-Bench和AnyEdit-Test上的实验表明，ADE-CoT在显著降低函数求值次数的同时，编辑质量持平或优于固定预算的Best-of-N方法。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.00141",
   "figures": [

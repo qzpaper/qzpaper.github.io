@@ -1,7 +1,7 @@
 {
   "paperId": "2603.02138",
   "date": "2026-03-03",
-  "category": "LLM",
+  "category": "Multimodal",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-03",
   "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
@@ -15,7 +15,7 @@
     "Gang Yu",
     "Xingjun Ma"
   ],
-  "summaryCn": "",
+  "summaryCn": "矢量动画相比光栅视频具有轻量可编辑的优势，但现有方法要么依赖外部运动先验无法端到端合成，要么直接让LLM输出Lottie JSON成功率极低接近零。OmniLottie通过设计专用Lottie Tokenizer从根本上解决这一问题，将冗余的层次化JSON转换为紧凑的命令参数序列，使预训练VLM可高效学习矢量动画分布。数据层面构建了首个百万级Lottie数据集MMLottie-2M，从五大平台爬取约120万专业Lottie文件，并基于OmniSVG的200万静态SVG施加运动模板生成约80万辅助动画，解耦内容与运动语义。所有文件进行空间时间归一化后用Qwen2.5-VL进行粗到精两阶段标注。技术核心Lottie Tokenizer将JSON结构重组后，通过类型特定的缩放因子和偏移量将不同参数类型映射到不重叠词表区间，形成命令与参数的交替token序列，相比原始JSON平均2562个token压缩至486个token，实现5.3倍压缩比和81%的token数量削减。以Qwen2.5-VL为骨干，扩展随机初始化的Lottie词表嵌入，通过标准自回归交叉熵损失训练，支持纯文本、文本加图像、视频三种多模态指令输入。在MMLottie-Bench的Real和Synthetic子集上评估表明，OmniLottie在视觉质量FVD和语义对齐CLIP等指标上均显著优于直接使用GPT-5、Qwen2.5-VL等模型生成JSON的基线方法。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.02138",
   "figures": [

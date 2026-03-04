@@ -1,7 +1,7 @@
 {
   "paperId": "2603.00912",
   "date": "2026-03-03",
-  "category": "LLM",
+  "category": "3D Vision",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-03",
   "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
@@ -13,7 +13,7 @@
     "Lanqing Hong",
     "Dan Xu"
   ],
-  "summaryCn": "",
+  "summaryCn": "多视图室内3D目标检测的现有方法严重依赖精确标定的相机位姿或深度图，这在实际部署场景中成本高昂且往往不可获得。VGGT-Det明确提出Sensor-Geometry-Free设定，即完全不使用传感器提供的几何输入，以提升系统可部署性。该框架以冻结的预训练VGGT编码器为骨干提取3D感知token，并设计两个核心模块克服缺乏显式几何约束带来的挑战。注意力引导查询生成模块（AG）发现VGGT编码器的注意力图天然捕获丰富语义信息，物体区域倾向于获得更高权重。AG融合归一化注意力权重与到已选点集的归一化最小欧氏距离，通过可调权衡系数迭代采样，使查询点优先分布于语义显著的物体区域，同时保持全局空间覆盖多样性，相比FPS均匀采样显著减少背景区域查询。查询驱动特征聚合模块（QD）引入共享的可学习See-Query，通过MLP加Softmax动态生成各VGGT编码器层的聚合权重，See-Query与目标查询经自注意力交互后感知检测需求，再通过交叉注意力从加权多层级特征中提取相关几何信息，实现上下文感知的自适应特征融合。在ScanNet和ARKitScenes的实验表明，完整模型分别超越最强竞争方法4.4和8.6 mAP@0.25，消融实验验证了AG和QD各自的独立贡献。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.00912",
   "figures": [
@@ -27,5 +27,5 @@
     }
   ],
   "prevPaperId": "2603.00889",
-  "nextPaperId": "2603.01493"
+  "nextPaperId": "2603.01562"
 }
