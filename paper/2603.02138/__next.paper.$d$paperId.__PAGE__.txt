@@ -1,0 +1,146 @@
+1:"$Sreact.fragment"
+9:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+a:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+b:"$Sreact.suspense"
+2:T2036,## 动机与问题定义
+
+矢量动画相比光栅视频具有轻量、可编辑、分辨率无关等优势，广泛应用于 UI/UX 设计。现有方法主要依赖外部运动先验（参考 GIF 或 Text-to-Video 模型）驱动手工设计的静态矢量图形，输出不具备原生矢量可编辑性。本文聚焦 Lottie 格式——一种将形状、特效和运动参数统一存储在单个 JSON 文件中的矢量动画标准，具有优越的跨平台兼容性。
+
+核心挑战：现有 LLM/VLM（如 GPT-5、Qwen2.5-VL、DeepSeek）虽能直接生成 JSON，但 Lottie 原始 JSON 包含大量不变的结构性元数据和格式化 token（占总 token 的 81\
+
+OmniLottie 的核心贡献：
+
+• 首个端到端多模态矢量动画生成框架，支持 Text-to-Lottie、Text-Image-to-Lottie 和 Video-to-Lottie；
+• 设计 Lottie Tokenizer，将 JSON 转换为紧凑的命令-参数序列，实现 5.3 压缩（2562 486 token）；
+• 构建 MMLottie-2M，首个大规模多模态矢量动画数据集（200万+），含文本、关键帧图像和渲染视频标注；
+• 建立 MMLottie-Bench 标准化评估协议，覆盖视觉质量和语义对齐两个维度。
+
+## 系统架构
+
+\\[1pt]
+图1：OmniLottie 架构。Lottie JSON 经结构重组和参数化 tokenizer 转换为命令-参数序列，扩展 Qwen2.5-VL 词汇表后进行自回归生成。
+
+### Lottie 结构重组
+
+原始 Lottie JSON 采用层级表示，包含大量冗余。OmniLottie 将其重组为核心属性（v, fr, ip, op, w, h, nm, ddd, layers）和条件属性（assets, markers, fonts, chars，仅在特定层类型需要时出现）。支持五种基础层类型：Precomposition（ty=0）、Solid（ty=1）、Null（ty=3）、Shape（ty=4）和 Text（ty=5）。
+
+每层属性分为三类：基础属性（标识符、类型、索引层级、时间参数 sr/ip/op/st）；视觉属性（几何变换 ks、遮罩、特效 ef、混合模式 bm）；类型特定属性（形状层的 shapes、预合成的 refId、文本层的 t 等）。Lottie 动画形式化为：
+L = \M, L_1, L_2, , L_N\
+其中 M = \v, fr, ip, op, w, h, nm, ddd\ 为基础元数据，每层 L_i = (_i, A__i, T_i, E_i) 包含类型、属性、变换和特效。
+
+### Lottie Tokenizer
+
+Tokenizer 将层级 JSON 展平为函数调用序列，再参数化为离散 token。核心是基于偏移的量化方案：
+token(x, t) = x s_t + o_t
+其中 x 为参数值，t 为参数类型，s_t 为类型特定缩放因子，o_t 为词汇偏移量。不同参数类型（时间、空间、变换、样式）被映射到不重叠的词汇区间，避免 token 冲突。完整离散表示为：
+T = [CMD_1, p_1,1, , p_1,k_1, CMD_2, , CMD_M, p_M,k_M]
+
+文本参数处理：字体、字符串等使用 Qwen2.5-VL 原生 tokenizer 编码为 T_text = [count, tok_1, , tok_n]，保留预训练语言知识。填充值使用特殊标记 token（start(o_t) - 1）。词汇偏移设计基于对整个数据集的参数分布统计分析，按复杂度分配空间。
+
+解码重建：确定性逆映射 p = (token - o_t) / s_t，保证无损往返转换——每个合法 token 序列均可重建为可渲染的 Lottie JSON，完整保留矢量特性。
+
+### 模型架构与训练
+
+基于预训练 Qwen2.5-VL 作为骨干，引入随机初始化的 Lottie 词汇嵌入扩展词表。模型处理交错的图像/视频/文本多模态指令，自回归生成 Lottie token。训练目标为标准交叉熵：
+^* = _ - _i=1^L P(x_s^[i] | x_c; x_s^[<i]; )
+其中 x_c 为多模态指令，x_s^[i] 为第 i 个 Lottie token。
+
+## MMLottie-2M 数据集
+
+\\[1pt]
+图2：数据构建流程。包含数据收集转换、时空归一化、视频渲染和多粒度标注。
+
+### 数据构建
+
+来源一：Web 爬取。从 LottieFiles、IconScout、Flaticon、Iconfont、Icons8 五大平台收集约 120 万 Lottie 文件。清洗去除 base64 图层、非可视层（音频/摄像机）和 After Effects 表达式。
+
+来源二：SVG-Lottie 合成。基于 OmniSVG 200万+ 静态 SVG，转换为静态 Lottie 后施加随机动画（平移、缩放、旋转、透明度变化及组合），生成约 80 万动画，解耦内容与运动语义。
+
+运动模板库：分析 100 万原生 Lottie 提取变换轨迹（旋转/缩放/位置/透明度），生成运动签名并聚类为典范模板，注入到 SVG-Lottie 中，大幅缩小路径分布差距。
+
+归一化：空间统一至 512512 画布（居中保持纵横比），时间归一化至 0--60 范围。渲染为 30fps MP4 视频，随机浅色背景。
+
+标注：采用 Qwen2.5-VL 进行粗到细两阶段标注——第一阶段生成整体摘要（主体/对象/运动/颜色/风格），第二阶段逐帧描述时间演进（使用 ``begins with''、``then'' 等连接词）。
+
+### MMLottie-Bench 评估协议
+
+构建 Real Subset（450 样本，来自专业设计师，严格与训练集不重叠）和 Synthetic Subset（450 样本，GPT-4o 合成文本 + Gemini3.1-Pro 合成图像 + Seedance 1.0 合成视频），覆盖三个任务各 150 样本。评估指标：
+
+• 视觉质量：FVD、PSNR、SSIM、DINO；
+• 语义对齐：CLIP 相似度、Object Alignment（0--10，衡量对象属性）、Motion Alignment（0--10，衡量运动正确性），后两者使用 Claude-3.5-Sonnet 作为 LLM judge。
+
+## 核心实验结果
+
+### 定量评估
+
+1pt
+
+@l l >X >X >X@
+
+任务 & 方法 & 成功率 & FVD & Motion \\
+
+4*T2L & DeepSeekV3 & 9.3\
+& GPT-5 & 12.7\
+& Recraft & 77.3\
+& Ours & 88.3\
+
+4*TI2L & GPT-5 & 28.0\
+& AniClipart & 87.3\
+& Livesketch & 91.3\
+& Ours & 93.3\
+
+3*V2L & GPT-5 & 9.2\
+& Gemini3.1 & 0.0\
+& Ours & 88.1\
+
+1pt
+
+Real Subset 上，OmniLottie 在所有任务和指标上全面领先。Text-to-Lottie：成功率 88.3\
+
+Text-Image-to-Lottie：OmniLottie FVD 180.27，Object Alignment 5.10，Motion Alignment 4.44，均为最优。AniClipart/Livesketch 虽有合理 CLIP 分数，但运行时间极长（1212s/723s vs.\ 88.6s）。
+
+Video-to-Lottie：OmniLottie 实现最优 FVD 227.11、PSNR 16.08、SSIM 0.82、DINO 0.92。GPT-5 成功率仅 9.2\
+
+效率对比：每次成功生成耗时——OmniLottie 约 31s，Livesketch 1625s（52），AniClipart 16438s（530）。
+
+### 定性评估
+
+Text-to-Lottie 中 OmniLottie 实现强提示对齐和高视觉保真度；Recraft 虽能生成复杂矢量图形但运动重复、对齐差；GPT-5 失败率高。Text-Image-to-Lottie 中 VLM 方法常失败，优化方法（AniClipart/Livesketch）需光栅到矢量转换、耗时长且无法输出原生矢量格式。Video-to-Lottie 中仅 OmniLottie 能稳定生成捕获运动模式和视觉特征的高质量矢量动画。
+
+## 消融实验
+
+### SVG 数据混合比例
+
+评估四种 Lottie--SVG 混合比例：纯 Lottie（FVD 305.57）、50:50（285.22）、纯 SVG（342.61）、70:30（269.50）。最优比例为 30\
+
+### Lottie Tokenizer 必要性
+
+对比三种配置：预训练 Qwen2.5-VL（成功率 0\
+
+## 失败模式分析
+
+OmniLottie 失败主要集中在 Level 2--3（结构/渲染层），失败率随输入复杂度递增：T2L 2.7\
+
+基线失败层级更低：Qwen2.5-VL 在 Level 1（模式幻觉，将 Lottie 与通用动画格式混淆）完全失败；DeepSeek 属性错位（将颜色属性置于错误节点）；GPT-5/Gemini 出现贝塞尔控制点坍缩、变换栈错误等渲染问题。
+
+## 用户研究
+
+招募 20 名参与者对 900 个评估案例进行 5 分制排名（视觉质量、条件遵循、动画质量、几何保真度），OmniLottie 在所有维度和任务上平均排名最高。相关性分析表明 Object Alignment 和 Motion Alignment 与人类判断呈强正相关（Motion Alignment Pearson r = 0.4823，p < 0.001），验证了自动化指标的有效性。
+
+## 讨论与局限
+
+核心贡献：(1) 首个端到端多模态矢量动画生成框架；(2) Lottie Tokenizer 实现 5.3 压缩且无损可逆；(3) MMLottie-2M 数据集和标准化 benchmark。
+
+局限性：
+
+• 自回归解码仍可能产生无效序列（成功率未达 100\
+• 对复杂场景和长上下文泛化能力有限；
+• 未探索约束解码、基于可渲染性奖励的强化学习等改进方向；
+• 与 After Effects 等专业工具的智能体集成是有前景的未来方向。0:{"buildId":"_QOC3VD90HEOI9p13FzMy","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["Multimodal"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens"}],["$","p",null,{"className":"paper-detail-authors","children":"Yiying Yang, Wei Cheng, Sijin Chen, Honghao Fu, Xianfang Zeng, Yujun Cai, Gang Yu, Xingjun Ma"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","p",null,{"children":"$2"}]]}],"$L3","$L4","$L5","$L6","$L7"]}],null,"$L8"]}],"loading":null,"isPartial":false}
+3:null
+4:["$","section",null,{"className":"contributions","children":[["$","h2",null,{"children":"Key Contributions"}],["$","ul",null,{"children":[["$","li","0",{"children":"设计基于偏移量化的Lottie Tokenizer，将层级JSON展平为命令-参数序列，实现2562→486 token的5.3倍压缩，保证无损往返转换。"}],["$","li","1",{"children":"构建MMLottie-2M大规模数据集，融合Web爬取原生Lottie和SVG-Lottie合成数据，通过运动模板库注入缩小路径分布差距，含粗到细两阶段多模态标注。"}],["$","li","2",{"children":"建立MMLottie-Bench标准化评估协议，覆盖视觉质量和语义对齐两个维度，为矢量动画生成任务提供首个系统性评估框架。"}]]}]]}]
+5:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2603.02138","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
+6:["$","hr",null,{"className":"divider"}]
+7:["$","nav",null,{"className":"prev-next","children":[["$","$L9",null,{"href":"/paper/2603.02024","className":"text-link","children":"← Previous"}],["$","span",null,{"className":"disabled","children":"Next →"}]]}]
+8:["$","$La",null,{"children":["$","$b",null,{"name":"Next.MetadataOutlet","children":"$@c"}]}]
+c:null

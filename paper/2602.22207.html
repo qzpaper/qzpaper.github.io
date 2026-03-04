@@ -1,0 +1,137 @@
+<!DOCTYPE html><!--_QOC3VD90HEOI9p13FzMy--><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0e826a48ac6fd355.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/465f799faf41e6df.js"/><script src="/_next/static/chunks/806bdb8e4a6a9b95.js" async=""></script><script src="/_next/static/chunks/f2f58a7e93290fbb.js" async=""></script><script src="/_next/static/chunks/045e59273b8f7eaf.js" async=""></script><script src="/_next/static/chunks/turbopack-078b5aea0698c0e3.js" async=""></script><script src="/_next/static/chunks/7c92e96509cd355e.js" async=""></script><script src="/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/_next/static/chunks/d2be314c3ece3fbe.js" async=""></script><title>PaperAgent - AI 论文日报</title><meta name="description" content="每日精选高价值 AI 论文，快速把握最新研究进展"/><link rel="icon" href="/favicon.ico?favicon.1383ba39.ico" sizes="341x341" type="image/x-icon"/><script src="/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><header class="topnav"><nav class="container"><a class="logo" href="/">PaperAgent</a><div class="nav-links"><a href="/">Papers</a><a href="/info">Info</a><a href="/archive">Archive</a><a href="/about">About</a></div></nav></header><main><div class="container"><article><p class="paper-detail-meta">Evaluation<!-- --> · <!-- -->Hugging Face Daily<!-- --> · <!-- -->2026-03-02</p><h1>Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets</h1><p class="paper-detail-authors">Hanna Yukhymenko, Anton Alexandrov, Martin Vechev</p><hr class="divider"/><section class="paper-detail-summary"><h2>中文摘要</h2><p>## 问题动机与背景
+
+多语言 LLM 评估的可靠性正受到翻译基准质量不一致的严重威胁。现有多语言基准（如 Global-MMLU、MuBench、Okapi）存在系统性翻译缺陷：
+
+• 语义漂移与上下文丢失：依赖旧版 MT 工具（Google Translate、DeepL）或早期模型（GPT-4），多语言能力落后于当前前沿模型；
+• 问题与答案分离翻译：在 Winogrande 等句子补全任务中，分离翻译导致语法性别标记泄露正确答案（如乌克兰语中动词词尾暗示答案），或产生语法不一致；
+• 术语错误与字面翻译：Global-MMLU/Okapi 中发现语义漂移（``lifespan&#x27;&#x27; 误译为``life cycle&#x27;&#x27;）、错误术语（``水的&#x27;&#x27;误用为``aquatic&#x27;&#x27;）、格变位错误、罗马数字误读为代词等四类系统性错误；
+• 验证不足：Global-MMLU 仅 20\
+
+本文聚焦东欧与南欧语言（乌克兰语、保加利亚语、斯洛伐克语、罗马尼亚语、立陶宛语、爱沙尼亚语、土耳其语、希腊语），原因是：（1）这些语言具有复杂语法特征（丰富格系统、语法性别、体态动词），对上下文不一致极为敏感；（2）属于中等资源语言，前沿模型本地化仍不足；（3）已有翻译基准可供对比评估。
+
+作者围绕三个核心研究问题展开：RQ1：现有多语言翻译基准是否可靠？RQ2：测试时计算扩展方法能在多大程度上提升翻译质量？RQ3：如何在翻译中高效融入目标语言的独特语言特征？
+
+## 系统架构与方法论
+
+框架提供两种配置模式——Dataset 模式（平坦文本，流程简单）和Benchmark 模式（需保持问题-答案结构完整性），并实现四种翻译方法：
+
+### SC：默认翻译 + 可选自检
+
+零样本提示 LLM 翻译，可选在新会话中让模型对照原文评估并纠正结果。适合高资源语言的大规模文本翻译，成本最低。缺点：模型可能幻想不存在的错误。支持 few-shot 提示注入语言特定注意事项。
+
+### Best-of-N 采样（BoN）
+
+在较高温度（0.7）下采样 N 个翻译候选，提示 LLM 按 1--10 分标准打分，选取最高分译文。无需奖励模型，保持无训练框架。成本可控但质量低于 T-RANK/USI——LLM 数值打分能力有限，且存在位置偏差（倾向高评前置候选）。
+
+### USI：通用自改进
+
+\\[1pt]
+图1：USI 方法工作流程。采样 N 个候选后融合为最优译文。
+
+基于 Universal Self-Consistency 和 Fusion-of-N 的思路，但专门适配机器翻译。在高温度下采样 N 个候选翻译，然后提示评估 LLM 按照预定义标准（翻译质量、术语准确性、问题完整性、拼写、语法变格/变位正确性）将候选融合为最佳版本，仅使用各候选的最优特征。总计仅需 N+1 次模型调用，成本和时间效率高，且能有效纠正语言特定错误。局限在于融合步骤仅执行一次，评估模型倾向于关注前几个候选中发现的错误类型，可能遗漏其他问题。
+
+### T-RANK：翻译排名
+
+\\[1pt]
+图2：T-RANK 方法工作流程。多轮竞争排名消除位置偏差。
+
+本文核心创新。高温度采样 N 个多样化翻译后，judge 模型通过比较排名（而非数值打分）评估候选质量。关键设计——多轮顺序排名策略：在 N 轮中，每个候选依次被放置在每个位置上恰好一次（构成循环网格），从而系统性消除位置偏差。最终将所有候选再次呈现给 judge 模型，对选出的最佳候选进行纠正与精化。
+
+总计 2N+1 次模型调用。与 USI 的核心区别：USI 执行一次性融合，而 T-RANK 通过多轮竞争发现所有候选中的各类缺陷，改进选择和最终精化质量。实验表明非推理模型在此方法下展现出更复杂的推理能力，能发现其他方法遗漏的细微错误。
+
+位置偏差分析（表5）：在 MMLU ENUK（n=5）上，尽管多轮轮换策略已大幅缓解偏差，输入位置 2 仍残留轻微优势（平均排名 2.06，最低），在五个最频繁排名组合中均占据第 1 名。
+
+### 多提示变体
+
+USI 和 T-RANK 均支持多提示采样（p 个不同翻译提示各采样 1 个候选，含英文和目标语言提示），进一步提升多样性和质量。
+
+## 基准翻译实践
+
+将 MMLU、Hellaswag、ARC-Challenge、Winogrande 翻译为 8 种语言，共计约 29,757 个样本。MMLU 使用 GPT-4o-mini 配合 T-RANK/USI 方法翻译；其余基准按语言选用 GPT-4o-mini 或 Gemini-2.0-Flash。核心设计：问题与答案在同一提示上下文中联合翻译，保持语义关系和语法一致性。针对 Winogrande，采用动词词形遮蔽（如``бу(-в/-ла/-ло/-ли)&#x27;&#x27;）防止语法性别标记泄露答案。
+
+## 实验评估
+
+### 机器翻译基准（FLORES \&amp; WMT24++）
+
+在 ENUK 对上使用 COMET（XCOMET-XL）参考评估，GPT-4o-mini 作为翻译模型：
+
+1pt
+
+@l &gt;X &gt;X@
+
+方法 &amp; WMT24++ &amp; FLORES \\
+
+Baseline &amp; 0.827 &amp; 0.937 \\
+SC（含自检） &amp; 0.821 &amp; 0.937 \\
+BoN (n=5) &amp; 0.843 &amp; 0.943 \\
+USI (n=5) &amp; 0.843 &amp; 0.945 \\
+T-RANK (p=5$) &amp; 0.845 &amp; 0.940 \\
+
+1pt
+
+USI 和 T-RANK 均显著优于基线和 BoN。SC 自检在 WMT24++ 上反而略有下降（0.821 vs 0.827），因模型可能幻想错误。跨 8 种语言的扩展评估（表20--25）显示：USI multi-prompt 在参考无关 QE 评估中通常最优；Gemini-2.0-Flash 上 T-RANK multi-prompt 可超越 USI（排名能力更强）。
+
+关键洞察：COMET 评估存在局限——短文本无法充分测试复杂语法结构，单一参考译文不能覆盖所有合理翻译。USI 更适合短文本数据集翻译，T-RANK 在复杂问答结构基准翻译中表现更优。
+
+### LLM-as-a-Judge 翻译质量评估
+
+使用 Gemini-2.5-Flash 作为 judge，逐条对比 Global-MMLU 与本文翻译：
+
+1pt
+
+@llrrr@
+
+语言 &amp; 方法 &amp; 胜 &amp; 平 &amp; 负 \\
+
+乌克兰语 &amp; T-RANK &amp; 8750 &amp; 3276 &amp; 2016 \\
+罗马尼亚语 &amp; T-RANK &amp; 8376 &amp; 3020 &amp; 2646 \\
+立陶宛语 &amp; USI &amp; 7382 &amp; 3181 &amp; 3478 \\
+
+1pt
+
+本文方法在所有语言上均显著胜出，乌克兰语胜率高达 62.2\
+
+### 下游模型评估影响
+
+在 Gemma 3 4B/12B、Qwen 3 8B、Llama 3.1 8B 上，使用本文翻译 vs 已有翻译进行基准评估：
+
+1pt
+
+@l &gt;X@
+
+基准 &amp; 平均提升 \\
+
+Winogrande（8 语言） &amp; +3.42\
+ARC-Challenge（4 语言） &amp; +2.35\
+Hellaswag（4 语言） &amp; +1.63\
+MMLU（7 语言） &amp; +0.94\
+
+1pt
+
+Winogrande 提升最大，因保持问答上下文连贯性和消除语法性别泄露至关重要。按语言排序：希腊语 +3.89\
+
+以乌克兰语为例（表11），Gemma-3-12B-IT 在 Hellaswag 上 0.687 vs 0.625（+6.2\
+
+保加利亚语专业翻译对比（表18）：与 INSAIT 专业翻译对比，自动翻译在 Hellaswag（+1.1\
+
+## 与相关工作的对比
+
+• vs.\ MuBench：MuBench 覆盖 61 语言但采用统一自动化流程，缺乏针对特定基准和语言的灵活适配，未显式处理性别标记泄露等问题；
+• vs.\ Global-MMLU：依赖 Google Translate + 仅 20\
+• vs.\ Okapi：使用早期 ChatGPT 翻译，未利用测试时计算扩展，不处理语言特定语法特征；
+• vs.\ AFSP/TEaR：AFSP 需平行语料检索，TEaR 为单候选自精化；本文通过多候选竞争/融合实现更强的错误检测能力。
+
+WMT24++ 研究已表明前沿 LLM 在所有评估语言对上超越传统 MT 工具，进一步证实基于旧工具翻译的基准需要更新。
+
+## 局限性与未来方向
+
+• 评分机制：BoN 选择使用 LLM 打分而非专用翻译质量模型（如 COMET），可能影响候选排名可靠性；
+• 无自适应难度估计：对所有条目统一应用相同方法，未根据文本复杂度自动选择翻译策略（短文本不需要最复杂方法）；
+• 闭源模型依赖：主要依赖 GPT-4o-mini 和 Gemini-2.0-Flash，开放权重模型测试有限。作者推测所提方法对零样本翻译能力较弱的开放模型收益更大，但需验证；
+• 语言覆盖：聚焦东南欧语言，需进一步验证在更广泛低资源语言上的泛化能力；
+• COMET 评估局限：训练数据领域偏差、与人类判断的潜在差异，应结合人工评估或 LLM-as-a-judge 综合评估；
+• 未来方向：基于翻译难度的自适应方法选择、集成专用翻译质量模型、在开放权重模型上全面评估、扩展至更多低资源语言。
+
+## 核心贡献总结
+
+（1）系统性分析现有多语言基准翻译缺陷的根源；（2）提出全自动、高度可配置的翻译框架，支持四种方法灵活平衡质量与成本；（3）创新性 T-RANK 多轮竞争排名方法，通过位置轮换消除评估偏差，实现更精细的错误检测；（4）发布 8 种东南欧语言的改进基准翻译（MMLU、Hellaswag、ARC、Winogrande），证明翻译质量显著影响下游评估结果。开源框架和基准数据集，促进可复现的多语言 AI 开发。</p></section><section class="contributions"><h2>Key Contributions</h2><ul><li>提出T-RANK多轮竞争排名方法，通过循环网格策略系统性消除位置偏差，结合USI融合方法在机器翻译基准上超越基线。</li><li>识别现有多语言基准（Global-MMLU、Okapi等）的四类系统性翻译错误，并提出联合翻译问题与答案的核心设计，解决语法性别标记泄露问题。</li><li>构建涵盖8种语言约29,757样本的高质量多语言基准，为中等资源语言的LLM评估提供可靠数据集。</li></ul></section><div class="original-link"><a href="https://arxiv.org/abs/2602.22207" target="_blank" rel="noopener noreferrer">查看原文 →</a></div><hr class="divider"/><nav class="prev-next"><span class="disabled">← Previous</span><a class="text-link" href="/paper/2602.22661">Next →</a></nav></article><!--$--><!--/$--></div></main><footer class="footer"><div class="container"><p>© 2026 PaperAgent</p></div></footer><script src="/_next/static/chunks/465f799faf41e6df.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/_next/static/chunks/7c92e96509cd355e.js\"],\"\"]\n3:I[39756,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"default\"]\n4:I[37457,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"default\"]\n6:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"ViewportBoundary\"]\nb:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"MetadataBoundary\"]\nd:I[68027,[],\"default\"]\n:HL[\"/_next/static/chunks/0e826a48ac6fd355.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"_QOC3VD90HEOI9p13FzMy\",\"c\":[\"\",\"paper\",\"2602.22207\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"paper\",{\"children\":[[\"paperId\",\"2602.22207\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0e826a48ac6fd355.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/7c92e96509cd355e.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"topnav\",\"children\":[\"$\",\"nav\",null,{\"className\":\"container\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"logo\",\"children\":\"PaperAgent\"}],[\"$\",\"div\",null,{\"className\":\"nav-links\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"children\":\"Papers\"}],[\"$\",\"$L2\",null,{\"href\":\"/info\",\"children\":\"Info\"}],[\"$\",\"$L2\",null,{\"href\":\"/archive\",\"children\":\"Archive\"}],[\"$\",\"$L2\",null,{\"href\":\"/about\",\"children\":\"About\"}]]}]]}]}],[\"$\",\"main\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"not-found\",\"children\":[[\"$\",\"h1\",null,{\"children\":\"页面未找到\"}],[\"$\",\"p\",null,{\"children\":\"你访问的页面不存在或已被移动。\"}],[\"$\",\"div\",null,{\"className\":\"not-found-links\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"text-link\",\"children\":\"返回今日页 →\"}],[\"$\",\"$L2\",null,{\"href\":\"/archive\",\"className\":\"text-link\",\"children\":\"查看归档 →\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}],[\"$\",\"footer\",null,{\"className\":\"footer\",\"children\":[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[\"$\",\"p\",null,{\"children\":\"© 2026 PaperAgent\"}]}]}]]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",null,[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"e:T2310,"])</script><script>self.__next_f.push([1,"## 问题动机与背景\n\n多语言 LLM 评估的可靠性正受到翻译基准质量不一致的严重威胁。现有多语言基准（如 Global-MMLU、MuBench、Okapi）存在系统性翻译缺陷：\n\n• 语义漂移与上下文丢失：依赖旧版 MT 工具（Google Translate、DeepL）或早期模型（GPT-4），多语言能力落后于当前前沿模型；\n• 问题与答案分离翻译：在 Winogrande 等句子补全任务中，分离翻译导致语法性别标记泄露正确答案（如乌克兰语中动词词尾暗示答案），或产生语法不一致；\n• 术语错误与字面翻译：Global-MMLU/Okapi 中发现语义漂移（``lifespan'' 误译为``life cycle''）、错误术语（``水的''误用为``aquatic''）、格变位错误、罗马数字误读为代词等四类系统性错误；\n• 验证不足：Global-MMLU 仅 20\\\n\n本文聚焦东欧与南欧语言（乌克兰语、保加利亚语、斯洛伐克语、罗马尼亚语、立陶宛语、爱沙尼亚语、土耳其语、希腊语），原因是：（1）这些语言具有复杂语法特征（丰富格系统、语法性别、体态动词），对上下文不一致极为敏感；（2）属于中等资源语言，前沿模型本地化仍不足；（3）已有翻译基准可供对比评估。\n\n作者围绕三个核心研究问题展开：RQ1：现有多语言翻译基准是否可靠？RQ2：测试时计算扩展方法能在多大程度上提升翻译质量？RQ3：如何在翻译中高效融入目标语言的独特语言特征？\n\n## 系统架构与方法论\n\n框架提供两种配置模式——Dataset 模式（平坦文本，流程简单）和Benchmark 模式（需保持问题-答案结构完整性），并实现四种翻译方法：\n\n### SC：默认翻译 + 可选自检\n\n零样本提示 LLM 翻译，可选在新会话中让模型对照原文评估并纠正结果。适合高资源语言的大规模文本翻译，成本最低。缺点：模型可能幻想不存在的错误。支持 few-shot 提示注入语言特定注意事项。\n\n### Best-of-N 采样（BoN）\n\n在较高温度（0.7）下采样 N 个翻译候选，提示 LLM 按 1--10 分标准打分，选取最高分译文。无需奖励模型，保持无训练框架。成本可控但质量低于 T-RANK/USI——LLM 数值打分能力有限，且存在位置偏差（倾向高评前置候选）。\n\n### USI：通用自改进\n\n\\\\[1pt]\n图1：USI 方法工作流程。采样 N 个候选后融合为最优译文。\n\n基于 Universal Self-Consistency 和 Fusion-of-N 的思路，但专门适配机器翻译。在高温度下采样 N 个候选翻译，然后提示评估 LLM 按照预定义标准（翻译质量、术语准确性、问题完整性、拼写、语法变格/变位正确性）将候选融合为最佳版本，仅使用各候选的最优特征。总计仅需 N+1 次模型调用，成本和时间效率高，且能有效纠正语言特定错误。局限在于融合步骤仅执行一次，评估模型倾向于关注前几个候选中发现的错误类型，可能遗漏其他问题。\n\n### T-RANK：翻译排名\n\n\\\\[1pt]\n图2：T-RANK 方法工作流程。多轮竞争排名消除位置偏差。\n\n本文核心创新。高温度采样 N 个多样化翻译后，judge 模型通过比较排名（而非数值打分）评估候选质量。关键设计——多轮顺序排名策略：在 N 轮中，每个候选依次被放置在每个位置上恰好一次（构成循环网格），从而系统性消除位置偏差。最终将所有候选再次呈现给 judge 模型，对选出的最佳候选进行纠正与精化。\n\n总计 2N+1 次模型调用。与 USI 的核心区别：USI 执行一次性融合，而 T-RANK 通过多轮竞争发现所有候选中的各类缺陷，改进选择和最终精化质量。实验表明非推理模型在此方法下展现出更复杂的推理能力，能发现其他方法遗漏的细微错误。\n\n位置偏差分析（表5）：在 MMLU ENUK（n=5）上，尽管多轮轮换策略已大幅缓解偏差，输入位置 2 仍残留轻微优势（平均排名 2.06，最低），在五个最频繁排名组合中均占据第 1 名。\n\n### 多提示变体\n\nUSI 和 T-RANK 均支持多提示采样（p 个不同翻译提示各采样 1 个候选，含英文和目标语言提示），进一步提升多样性和质量。\n\n## 基准翻译实践\n\n将 MMLU、Hellaswag、ARC-Challenge、Winogrande 翻译为 8 种语言，共计约 29,757 个样本。MMLU 使用 GPT-4o-mini 配合 T-RANK/USI 方法翻译；其余基准按语言选用 GPT-4o-mini 或 Gemini-2.0-Flash。核心设计：问题与答案在同一提示上下文中联合翻译，保持语义关系和语法一致性。针对 Winogrande，采用动词词形遮蔽（如``бу(-в/-ла/-ло/-ли)''）防止语法性别标记泄露答案。\n\n## 实验评估\n\n### 机器翻译基准（FLORES \\\u0026 WMT24++）\n\n在 ENUK 对上使用 COMET（XCOMET-XL）参考评估，GPT-4o-mini 作为翻译模型：\n\n1pt\n\n@l \u003eX \u003eX@\n\n方法 \u0026 WMT24++ \u0026 FLORES \\\\\n\nBaseline \u0026 0.827 \u0026 0.937 \\\\\nSC（含自检） \u0026 0.821 \u0026 0.937 \\\\\nBoN (n=5) \u0026 0.843 \u0026 0.943 \\\\\nUSI (n=5) \u0026 0.843 \u0026 0.945 \\\\\nT-RANK (p=5$) \u0026 0.845 \u0026 0.940 \\\\\n\n1pt\n\nUSI 和 T-RANK 均显著优于基线和 BoN。SC 自检在 WMT24++ 上反而略有下降（0.821 vs 0.827），因模型可能幻想错误。跨 8 种语言的扩展评估（表20--25）显示：USI multi-prompt 在参考无关 QE 评估中通常最优；Gemini-2.0-Flash 上 T-RANK multi-prompt 可超越 USI（排名能力更强）。\n\n关键洞察：COMET 评估存在局限——短文本无法充分测试复杂语法结构，单一参考译文不能覆盖所有合理翻译。USI 更适合短文本数据集翻译，T-RANK 在复杂问答结构基准翻译中表现更优。\n\n### LLM-as-a-Judge 翻译质量评估\n\n使用 Gemini-2.5-Flash 作为 judge，逐条对比 Global-MMLU 与本文翻译：\n\n1pt\n\n@llrrr@\n\n语言 \u0026 方法 \u0026 胜 \u0026 平 \u0026 负 \\\\\n\n乌克兰语 \u0026 T-RANK \u0026 8750 \u0026 3276 \u0026 2016 \\\\\n罗马尼亚语 \u0026 T-RANK \u0026 8376 \u0026 3020 \u0026 2646 \\\\\n立陶宛语 \u0026 USI \u0026 7382 \u0026 3181 \u0026 3478 \\\\\n\n1pt\n\n本文方法在所有语言上均显著胜出，乌克兰语胜率高达 62.2\\\n\n### 下游模型评估影响\n\n在 Gemma 3 4B/12B、Qwen 3 8B、Llama 3.1 8B 上，使用本文翻译 vs 已有翻译进行基准评估：\n\n1pt\n\n@l \u003eX@\n\n基准 \u0026 平均提升 \\\\\n\nWinogrande（8 语言） \u0026 +3.42\\\nARC-Challenge（4 语言） \u0026 +2.35\\\nHellaswag（4 语言） \u0026 +1.63\\\nMMLU（7 语言） \u0026 +0.94\\\n\n1pt\n\nWinogrande 提升最大，因保持问答上下文连贯性和消除语法性别泄露至关重要。按语言排序：希腊语 +3.89\\\n\n以乌克兰语为例（表11），Gemma-3-12B-IT 在 Hellaswag 上 0.687 vs 0.625（+6.2\\\n\n保加利亚语专业翻译对比（表18）：与 INSAIT 专业翻译对比，自动翻译在 Hellaswag（+1.1\\\n\n## 与相关工作的对比\n\n• vs.\\ MuBench：MuBench 覆盖 61 语言但采用统一自动化流程，缺乏针对特定基准和语言的灵活适配，未显式处理性别标记泄露等问题；\n• vs.\\ Global-MMLU：依赖 Google Translate + 仅 20\\\n• vs.\\ Okapi：使用早期 ChatGPT 翻译，未利用测试时计算扩展，不处理语言特定语法特征；\n• vs.\\ AFSP/TEaR：AFSP 需平行语料检索，TEaR 为单候选自精化；本文通过多候选竞争/融合实现更强的错误检测能力。\n\nWMT24++ 研究已表明前沿 LLM 在所有评估语言对上超越传统 MT 工具，进一步证实基于旧工具翻译的基准需要更新。\n\n## 局限性与未来方向\n\n• 评分机制：BoN 选择使用 LLM 打分而非专用翻译质量模型（如 COMET），可能影响候选排名可靠性；\n• 无自适应难度估计：对所有条目统一应用相同方法，未根据文本复杂度自动选择翻译策略（短文本不需要最复杂方法）；\n• 闭源模型依赖：主要依赖 GPT-4o-mini 和 Gemini-2.0-Flash，开放权重模型测试有限。作者推测所提方法对零样本翻译能力较弱的开放模型收益更大，但需验证；\n• 语言覆盖：聚焦东南欧语言，需进一步验证在更广泛低资源语言上的泛化能力；\n• COMET 评估局限：训练数据领域偏差、与人类判断的潜在差异，应结合人工评估或 LLM-as-a-judge 综合评估；\n• 未来方向：基于翻译难度的自适应方法选择、集成专用翻译质量模型、在开放权重模型上全面评估、扩展至更多低资源语言。\n\n## 核心贡献总结\n\n（1）系统性分析现有多语言基准翻译缺陷的根源；（2）提出全自动、高度可配置的翻译框架，支持四种方法灵活平衡质量与成本；（3）创新性 T-RANK 多轮竞争排名方法，通过位置轮换消除评估偏差，实现更精细的错误检测；（4）发布 8 种东南欧语言的改进基准翻译（MMLU、Hellaswag、ARC、Winogrande），证明翻译质量显著影响下游评估结果。开源框架和基准数据集，促进可复现的多语言 AI 开发。"])</script><script>self.__next_f.push([1,"5:[\"$\",\"article\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"paper-detail-meta\",\"children\":[\"Evaluation\",\" · \",\"Hugging Face Daily\",\" · \",\"2026-03-02\"]}],[\"$\",\"h1\",null,{\"children\":\"Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets\"}],[\"$\",\"p\",null,{\"className\":\"paper-detail-authors\",\"children\":\"Hanna Yukhymenko, Anton Alexandrov, Martin Vechev\"}],[\"$\",\"hr\",null,{\"className\":\"divider\"}],[\"$\",\"section\",null,{\"className\":\"paper-detail-summary\",\"children\":[[\"$\",\"h2\",null,{\"children\":\"中文摘要\"}],[\"$\",\"p\",null,{\"children\":\"$e\"}]]}],\"$Lf\",\"$L10\",\"$L11\",\"$L12\",\"$L13\"]}]\n"])</script><script>self.__next_f.push([1,"f:null\n10:[\"$\",\"section\",null,{\"className\":\"contributions\",\"children\":[[\"$\",\"h2\",null,{\"children\":\"Key Contributions\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",\"0\",{\"children\":\"提出T-RANK多轮竞争排名方法，通过循环网格策略系统性消除位置偏差，结合USI融合方法在机器翻译基准上超越基线。\"}],[\"$\",\"li\",\"1\",{\"children\":\"识别现有多语言基准（Global-MMLU、Okapi等）的四类系统性翻译错误，并提出联合翻译问题与答案的核心设计，解决语法性别标记泄露问题。\"}],[\"$\",\"li\",\"2\",{\"children\":\"构建涵盖8种语言约29,757样本的高质量多语言基准，为中等资源语言的LLM评估提供可靠数据集。\"}]]}]]}]\n11:[\"$\",\"div\",null,{\"className\":\"original-link\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://arxiv.org/abs/2602.22207\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":\"查看原文 →\"}]}]\n12:[\"$\",\"hr\",null,{\"className\":\"divider\"}]\n13:[\"$\",\"nav\",null,{\"className\":\"prev-next\",\"children\":[[\"$\",\"span\",null,{\"className\":\"disabled\",\"children\":\"← Previous\"}],[\"$\",\"$L2\",null,{\"href\":\"/paper/2602.22661\",\"className\":\"text-link\",\"children\":\"Next →\"}]]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"14:I[27201,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"IconMark\"]\n8:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"PaperAgent - AI 论文日报\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"每日精选高价值 AI 论文，快速把握最新研究进展\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.1383ba39.ico\",\"sizes\":\"341x341\",\"type\":\"image/x-icon\"}],[\"$\",\"$L14\",\"3\",{}]]\n"])</script></body></html>

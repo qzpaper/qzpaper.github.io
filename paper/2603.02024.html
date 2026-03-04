@@ -1,0 +1,114 @@
+<!DOCTYPE html><!--_QOC3VD90HEOI9p13FzMy--><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/_next/static/chunks/0e826a48ac6fd355.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/_next/static/chunks/465f799faf41e6df.js"/><script src="/_next/static/chunks/806bdb8e4a6a9b95.js" async=""></script><script src="/_next/static/chunks/f2f58a7e93290fbb.js" async=""></script><script src="/_next/static/chunks/045e59273b8f7eaf.js" async=""></script><script src="/_next/static/chunks/turbopack-078b5aea0698c0e3.js" async=""></script><script src="/_next/static/chunks/7c92e96509cd355e.js" async=""></script><script src="/_next/static/chunks/ff1a16fafef87110.js" async=""></script><script src="/_next/static/chunks/d2be314c3ece3fbe.js" async=""></script><title>PaperAgent - AI 论文日报</title><meta name="description" content="每日精选高价值 AI 论文，快速把握最新研究进展"/><link rel="icon" href="/favicon.ico?favicon.1383ba39.ico" sizes="341x341" type="image/x-icon"/><script src="/_next/static/chunks/a6dad97d9634a72d.js" noModule=""></script></head><body><div hidden=""><!--$--><!--/$--></div><header class="topnav"><nav class="container"><a class="logo" href="/">PaperAgent</a><div class="nav-links"><a href="/">Papers</a><a href="/info">Info</a><a href="/archive">Archive</a><a href="/about">About</a></div></nav></header><main><div class="container"><article><p class="paper-detail-meta">Multimodal<!-- --> · <!-- -->Hugging Face Daily<!-- --> · <!-- -->2026-03-02</p><h1>MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning</h1><p class="paper-detail-authors">Jiachun Li, Shaoping Huang, Zhuoran Jin, Chenlong Zhang, Pengfei Cao, Yubo Chen, Kang Liu, Jun Zhao</p><hr class="divider"/><section class="paper-detail-summary"><h2>中文摘要</h2><p>## 动机与问题定义
+
+多模态大语言模型（MLLMs）在科学分析和数学推理等复杂任务上取得了显著进展，但其在日常生活场景中的多样化推理能力仍缺乏系统评估。现有基准存在两大偏离：
+
+• 任务设计偏差：知识密集型基准（MMMU、GPQA）依赖专家级领域知识，符号拼图基准（VisualPuzzles、MME-Reasoning）使用合成图像，两者均与日常推理需求不符；
+• 输入图像偏差：大量基准仅支持单图输入（MMMU、VisualPuzzles），而现实中视觉信息以图像序列形式呈现；现有多图基准要么包含非推理任务，要么仅覆盖有限推理类型（MMRB、MMIU）。
+
+为此，作者提出 MMR-Life——首个面向真实生活场景、覆盖七种推理类型的多模态多图像推理综合基准。核心设计原则：（1）输入为多张自然图像（排除图表、符号图），（2）答案仅需常识推理而非专业知识，（3）全面覆盖日常推理所需的七种能力。
+
+\\[1pt]
+图1：MMR-Life 概览。左：7种推理类型与21个任务；中：多图推理示例；右：人类与SOTA模型性能差距。
+
+## 基准构建
+
+### 数据集概况
+
+MMR-Life 包含 2,646 道多选题，基于 19,108 张图像，覆盖 7 种推理类型和 21 个任务，15 种图像类型。每题平均关联 7.22 张图像，平均问题长度 283 字符。选项中 54.95\
+
+### 七种推理类型
+
+\\[1pt]
+图2：MMR-Life 各推理类型示例。
+
+• 溯因推理（Abductive, 307题/11.6\
+• 类比推理（Analogical, 568题/21.5\
+• 因果推理（Causal, 263题/9.9\
+• 演绎推理（Deductive, 282题/10.7\
+• 归纳推理（Inductive, 429题/16.2\
+• 空间推理（Spatial, 255题/9.6\
+• 时间推理（Temporal, 542题/20.5\
+
+### 数据收集与质控流程
+
+数据来源四类：（1）Kaggle 公开高分辨率图像数据集；（2）公开网络资源截图（如 eBird 鸟类分布图）；（3）公开视频数据集抽帧（保证清晰度）；（4）已有多图/视频推理基准。
+
+问答生成采用双轨策略：图像本身已包含充分信息时（如时间推理中的序列信息），使用启发式规则自动合成；需要推理隐含信息时（如溯因推理中的因果事件对），由人工标注。初始生成 3.2K 题。
+
+干扰项生成：图像选项使用启发式规则采样；文本选项调用 GPT-5-mini、GPT-4o 和 Qwen2.5-VL-32B 生成，人工筛选最高质量的 4 个错误选项。
+
+三步质控：（1）难度过滤——Qwen2.5-VL-7B、Gemma3-4B、InternVL3.5-8B 三个小模型全部答对的题目被剔除；（2）格式过滤——人工修订选项间显著格式差异以防止捷径；（3）质量过滤——共同作者交叉审核，剔除语义模糊、多正确答案或需专业知识的题目。
+
+### 与现有基准的区别
+
+MMR-Life 是唯一满足以下全部条件的基准：纯自然图像（非符号/混合）、7种推理类型（最全面）、全新标注（非采样自已有数据集，降低数据污染风险）、低知识依赖、平均每题 7.22 张图像（远超大多数基准的 1--6 张）。
+
+## 主要实验结果
+
+### 实验设置
+
+评估 37 个 MLLM，分为四组：（1）闭源思考模型（GPT-5、Gemini-2.5-Pro/Flash、o4-mini、GPT-5-mini、Claude-Sonnet-4）；（2）闭源非思考模型（GPT-4.1/mini、Claude-3.7-Sonnet、GPT-4o、Doubao-1.5-vision）；（3）开源思考模型（VL-Rethinker-7/72B、MM-Eureka-Qwen-32B、MiMo-VL-7B-RL、Keye-VL-1.5-8B 等）；（4）开源非思考模型（Qwen2.5-VL-7/32/72B、Gemma3-12/27B、InternVL3.5 等）。人类基线由 12 名不同背景学生在 210 题子集上完成（600 个有效答案）。
+
+### 核心发现
+
+1pt
+
+@l &gt;X@
+
+模型 &amp; 平均准确率 \\
+
+人类 &amp; 72.28\
+GPT-5（最佳闭源思考） &amp; 58.69\
+Gemini-2.5-Pro &amp; 56.86\
+GPT-4.1（最佳闭源非思考） &amp; 48.15\
+Qwen2.5-VL-72B（最佳开源非思考） &amp; 40.21\
+VL-Rethinker-72B（最佳开源思考） &amp; 39.68\
+
+1pt
+
+（1）MMR-Life 具有极高挑战性。即使 GPT-5 也仅达 58.69\
+
+（2）推理类型间存在巨大差异。类比（Ana）、演绎（Ded）、归纳（Ind）推理表现尚可——GPT-5 在这三类分别达 78.87\
+
+（3）开源思考模型改进有限。闭源思考模型普遍优于非思考模型，但开源思考模型平均准确率（27.15\
+
+## 思考模式分析
+
+### 更长思考是否总是更好？
+
+推理性能与思考长度呈对数关系。14 个模型的半对数图显示，输出 token 数与准确率之间存在粗略的对数正比关系。但 MiMo-VL-7B-RL 和 QVQ-72B-Preview 位于图的右下方（长输出低性能），说明推理效率仍是主要挑战。
+
+更长思考并非万能。细粒度分析发现长 CoT 仅对部分推理类型有效。对于归纳推理，加入 CoT 后非思考模型性能反而下降，增加推理预算也无改善；而类比推理则从长 CoT 中显著获益。作者推测：长 CoT 仅适合需要逐步推导的任务，归纳推理可能更受益于快速思考。
+
+### 是否存在通用的推理增强方法？
+
+比较四种方法（CoT、Self-Consistency SC@8、Best-of-N BoN@8、GRPO）在 Qwen2.5-VL-7B/32B/72B 上的效果：
+
+增强方法在大模型上失效。从 7B 到 72B，其他方法相对 CoT 的提升持续减小。在 72B 上，BoN（-0.41\
+
+RL 在小模型上泛化弱于 BoN。在所有三个规模上，GRPO 的泛化均弱于 BoN@8。跨架构和训练集的额外实验进一步验证：RL 训练模型在 MMR-Life 上持续弱于对应基模型的 BoN 推理，部分 RL 模型甚至弱于基模型的 CoT。这引发根本性问题：RL 方法在小模型上是否仅导致特定数据集的过拟合？
+
+### 推理类型间的关联
+
+计算所有模型在各推理类型上的 Pearson 相关系数并进行层次聚类：
+
+• 高相关：归纳与类比（0.97），共享``从具体特征抽象一般规则&#x27;&#x27;的模式；
+• 低相关：空间与归纳（0.40），空间推理与所有其他类型距离最远，表明其所需能力（位置估计、距离判断）难以从非空间任务中学习；
+• 聚类揭示了 MLLMs 中存在高阶推理模式的层次结构，有助于理解推理泛化机制。
+
+## 错误分析
+
+对 GPT-5 和 Gemini-2.5-Pro 各随机抽取 140 个错误样本（每类 20 个），识别根因分布：
+
+• 推理错误占主导（32\
+• 抽象错误（17\
+• 知识错误（17\
+• 感知错误（12\
+
+## 讨论与局限
+
+核心贡献：（1）首个覆盖 7 种推理类型的真实生活多图像推理基准；（2）37 个 SOTA 模型的全面评估揭示空间/因果/时间推理的严重短板；（3）深入分析推理范式，发现长思考的有限性、RL 在小模型上的弱泛化、推理类型间的模式聚类。
+
+关键启示：（1）未来模型训练应重点关注空间、因果和时间推理能力——这些是当前最大瓶颈；（2）推理增强方法（SC、BoN、GRPO）并非通用解决方案，在大模型上甚至可能有害；（3）开源思考模型在真实场景泛化上仍有巨大提升空间；（4）不同推理类型可能需要差异化训练策略——归纳推理受益于快思考，类比推理受益于长 CoT。
+
+局限性：基准聚焦常识推理，未覆盖需专业知识的推理场景；多选题格式可能低估开放生成能力；图像来源虽多样但仍有覆盖盲区；人类评估规模有限（210 题子集）。</p></section><section class="contributions"><h2>Key Contributions</h2><ul><li>构建涵盖7种推理类型（溯因、类比、因果、演绎、归纳、空间、时间）和21个任务的综合基准，平均每题7.22张图像，全部基于自然图像和常识推理。</li><li>系统评估37个MLLM，发现开源思考模型改进有限（平均27.15%低于非思考模型28.26%），且长CoT仅对部分推理类型有效，归纳推理反而因CoT性能下降。</li><li>揭示多模态推理的细粒度能力差异：类比、演绎、归纳推理表现相对较好，而溯因、空间和时间推理存在严重不足，为未来模型改进指明方向。</li></ul></section><div class="original-link"><a href="https://arxiv.org/abs/2603.02024" target="_blank" rel="noopener noreferrer">查看原文 →</a></div><hr class="divider"/><nav class="prev-next"><a class="text-link" href="/paper/2603.01562">← Previous</a><a class="text-link" href="/paper/2603.02138">Next →</a></nav></article><!--$--><!--/$--></div></main><footer class="footer"><div class="container"><p>© 2026 PaperAgent</p></div></footer><script src="/_next/static/chunks/465f799faf41e6df.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[22016,[\"/_next/static/chunks/7c92e96509cd355e.js\"],\"\"]\n3:I[39756,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"default\"]\n4:I[37457,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"default\"]\n6:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"OutletBoundary\"]\n7:\"$Sreact.suspense\"\n9:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"ViewportBoundary\"]\nb:I[97367,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"MetadataBoundary\"]\nd:I[68027,[],\"default\"]\n:HL[\"/_next/static/chunks/0e826a48ac6fd355.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"_QOC3VD90HEOI9p13FzMy\",\"c\":[\"\",\"paper\",\"2603.02024\"],\"q\":\"\",\"i\":false,\"f\":[[[\"\",{\"children\":[\"paper\",{\"children\":[[\"paperId\",\"2603.02024\",\"d\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/chunks/0e826a48ac6fd355.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}],[\"$\",\"script\",\"script-0\",{\"src\":\"/_next/static/chunks/7c92e96509cd355e.js\",\"async\":true,\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"children\":[\"$\",\"body\",null,{\"children\":[[\"$\",\"header\",null,{\"className\":\"topnav\",\"children\":[\"$\",\"nav\",null,{\"className\":\"container\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"logo\",\"children\":\"PaperAgent\"}],[\"$\",\"div\",null,{\"className\":\"nav-links\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"children\":\"Papers\"}],[\"$\",\"$L2\",null,{\"href\":\"/info\",\"children\":\"Info\"}],[\"$\",\"$L2\",null,{\"href\":\"/archive\",\"children\":\"Archive\"}],[\"$\",\"$L2\",null,{\"href\":\"/about\",\"children\":\"About\"}]]}]]}]}],[\"$\",\"main\",null,{\"children\":[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"not-found\",\"children\":[[\"$\",\"h1\",null,{\"children\":\"页面未找到\"}],[\"$\",\"p\",null,{\"children\":\"你访问的页面不存在或已被移动。\"}],[\"$\",\"div\",null,{\"className\":\"not-found-links\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/\",\"className\":\"text-link\",\"children\":\"返回今日页 →\"}],[\"$\",\"$L2\",null,{\"href\":\"/archive\",\"className\":\"text-link\",\"children\":\"查看归档 →\"}]]}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}]}],[\"$\",\"footer\",null,{\"className\":\"footer\",\"children\":[\"$\",\"div\",null,{\"className\":\"container\",\"children\":[\"$\",\"p\",null,{\"children\":\"© 2026 PaperAgent\"}]}]}]]}]}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L3\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L4\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"$\",\"$1\",\"c\",{\"children\":[\"$L5\",null,[\"$\",\"$L6\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.MetadataOutlet\",\"children\":\"$@8\"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[\"$\",\"$L9\",null,{\"children\":\"$La\"}],[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$Lb\",null,{\"children\":[\"$\",\"$7\",null,{\"name\":\"Next.Metadata\",\"children\":\"$Lc\"}]}]}],null]}],false]],\"m\":\"$undefined\",\"G\":[\"$d\",[]],\"S\":true}\n"])</script><script>self.__next_f.push([1,"e:T1d2b,"])</script><script>self.__next_f.push([1,"## 动机与问题定义\n\n多模态大语言模型（MLLMs）在科学分析和数学推理等复杂任务上取得了显著进展，但其在日常生活场景中的多样化推理能力仍缺乏系统评估。现有基准存在两大偏离：\n\n• 任务设计偏差：知识密集型基准（MMMU、GPQA）依赖专家级领域知识，符号拼图基准（VisualPuzzles、MME-Reasoning）使用合成图像，两者均与日常推理需求不符；\n• 输入图像偏差：大量基准仅支持单图输入（MMMU、VisualPuzzles），而现实中视觉信息以图像序列形式呈现；现有多图基准要么包含非推理任务，要么仅覆盖有限推理类型（MMRB、MMIU）。\n\n为此，作者提出 MMR-Life——首个面向真实生活场景、覆盖七种推理类型的多模态多图像推理综合基准。核心设计原则：（1）输入为多张自然图像（排除图表、符号图），（2）答案仅需常识推理而非专业知识，（3）全面覆盖日常推理所需的七种能力。\n\n\\\\[1pt]\n图1：MMR-Life 概览。左：7种推理类型与21个任务；中：多图推理示例；右：人类与SOTA模型性能差距。\n\n## 基准构建\n\n### 数据集概况\n\nMMR-Life 包含 2,646 道多选题，基于 19,108 张图像，覆盖 7 种推理类型和 21 个任务，15 种图像类型。每题平均关联 7.22 张图像，平均问题长度 283 字符。选项中 54.95\\\n\n### 七种推理类型\n\n\\\\[1pt]\n图2：MMR-Life 各推理类型示例。\n\n• 溯因推理（Abductive, 307题/11.6\\\n• 类比推理（Analogical, 568题/21.5\\\n• 因果推理（Causal, 263题/9.9\\\n• 演绎推理（Deductive, 282题/10.7\\\n• 归纳推理（Inductive, 429题/16.2\\\n• 空间推理（Spatial, 255题/9.6\\\n• 时间推理（Temporal, 542题/20.5\\\n\n### 数据收集与质控流程\n\n数据来源四类：（1）Kaggle 公开高分辨率图像数据集；（2）公开网络资源截图（如 eBird 鸟类分布图）；（3）公开视频数据集抽帧（保证清晰度）；（4）已有多图/视频推理基准。\n\n问答生成采用双轨策略：图像本身已包含充分信息时（如时间推理中的序列信息），使用启发式规则自动合成；需要推理隐含信息时（如溯因推理中的因果事件对），由人工标注。初始生成 3.2K 题。\n\n干扰项生成：图像选项使用启发式规则采样；文本选项调用 GPT-5-mini、GPT-4o 和 Qwen2.5-VL-32B 生成，人工筛选最高质量的 4 个错误选项。\n\n三步质控：（1）难度过滤——Qwen2.5-VL-7B、Gemma3-4B、InternVL3.5-8B 三个小模型全部答对的题目被剔除；（2）格式过滤——人工修订选项间显著格式差异以防止捷径；（3）质量过滤——共同作者交叉审核，剔除语义模糊、多正确答案或需专业知识的题目。\n\n### 与现有基准的区别\n\nMMR-Life 是唯一满足以下全部条件的基准：纯自然图像（非符号/混合）、7种推理类型（最全面）、全新标注（非采样自已有数据集，降低数据污染风险）、低知识依赖、平均每题 7.22 张图像（远超大多数基准的 1--6 张）。\n\n## 主要实验结果\n\n### 实验设置\n\n评估 37 个 MLLM，分为四组：（1）闭源思考模型（GPT-5、Gemini-2.5-Pro/Flash、o4-mini、GPT-5-mini、Claude-Sonnet-4）；（2）闭源非思考模型（GPT-4.1/mini、Claude-3.7-Sonnet、GPT-4o、Doubao-1.5-vision）；（3）开源思考模型（VL-Rethinker-7/72B、MM-Eureka-Qwen-32B、MiMo-VL-7B-RL、Keye-VL-1.5-8B 等）；（4）开源非思考模型（Qwen2.5-VL-7/32/72B、Gemma3-12/27B、InternVL3.5 等）。人类基线由 12 名不同背景学生在 210 题子集上完成（600 个有效答案）。\n\n### 核心发现\n\n1pt\n\n@l \u003eX@\n\n模型 \u0026 平均准确率 \\\\\n\n人类 \u0026 72.28\\\nGPT-5（最佳闭源思考） \u0026 58.69\\\nGemini-2.5-Pro \u0026 56.86\\\nGPT-4.1（最佳闭源非思考） \u0026 48.15\\\nQwen2.5-VL-72B（最佳开源非思考） \u0026 40.21\\\nVL-Rethinker-72B（最佳开源思考） \u0026 39.68\\\n\n1pt\n\n（1）MMR-Life 具有极高挑战性。即使 GPT-5 也仅达 58.69\\\n\n（2）推理类型间存在巨大差异。类比（Ana）、演绎（Ded）、归纳（Ind）推理表现尚可——GPT-5 在这三类分别达 78.87\\\n\n（3）开源思考模型改进有限。闭源思考模型普遍优于非思考模型，但开源思考模型平均准确率（27.15\\\n\n## 思考模式分析\n\n### 更长思考是否总是更好？\n\n推理性能与思考长度呈对数关系。14 个模型的半对数图显示，输出 token 数与准确率之间存在粗略的对数正比关系。但 MiMo-VL-7B-RL 和 QVQ-72B-Preview 位于图的右下方（长输出低性能），说明推理效率仍是主要挑战。\n\n更长思考并非万能。细粒度分析发现长 CoT 仅对部分推理类型有效。对于归纳推理，加入 CoT 后非思考模型性能反而下降，增加推理预算也无改善；而类比推理则从长 CoT 中显著获益。作者推测：长 CoT 仅适合需要逐步推导的任务，归纳推理可能更受益于快速思考。\n\n### 是否存在通用的推理增强方法？\n\n比较四种方法（CoT、Self-Consistency SC@8、Best-of-N BoN@8、GRPO）在 Qwen2.5-VL-7B/32B/72B 上的效果：\n\n增强方法在大模型上失效。从 7B 到 72B，其他方法相对 CoT 的提升持续减小。在 72B 上，BoN（-0.41\\\n\nRL 在小模型上泛化弱于 BoN。在所有三个规模上，GRPO 的泛化均弱于 BoN@8。跨架构和训练集的额外实验进一步验证：RL 训练模型在 MMR-Life 上持续弱于对应基模型的 BoN 推理，部分 RL 模型甚至弱于基模型的 CoT。这引发根本性问题：RL 方法在小模型上是否仅导致特定数据集的过拟合？\n\n### 推理类型间的关联\n\n计算所有模型在各推理类型上的 Pearson 相关系数并进行层次聚类：\n\n• 高相关：归纳与类比（0.97），共享``从具体特征抽象一般规则''的模式；\n• 低相关：空间与归纳（0.40），空间推理与所有其他类型距离最远，表明其所需能力（位置估计、距离判断）难以从非空间任务中学习；\n• 聚类揭示了 MLLMs 中存在高阶推理模式的层次结构，有助于理解推理泛化机制。\n\n## 错误分析\n\n对 GPT-5 和 Gemini-2.5-Pro 各随机抽取 140 个错误样本（每类 20 个），识别根因分布：\n\n• 推理错误占主导（32\\\n• 抽象错误（17\\\n• 知识错误（17\\\n• 感知错误（12\\\n\n## 讨论与局限\n\n核心贡献：（1）首个覆盖 7 种推理类型的真实生活多图像推理基准；（2）37 个 SOTA 模型的全面评估揭示空间/因果/时间推理的严重短板；（3）深入分析推理范式，发现长思考的有限性、RL 在小模型上的弱泛化、推理类型间的模式聚类。\n\n关键启示：（1）未来模型训练应重点关注空间、因果和时间推理能力——这些是当前最大瓶颈；（2）推理增强方法（SC、BoN、GRPO）并非通用解决方案，在大模型上甚至可能有害；（3）开源思考模型在真实场景泛化上仍有巨大提升空间；（4）不同推理类型可能需要差异化训练策略——归纳推理受益于快思考，类比推理受益于长 CoT。\n\n局限性：基准聚焦常识推理，未覆盖需专业知识的推理场景；多选题格式可能低估开放生成能力；图像来源虽多样但仍有覆盖盲区；人类评估规模有限（210 题子集）。"])</script><script>self.__next_f.push([1,"5:[\"$\",\"article\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"paper-detail-meta\",\"children\":[\"Multimodal\",\" · \",\"Hugging Face Daily\",\" · \",\"2026-03-02\"]}],[\"$\",\"h1\",null,{\"children\":\"MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning\"}],[\"$\",\"p\",null,{\"className\":\"paper-detail-authors\",\"children\":\"Jiachun Li, Shaoping Huang, Zhuoran Jin, Chenlong Zhang, Pengfei Cao, Yubo Chen, Kang Liu, Jun Zhao\"}],[\"$\",\"hr\",null,{\"className\":\"divider\"}],[\"$\",\"section\",null,{\"className\":\"paper-detail-summary\",\"children\":[[\"$\",\"h2\",null,{\"children\":\"中文摘要\"}],[\"$\",\"p\",null,{\"children\":\"$e\"}]]}],\"$Lf\",\"$L10\",\"$L11\",\"$L12\",\"$L13\"]}]\n"])</script><script>self.__next_f.push([1,"f:null\n10:[\"$\",\"section\",null,{\"className\":\"contributions\",\"children\":[[\"$\",\"h2\",null,{\"children\":\"Key Contributions\"}],[\"$\",\"ul\",null,{\"children\":[[\"$\",\"li\",\"0\",{\"children\":\"构建涵盖7种推理类型（溯因、类比、因果、演绎、归纳、空间、时间）和21个任务的综合基准，平均每题7.22张图像，全部基于自然图像和常识推理。\"}],[\"$\",\"li\",\"1\",{\"children\":\"系统评估37个MLLM，发现开源思考模型改进有限（平均27.15%低于非思考模型28.26%），且长CoT仅对部分推理类型有效，归纳推理反而因CoT性能下降。\"}],[\"$\",\"li\",\"2\",{\"children\":\"揭示多模态推理的细粒度能力差异：类比、演绎、归纳推理表现相对较好，而溯因、空间和时间推理存在严重不足，为未来模型改进指明方向。\"}]]}]]}]\n11:[\"$\",\"div\",null,{\"className\":\"original-link\",\"children\":[\"$\",\"a\",null,{\"href\":\"https://arxiv.org/abs/2603.02024\",\"target\":\"_blank\",\"rel\":\"noopener noreferrer\",\"children\":\"查看原文 →\"}]}]\n12:[\"$\",\"hr\",null,{\"className\":\"divider\"}]\n13:[\"$\",\"nav\",null,{\"className\":\"prev-next\",\"children\":[[\"$\",\"$L2\",null,{\"href\":\"/paper/2603.01562\",\"className\":\"text-link\",\"children\":\"← Previous\"}],[\"$\",\"$L2\",null,{\"href\":\"/paper/2603.02138\",\"className\":\"text-link\",\"children\":\"Next →\"}]]}]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\n"])</script><script>self.__next_f.push([1,"14:I[27201,[\"/_next/static/chunks/ff1a16fafef87110.js\",\"/_next/static/chunks/d2be314c3ece3fbe.js\"],\"IconMark\"]\n8:null\nc:[[\"$\",\"title\",\"0\",{\"children\":\"PaperAgent - AI 论文日报\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"每日精选高价值 AI 论文，快速把握最新研究进展\"}],[\"$\",\"link\",\"2\",{\"rel\":\"icon\",\"href\":\"/favicon.ico?favicon.1383ba39.ico\",\"sizes\":\"341x341\",\"type\":\"image/x-icon\"}],[\"$\",\"$L14\",\"3\",{}]]\n"])</script></body></html>

@@ -1,0 +1,166 @@
+1:"$Sreact.fragment"
+9:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
+a:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+b:"$Sreact.suspense"
+2:T22f2,## 问题动机与背景
+
+文本到图像（T2I）生成模型在视觉保真度和创造力上取得巨大进步，但在处理包含复杂空间关系的长文本提示时仍面临严峻挑战——多对象间的相对位置（左右、前后、上下等）往往需要多次采样才能获得令人满意的结果。在线强化学习（RL）是提升空间理解的有前景方向，但其核心瓶颈在于缺乏可靠的奖励模型：
+
+• 人类偏好奖励模型（HPSv2、PickScore、ImageReward 等）侧重美学与整体文图对齐，无法准确评估多对象空间关系——甚至对空间错误的图像给出更高分数；
+• VQA 式文图对齐模型（VQAScore、TIFA 等）同样在复杂空间推理上表现不足；
+• 专有 VLM API（GPT-5、Gemini-2.5 Pro）准确度高，但每次查询成本过高，无法支撑在线 RL 的高频奖励查询；
+• 开源 VLM（Qwen2.5-VL-72B 等）存在严重幻觉，在多对象空间推理上不可靠；
+• 规则基奖励（GenEval）依赖目标检测器，仅支持``A <方位> B''的简单模板，无法泛化至长文本多对象场景，且对遮挡等视觉挑战极度敏感。
+
+本文的核心论点：增强图像生成的空间理解，关键在于构建专用的、可靠的空间奖励模型。
+
+## SpatialReward-Dataset 数据集
+
+\\[1pt]
+图1：SpatialReward-Dataset 构建流程概览。
+
+作者构建了包含 80K 对抗性偏好对的 SpatialReward-Dataset，核心设计如下：
+
+### 对抗性构造
+
+使用 GPT-5 生成包含多对象复杂空间关系的初始提示（clean prompt），再由 GPT-5 对其进行空间扰动（如将``左侧''改为``右侧''、交换两物体相对位置），保持其余空间关系不变，得到 perturbed prompt。用同一图像生成模型分别生成两条提示对应的图像，消除模型美学差异的干扰。原始提示生成的图像为 perfect image，扰动提示生成的图像为 perturbed image。
+
+### 数据多样性与质量保证
+
+采用三个 SOTA 生成模型（Qwen-Image、HunyuanImage-2.1、Seedream 4.0），每对随机选用其一。所有偏好对经人工标注员逐一审核：（1）验证 perfect image 是否忠实满足所有空间约束；（2）验证 perturbed image 是否确实展现了预期的空间偏差。不满足条件的对直接丢弃。
+
+### 数据特点
+
+与 GenEval 相比，SpatialReward-Dataset 的提示显著更长（涉及多对象复杂场景），包含多重空间关系，具有更高的空间复杂度和组合多样性。
+
+## SpatialScore 奖励模型
+
+### 模型架构
+
+以 Qwen2.5-VL-7B 作为骨干 H_ 提取图像和文本特征，将原始语言建模头替换为线性奖励头 R_（MLP），预测奖励值：
+s = R_(H_(c, y))
+其中 c 为指令提示，y 为生成图像。
+
+### 奖励训练
+
+使用 LoRA 微调以保留预训练知识。受 HPSv3 启发，将奖励分数建模为高斯分布 s N(, ^2)：在提示末尾插入特殊 token <reward>，其最终层嵌入经 MLP 映射为 和 。训练时对每个三元组 (c, y_w, y_l) 进行两次前向传播，基于 Bradley-Terry 模型优化：
+P(y_w y_l c) = (R_(H_(y_w, c)) - R_(H_(y_l, c)))
+L_Reward() = E_c, y_w, y_l[- P(y_w y_l c)]
+训练稳定性增强：从高斯分布采样 1000 次取平均计算损失。训练在 8 张 H20 GPU 上一天完成，学习率 2\!\!10^-6，梯度累积批大小 32。
+
+### 奖励模型评估
+
+构建 365 对高质量偏好对的评估基准，涵盖 1 次扰动和 2--3 次扰动子集。
+
+1pt
+
+@l >X@
+
+模型 & 配对准确率 \\
+
+ImageReward / PickScore / HPSv2.1 & 0.479 / 0.509 / 0.463 \\
+VQAScore / UnifiedReward / HPSv3 & 0.603 / 0.605 / 0.652 \\
+Qwen2.5-VL-7B / 32B / 72B & 0.602 / 0.685 / 0.764 \\
+GPT-5 / Gemini-2.5 Pro & 0.890 / 0.951 \\
+SpatialScore (7B) & 0.958 \\
+
+1pt
+
+关键发现：仅 7B 参数的 SpatialScore 达到 95.8\
+
+## 基于 SpatialScore 的在线 RL
+
+\\[1pt]
+图2：GRPO 训练流程。采样一组图像后由 SpatialScore 评分，选取 top-k 和 bottom-k 构成平衡子集，转化为优势信号优化策略。
+
+### 基础模型与 SDE 采样
+
+选择 FLUX.1-dev 为基础模型（支持长文本，未经后训练）。遵循 Flow-GRPO，将确定性 ODE 转化为等价 SDE 以实现策略探索：
+x_t+ t = x_t + [v_(x_t, t) + _t^22t(x_t + (1-t)v_(x_t, t))] t + _t t\,
+
+### GRPO 优化与优势计算
+
+对每个提示 c，策略 _ 通过 SDE 采样生成 G=24 张图像，SpatialScore 为每张评分 R(x_0^i, c)，组内归一化计算优势：
+A^i = R(x_0^i, c) - mean(\R(x_0^i, c)\)std(\R(x_0^i, c)\)
+
+### Top-k 过滤策略
+
+作者发现随训练推进，不同难度提示导致优势偏差：简单提示产生大量高分样本，组均值过高使部分优质样本获得负优势，优化方向偏离。为此提出 top-k 过滤——按分数排序后仅选取 top-k 和 bottom-k 样本组成子集 S，用于计算均值/标准差及策略更新。GRPO 目标函数为带 clipping 的策略梯度加 KL 散度正则化项。
+
+实验表明 k\!=\!6（从 G\!=\!24 中选 12 个）在采样平衡与多样性间取得最佳权衡，且将训练阶段每提示 NFE 从 24\!\!6\!=\!144 降至 12\!\!6\!=\!72。
+
+### 训练细节
+
+LoRA rank 32，学习率 3\!\!10^-4，importance clipping 范围 1\!\!10^-4，KL 惩罚系数 0.01，32 张 H20 GPU 训练。
+
+## 实验结果
+
+### 多基准空间理解评估
+
+@l c c c c@
+
+方法 & SpatialScore & DPG & TIIF-long BR & Uni-long 2D \\
+
+Flux.1-dev & 2.18 & 0.871 & 0.758 & 0.819 \\
+Flow-GRPO* & 3.01 & 0.742 & 0.577 & 0.445 \\
+Ours & 7.81 & 0.932 & 0.845 & 0.891 \\
+
+1pt
+
+域内 SpatialScore 从 2.18 提升至 7.81（3.6）。在域外基准上，DPG-Bench 关系子维度从 0.871 升至 0.932；TIIF-Bench 长文本 BR/AR/RR 分别提升至 0.845/0.715/0.675；UniGenBench^++ 长文本 Layout-2D/3D 提升至 0.891/0.801。所有短文本和长文本设置均获一致提升。
+
+对比之下，基于 GenEval 规则奖励训练的 Flow-GRPO 在短文本上有部分提升，但在长文本设置上严重退化（TIIF-long BR 从 0.758 降至 0.577，UniGenBench-long 2D 从 0.819 降至 0.445），说明规则基奖励无法泛化至复杂多对象空间关系。
+
+### DPG-Bench 全维度评估
+
+@l c c c c c@
+
+方法 & Global & Entity & Attr & Rel & Overall \\
+
+GPT-Image-1 & 88.89 & 88.94 & 89.84 & 92.63 & 85.15 \\
+Flux.1-dev & 84.70 & 87.29 & 89.29 & 89.44 & 82.91 \\
+Ours & 87.65 & 90.56 & 91.20 & 91.58 & 85.03 \\
+
+1pt
+
+RL 增强模型在 DPG-Bench 全部五个维度上均超越 Flux.1-dev，整体性能接近专有 GPT-Image-1（85.03 vs 85.15），增益不仅限于空间子维度。
+
+### Qwen-Image 上的验证
+
+在更强的 Qwen-Image 基础模型上，SpatialScore 指导的 RL 同样有效：域内分数从 6.74 提升至 8.25，各文图对齐基准的空间子维度在短/长文本设置上均获一致提升。
+
+### GenEval 基准零样本评估
+
+尽管训练未使用 GenEval，模型在该基准上仍取得显著零样本提升：Position 从 0.19 升至 0.37，Color Attribute 从 0.45 升至 0.66，Overall 从 0.65 升至 0.78。
+
+## 消融实验
+
+### 奖励模型骨干大小
+
+SpatialScore 在 Qwen2.5-VL-3B/7B/32B 骨干上的配对准确率分别为 89.1\
+
+### Top-k 过滤
+
+（1）不使用过滤（G\!=\!24 全部更新）：SpatialScore 7.73，NFE 24\!\!6；（2）k\!=\!4：早期收敛快但后期因多样性不足而减速，SpatialScore 7.71，NFE 8\!\!6；（3）k\!=\!6（默认）：SpatialScore 7.81，DPG-Rel 0.932，NFE 12\!\!6，在性能和效率间取得最优。训练曲线显示 top-k 过滤加速收敛且最终性能更优或持平。
+
+## 定性分析
+
+定性对比显示，SpatialScore 指导的 RL 模型在复杂多对象空间关系（如``笔记本左侧、咖啡杯在其右前方、盆栽在桌面右缘中央、书架在桌后墙面''等组合约束）上生成更忠实的图像。而 GenEval 引导的 Flow-GRPO 模型不仅空间泛化能力有限，还会丢失基础模型的长文本跟随能力（遗漏关键物体如蜡烛、帐篷等），且因依赖目标检测器的规则基奖励，常生成视觉不合理的伪影（如悬浮的地图或夹克）。
+
+## 讨论与局限
+
+核心贡献：（1）首个面向空间理解的大规模对抗性偏好数据集（80K对）；（2）首个专用空间奖励模型，7B 参数即超越专有模型；（3）top-k 过滤策略缓解 GRPO 中的优势偏差并提升训练效率。
+
+局限与未来方向：
+
+• 当前仅在图像层面验证，未扩展到视频生成——视频需同时理解静态空间关系和时间动态变化（如物体移动、位置交换）；
+• 对 sim-to-real 具身仿真场景尤为重要，需生成时间一致且空间准确的视频序列以弥合仿真与现实的差距；
+• 训练数据依赖 SOTA 生成模型的文图对齐能力，数据质量受限于生成模型本身；
+• 奖励模型专注于空间维度，与美学、风格等其他维度的联合优化有待探索。0:{"buildId":"_QOC3VD90HEOI9p13FzMy","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["Image Generation"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Enhancing Spatial Understanding in Image Generation via Reward Modeling"}],["$","p",null,{"className":"paper-detail-authors","children":"Zhenyu Tang, Chaoran Feng, Yufan Deng, Jie Wu, Xiaojie Li, Rui Wang, Yunpeng Chen, Daquan Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","p",null,{"children":"$2"}]]}],"$L3","$L4","$L5","$L6","$L7"]}],null,"$L8"]}],"loading":null,"isPartial":false}
+3:null
+4:["$","section",null,{"className":"contributions","children":[["$","h2",null,{"children":"Key Contributions"}],["$","ul",null,{"children":[["$","li","0",{"children":"构建SpatialReward-Dataset，通过GPT-5空间扰动生成对抗性偏好对，经人工标注审核，包含多对象复杂空间关系的80K高质量样本。"}],["$","li","1",{"children":"训练SpatialScore奖励模型，以Qwen2.5-VL-7B为骨干，仅7B参数即超越GPT-5（95.8% vs 89.0%配对准确率），支持高频在线RL奖励查询。"}],["$","li","2",{"children":"提出top-k过滤策略解决训练后期简单提示导致的优势偏差问题，在GenEval和T2I-CompBench等基准上取得SOTA空间理解性能。"}]]}]]}]
+5:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.24233","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
+6:["$","hr",null,{"className":"divider"}]
+7:["$","nav",null,{"className":"prev-next","children":[["$","$L9",null,{"href":"/paper/2602.22661","className":"text-link","children":"← Previous"}],["$","$L9",null,{"href":"/paper/2602.24286","className":"text-link","children":"Next →"}]]}]
+8:["$","$La",null,{"children":["$","$b",null,{"name":"Next.MetadataOutlet","children":"$@c"}]}]
+c:null
