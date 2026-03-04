@@ -7,188 +7,87 @@
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"ViewportBoundary"]
 b:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"MetadataBoundary"]
 d:I[68027,[],"default"]
-:HL["/_next/static/chunks/0e826a48ac6fd355.css","style"]
-0:{"P":null,"b":"_QOC3VD90HEOI9p13FzMy","c":["","paper","2602.24286"],"q":"","i":false,"f":[[["",{"children":["paper",{"children":[["paperId","2602.24286","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/0e826a48ac6fd355.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/7c92e96509cd355e.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"children":[["$","header",null,{"className":"topnav","children":["$","nav",null,{"className":"container","children":[["$","$L2",null,{"href":"/","className":"logo","children":"PaperAgent"}],["$","div",null,{"className":"nav-links","children":[["$","$L2",null,{"href":"/","children":"Papers"}],["$","$L2",null,{"href":"/info","children":"Info"}],["$","$L2",null,{"href":"/archive","children":"Archive"}],["$","$L2",null,{"href":"/about","children":"About"}]]}]]}]}],["$","main",null,{"children":["$","div",null,{"className":"container","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"not-found","children":[["$","h1",null,{"children":"页面未找到"}],["$","p",null,{"children":"你访问的页面不存在或已被移动。"}],["$","div",null,{"className":"not-found-links","children":[["$","$L2",null,{"href":"/","className":"text-link","children":"返回今日页 →"}],["$","$L2",null,{"href":"/archive","className":"text-link","children":"查看归档 →"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}],["$","footer",null,{"className":"footer","children":["$","div",null,{"className":"container","children":["$","p",null,{"children":"© 2026 PaperAgent"}]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
-e:T24f6,## 动机与问题定义
-
-GPU 内核优化是现代深度学习基础设施的核心，但高性能 CUDA 内核开发仍高度依赖专家对 GPU 微架构的深入理解和复杂 profiling 工具链的熟练使用。尽管 LLM 在通用编程中已接近人类水平，但在 CUDA 内核生成上甚至不如 torch.compile 等编译器自动优化工具。
-
-现有方法存在两大范式缺陷：
-
-• 无训练工作流（STARK、ReGraphT、EvoEngineer、CudaForge）：依赖手工设计的搜索/精炼启发式，受限于基座模型固有的 CUDA 编码能力，性能增益上限明显；
-• 固定多轮微调（Kevin、CUDA-L1、ConCuR）：在预设的执行-反馈循环中微调模型，但浪费上下文长度（保留所有历史解）、限制智能体自主学习调试/搜索/profiling 策略的自由度，且受高质量训练数据匮乏、训练规模有限等制约。
-
-CUDA Agent 是首个大规模智能体强化学习系统，通过三个维度系统性增强 LLM 的 CUDA 内核编码能力：可扩展数据合成、技能增强的开发环境、以及稳定训练的 RL 算法改进。系统支持 128K token 上下文和最多 200 轮交互，在 KernelBench 上取得 SOTA。
-
-1pt
-
-@l >X@
-
-KernelBench 分级 & vs.\ torch.compile Faster Rate \\
-
-Level-1（单算子） & 97\
-Level-2（算子序列） & 100\
-Level-3（完整模型） & 90\
-Overall & 96.8\
-
-1pt
-
-在最困难的 Level-3 上，CUDA Agent 的 Faster Rate 达 90\
-
-## 系统架构概览
-
-\\[1pt]
-图1：训练流程。单轮 RL 预热后，采样轨迹用于初始化 Actor 和 Critic，再进入智能体 RL 阶段。
-
-系统由三大组件构成：（1）可扩展数据合成流水线；（2）技能集成的防作弊训练环境与鲁棒奖励设计；（3）面向稳定训练的 RL 算法改进（Actor/Critic 多阶段预热）。
-
-## 可扩展训练数据合成
-
-\\[1pt]
-图2：三阶段数据收集流水线：种子爬取 组合合成 执行过滤。
-
-高质量 CUDA 内核稀缺使得 SFT 成本极高，因此采用 RL 训练。RL 需要大量多样的 PyTorch 参考算子作为训练任务。核心洞察：将多个算子组合为融合任务能产生有价值的新训练问题——融合改变优化格局（避免中间全局内存写回、耦合寄存器/SMEM/占用率约束、要求统一的并行映射和数据布局）。
-
-### 种子爬取
-
-从 torch 和 transformers 库挖掘 PyTorch 参考算子，每个算子表示为含 \_\_init\_\_ 和 forward 的 nn.Module 子类，附带 get\_init\_inputs() 和 get\_inputs() 辅助函数。
-
-### 组合构造
-
-使用 LLM 从 torch 库采样至多 5 个算子类，顺序堆叠为单一计算层。不从 transformers 采样（其算子已封装多个原语）。
-
-### 执行过滤
-
-四项准入标准：（1）Eager 和 Compile 模式均可执行；（2）排除随机性算子以确保可复现；（3）反作弊——不同输入的输出不能为常数或不可区分；（4）Eager 模式执行时间限制在 1--100ms。此外排除与 KernelBench 高相似度样本（AST 相似度 >0.9 的被移除）。最终得到 CUDA-Agent-Ops-6K，含 6000 个样本。数据集构成：双算子组合占 83.77\
-
-## 技能集成智能体环路
-
-### 智能体环路设计
-
-基于 OpenHands 框架，提供 BashTool、GlobTool、MultiEditTool 等标准工具集。采用 ReAct 范式交替执行推理、动作和观测，支持迭代编码、调试和性能优化。
-
-### CUDA 编码技能
-
-借鉴 Agent Skills 理念，将 CUDA 编码专用指令和工具（如 profiling 脚本）封装为技能格式。SKILL.md 规范化标准优化流程：（1）分析原生 PyTorch 实现的性能瓶颈；（2）在 model\_new.py 中重写模型并在 kernels/ 目录实现 CUDA 内核；（3）编译、验证正确性与性能，迭代精炼；（4）反复优化直至超越 torch.compile 至少 5\
-
-### 鲁棒奖励调度
-
-现有方法直接使用加速比作为奖励信号，但不同算子优化难度差异巨大，原始加速比是不可靠的质量代理且偏向简单内核。CUDA Agent 采用归一化里程碑式离散奖励：
-
-r = -1 & 正确性检查失败 \\ 3 & 同时超越 eager 和 compile 5\
-
-其中 b(t, t_0) = I[(t_0 - t)/t_0 > 5\
-
-### 防奖励作弊
-
-五项措施：（1）文件权限保护——正确性验证和 profiling 脚本不可被智能体修改；（2）上下文管理器禁止调用 torch.nn.functional 回退；（3）每个问题 5 组随机输入验证正确性；（4）profiling 含设备同步、预热、多次平均以降低噪声；（5）不提供网络搜索工具，所有方案来自本地环境。
-
-## 稳定 RL 训练的算法改进
-
-### 训练不稳定的根源
-
-初始 RL 仅能稳定训练 17 步即崩溃。根本原因：严重的领域分布不匹配——CUDA 编码数据仅占预训练数据的 <0.01\
-
-### 多阶段预热策略
-
-第一阶段：单轮 RL 预热。先在基座模型上进行单轮 RL（标准 PPO），增强其 CUDA 内核生成能力。上下文长度 32768。
-
-第二阶段：Actor 初始化（RFT）。用单轮 RL 后的模型在智能体环路中采集轨迹，经拒绝采样保留高质量轨迹：（1）仅保留正奖励轨迹；（2）过滤低效行为（冗余循环、违反 tool-call schema 的幻觉）。在过滤后的轨迹上做 SFT：
-L_RFT() = -E_ D'[_t=1^T _(a_t s_t, a_<t)]
-
-第三阶段：Critic 初始化（Value Pretraining）。利用采样轨迹及其结果奖励预训练价值网络。目标值通过 GAE 计算（=1, =0.95）：
-V_t^targ = V_(s_t) + A_t, A_t = _l=0^T-1-t()^l _t+l
-优化 MSE 损失 L_VP() = 12E[1T_t (V_(s_t) - V_t^targ)^2]。
-
-第四阶段：智能体 RL。使用 PPO 的 clipped surrogate objective 优化 Actor，采用非对称裁剪 _lower=0.2, _higher=0.28。上下文扩展至 131072，最大 150 轮交互。经此多阶段预热，RL 可稳定训练 150+ 步并持续增长。
-
-## 实验设置
-
-基座模型：Seed1.6，MoE 架构，23B 活跃参数 / 230B 总参数。全局批大小 1024，Actor 学习率 310^-6，Critic 学习率 610^-6。
-
-沙箱环境：CPU-GPU 资源解耦架构。Docker 终端沙箱处理 CPU 密集任务（编译），profiling 任务分发至 128 块 NVIDIA H20 GPU 专用池，进程级隔离和独占资源分配消除干扰，确保延迟测量稳定。
-
-评估指标：Pass Rate（编译+正确性通过率）、Faster Rate（正确且快于基线的比例）、Speed-up（正确解的几何平均加速比）。
-
-## 核心实验结果
-
-@l c c c@
-
-模型 & Pass & Faster(Compile) & Speedup \\
-
-4@lOverall（加权） \\
-Seed1.6（基座） & 74.0\
-GLM 4.6 & 75.6\
-Kimi K2 & 66.8\
-Gemini 3 Pro & 91.2\
-Claude Opus 4.5 & 95.2\
-CUDA Agent & 98.8\
-
-4@lLevel-2（算子序列） \\
-CUDA Agent & 100\
-
-4@lLevel-3（完整模型） \\
-Gemini 3 Pro & 80.0\
-Claude Opus 4.5 & 88.0\
-CUDA Agent & 94.0\
-
-1pt
-
-三项关键发现：（1）CUDA Agent 在所有级别均大幅超越最强闭源模型，Level-3 Faster Rate 达 90\
-
-## 消融实验
-
-@l c c@
-
-变体 & Faster(Compile) & Speedup \\
-
-w/o Agent Loop & 14.1\
-w/o Robust Reward & 60.4\
-w/o RFT & 49.8\
-w/o Value Pretraining & 50.9\
-CUDA Agent & 96.8\
-
-### 智能体环路
-
-去除多轮交互环路（退化为单轮代码生成），Faster Rate 从 96.8\
-
-### 奖励设计
-
-将离散里程碑奖励替换为连续加速比奖励 r_s = t_compile/t_gen，Pass Rate 基本不变但 Faster Rate 降至 60.4\
-
-### RFT 初始化
-
-去除 RFT 导致训练奖励快速灾难性崩溃。诊断显示策略熵急剧上升——分布变得越来越弥散，输出不连贯。RFT 通过强行为先验约束熵增长，保持优化轨迹在良构输出分布内。
-
-### Value Pretraining
-
-去除 Critic 预训练后，解释方差极低（Critic 无法学习有意义的值函数），导致轨迹长度爆炸——未初始化的 Critic 无法惩罚无效搜索路径。Value Pretraining 确保 Critic 能即时提供准确反馈，引导智能体走向高效优化路径。
-
-## 案例分析：优化模式
-
-通过 Level 1--3 案例分析，归纳 CUDA Agent 的五类常见优化模式：
-
-• 代数化简：识别隐含结构，如对角矩阵乘法化简为逐行缩放（O(N^2M) O(NM)，达 73.31 加速）；矩阵乘+规约化简为列求和+点积（24.04 加速）；
-• 内核融合：合并逻辑相关操作为单一内核，避免中间张量写回全局内存，减少 kernel launch 开销；
-• 内存访问优化：合并全局内存访问、共享内存块内规约、float4 向量化加载最大化带宽利用率；
-• 硬件感知优化：启用 TF32 利用 Tensor Core、占用率调优等；
-• 库感知优化：识别可调用 cuDNN/cuBLAS 融合 API 的场景（如 conv+bias+activation），利用成熟的硬件调优实现。
-
-## 讨论与局限
-
-CUDA Agent 证明：配备结构化环境和可靠执行奖励的基础模型可从被动代码生成器转变为主动系统优化器。然而仍有局限：
-
-• 训练数据仍限于算子级别，跨层融合和端到端计算图优化尚未覆盖；
-• 128K 上下文和 200 轮交互的计算开销显著（128 块 H20 GPU 用于评估）；
-• 与无训练测试时扩展方法（STARK、EvoEngineer 等）正交——这些搜索策略可直接应用于 CUDA Agent 以进一步提升性能；
-• 当前仅在 KernelBench 上评估，生产环境中的异构硬件支持和更复杂工作负载有待验证；
-• 防作弊措施虽严格，但 RL 训练的奖励信号仍依赖沙箱环境的测量精度。5:["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["Code Generation"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation"}],["$","p",null,{"className":"paper-detail-authors","children":"Weinan Dai, Hanlin Wu, Qiying Yu, Huan-ang Gao, Jiahao Li, Chengquan Jiang, Weiqiang Lou, Yufan Song, Hongli Yu, Jiaze Chen, Wei-Ying Ma, Ya-Qin Zhang, Jingjing Liu, Mingxuan Wang, Xin Liu, Hao Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","p",null,{"children":"$e"}]]}],"$Lf","$L10","$L11","$L12","$L13"]}]
+:HL["/_next/static/chunks/ef54e033fa5ab592.css","style"]
+0:{"P":null,"b":"VHpQtGCoOVPlE0jB0VdLD","c":["","paper","2602.24286"],"q":"","i":false,"f":[[["",{"children":["paper",{"children":[["paperId","2602.24286","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/chunks/ef54e033fa5ab592.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","script","script-0",{"src":"/_next/static/chunks/7c92e96509cd355e.js","async":true,"nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":["$","body",null,{"children":[["$","header",null,{"className":"topnav","children":["$","nav",null,{"className":"container","children":[["$","$L2",null,{"href":"/","className":"logo","children":"PaperAgent"}],["$","div",null,{"className":"nav-links","children":[["$","$L2",null,{"href":"/","children":"Papers"}],["$","$L2",null,{"href":"/info","children":"Info"}],["$","$L2",null,{"href":"/archive","children":"Archive"}],["$","$L2",null,{"href":"/about","children":"About"}]]}]]}]}],["$","main",null,{"children":["$","div",null,{"className":"container","children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"not-found","children":[["$","h1",null,{"children":"页面未找到"}],["$","p",null,{"children":"你访问的页面不存在或已被移动。"}],["$","div",null,{"className":"not-found-links","children":[["$","$L2",null,{"href":"/","className":"text-link","children":"返回今日页 →"}],["$","$L2",null,{"href":"/archive","className":"text-link","children":"查看归档 →"}]]}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}],["$","footer",null,{"className":"footer","children":["$","div",null,{"className":"container","children":["$","p",null,{"children":"© 2026 PaperAgent"}]}]}]]}]}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":[null,["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["$","$1","c",{"children":["$L5",null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],{},null,false,false]},null,false,false]},null,false,false]},null,false,false],["$","$1","h",{"children":[null,["$","$L9",null,{"children":"$La"}],["$","div",null,{"hidden":true,"children":["$","$Lb",null,{"children":["$","$7",null,{"name":"Next.Metadata","children":"$Lc"}]}]}],null]}],false]],"m":"$undefined","G":["$d",[]],"S":true}
+e:T2577,<h2>动机与问题定义</h2>
+<p>GPU 内核优化是现代深度学习基础设施的核心，但高性能 CUDA 内核开发仍高度依赖专家对 GPU 微架构的深入理解和复杂 profiling 工具链的熟练使用。尽管 LLM 在通用编程中已接近人类水平，但在 CUDA 内核生成上<strong>甚至不如 torch.compile 等编译器自动优化工具</strong>。</p>
+<p>现有方法存在两大范式缺陷：</p>
+<ul>
+<li><strong>无训练工作流</strong>（STARK、ReGraphT、EvoEngineer、CudaForge）：依赖手工设计的搜索/精炼启发式，受限于基座模型固有的 CUDA 编码能力，性能增益上限明显；</li>
+<li><strong>固定多轮微调</strong>（Kevin、CUDA-L1、ConCuR）：在预设的执行-反馈循环中微调模型，但浪费上下文长度（保留所有历史解）、限制智能体自主学习调试/搜索/profiling 策略的自由度，且受高质量训练数据匮乏、训练规模有限等制约。</li>
+</ul>
+<p>CUDA Agent 是首个<strong>大规模智能体强化学习系统</strong>，通过三个维度系统性增强 LLM 的 CUDA 内核编码能力：可扩展数据合成、技能增强的开发环境、以及稳定训练的 RL 算法改进。系统支持 <strong>128K token 上下文</strong>和最多 <strong>200 轮交互</strong>，在 KernelBench 上取得 SOTA。</p>
+<p>1pt</p>
+<p>1pt</p>
+<p>在最困难的 Level-3 上，CUDA Agent 的 Faster Rate 达 90\</p>
+<h2>系统架构概览</h2>
+<p>系统由三大组件构成：（1）可扩展数据合成流水线；（2）技能集成的防作弊训练环境与鲁棒奖励设计；（3）面向稳定训练的 RL 算法改进（Actor/Critic 多阶段预热）。</p>
+<h2>可扩展训练数据合成</h2>
+<p>高质量 CUDA 内核稀缺使得 SFT 成本极高，因此采用 RL 训练。RL 需要大量多样的 PyTorch 参考算子作为训练任务。核心洞察：<strong>将多个算子组合为融合任务能产生有价值的新训练问题</strong>——融合改变优化格局（避免中间全局内存写回、耦合寄存器/SMEM/占用率约束、要求统一的并行映射和数据布局）。</p>
+<h3>种子爬取</h3>
+<p>从 <code>torch</code> 和 <code>transformers</code> 库挖掘 PyTorch 参考算子，每个算子表示为含 <code>\_\_init\_\_</code> 和 <code>forward</code> 的 <code>nn.Module</code> 子类，附带 <code>get\_init\_inputs()</code> 和 <code>get\_inputs()</code> 辅助函数。</p>
+<h3>组合构造</h3>
+<p>使用 LLM 从 <code>torch</code> 库采样至多 5 个算子类，顺序堆叠为单一计算层。不从 <code>transformers</code> 采样（其算子已封装多个原语）。</p>
+<h3>执行过滤</h3>
+<p>四项准入标准：（1）Eager 和 Compile 模式均可执行；（2）排除随机性算子以确保可复现；（3）反作弊——不同输入的输出不能为常数或不可区分；（4）Eager 模式执行时间限制在 1--100ms。此外排除与 KernelBench 高相似度样本（AST 相似度 >0.9 的被移除）。最终得到 <strong>CUDA-Agent-Ops-6K</strong>，含 6000 个样本。数据集构成：双算子组合占 83.77\</p>
+<h2>技能集成智能体环路</h2>
+<h3>智能体环路设计</h3>
+<p>基于 OpenHands 框架，提供 BashTool、GlobTool、MultiEditTool 等标准工具集。采用 <strong>ReAct 范式</strong>交替执行推理、动作和观测，支持迭代编码、调试和性能优化。</p>
+<h3>CUDA 编码技能</h3>
+<p>借鉴 Agent Skills 理念，将 CUDA 编码专用指令和工具（如 profiling 脚本）封装为技能格式。<code>SKILL.md</code> 规范化标准优化流程：（1）分析原生 PyTorch 实现的性能瓶颈；（2）在 <code>model\_new.py</code> 中重写模型并在 <code>kernels/</code> 目录实现 CUDA 内核；（3）编译、验证正确性与性能，迭代精炼；（4）反复优化直至超越 torch.compile 至少 5\</p>
+<h3>鲁棒奖励调度</h3>
+<p>现有方法直接使用加速比作为奖励信号，但不同算子优化难度差异巨大，原始加速比是不可靠的质量代理且偏向简单内核。CUDA Agent 采用<strong>归一化里程碑式离散奖励</strong>：</p>
+<p>r = -1 & 正确性检查失败 3 & 同时超越 eager 和 compile 5\</p>
+<p>其中 b(t, t_0) = I[(t_0 - t)/t_0 > 5\</p>
+<h3>防奖励作弊</h3>
+<p>五项措施：（1）文件权限保护——正确性验证和 profiling 脚本不可被智能体修改；（2）上下文管理器禁止调用 <code>torch.nn.functional</code> 回退；（3）每个问题 5 组随机输入验证正确性；（4）profiling 含设备同步、预热、多次平均以降低噪声；（5）不提供网络搜索工具，所有方案来自本地环境。</p>
+<h2>稳定 RL 训练的算法改进</h2>
+<h3>训练不稳定的根源</h3>
+<p>初始 RL 仅能稳定训练 <strong>17 步</strong>即崩溃。根本原因：<strong>严重的领域分布不匹配</strong>——CUDA 编码数据仅占预训练数据的 <0.01\</p>
+<h3>多阶段预热策略</h3>
+<p><strong>第一阶段：单轮 RL 预热。</strong>先在基座模型上进行单轮 RL（标准 PPO），增强其 CUDA 内核生成能力。上下文长度 32768。</p>
+<p><strong>第二阶段：Actor 初始化（RFT）。</strong>用单轮 RL 后的模型在智能体环路中采集轨迹，经拒绝采样保留高质量轨迹：（1）仅保留正奖励轨迹；（2）过滤低效行为（冗余循环、违反 tool-call schema 的幻觉）。在过滤后的轨迹上做 SFT： L_RFT() = -E_ D'[_t=1^T _(a_t s_t, a_<t)]</p>
+<p><strong>第三阶段：Critic 初始化（Value Pretraining）。</strong>利用采样轨迹及其结果奖励预训练价值网络。目标值通过 GAE 计算（=1, =0.95）： V_t^targ = V_(s_t) + A_t, A_t = _l=0^T-1-t()^l _t+l 优化 MSE 损失 L_VP() = 12E[1T_t (V_(s_t) - V_t^targ)^2]。</p>
+<p><strong>第四阶段：智能体 RL。</strong>使用 PPO 的 clipped surrogate objective 优化 Actor，采用非对称裁剪 _lower=0.2, _higher=0.28。上下文扩展至 131072，最大 150 轮交互。经此多阶段预热，RL 可<strong>稳定训练 150+ 步并持续增长</strong>。</p>
+<h2>实验设置</h2>
+<p><strong>基座模型：</strong>Seed1.6，MoE 架构，23B 活跃参数 / 230B 总参数。全局批大小 1024，Actor 学习率 310^-6，Critic 学习率 610^-6。</p>
+<p><strong>沙箱环境：</strong>CPU-GPU 资源解耦架构。Docker 终端沙箱处理 CPU 密集任务（编译），profiling 任务分发至 <strong>128 块 NVIDIA H20 GPU</strong> 专用池，进程级隔离和独占资源分配消除干扰，确保延迟测量稳定。</p>
+<p><strong>评估指标：</strong>Pass Rate（编译+正确性通过率）、Faster Rate（正确且快于基线的比例）、Speed-up（正确解的几何平均加速比）。</p>
+<h2>核心实验结果</h2>
+<p>1pt</p>
+<p>三项关键发现：（1）CUDA Agent 在所有级别均大幅超越最强闭源模型，Level-3 Faster Rate 达 90\</p>
+<h2>消融实验</h2>
+<h3>智能体环路</h3>
+<p>去除多轮交互环路（退化为单轮代码生成），Faster Rate 从 96.8\</p>
+<h3>奖励设计</h3>
+<p>将离散里程碑奖励替换为连续加速比奖励 r_s = t_compile/t_gen，Pass Rate 基本不变但 Faster Rate 降至 60.4\</p>
+<h3>RFT 初始化</h3>
+<p>去除 RFT 导致训练奖励<strong>快速灾难性崩溃</strong>。诊断显示策略熵急剧上升——分布变得越来越弥散，输出不连贯。RFT 通过强行为先验约束熵增长，保持优化轨迹在良构输出分布内。</p>
+<h3>Value Pretraining</h3>
+<p>去除 Critic 预训练后，解释方差极低（Critic 无法学习有意义的值函数），导致轨迹长度爆炸——未初始化的 Critic 无法惩罚无效搜索路径。Value Pretraining 确保 Critic 能即时提供准确反馈，引导智能体走向高效优化路径。</p>
+<h2>案例分析：优化模式</h2>
+<p>通过 Level 1--3 案例分析，归纳 CUDA Agent 的五类常见优化模式：</p>
+<ul>
+<li><strong>代数化简</strong>：识别隐含结构，如对角矩阵乘法化简为逐行缩放（O(N^2M) O(NM)，达 73.31 加速）；矩阵乘+规约化简为列求和+点积（24.04 加速）；</li>
+<li><strong>内核融合</strong>：合并逻辑相关操作为单一内核，避免中间张量写回全局内存，减少 kernel launch 开销；</li>
+<li><strong>内存访问优化</strong>：合并全局内存访问、共享内存块内规约、<code>float4</code> 向量化加载最大化带宽利用率；</li>
+<li><strong>硬件感知优化</strong>：启用 TF32 利用 Tensor Core、占用率调优等；</li>
+<li><strong>库感知优化</strong>：识别可调用 cuDNN/cuBLAS 融合 API 的场景（如 conv+bias+activation），利用成熟的硬件调优实现。</li>
+</ul>
+<h2>讨论与局限</h2>
+<p>CUDA Agent 证明：<strong>配备结构化环境和可靠执行奖励的基础模型可从被动代码生成器转变为主动系统优化器</strong>。然而仍有局限：</p>
+<ul>
+<li>训练数据仍限于算子级别，跨层融合和端到端计算图优化尚未覆盖；</li>
+<li>128K 上下文和 200 轮交互的计算开销显著（128 块 H20 GPU 用于评估）；</li>
+<li>与无训练测试时扩展方法（STARK、EvoEngineer 等）正交——这些搜索策略可直接应用于 CUDA Agent 以进一步提升性能；</li>
+<li>当前仅在 KernelBench 上评估，生产环境中的异构硬件支持和更复杂工作负载有待验证；</li>
+<li>防作弊措施虽严格，但 RL 训练的奖励信号仍依赖沙箱环境的测量精度。</li>
+</ul>5:["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation"}],["$","p",null,{"className":"paper-detail-authors","children":"Weinan Dai, Hanlin Wu, Qiying Yu, Huan-ang Gao, Jiahao Li, Chengquan Jiang, Weiqiang Lou, Yufan Song, Hongli Yu, Jiaze Chen, Wei-Ying Ma, Ya-Qin Zhang, Jingjing Liu, Mingxuan Wang, Xin Liu, Hao Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$e"}}]]}],"$Lf",false,"$L10","$L11","$L12"]}]
 f:null
-10:["$","section",null,{"className":"contributions","children":[["$","h2",null,{"children":"Key Contributions"}],["$","ul",null,{"children":[["$","li","0",{"children":"构建CUDA-Agent-Ops-6K训练数据集，通过组合多算子融合任务合成多样化CUDA优化问题，并设计五项防奖励作弊机制确保训练信号可靠性。"}],["$","li","1",{"children":"设计归一化里程碑式离散奖励函数，替代原始加速比奖励，消除不同算子优化难度差异导致的偏差，并集成SKILL.md规范化CUDA编码技能。"}],["$","li","2",{"children":"提出Actor/Critic多阶段预热策略，先单轮RL预热再智能体RL，解决CUDA编码领域分布不匹配导致的训练崩溃问题，支持128K上下文200轮交互。"}]]}]]}]
-11:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.24286","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
-12:["$","hr",null,{"className":"divider"}]
-13:["$","nav",null,{"className":"prev-next","children":[["$","$L2",null,{"href":"/paper/2602.24233","className":"text-link","children":"← Previous"}],["$","$L2",null,{"href":"/paper/2602.24289","className":"text-link","children":"Next →"}]]}]
+10:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.24286","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
+11:["$","hr",null,{"className":"divider"}]
+12:["$","nav",null,{"className":"prev-next","children":[["$","$L2",null,{"href":"/paper/2602.24233","className":"text-link","children":"← Previous"}],["$","$L2",null,{"href":"/paper/2602.24289","className":"text-link","children":"Next →"}]]}]
 a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-14:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"IconMark"]
+13:I[27201,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"IconMark"]
 8:null
-c:[["$","title","0",{"children":"PaperAgent - AI 论文日报"}],["$","meta","1",{"name":"description","content":"每日精选高价值 AI 论文，快速把握最新研究进展"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.1383ba39.ico","sizes":"341x341","type":"image/x-icon"}],["$","$L14","3",{}]]
+c:[["$","title","0",{"children":"PaperAgent - AI 论文日报"}],["$","meta","1",{"name":"description","content":"每日精选高价值 AI 论文，快速把握最新研究进展"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.1383ba39.ico","sizes":"341x341","type":"image/x-icon"}],["$","$L13","3",{}]]

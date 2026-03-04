@@ -6,80 +6,80 @@
     {
       "paperId": "2602.22207",
       "title": "Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets",
-      "summary": "针对多语言LLM评估中翻译基准质量不一致问题，提出自动化翻译流水线，包含SC、BoN、USI、T-RANK四种方法，将MMLU等基准翻译为8种东欧/南欧语言，显著提升翻译质量与评估可靠性。",
-      "category": "Evaluation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22207"
     },
     {
       "paperId": "2602.22661",
       "title": "dLLM: Simple Diffusion Language Modeling",
-      "summary": "dLLM是一个开源框架，统一扩散语言模型的训练、推理和评估三大组件，解决现有DLM代码库分散、API不一致、评估超参敏感等痛点，并提供大型DLM推理能力微调的开放配方。",
-      "category": "Diffusion Model",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22661"
     },
     {
       "paperId": "2602.24233",
       "title": "Enhancing Spatial Understanding in Image Generation via Reward Modeling",
-      "summary": "针对文本到图像生成中空间关系理解不足的问题，构建80K对抗性偏好对数据集，训练7B参数专用空间奖励模型SpatialScore（达95.8%配对准确率），并用于FLUX.1-dev的在线GRPO强化学习训练。",
-      "category": "Image Generation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24233"
     },
     {
       "paperId": "2602.24286",
       "title": "CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation",
-      "summary": "CUDA Agent是首个大规模智能体强化学习系统，通过可扩展数据合成、技能增强的开发环境和多阶段RL预热策略，在KernelBench上达到96.8%整体超越torch.compile胜率，Level-3完整模型达90%。",
-      "category": "Code Generation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24286"
     },
     {
       "paperId": "2602.24289",
       "title": "Mode Seeking meets Mean Seeking for Fast Long Video Generation",
-      "summary": "提出Mode Seeking meets Mean Seeking训练范式，基于解耦扩散Transformer将局部保真度与长程连贯性解耦：DM head通过滑动窗口reverse-KL对齐短视频教师，FM head在长视频上做SFT，推理时仅用DM head实现分钟级视频快速生成。",
-      "category": "Video Generation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24289"
     },
     {
       "paperId": "2603.00141",
       "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "针对图像编辑中Image-CoT方法固定预算浪费、早期验证不可靠、结果冗余三大问题，提出ADE-CoT自适应测试时缩放框架，通过难度感知资源分配、编辑特定验证和深度优先机会性停止提升编辑效率。",
-      "category": "Image Generation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00141"
     },
     {
       "paperId": "2603.00912",
       "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
-      "summary": "VGGT-Det是首个无需传感器几何输入（无位姿、无深度）的多视角室内3D目标检测框架，通过挖掘VGGT内部注意力先验和多层级几何特征，在ScanNet和ARKitScenes上显著超越竞争方法。",
-      "category": "3D Vision",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00912"
     },
     {
       "paperId": "2603.01562",
       "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
-      "summary": "RubricBench是包含1,147对成对偏好比较的评估基准，每对配有专家标注的原子化评分标准，专门评估基于标准的奖励模型可靠性，量化揭示了模型生成标准与人类标准之间高达27%的性能差距。",
-      "category": "Evaluation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01562"
     },
     {
       "paperId": "2603.02024",
       "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
-      "summary": "MMR-Life是首个面向真实生活场景的多模态多图像推理基准，包含2,646道多选题和19,108张自然图像，覆盖7种推理类型，揭示最强模型GPT-5仅达58.69%而人类达72.28%的显著差距。",
-      "category": "Multimodal",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02024"
     },
     {
       "paperId": "2603.02138",
       "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
-      "summary": "OmniLottie是首个端到端多模态矢量动画生成框架，通过Lottie Tokenizer将JSON压缩5.3倍，构建200万+样本数据集MMLottie-2M，支持文本/图像/视频到Lottie矢量动画的自回归生成。",
-      "category": "Multimodal",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02138"
     }
