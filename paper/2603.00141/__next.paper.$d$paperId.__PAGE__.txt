@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T2293,<h2>动机与问题</h2>
+2:T227d,<h2>动机与问题</h2>
 <p>Image Chain-of-Thought (Image-CoT) 是一种测试时缩放范式，通过延长推理时间来提升图像生成质量。现有 Image-CoT 方法主要针对<strong>文本到图像（T2I）生成</strong>，而图像编辑与 T2I 存在本质区别：T2I 是开放式任务，大规模采样后选最优即可；图像编辑是<strong>目标导向</strong>任务，解空间受源图像和编辑指令约束。将 T2I 的 Image-CoT 直接迁移到编辑任务时暴露三个问题：</p>
 <ul>
 <li><strong>资源分配低效</strong>：现有方法对所有编辑使用固定采样预算（如 N=32）。实验表明简单编辑（初始分数高）几乎不受益于 Image-CoT，而困难编辑（初始分数低）收益显著，固定预算在简单样例上浪费大量计算；</li>
@@ -44,8 +44,6 @@ a:"$Sreact.suspense"
 </ul>
 <p>缩放曲线（N=2,4,8,16,32）显示 ADE-CoT 在所有预算水平上持续以更低计算成本达到更高性能。</p>
 <h3>消融实验</h3>
-<p>1pt</p>
-<p>1pt</p>
 <p>逐步添加各组件，NFE 从 896 降至 <strong>418</strong>（降低 53\</p>
 <p><strong>预览方式对比：</strong>额外去噪步数（TTS-EF 方式）NFE = 523，直接解码含噪隐变量 NFE = 790，单步预览（本方法）NFE = <strong>418</strong>，且 G O 可比。</p>
 <p><strong>最优时步：</strong>早期剪枝 t_e=8、后期保留 t_l=16 为最佳权衡（Kontext）。t_e 过小预览模糊导致剪枝不准，过大增加开销；t_l>16 后预览已高保真，性能饱和。</p>
@@ -61,7 +59,7 @@ a:"$Sreact.suspense"
 <li>未来方向包括：结合强化学习优化验证器、扩展至视频和 3D 编辑、探索更高效的搜索策略。</li>
 </ul>
 <h2>总结</h2>
-<p>ADE-CoT 提出三个互补策略解决 Image-CoT 在图像编辑中的效率瓶颈：难度感知资源分配避免简单任务浪费、编辑特定验证提高早期剪枝准确性（误判降低 63\</p>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"From Scale to Speed: Adaptive Test-Time Scaling for Image Editing"}],["$","p",null,{"className":"paper-detail-authors","children":"Xiangyan Qu, Zhenlong Yuan, Jing Tang, Rui Chen, Datao Tang, Meng Yu, Lei Sun, Yancheng Bai, Xiangxiang Chu, Gaopeng Gou, Gang Xiong, Yujun Cai"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+<p>ADE-CoT 提出三个互补策略解决 Image-CoT 在图像编辑中的效率瓶颈：难度感知资源分配避免简单任务浪费、编辑特定验证提高早期剪枝准确性（误判降低 63\</p>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"From Scale to Speed: Adaptive Test-Time Scaling for Image Editing"}],["$","p",null,{"className":"paper-detail-authors","children":"Xiangyan Qu, Zhenlong Yuan, Jing Tang, Rui Chen, Datao Tang, Meng Yu, Lei Sun, Yancheng Bai, Xiangxiang Chu, Gaopeng Gou, Gang Xiong, Yujun Cai"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2603.00141","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

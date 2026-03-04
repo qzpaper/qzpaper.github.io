@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T203d,<h2>动机与问题定义</h2>
+2:T2027,<h2>动机与问题定义</h2>
 <p>多模态大语言模型（MLLMs）在科学分析和数学推理等复杂任务上取得了显著进展，但其在<strong>日常生活场景</strong>中的多样化推理能力仍缺乏系统评估。现有基准存在两大偏离：</p>
 <ul>
 <li><strong>任务设计偏差</strong>：知识密集型基准（MMMU、GPQA）依赖专家级领域知识，符号拼图基准（VisualPuzzles、MME-Reasoning）使用合成图像，两者均与日常推理需求不符；</li>
@@ -33,8 +33,6 @@ a:"$Sreact.suspense"
 <h3>实验设置</h3>
 <p>评估 <strong>37 个</strong> MLLM，分为四组：（1）闭源思考模型（GPT-5、Gemini-2.5-Pro/Flash、o4-mini、GPT-5-mini、Claude-Sonnet-4）；（2）闭源非思考模型（GPT-4.1/mini、Claude-3.7-Sonnet、GPT-4o、Doubao-1.5-vision）；（3）开源思考模型（VL-Rethinker-7/72B、MM-Eureka-Qwen-32B、MiMo-VL-7B-RL、Keye-VL-1.5-8B 等）；（4）开源非思考模型（Qwen2.5-VL-7/32/72B、Gemma3-12/27B、InternVL3.5 等）。人类基线由 12 名不同背景学生在 210 题子集上完成（600 个有效答案）。</p>
 <h3>核心发现</h3>
-<p>1pt</p>
-<p>1pt</p>
 <p><strong>（1）MMR-Life 具有极高挑战性。</strong>即使 GPT-5 也仅达 58.69\</p>
 <p><strong>（2）推理类型间存在巨大差异。</strong>类比（Ana）、演绎（Ded）、归纳（Ind）推理表现尚可——GPT-5 在这三类分别达 78.87\</p>
 <p><strong>（3）开源思考模型改进有限。</strong>闭源思考模型普遍优于非思考模型，但开源思考模型平均准确率（27.15\</p>
@@ -64,7 +62,7 @@ a:"$Sreact.suspense"
 <h2>讨论与局限</h2>
 <p><strong>核心贡献：</strong>（1）首个覆盖 7 种推理类型的真实生活多图像推理基准；（2）37 个 SOTA 模型的全面评估揭示空间/因果/时间推理的严重短板；（3）深入分析推理范式，发现长思考的有限性、RL 在小模型上的弱泛化、推理类型间的模式聚类。</p>
 <p><strong>关键启示：</strong>（1）未来模型训练应重点关注空间、因果和时间推理能力——这些是当前最大瓶颈；（2）推理增强方法（SC、BoN、GRPO）并非通用解决方案，在大模型上甚至可能有害；（3）开源思考模型在真实场景泛化上仍有巨大提升空间；（4）不同推理类型可能需要<strong>差异化训练策略</strong>——归纳推理受益于快思考，类比推理受益于长 CoT。</p>
-<p><strong>局限性：</strong>基准聚焦常识推理，未覆盖需专业知识的推理场景；多选题格式可能低估开放生成能力；图像来源虽多样但仍有覆盖盲区；人类评估规模有限（210 题子集）。</p>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning"}],["$","p",null,{"className":"paper-detail-authors","children":"Jiachun Li, Shaoping Huang, Zhuoran Jin, Chenlong Zhang, Pengfei Cao, Yubo Chen, Kang Liu, Jun Zhao"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+<p><strong>局限性：</strong>基准聚焦常识推理，未覆盖需专业知识的推理场景；多选题格式可能低估开放生成能力；图像来源虽多样但仍有覆盖盲区；人类评估规模有限（210 题子集）。</p>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning"}],["$","p",null,{"className":"paper-detail-authors","children":"Jiachun Li, Shaoping Huang, Zhuoran Jin, Chenlong Zhang, Pengfei Cao, Yubo Chen, Kang Liu, Jun Zhao"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2603.02024","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T226c,<h2>动机与问题定义</h2>
+2:T2240,<h2>动机与问题定义</h2>
 <p>随着 LLM 输出从简单补全演化为复杂推理生成，奖励模型（Reward Model, RM）面临核心瓶颈：倾向于优先考虑表面复杂度而非用户意图的真实满足。生成式奖励模型（GRM）虽通过 Chain-of-Thought 推理缓解此问题，但自由形式推理缺乏严格基础，导致<strong>冗长偏差</strong>（verbosity bias）和<strong>奖励攻击</strong>（reward hacking）——模型利用表面特征（长度、格式、语气）最大化奖励而不提升质量。</p>
 <p>为引入必要的严谨性，领域正转向<strong>评分标准引导评估</strong>（rubric-guided evaluation）：将模糊的质量定义分解为原子化、可验证的约束。然而社区缺乏统一基准来评估此范式的可靠性，现有基准存在三个关键缺陷：</p>
 <ul>
@@ -34,14 +34,11 @@ a:"$Sreact.suspense"
 <p><strong>偏好准确率</strong>：Acc = 1|D|_iI[z_i = z_i^*]。<strong>标准对齐指标</strong>——Rubric Recall：参考项被匹配比例 H/M；幻觉率：生成项未匹配任何参考项的比例；结构 F1：精确率（1-幻觉率）与召回率的调和均值。</p>
 <h2>核心实验结果</h2>
 <h3>主结果：清晰的能力层级</h3>
-<p>1pt</p>
 <p><strong>隐式推理不足</strong>：标量和生成式 RM 难以稳定超越随机水平（44--50\</p>
 <p><strong>标准感知流水线恢复性能</strong>：引入自生成标准一致提升（GPT-4o-mini +6\</p>
 <p><strong>失败集中度</strong>：安全领域对标准质量最敏感——自生成方法仅 25--30\</p>
 <p><strong>执行天花板</strong>：即使使用人类标准，准确率也在约 85\</p>
 <h3>Rubric Gap 量化</h3>
-<p>1pt</p>
-<p>1pt</p>
 <p>跨所有模型族——从轻量判断器到前沿推理系统——人类标准带来的增益稳定在 <strong>26\</p>
 <h3>计算扩展无法弥合差距</h3>
 <p>自动标准扩展</strong>（图2a）：增加采样数产生递减甚至非单调回报——GPT-4o-mini 从 Rub@4 的 48.0\</p>
@@ -49,7 +46,6 @@ a:"$Sreact.suspense"
 <p><strong>迭代精炼扩展</strong>（图2c）：增加精炼步骤同样无法弥合差距，甚至轻微退化（GPT-4o-mini: 46.7\</p>
 <h2>深入分析</h2>
 <h3>认知错位：结构质量分析</h3>
-<p>1pt</p>
 <p>核心发现：<strong>注意力错位</strong>（Attention Displacement）。尽管生成冗长清单（Auto-Rubric 和 OpenRubric 平均 >13 条），模型仍维持 >70\</p>
 <h3>标准特征诊断</h3>
 <p>沿<strong>约束刚性</strong>（R，规则执行严格度）和<strong>意图必要性</strong>（N，规则对指令的本质性）两个正交维度分析：LLM 生成标准包含显著更多低必要性规则（N=1: 17.9\</p>
@@ -65,7 +61,7 @@ a:"$Sreact.suspense"
 <h2>讨论与局限</h2>
 <p><strong>三项核心结论</strong>：（1）RubricBench 有效区分 RM 能力层级——传统方法停滞于 40\</p>
 <p><strong>未来方向</strong>：从扩展合成转向<strong>标准对齐</strong>——使模型内化人类优先级层次。更结构化的标准设计（如区分硬/软约束、显式权重分配）可帮助弥合执行差距。</p>
-<p><strong>局限性</strong>：（1）数据源限于现有公共基准，可能不完全代表专有领域长尾场景；（2）依赖专家标注限制规模，不适合大规模训练；（3）严格二元检查清单优先可验证性而牺牲细微差异，可能无法完美捕获高度主观任务（如创意写作）的连续质量特征。</p>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"RubricBench: Aligning Model-Generated Rubrics with Human Standards"}],["$","p",null,{"className":"paper-detail-authors","children":"Qiyuan Zhang, Junyi Zhou, Yufei Wang, Fuyuan Lyu, Yidong Ming, Can Xu, Qingfeng Sun, Kai Zheng, Peng Kang, Xue Liu, Chen Ma"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+<p><strong>局限性</strong>：（1）数据源限于现有公共基准，可能不完全代表专有领域长尾场景；（2）依赖专家标注限制规模，不适合大规模训练；（3）严格二元检查清单优先可验证性而牺牲细微差异，可能无法完美捕获高度主观任务（如创意写作）的连续质量特征。</p>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"RubricBench: Aligning Model-Generated Rubrics with Human Standards"}],["$","p",null,{"className":"paper-detail-authors","children":"Qiyuan Zhang, Junyi Zhou, Yufei Wang, Fuyuan Lyu, Yidong Ming, Can Xu, Qingfeng Sun, Kai Zheng, Peng Kang, Xue Liu, Chen Ma"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2603.01562","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

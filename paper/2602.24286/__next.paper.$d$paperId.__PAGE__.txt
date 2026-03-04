@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T2577,<h2>动机与问题定义</h2>
+2:T2556,<h2>动机与问题定义</h2>
 <p>GPU 内核优化是现代深度学习基础设施的核心，但高性能 CUDA 内核开发仍高度依赖专家对 GPU 微架构的深入理解和复杂 profiling 工具链的熟练使用。尽管 LLM 在通用编程中已接近人类水平，但在 CUDA 内核生成上<strong>甚至不如 torch.compile 等编译器自动优化工具</strong>。</p>
 <p>现有方法存在两大范式缺陷：</p>
 <ul>
@@ -10,8 +10,6 @@ a:"$Sreact.suspense"
 <li><strong>固定多轮微调</strong>（Kevin、CUDA-L1、ConCuR）：在预设的执行-反馈循环中微调模型，但浪费上下文长度（保留所有历史解）、限制智能体自主学习调试/搜索/profiling 策略的自由度，且受高质量训练数据匮乏、训练规模有限等制约。</li>
 </ul>
 <p>CUDA Agent 是首个<strong>大规模智能体强化学习系统</strong>，通过三个维度系统性增强 LLM 的 CUDA 内核编码能力：可扩展数据合成、技能增强的开发环境、以及稳定训练的 RL 算法改进。系统支持 <strong>128K token 上下文</strong>和最多 <strong>200 轮交互</strong>，在 KernelBench 上取得 SOTA。</p>
-<p>1pt</p>
-<p>1pt</p>
 <p>在最困难的 Level-3 上，CUDA Agent 的 Faster Rate 达 90\</p>
 <h2>系统架构概览</h2>
 <p>系统由三大组件构成：（1）可扩展数据合成流水线；（2）技能集成的防作弊训练环境与鲁棒奖励设计；（3）面向稳定训练的 RL 算法改进（Actor/Critic 多阶段预热）。</p>
@@ -47,7 +45,6 @@ a:"$Sreact.suspense"
 <p><strong>沙箱环境：</strong>CPU-GPU 资源解耦架构。Docker 终端沙箱处理 CPU 密集任务（编译），profiling 任务分发至 <strong>128 块 NVIDIA H20 GPU</strong> 专用池，进程级隔离和独占资源分配消除干扰，确保延迟测量稳定。</p>
 <p><strong>评估指标：</strong>Pass Rate（编译+正确性通过率）、Faster Rate（正确且快于基线的比例）、Speed-up（正确解的几何平均加速比）。</p>
 <h2>核心实验结果</h2>
-<p>1pt</p>
 <p>三项关键发现：（1）CUDA Agent 在所有级别均大幅超越最强闭源模型，Level-3 Faster Rate 达 90\</p>
 <h2>消融实验</h2>
 <h3>智能体环路</h3>
@@ -75,7 +72,7 @@ a:"$Sreact.suspense"
 <li>与无训练测试时扩展方法（STARK、EvoEngineer 等）正交——这些搜索策略可直接应用于 CUDA Agent 以进一步提升性能；</li>
 <li>当前仅在 KernelBench 上评估，生产环境中的异构硬件支持和更复杂工作负载有待验证；</li>
 <li>防作弊措施虽严格，但 RL 训练的奖励信号仍依赖沙箱环境的测量精度。</li>
-</ul>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation"}],["$","p",null,{"className":"paper-detail-authors","children":"Weinan Dai, Hanlin Wu, Qiying Yu, Huan-ang Gao, Jiahao Li, Chengquan Jiang, Weiqiang Lou, Yufan Song, Hongli Yu, Jiaze Chen, Wei-Ying Ma, Ya-Qin Zhang, Jingjing Liu, Mingxuan Wang, Xin Liu, Hao Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+</ul>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation"}],["$","p",null,{"className":"paper-detail-authors","children":"Weinan Dai, Hanlin Wu, Qiying Yu, Huan-ang Gao, Jiahao Li, Chengquan Jiang, Weiqiang Lou, Yufan Song, Hongli Yu, Jiaze Chen, Wei-Ying Ma, Ya-Qin Zhang, Jingjing Liu, Mingxuan Wang, Xin Liu, Hao Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.24286","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

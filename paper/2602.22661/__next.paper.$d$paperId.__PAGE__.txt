@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T278f,<h2>动机与问题背景</h2>
+2:T277c,<h2>动机与问题背景</h2>
 <p>扩散语言模型（Diffusion Language Models, DLMs）已成为自回归（AR）语言建模的有前景替代方案，具备迭代精炼、灵活引导和高效解码等优势。随着 LLaDA、Dream 等开源 DLM 的涌现，研究者发现这些模型共享大量相似的设计选择（训练目标、采样算法、评估流程）。然而，这些共同组件分散在各自的临时代码库中，缺乏透明实现，导致<strong>难以复现、比较和扩展</strong>。</p>
 <p>核心痛点包括：</p>
 <ul>
@@ -52,13 +52,13 @@ a:"$Sreact.suspense"
 <h3>官方结果复现</h3>
 <p>dLLM 的评估流水线能紧密匹配 LLaDA 和 Dream 的官方结果。LLaDA-Base：MMLU 65.9（官方 65.9），GSM8K 70.7（官方 70.3）。Dream-Base：MMLU 70.0（官方 69.5），GSM8K 77.0（官方 77.2）。差异在合理范围内，验证了评估流水线的一致性。</p>
 <h3>Fast-dLLM 加速结果</h3>
-<p>dLLM 复现了 Fast-dLLM 的加速效果。以 LLaDA-Instruct @ max new tokens 512 为例：</p>
+<p>dLLM 复现了 Fast-dLLM 的加速效果。以 LLaDA-Instruct 512 为例：</p>
 <ul>
 <li><strong>+Cache</strong>（块级近似 KV 缓存）：3.0 加速，GSM8K 81.1 76.0；</li>
 <li><strong>+Parallel</strong>（基于置信度的并行更新）：3.3 加速，GSM8K 77.6；</li>
 <li><strong>+Both</strong>（组合）：7.8 加速，GSM8K 76.6（官方 11.0/77.2）。</li>
 </ul>
-<p>Dream-Base @ 512：Baseline GSM8K 75.7，+Both 74.5（4.4）；HumanEval 54.9，+Both 54.3（3.6）；MBPP 56.0，+Both 54.4（最高达 13.3）。结果表明加速与精度之间的权衡合理。</p>
+<p>Dream-Base 512：Baseline GSM8K 75.7，+Both 74.5（4.4）；HumanEval 54.9，+Both 54.3（3.6）；MBPP 56.0，+Both 54.4（最高达 13.3）。结果表明加速与精度之间的权衡合理。</p>
 <h2>关键发现与启示</h2>
 <p><strong>DLM 评估对推理超参数极度敏感。</strong>这一事实在先前工作中很少被明确陈述。作者通过系统实验发现：关闭 <code><eos></code> 抑制、设置 CFG=0.5、温度设为 0.0、或每步并行生成 4 个 token 均可导致显著性能下降。max new tokens 的选择也直接影响计算量和测量性能。</p>
 <p><strong>现有预训练模型可低成本转化为 DLM。</strong>无论是 BERT 风格编码器还是自回归 LM，仅需 SFT（无架构修改、无持续预训练）即可转化为功能性 DLM。最近的独立工作 Efficient-DLM 也验证了这种轻量转化可以匹配甚至超过从头训练的 DLM。</p>
@@ -73,7 +73,7 @@ a:"$Sreact.suspense"
 <li>评估复现依赖逐模型的人工配置验证，自动化程度有待提升；</li>
 <li>小模型配方目前限于 SFT，未探索持续预训练对转化效果的进一步提升；</li>
 <li>框架将持续跟进新开源模型的发布与集成。</li>
-</ul>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"dLLM: Simple Diffusion Language Modeling"}],["$","p",null,{"className":"paper-detail-authors","children":"Zhanhui Zhou, Lingjie Chen, Hanghang Tong, Dawn Song"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+</ul>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"dLLM: Simple Diffusion Language Modeling"}],["$","p",null,{"className":"paper-detail-authors","children":"Zhanhui Zhou, Lingjie Chen, Hanghang Tong, Dawn Song"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.22661","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

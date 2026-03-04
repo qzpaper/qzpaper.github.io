@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T23cd,<h2>问题动机与背景</h2>
+2:T238b,<h2>问题动机与背景</h2>
 <p>多语言 LLM 评估的可靠性正受到<strong>翻译基准质量不一致</strong>的严重威胁。现有多语言基准（如 Global-MMLU、MuBench、Okapi）存在系统性翻译缺陷：</p>
 <ul>
 <li><strong>语义漂移与上下文丢失</strong>：依赖旧版 MT 工具（Google Translate、DeepL）或早期模型（GPT-4），多语言能力落后于当前前沿模型；</li>
@@ -31,19 +31,13 @@ a:"$Sreact.suspense"
 <h2>实验评估</h2>
 <h3>机器翻译基准（FLORES \& WMT24++）</h3>
 <p>在 EN$UK 对上使用 COMET（XCOMET-XL）参考评估，GPT-4o-mini 作为翻译模型：</p>
-<p>1pt</p>
-<p>1pt</p>
 <p>USI 和 T-RANK 均显著优于基线和 BoN。SC 自检在 WMT24++ 上反而略有下降（0.821 vs 0.827），因模型可能幻想错误。跨 8 种语言的扩展评估（表20--25）显示：USI multi-prompt 在参考无关 QE 评估中通常最优；Gemini-2.0-Flash 上 T-RANK multi-prompt 可超越 USI（排名能力更强）。</p>
 <p><strong>关键洞察：</strong>COMET 评估存在局限——短文本无法充分测试复杂语法结构，单一参考译文不能覆盖所有合理翻译。USI 更适合短文本数据集翻译，T-RANK 在复杂问答结构基准翻译中表现更优。</p>
 <h3>LLM-as-a-Judge 翻译质量评估</h3>
 <p>使用 Gemini-2.5-Flash 作为 judge，逐条对比 Global-MMLU 与本文翻译：</p>
-<p>1pt</p>
-<p>1pt</p>
 <p>本文方法在所有语言上均显著胜出，乌克兰语胜率高达 62.2\</p>
 <h3>下游模型评估影响</h3>
 <p>在 Gemma 3 4B/12B、Qwen 3 8B、Llama 3.1 8B 上，使用本文翻译 vs 已有翻译进行基准评估：</p>
-<p>1pt</p>
-<p>1pt</p>
 <p>Winogrande 提升最大，因保持问答上下文连贯性和消除语法性别泄露至关重要。按语言排序：希腊语 +3.89\</p>
 <p>以乌克兰语为例（表11），Gemma-3-12B-IT 在 Hellaswag 上 0.687 vs 0.625（+6.2\</p>
 <p><strong>保加利亚语专业翻译对比（表18）：</strong>与 INSAIT 专业翻译对比，自动翻译在 Hellaswag（+1.1\</p>
@@ -65,7 +59,7 @@ a:"$Sreact.suspense"
 <li><strong>未来方向</strong>：基于翻译难度的自适应方法选择、集成专用翻译质量模型、在开放权重模型上全面评估、扩展至更多低资源语言。</li>
 </ul>
 <h2>核心贡献总结</h2>
-<p>（1）系统性分析现有多语言基准翻译缺陷的根源；（2）提出全自动、高度可配置的翻译框架，支持四种方法灵活平衡质量与成本；（3）创新性 T-RANK 多轮竞争排名方法，通过位置轮换消除评估偏差，实现更精细的错误检测；（4）发布 8 种东南欧语言的改进基准翻译（MMLU、Hellaswag、ARC、Winogrande），证明翻译质量显著影响下游评估结果。开源框架和基准数据集，促进可复现的多语言 AI 开发。</p>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets"}],["$","p",null,{"className":"paper-detail-authors","children":"Hanna Yukhymenko, Anton Alexandrov, Martin Vechev"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+<p>（1）系统性分析现有多语言基准翻译缺陷的根源；（2）提出全自动、高度可配置的翻译框架，支持四种方法灵活平衡质量与成本；（3）创新性 T-RANK 多轮竞争排名方法，通过位置轮换消除评估偏差，实现更精细的错误检测；（4）发布 8 种东南欧语言的改进基准翻译（MMLU、Hellaswag、ARC、Winogrande），证明翻译质量显著影响下游评估结果。开源框架和基准数据集，促进可复现的多语言 AI 开发。</p>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets"}],["$","p",null,{"className":"paper-detail-authors","children":"Hanna Yukhymenko, Anton Alexandrov, Martin Vechev"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.22207","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

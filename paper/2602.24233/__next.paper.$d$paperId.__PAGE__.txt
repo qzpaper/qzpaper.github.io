@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T2291,<h2>问题动机与背景</h2>
+2:T2265,<h2>问题动机与背景</h2>
 <p>文本到图像（T2I）生成模型在视觉保真度和创造力上取得巨大进步，但在处理包含<strong>复杂空间关系</strong>的长文本提示时仍面临严峻挑战——多对象间的相对位置（左右、前后、上下等）往往需要多次采样才能获得令人满意的结果。在线强化学习（RL）是提升空间理解的有前景方向，但其核心瓶颈在于<strong>缺乏可靠的奖励模型</strong>：</p>
 <ul>
 <li><strong>人类偏好奖励模型</strong>（HPSv2、PickScore、ImageReward 等）侧重美学与整体文图对齐，无法准确评估多对象空间关系——甚至对空间错误的图像给出更高分数；</li>
@@ -27,8 +27,6 @@ a:"$Sreact.suspense"
 <p>使用 <strong>LoRA</strong> 微调以保留预训练知识。受 HPSv3 启发，将奖励分数建模为<strong>高斯分布</strong> s N(, ^2)：在提示末尾插入特殊 token <code><reward></code>，其最终层嵌入经 MLP 映射为 和 。训练时对每个三元组 (c, y_w, y_l) 进行两次前向传播，基于 <strong>Bradley-Terry</strong> 模型优化： P(y_w y_l c) = (R_(H_(y_w, c)) - R_(H_(y_l, c))) L_Reward() = E_c, y_w, y_l[- P(y_w y_l c)] 训练稳定性增强：从高斯分布采样 1000 次取平均计算损失。训练在 8 张 H20 GPU 上一天完成，学习率 2\!\!10^-6，梯度累积批大小 32。</p>
 <h3>奖励模型评估</h3>
 <p>构建 365 对高质量偏好对的评估基准，涵盖 1 次扰动和 2--3 次扰动子集。</p>
-<p>1pt</p>
-<p>1pt</p>
 <p><strong>关键发现：</strong>仅 7B 参数的 SpatialScore 达到 95.8\</p>
 <h2>基于 SpatialScore 的在线 RL</h2>
 <h3>基础模型与 SDE 采样</h3>
@@ -42,11 +40,9 @@ a:"$Sreact.suspense"
 <p>LoRA rank 32，学习率 3\!\!10^-4，importance clipping 范围 1\!\!10^-4，KL 惩罚系数 0.01，32 张 H20 GPU 训练。</p>
 <h2>实验结果</h2>
 <h3>多基准空间理解评估</h3>
-<p>1pt</p>
 <p>域内 SpatialScore 从 2.18 提升至 <strong>7.81</strong>（3.6）。在域外基准上，DPG-Bench 关系子维度从 0.871 升至 0.932；TIIF-Bench 长文本 BR/AR/RR 分别提升至 0.845/0.715/0.675；UniGenBench^++ 长文本 Layout-2D/3D 提升至 0.891/0.801。所有短文本和长文本设置均获<strong>一致提升</strong>。</p>
 <p>对比之下，基于 GenEval 规则奖励训练的 Flow-GRPO 在短文本上有部分提升，但在长文本设置上<strong>严重退化</strong>（TIIF-long BR 从 0.758 降至 0.577，UniGenBench-long 2D 从 0.819 降至 0.445），说明规则基奖励无法泛化至复杂多对象空间关系。</p>
 <h3>DPG-Bench 全维度评估</h3>
-<p>1pt</p>
 <p>RL 增强模型在 DPG-Bench 全部五个维度上均超越 Flux.1-dev，整体性能<strong>接近专有 GPT-Image-1</strong>（85.03 vs 85.15），增益不仅限于空间子维度。</p>
 <h3>Qwen-Image 上的验证</h3>
 <p>在更强的 Qwen-Image 基础模型上，SpatialScore 指导的 RL 同样有效：域内分数从 6.74 提升至 8.25，各文图对齐基准的空间子维度在短/长文本设置上均获一致提升。</p>
@@ -67,7 +63,7 @@ a:"$Sreact.suspense"
 <li>对 sim-to-real 具身仿真场景尤为重要，需生成时间一致且空间准确的视频序列以弥合仿真与现实的差距；</li>
 <li>训练数据依赖 SOTA 生成模型的文图对齐能力，数据质量受限于生成模型本身；</li>
 <li>奖励模型专注于空间维度，与美学、风格等其他维度的联合优化有待探索。</li>
-</ul>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Enhancing Spatial Understanding in Image Generation via Reward Modeling"}],["$","p",null,{"className":"paper-detail-authors","children":"Zhenyu Tang, Chaoran Feng, Yufan Deng, Jie Wu, Xiaojie Li, Rui Wang, Yunpeng Chen, Daquan Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+</ul>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Enhancing Spatial Understanding in Image Generation via Reward Modeling"}],["$","p",null,{"className":"paper-detail-authors","children":"Zhenyu Tang, Chaoran Feng, Yufan Deng, Jie Wu, Xiaojie Li, Rui Wang, Yunpeng Chen, Daquan Zhou"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.24233","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]

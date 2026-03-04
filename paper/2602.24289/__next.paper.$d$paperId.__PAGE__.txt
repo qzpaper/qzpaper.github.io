@@ -2,7 +2,7 @@
 8:I[22016,["/_next/static/chunks/7c92e96509cd355e.js"],""]
 9:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
 a:"$Sreact.suspense"
-2:T285d,<h2>动机与核心思想</h2>
+2:T2852,<h2>动机与核心思想</h2>
 <p>将视频生成从秒级扩展到分钟级面临关键瓶颈：短视频数据丰富且高保真，但连贯的长视频数据稀缺且局限于窄领域。现有做法借鉴图像生成，将不同长度视频混合训练（mixed-length SFT），隐含假设模型能像跨分辨率插值一样跨时间跨度平滑泛化。</p>
 <p><strong>核心论点：时间维度空间分辨率。</strong>1024\!\!1024图像是256\!\!256图像的高分辨率<em>插值</em>，局部 patch 分布本质相同；而1分钟视频并非5秒视频的"插值"，而是<em>外推</em>——需引入新事件、因果链和叙事结构，信息量远超短片。这种不匹配导致：即使混合训练，模型在生成较长序列时会丧失短视频教师所具有的锐利局部动态，输出变得模糊、缺乏细节。</p>
 <p>本文提出<strong>Mode Seeking meets Mean Seeking</strong>训练范式，基于 Decoupled Diffusion Transformer (DDT) 将局部保真度与长程连贯性解耦：</p>
@@ -51,7 +51,6 @@ a:"$Sreact.suspense"
 <p><strong>教师-only 方法分析：</strong>CausVid 和 Self-Forcing 在短时局部保真度上成功，但缺乏长程叙事基础。AR rollout 导致误差累积；CausVid 倾向过饱和，InfinityRoPE 生成近静态内容（动态度仅0.719）。VLM 一致性极低（39.30/37.60）表明短视频教师对长上下文"盲目"。</p>
 <p><strong>本方法分析：</strong>在仅<strong>4步 NFE</strong>下，动态度（0.945）、画质（0.698）和 VLM 一致性（75.42）均为最优或次优。FM head 提供长程锚点，DM head 注入教师高保真纹理/运动先验，解耦架构有效组合两者。</p>
 <h3>消融实验</h3>
-<p>1pt</p>
 <ul>
 <li><strong>去除 DDT 双 head</strong>（单一速度预测器同时承载 mean-seeking 和 mode-seeking）：所有指标下降最大（画质 0.5298），验证梯度干扰假说；</li>
 <li><strong>去除滑动窗口 DMD</strong>：退化为纯 SFT，画质从 0.6359 降至 0.6075，局部保真度损失明显；</li>
@@ -72,7 +71,7 @@ a:"$Sreact.suspense"
 <li>长上下文编码器提供持久历史表示，添加交互/动作条件可扩展至世界模型场景（类 Genie 风格）；</li>
 <li>与 rollout 鲁棒性技术（Rolling Forcing, LongLive）和更长位置编码方案（InfinityRoPE）组合有望进一步扩展至超分钟级生成；</li>
 <li>当前评估限于30秒视频和特定基座模型，更大规模模型和更长时长的验证待开展。</li>
-</ul>0:{"buildId":"VHpQtGCoOVPlE0jB0VdLD","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Mode Seeking meets Mean Seeking for Fast Long Video Generation"}],["$","p",null,{"className":"paper-detail-authors","children":"Shengqu Cai, Weili Nie, Chao Liu, Julius Berner, Lvmin Zhang, Nanye Ma, Hansheng Chen, Maneesh Agrawala, Leonidas Guibas, Gordon Wetzstein, Arash Vahdat"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
+</ul>0:{"buildId":"OpmkQSKTx7ikZ6jIO8hLz","rsc":["$","$1","c",{"children":[["$","article",null,{"children":[["$","p",null,{"className":"paper-detail-meta","children":["LLM"," · ","Hugging Face Daily"," · ","2026-03-02"]}],["$","h1",null,{"children":"Mode Seeking meets Mean Seeking for Fast Long Video Generation"}],["$","p",null,{"className":"paper-detail-authors","children":"Shengqu Cai, Weili Nie, Chao Liu, Julius Berner, Lvmin Zhang, Nanye Ma, Hansheng Chen, Maneesh Agrawala, Leonidas Guibas, Gordon Wetzstein, Arash Vahdat"}],["$","hr",null,{"className":"divider"}],["$","section",null,{"className":"paper-detail-summary","children":[["$","h2",null,{"children":"中文摘要"}],["$","div",null,{"className":"paper-content","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],"$L3",false,"$L4","$L5","$L6"]}],null,"$L7"]}],"loading":null,"isPartial":false}
 3:null
 4:["$","div",null,{"className":"original-link","children":["$","a",null,{"href":"https://arxiv.org/abs/2602.24289","target":"_blank","rel":"noopener noreferrer","children":"查看原文 →"}]}]
 5:["$","hr",null,{"className":"divider"}]
