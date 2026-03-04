@@ -1,0 +1,23 @@
+{
+  "date": "2026-03-03",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2602.22661",
+      "title": "dLLM: Simple Diffusion Language Modeling",
+      "summary": "dLLM是首个统一扩散语言模型开发全流程的开源框架，标准化训练、推理和评估三大组件，解决领域工程碎片化问题，并提供可复现的小型DLM训练配方。",
+      "category": "Diffusion Model",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.22661"
+    },
+    {
+      "paperId": "2603.00141",
+      "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
+      "summary": "ADE-CoT提出自适应测试时缩放框架，针对图像编辑任务的特殊性，通过难度感知预算、编辑特定早期剪枝和深度优先停止三策略，在大幅减少计算量的同时保持甚至提升编辑质量。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.00141"
+    }
+  ]
+}

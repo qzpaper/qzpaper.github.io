@@ -1,0 +1,31 @@
+{
+  "paperId": "2602.23881",
+  "date": "2026-03-04",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-04",
+  "title": "LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding",
+  "authors": [
+    "Alexander Samarin",
+    "Sergei Krutikov",
+    "Anton Shevtsov",
+    "Sergei Skvortsov",
+    "Filipp Fisin",
+    "Alexander Golubev"
+  ],
+  "summaryCn": "投机解码的加速效果核心取决于草稿模型的接受率，而现有训练普遍以KL散度为代理目标。本文从理论上指出：最大化接受率严格等价于最小化TV距离，而直接优化TV距离面临梯度消失和不连续问题。针对这一矛盾，作者提出LK Losses：自适应混合目标L_LK^α将KL与TV按当前接受率动态融合，低接受率时KL主导提供平滑梯度，高接受率时TV主导直接精调；似然目标L_LK^β将接受率视为边际概率取负对数，通过1/α因子在低接受率阶段自动放大梯度。两种方法天然兼容词表截断加速方案。在EAGLE-3、MEDUSA等四种草稿架构和六个目标模型（含DeepSeek-V3）上的实验均验证了方法的一致有效性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.23881",
+  "figures": [
+    {
+      "src": "/data/papers/images/2602.23881_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2602.23881_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2602.23866",
+  "nextPaperId": "2603.00141"
+}

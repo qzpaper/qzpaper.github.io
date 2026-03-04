@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.00889",
+  "date": "2026-03-04",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-04",
+  "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+  "authors": [
+    "Xinyu Zhu",
+    "Yihao Feng",
+    "Yanchao Sun",
+    "Xianzhi Du",
+    "Pingzhi Li",
+    "Olli Saarikivi",
+    "Yun Zhu",
+    "Yu Meng"
+  ],
+  "summaryCn": "CHIMERA直面LLM推理后训练的三大数据瓶颈：缺乏详细CoT轨迹的冷启动数据、领域覆盖偏窄于数学和编码、前沿任务人工标注成本高昂。其合成流水线分三阶段：以少量学科种子为起点扩展至1179个细粒度主题，用gpt-5生成博士级难度的自包含可验证问题并经双模型共识验证，再由Qwen3-235B-Thinking重新生成详尽推理轨迹。最终数据集仅9225条，但平均问题长度211词、解答长度11121词，远超所有现有数据集。以此微调Qwen3-4B后，模型在GPQA-D、AIME24、HMMT等基准上的表现超越体量大数十倍的开源模型，证明小而精的跨学科数据对推理能力提升的高效性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.00889",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.00889_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.00889_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.00141",
+  "nextPaperId": "2603.00912"
+}

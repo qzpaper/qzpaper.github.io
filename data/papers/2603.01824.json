@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.01824",
+  "date": "2026-03-04",
+  "category": "NLP",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-04",
+  "title": "OpenAutoNLU: Open Source AutoML Library for NLU",
+  "authors": [
+    "Grigory Arshinov",
+    "Aleksandr Boriskin",
+    "Sergey Senichev",
+    "Ayaz Zaripov",
+    "Daria Galimzianova",
+    "Daniil Karpov",
+    "Leonid Sanochkin"
+  ],
+  "summaryCn": "现有AutoML框架主要面向表格数据，难以满足NLP任务在低资源设定、OOD检测和数据质量诊断方面的特殊需求。OpenAutoNLU以数据感知训练方案选择为核心创新：根据每类最小样本数自动在锚点对比学习、SetFit和全量微调之间切换，阈值经大量实验验证。系统还集成自适应数据重平衡（Augmentex或LLM增强）、四种数据质量诊断器（逐样本logit分析）、无监督OOD检测（边际Mahalanobis距离，无需OOD训练样本）及LLM数据增强模块。在Banking77等四个基准上，OpenAutoNLU是唯一在5-shot到全量数据全范围内表现一致的框架，同时在无监督OOD检测上大幅超越需要监督信号的AutoIntent，兼顾准确性与实用性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.01824",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.01824_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.01824_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.01562",
+  "nextPaperId": "2603.01940"
+}

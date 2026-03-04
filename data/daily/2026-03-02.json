@@ -6,15 +6,15 @@
     {
       "paperId": "2602.22207",
       "title": "Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets",
-      "summary": "",
-      "category": "LLM",
+      "summary": "针对多语言基准翻译质量不一致问题，提出含T-RANK等四种方法的自动化翻译流水线，将MMLU等基准翻译为8种东欧/南欧语言，系统修复语义漂移与语法错误。",
+      "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22207"
     },
     {
       "paperId": "2602.22661",
       "title": "dLLM: Simple Diffusion Language Modeling",
-      "summary": "",
+      "summary": "dLLM是统一扩散语言模型训练、推理与评估的开源框架，解决各DLM代码库分散、接口不一致、评估超参敏感导致的对比困难问题。",
       "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22661"
@@ -22,64 +22,64 @@
     {
       "paperId": "2602.24233",
       "title": "Enhancing Spatial Understanding in Image Generation via Reward Modeling",
-      "summary": "",
-      "category": "LLM",
+      "summary": "针对文本到图像生成中空间关系理解不足的问题，构建了80K对抗性偏好数据集，训练了7B专用空间奖励模型SpatialScore，并用于FLUX模型的在线强化学习微调。",
+      "category": "Image Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24233"
     },
     {
       "paperId": "2602.24286",
       "title": "CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation",
-      "summary": "",
-      "category": "LLM",
+      "summary": "CUDA Agent是首个大规模智能体强化学习系统，通过可扩展数据合成、技能增强环境和多阶段RL预热，在KernelBench上以96.8%超越率大幅超越torch.compile。",
+      "category": "Code Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24286"
     },
     {
       "paperId": "2602.24289",
       "title": "Mode Seeking meets Mean Seeking for Fast Long Video Generation",
-      "summary": "",
-      "category": "LLM",
+      "summary": "提出Mode Seeking meets Mean Seeking训练范式，通过解耦扩散Transformer的双Head分别学习分钟级叙事结构和局部高保真动态，实现快速长视频生成。",
+      "category": "Video Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24289"
     },
     {
       "paperId": "2603.00141",
       "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "",
-      "category": "LLM",
+      "summary": "ADE-CoT针对图像编辑任务提出自适应测试时缩放框架，通过难度感知预算分配、编辑特定早期剪枝和深度优先机会停止三策略提升效率。",
+      "category": "Image Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00141"
     },
     {
       "paperId": "2603.00912",
       "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
-      "summary": "",
-      "category": "LLM",
+      "summary": "VGGT-Det提出无传感器几何输入的多视角室内3D目标检测框架，通过注意力引导查询生成和查询驱动特征聚合两模块挖掘预训练VGGT的内部先验。",
+      "category": "3D Vision",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00912"
     },
     {
       "paperId": "2603.01562",
       "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
-      "summary": "",
-      "category": "LLM",
+      "summary": "RubricBench构建含1147对专家标注评分标准的偏好比较基准，揭示模型自生成标准与人类标准间存在27个百分点的巨大性能差距。",
+      "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01562"
     },
     {
       "paperId": "2603.02024",
       "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
-      "summary": "",
-      "category": "LLM",
+      "summary": "MMR-Life是首个面向真实生活场景的多模态多图推理基准，含2646题7种推理类型，最强模型GPT-5仅达58.69%，远低于人类72.28%。",
+      "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02024"
     },
     {
       "paperId": "2603.02138",
       "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
-      "summary": "",
-      "category": "LLM",
+      "summary": "OmniLottie通过Lottie Tokenizer将矢量动画JSON压缩5.3倍为命令参数序列，基于Qwen2.5-VL实现文本/图像/视频到可编辑Lottie动画的端到端生成。",
+      "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02138"
     }

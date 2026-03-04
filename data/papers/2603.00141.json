@@ -1,9 +1,9 @@
 {
   "paperId": "2603.00141",
-  "date": "2026-03-02",
-  "category": "LLM",
+  "date": "2026-03-04",
+  "category": "Image Generation",
   "source": "Hugging Face Daily",
-  "publishedDate": "2026-03-02",
+  "publishedDate": "2026-03-04",
   "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
   "authors": [
     "Xiangyan Qu",
@@ -19,10 +19,19 @@
     "Gang Xiong",
     "Yujun Cai"
   ],
-  "summaryCn": "<h2>动机与问题</h2>\n<p>Image Chain-of-Thought (Image-CoT) 是一种测试时缩放范式，通过延长推理时间来提升图像生成质量。现有 Image-CoT 方法主要针对<strong>文本到图像（T2I）生成</strong>，而图像编辑与 T2I 存在本质区别：T2I 是开放式任务，大规模采样后选最优即可；图像编辑是<strong>目标导向</strong>任务，解空间受源图像和编辑指令约束。将 T2I 的 Image-CoT 直接迁移到编辑任务时暴露三个问题：</p>\n<ul>\n<li><strong>资源分配低效</strong>：现有方法对所有编辑使用固定采样预算（如 N=32）。实验表明简单编辑（初始分数高）几乎不受益于 Image-CoT，而困难编辑（初始分数低）收益显著，固定预算在简单样例上浪费大量计算；</li>\n<li><strong>早期验证不可靠</strong>：现有剪枝方法依赖通用 MLLM 分数评估中间去噪状态，但编辑仅修改图像的细微局部区域，早期阶段难以分辨。实验显示 <strong>40\\</li>\n<li>编辑结果冗余</strong>：大规模采样产生大量正确但相同最优分数的结果。例如最优分数在 [7,9) 的编辑案例中，超过 15 个候选共享同一最优分数，而编辑任务仅需一个意图对齐的结果。</li>\n</ul>\n<h2>ADE-CoT 框架概览</h2>\n<p>针对上述问题，本文提出 <strong>ADaptive Edit-CoT (ADE-CoT)</strong>，一个按需测试时缩放框架，将关注点从<em>规模</em>转向<em>速度</em>，通过三个核心策略提升编辑效率与质量。</p>\n<p><strong>前置定义。</strong>给定源图像 I_src 和编辑指令 c，标准 Best-of-N 方法生成 N 个候选 \\I_1, , I_N\\（通过扰动噪声或重写提示），再由验证器 Vrf: I_src I c R 打分，选最高分作为输出 I^* = _I_i Vrf(I_src, I_i, c)。通用验证器为 VIE-Score（MLLM 打分）。早期剪枝在时步 t_e < T 生成中间预览并剪除低分候选。</p>\n<h2>方法详解</h2>\n<h3>难度感知资源分配</h3>\n<p>不再使用固定预算，而是根据编辑难度动态调整。先生成单个候选并用验证器评分得初始分数 S 作为难度代理，自适应预算为： N_a = N_ + (N - N_) (1 - S / S_)^ 其中 N_、N 分别为最小和原始预算，S_ 为最大可能分数， 控制灵敏度。当 S S_（简单编辑），N_a N_；当 S 0（困难编辑），N_a N。实验取 =0.15：增大 可持续降低 NFE，性能在 >0.15 后才开始下降，平衡效率与质量。</p>\n<h3>编辑特定验证（早期剪枝）</h3>\n<p>包含三个关键组件：</p>\n<p><strong>(1) 单步预览机制。</strong>基于 flow matching 训练的编辑模型，从早期时步 t_e 的含噪隐变量 x_t_e 一步估计近似干净隐变量： x_0|t_e = x_t_e - _t_e _(x_t_e, T_t_e) 解码后得到预览图 I_0|t_e，无需额外去噪步数（对比 TTS-EF 需额外步数，本方法零额外开销）。实验验证该预览能有效反映最终输出的正确性。</p>\n<p><strong>(2) 编辑特定验证器。</strong>引入两个补充通用分数 S_gen 的指标：</p>\n<p><em>编辑区域正确性</em> S_reg：编辑的主要失败模式是修改区域错误。用 MLLM 识别待编辑对象，Grounded SAM2 生成二值掩码 M \\0,1\\^H W，计算逐像素变化图 = 1C_c=1^C|I^(c) - I_src^(c)|，经像素级 softmax 归一化后在掩码区域内聚合： S_reg = _H,W M softmax_H,W() 分数越高表示变化越集中在目标区域。</p>\n<p><em>指令-描述一致性</em> S_cap：用 MLLM 基于 I_src 和指令 c 生成目标描述 c_cap，再用 CLIP 计算：S_cap = CLIPScore(I, c_cap)。</p>\n<p>统一评估分数：S = S_gen + _reg S_reg + _cap S_cap（默认 _reg=1, _cap=3），低于拒绝阈值 S_rj 的候选被剪除。关键优势：S_reg 和 S_cap 每个编辑案例仅需<strong>一次</strong> MLLM 查询，额外开销极小。使用编辑特定分数后，误判从 235 例降至 86 例（<strong>降低 63\\</p>\n<p>(3) 视觉相似度过滤。</strong>用 DINOv2 提取预览图嵌入，成对相似度超过阈值 _sim=0.9 时丢弃低分者。实验显示过滤冗余图像可降低 NFE <strong>16--24\\</p>\n<p>剩余候选按 S 降序排列，指导后续深度优先生成。</p>\n<h3>深度优先机会性停止</h3>\n<p>候选按早期分数排序后逐个顺序</strong>完成完整去噪（深度优先，非广度优先并行），找到足够意图对齐结果后立即终止：</p>\n<p><strong>后期保留过滤：</strong>在后期时步 t_l（t_e < t_l < T）生成预览并计算统一分数，自适应保留与当前最高分相当的候选，动态剪除不可能最优的样本。</p>\n<p><strong>实例特定验证器：</strong>通用分数 S_gen 常给多个候选相同高分（图1(c)），即使部分含编辑错误。本文设计两阶段问答机制：(1) 给定 I_src 和 c，MLLM 生成 5 个 yes-no 问题（覆盖指令遵循、美学等方面）；(2) MLLM 回答问题，统计 yes 数作为 S_spec。当 N_high=4 个候选全部回答 yes 后停止搜索。该验证器能发现通用分数忽略的细节错误（如\"头部是否朝前\"）。</p>\n<p><strong>混合搜索策略：</strong>早期阶段广度优先（保留高潜力候选），后期阶段深度优先（避免冗余计算）。消融实验证实此混合策略在性能-效率权衡上最优。</p>\n<h2>实验结果</h2>\n<h3>实验设置</h3>\n<p>在三个 SOTA 开源编辑模型上评估：<strong>Step1X-Edit</strong>（T=28）、<strong>FLUX.1 Kontext</strong>（T=28）、<strong>BAGEL</strong>（T=50）。三个基准：GEdit-Bench（真实用户编辑）、AnyEdit-Test（多任务）、Reason-Edit（复杂推理场景）。MLLM 使用 Qwen-VL-MAX，通用分数为 VIE-Score。</p>\n<p>效率指标：NFE（总去噪步数）；推理效率 = 1M_i=1^M _i S^(i)S_ NTNFE^(i)（_i=1 当性能不退化）；结果效率 = 1M_i=1^M _i NFE_^(i)NFE^(i)（衡量冗余度）。</p>\n<h3>与 SOTA 方法对比</h3>\n<p>对比方法：BoN、PRM、PARM、TTS-EF 及其修改版。固定预算 N=32 下的关键发现：</p>\n<ul>\n<li>ADE-CoT 在三个模型三个基准上均达到与 BoN 相当或更优的性能，同时实现 <strong>超过 2 提升</strong>。结果效率 在 GEdit-Bench / AnyEdit / Reason-Edit 上分别平均提升 4.9 / 2.7 / 2.9；</li>\n<li>具体数值（FLUX.1 Kontext, GEdit-Bench）：BoN 的 G O = 6.641，ADE-CoT 的 G O = <strong>6.695</strong>（更优），: 0.66 1.47（ 2.2），: 0.12 0.66（ 5.5）；</li>\n<li>BAGEL 上：BoN 的 G O = 6.908，ADE-CoT = <strong>6.972</strong>， 提升 1.8， 提升 4.4；</li>\n<li>Step1X-Edit 上：BoN 的 G O = 7.157，ADE-CoT = <strong>7.196</strong>， 提升 2.0， 提升 4.8；</li>\n<li>PRM 和 PARM 因通用分数误判导致性能低于 BoN；TTS-EF 效率高但性能差（仅保留单个早期最优样本不可靠）。</li>\n</ul>\n<p>缩放曲线（N=2,4,8,16,32）显示 ADE-CoT 在所有预算水平上持续以更低计算成本达到更高性能。</p>\n<h3>消融实验</h3>\n<p>逐步添加各组件，NFE 从 896 降至 <strong>418</strong>（降低 53\\</p>\n<p><strong>预览方式对比：</strong>额外去噪步数（TTS-EF 方式）NFE = 523，直接解码含噪隐变量 NFE = 790，单步预览（本方法）NFE = <strong>418</strong>，且 G O 可比。</p>\n<p><strong>最优时步：</strong>早期剪枝 t_e=8、后期保留 t_l=16 为最佳权衡（Kontext）。t_e 过小预览模糊导致剪枝不准，过大增加开销；t_l>16 后预览已高保真，性能饱和。</p>\n<p><strong>MLLM 鲁棒性：</strong>在 Qwen2.5-VL-72B、Qwen-VL-MAX、Qwen3-VL-32B 上均实现 >2 加速。更强 MLLM（Qwen3-VL）带来更高 G O 和更大效率增益（Kontext: NFE 896403，G O 6.6916.719）。</p>\n<p><strong>N_high</strong> 选择：性能在 N_high 4 后饱和，NFE 线性增加。N_high=4 在鲁棒性和效率间取得最佳平衡。</p>\n<p><strong>深度优先停止的通用性：</strong>与 BoN、PRM、PARM 组合后均可降低其 NFE 至少 10\\</p>\n<h2>局限性与未来方向</h2>\n<ul>\n<li>ADE-CoT 依赖 MLLM 验证器质量，验证器偏差直接影响剪枝和停止决策的准确性；</li>\n<li>实例特定验证器的两阶段问答增加少量 MLLM 调用开销，在极端实时场景可能受限；</li>\n<li>当前仅在静态图像编辑上验证，视频编辑等时序任务的迁移有待探索；</li>\n<li>难度估计基于单次采样的代理分数，对边界难度案例可能不够精确；</li>\n<li>未来方向包括：结合强化学习优化验证器、扩展至视频和 3D 编辑、探索更高效的搜索策略。</li>\n</ul>\n<h2>总结</h2>\n<p>ADE-CoT 提出三个互补策略解决 Image-CoT 在图像编辑中的效率瓶颈：难度感知资源分配避免简单任务浪费、编辑特定验证提高早期剪枝准确性（误判降低 63\\</p>",
+  "summaryCn": "将测试时缩放（Image-CoT）迁移至图像编辑任务时暴露出三个痛点：固定采样预算在简单编辑上浪费算力，通用MLLM分数在早期去噪阶段无法可靠区分编辑质量，以及大规模采样导致结果冗余。ADE-CoT通过三个协同策略应对：首先根据初始候选分数动态调整采样预算，简单编辑少采样，困难编辑多采样；其次设计编辑特定验证器，融合编辑区域正确性（Grounded SAM2定位变化区域）和指令-描述一致性（CLIP评分），并辅以DINOv2视觉相似性过滤冗余候选；最后采用深度优先的机会性停止策略，逐个生成候选并在满足条件时提前终止。在三个SOTA编辑模型和多个基准上的实验表明，ADE-CoT在保持编辑正确性的同时显著降低推理开销。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.00141",
-  "figures": [],
-  "prevPaperId": "2602.24289",
-  "nextPaperId": "2603.00912"
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.00141_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.00141_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2602.23881",
+  "nextPaperId": "2603.00889"
 }
