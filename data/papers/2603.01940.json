@@ -1,9 +1,9 @@
 {
   "paperId": "2603.01940",
-  "date": "2026-03-04",
-  "category": "Agent",
+  "date": "2026-03-03",
+  "category": "LLM",
   "source": "Hugging Face Daily",
-  "publishedDate": "2026-03-04",
+  "publishedDate": "2026-03-03",
   "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
   "authors": [
     "Jinpeng Chen",
@@ -19,7 +19,7 @@
     "Dandan Tu",
     "Rui Liu"
   ],
-  "summaryCn": "多轮交互式工具使用智能体需理解模糊用户指令并通过对话澄清后转化为精确API调用，训练数据获取是核心瓶颈。现有LLM合成方法存在可解性无法保证、复杂样本缺乏、验证存在幻觉等根本缺陷。CoVe提出基于显式约束的合成框架，约束扮演双重角色：引导生成复杂轨迹，同时作为确定性验证器。框架分四阶段：约束采样从沙盒数据库随机采样确定性约束集，逻辑上保证任务可解性；约束模糊化将精确标识符（订单号、商品ID等）映射为模糊自然语言描述（如用订单中物品子集描述订单），迫使智能体推理和查询数据库；轨迹生成阶段用户模拟器LLM根据模糊约束与智能体进行多轮自然对话，渐进揭示需求；轨迹验证使用基于规则的确定性验证器对照原始约束检查结果是否达成，评估约束满足率和冗余操作数，消除LLM幻觉评估风险。该框架同时支持SFT（保留满分轨迹）和RL训练（验证器直接提供奖励信号）。基于Qwen3-4B在^2-bench的Airline和Retail域实验中，CoVe训练的智能体在pass@k指标上显著超越基线，证明了约束引导合成范式在工具使用智能体训练中的有效性。",
+  "summaryCn": "",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.01940",
   "figures": [

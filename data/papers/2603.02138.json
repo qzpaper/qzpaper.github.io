@@ -1,9 +1,9 @@
 {
   "paperId": "2603.02138",
-  "date": "2026-03-04",
-  "category": "Multimodal",
+  "date": "2026-03-03",
+  "category": "LLM",
   "source": "Hugging Face Daily",
-  "publishedDate": "2026-03-04",
+  "publishedDate": "2026-03-03",
   "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
   "authors": [
     "Yiying Yang",
@@ -15,7 +15,7 @@
     "Gang Yu",
     "Xingjun Ma"
   ],
-  "summaryCn": "矢量动画因轻量可编辑的优势广泛应用于UI/UX设计，但现有生成方法依赖参考运动先验或手工设计静态图形，无法实现端到端生成。直接用LLM生成Lottie JSON效率极低，现有模型成功率仅0-12.7%。OmniLottie提出系统性解决方案：核心是Lottie Tokenizer，将层级化JSON通过基于偏移的离散化方案转换为紧凑命令-参数序列，不同参数类型占据互不重叠的词表区间，整个过程完全可逆。压缩路径从原始JSON平均2,562 tokens经结构重组到884 tokens再到最终486 tokens，实现5.3倍压缩、序列长度减少81%。以Qwen2.5-VL为骨干扩展Lottie专属词表，支持文本描述、图文、视频三种多模态指令输入模式。为解决训练数据匮乏，构建MMLottie-2M数据集：从五大平台收集120万Lottie文件，将静态SVG施加随机动画效果生成80万额外样本，并通过运动库增强缩小路径分布差距；使用Qwen2.5-VL以粗到精策略生成配对文本标注。评估协议MMLottie-Bench包含专业设计师作品和合成子集，从视觉质量（FVD）、语义对齐（CLIP）等多维度评估，OmniLottie在生成成功率和语义对齐上全面超越GPT-5、DeepSeek等现有方法。",
+  "summaryCn": "",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.02138",
   "figures": [

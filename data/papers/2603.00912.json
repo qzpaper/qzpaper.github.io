@@ -1,9 +1,9 @@
 {
   "paperId": "2603.00912",
-  "date": "2026-03-04",
-  "category": "3D Vision",
+  "date": "2026-03-03",
+  "category": "LLM",
   "source": "Hugging Face Daily",
-  "publishedDate": "2026-03-04",
+  "publishedDate": "2026-03-03",
   "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
   "authors": [
     "Yang Cao",
@@ -13,7 +13,7 @@
     "Lanqing Hong",
     "Dan Xu"
   ],
-  "summaryCn": "多视角室内3D目标检测传统上严重依赖精确相机位姿或深度图等传感器几何输入，严重限制实际部署。VGGT-Det提出更实际的无传感器几何设置，仅从无位姿的2D图像进行3D检测。核心洞察是预训练VGGT编码器的内部表示蕴含丰富的语义和几何先验，但简单消费其预测输出效果有限。为此设计两个关键组件：注意力引导查询生成（AG）观察到VGGT注意力图与语义内容高度相关，通过融合注意力权重与空间多样性的优先级公式迭代采样查询点，使object query集中于前景物体区域而非均匀分布于背景；查询驱动特征聚合（QD）引入可学习的See-Query，与object query交互后通过MLP生成各层特征的动态融合权重，充分利用VGGT逐层从2D到3D渐进编码的多层级几何信息。整体采用编码器-解码器Transformer架构，VGGT编码器冻结，解码器通过L层迭代精炼实现检测。在ScanNet和ARKitScenes基准上，VGGT-Det在无传感器几何设置下显著超越依赖传感器输入的ImVoxelNet、NeRF-Det和MVSDet等方法，证明了从预训练视觉模型内部先验中挖掘3D信息的有效性。",
+  "summaryCn": "",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.00912",
   "figures": [
@@ -27,5 +27,5 @@
     }
   ],
   "prevPaperId": "2603.00889",
-  "nextPaperId": "2603.01562"
+  "nextPaperId": "2603.01493"
 }

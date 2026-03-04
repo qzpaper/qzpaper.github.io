@@ -1,9 +1,9 @@
 {
   "paperId": "2603.01562",
-  "date": "2026-03-04",
-  "category": "Evaluation",
+  "date": "2026-03-03",
+  "category": "LLM",
   "source": "Hugging Face Daily",
-  "publishedDate": "2026-03-04",
+  "publishedDate": "2026-03-03",
   "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
   "authors": [
     "Qiyuan Zhang",
@@ -18,7 +18,7 @@
     "Xue Liu",
     "Chen Ma"
   ],
-  "summaryCn": "奖励模型评估正向rubric引导范式转变，但社区缺乏统一基准衡量模型生成rubric与理想评估标准的差距。RubricBench包含1,147个成对比较，每个样本配有专家标注的原子化rubric，覆盖Chat、Safety、Reasoning等多个领域。基准构建遵循三大原则：优先选择表面线索与实际质量矛盾的判别性样本、rubric仅从指令推导而不接触候选回复、rubric表述为独立的二值约束支持粒度诊断。构建流程包含多维数据过滤（输入复杂度、输出表面偏差、过程失败三维度）、双独立标注后专家合成的标注协议，以及三阶段质量控制。实验设计三种对照条件：无显式推理的Vanilla评估、模型自生成rubric引导评估、以及人类标注rubric引导评估。结果揭示显著的性能层次：标量和生成RM难以稳定超越随机（44-50%）；自生成rubric最优方法约58%；注入人类rubric后跃升至85%，形成高达27个百分点的巨大差距。这一差距量化了rubric质量本身作为评估瓶颈的关键作用，并揭示现有方法在Safety域和隐式约束推理上的系统性失败，为rubric引导评估研究提供了重要方向指引。",
+  "summaryCn": "",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.01562",
   "figures": [
@@ -31,6 +31,6 @@
       "caption": ""
     }
   ],
-  "prevPaperId": "2603.00912",
+  "prevPaperId": "2603.01493",
   "nextPaperId": "2603.01824"
 }

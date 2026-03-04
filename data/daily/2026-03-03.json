@@ -6,18 +6,98 @@
     {
       "paperId": "2602.22661",
       "title": "dLLM: Simple Diffusion Language Modeling",
-      "summary": "dLLM是首个统一扩散语言模型开发全流程的开源框架，标准化训练、推理和评估三大组件，解决了当前DLM生态中工程碎片化、评估不一致等核心问题。",
-      "category": "Diffusion Model",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22661"
     },
     {
+      "paperId": "2602.23866",
+      "title": "SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2602.23866"
+    },
+    {
       "paperId": "2603.00141",
       "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "ADE-CoT针对图像编辑任务提出自适应测试时缩放框架，通过难度感知预算分配、编辑特定早期剪枝和深度优先机会性停止三策略，在保持质量的同时大幅提升推理效率。",
-      "category": "Image Generation",
+      "summary": "",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00141"
+    },
+    {
+      "paperId": "2603.00610",
+      "title": "CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.00610"
+    },
+    {
+      "paperId": "2603.00889",
+      "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.00889"
+    },
+    {
+      "paperId": "2603.00912",
+      "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.00912"
+    },
+    {
+      "paperId": "2603.01493",
+      "title": "PhotoBench: Beyond Visual Matching Towards Personalized Intent-Driven Photo Retrieval",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.01493"
+    },
+    {
+      "paperId": "2603.01562",
+      "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.01562"
+    },
+    {
+      "paperId": "2603.01824",
+      "title": "OpenAutoNLU: Open Source AutoML Library for NLU",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.01824"
+    },
+    {
+      "paperId": "2603.01940",
+      "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.01940"
+    },
+    {
+      "paperId": "2603.02024",
+      "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02024"
+    },
+    {
+      "paperId": "2603.02138",
+      "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02138"
     }
   ]
 }

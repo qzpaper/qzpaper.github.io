@@ -1,0 +1,37 @@
+{
+  "paperId": "2603.00610",
+  "date": "2026-03-03",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-03",
+  "title": "CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction",
+  "authors": [
+    "Yinghao Ma",
+    "Haiwen Xia",
+    "Hewei Gao",
+    "Weixiong Chen",
+    "Yuxin Ye",
+    "Yuchen Yang",
+    "Sungkyun Chang",
+    "Mingshuo Ding",
+    "Yizhi Li",
+    "Ruibin Yuan",
+    "Simon Dixon",
+    "Emmanouil Benetos"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.00610",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.00610_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.00610_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.00141",
+  "nextPaperId": "2603.00889"
+}
