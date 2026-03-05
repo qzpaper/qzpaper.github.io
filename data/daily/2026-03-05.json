@@ -1,0 +1,31 @@
+{
+  "date": "2026-03-05",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.03975",
+      "title": "Phi-4-reasoning-vision-15B Technical Report",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03975"
+    },
+    {
+      "paperId": "2603.04338",
+      "title": "ArtHOI: Articulated Human-Object Interaction Synthesis by 4D Reconstruction from Video Priors",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04338"
+    },
+    {
+      "paperId": "2603.04379",
+      "title": "Helios: Real Real-Time Long Video Generation Model",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04379"
+    }
+  ]
+}

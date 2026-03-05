@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.04338",
+  "date": "2026-03-05",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-05",
+  "title": "ArtHOI: Articulated Human-Object Interaction Synthesis by 4D Reconstruction from Video Priors",
+  "authors": [
+    "Zihao Huang",
+    "Tianqi Liu",
+    "Zhaoxi Chen",
+    "Shaocong Xu",
+    "Saining Zhang",
+    "Lixing Xiao",
+    "Zhiguo Cao",
+    "Wei Li",
+    "Hao Zhao",
+    "Ziwei Liu"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04338",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04338_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04338_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.03975",
+  "nextPaperId": "2603.04379"
+}

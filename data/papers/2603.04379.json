@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.04379",
+  "date": "2026-03-05",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-05",
+  "title": "Helios: Real Real-Time Long Video Generation Model",
+  "authors": [
+    "Shenghai Yuan",
+    "Yuanyang Yin",
+    "Zongjian Li",
+    "Xinwei Huang",
+    "Xiao Yang",
+    "Li Yuan"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04379",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04379_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04379_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.04338",
+  "nextPaperId": null
+}
