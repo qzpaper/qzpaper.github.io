@@ -4,6 +4,14 @@
   "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
   "papers": [
     {
+      "paperId": "2603.02482",
+      "title": "MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02482"
+    },
+    {
       "paperId": "2603.02604",
       "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
       "summary": "",
@@ -28,12 +36,12 @@
       "originalUrl": "https://arxiv.org/abs/2603.03447"
     },
     {
-      "paperId": "2603.03823",
-      "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+      "paperId": "2603.03790",
+      "title": "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning",
       "summary": "",
       "category": "LLM",
       "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.03823"
+      "originalUrl": "https://arxiv.org/abs/2603.03790"
     },
     {
       "paperId": "2603.03975",
@@ -42,6 +50,14 @@
       "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.03975"
+    },
+    {
+      "paperId": "2603.04257",
+      "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04257"
     },
     {
       "paperId": "2603.04338",

@@ -1,0 +1,29 @@
+{
+  "paperId": "2603.04257",
+  "date": "2026-03-05",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-05",
+  "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
+  "authors": [
+    "Zhenting Wang",
+    "Huancheng Chen",
+    "Jiayun Wang",
+    "Wei Wei"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04257",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04257_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04257_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.03975",
+  "nextPaperId": "2603.04338"
+}

@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.02482",
+  "date": "2026-03-05",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-05",
+  "title": "MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models",
+  "authors": [
+    "Zhongxi Wang",
+    "Yueqian Lin",
+    "Jingyang Zhang",
+    "Hai Helen Li",
+    "Yiran Chen"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.02482",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.02482_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.02482_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.02604"
+}
