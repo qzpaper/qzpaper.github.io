@@ -1,0 +1,34 @@
+{
+  "paperId": "2603.03447",
+  "date": "2026-03-05",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-05",
+  "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
+  "authors": [
+    "Weicai Yan",
+    "Yuhong Dai",
+    "Qi Ran",
+    "Haodong Li",
+    "Wang Lin",
+    "Hao Liao",
+    "Xing Xie",
+    "Tao Jin",
+    "Jianxun Lian"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.03447",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.03447_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.03447_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.03379",
+  "nextPaperId": "2603.03823"
+}

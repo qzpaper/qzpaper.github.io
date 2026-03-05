@@ -4,6 +4,38 @@
   "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
   "papers": [
     {
+      "paperId": "2603.02604",
+      "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02604"
+    },
+    {
+      "paperId": "2603.03379",
+      "title": "MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03379"
+    },
+    {
+      "paperId": "2603.03447",
+      "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03447"
+    },
+    {
+      "paperId": "2603.03823",
+      "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+      "summary": "",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03823"
+    },
+    {
       "paperId": "2603.03975",
       "title": "Phi-4-reasoning-vision-15B Technical Report",
       "summary": "",
