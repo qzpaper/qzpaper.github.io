@@ -1,0 +1,42 @@
+{
+  "paperId": "2603.04304",
+  "date": "2026-03-05",
+  "category": "Other",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-05",
+  "title": "$V_1$: Unifying Generation and Self-Verification for Parallel Reasoners",
+  "authors": [
+    "Harman Singh",
+    "Xiuyu Li",
+    "Kusha Sareen",
+    "Monishwaran Maheswaran",
+    "Sijun Tan",
+    "Xiaoxia Wu",
+    "Junxiong Wang",
+    "Alpay Ariyak",
+    "Qingyang Wu",
+    "Samir Khaki",
+    "Rishabh Tiwari",
+    "Long Lian",
+    "Yucheng Lu",
+    "Boyi Li",
+    "Alane Suhr",
+    "Ben Athiwaratkun",
+    "Kurt Keutzer"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04304",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04304_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04304_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.04291",
+  "nextPaperId": "2603.04338"
+}

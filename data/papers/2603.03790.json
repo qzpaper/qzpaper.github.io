@@ -1,7 +1,7 @@
 {
   "paperId": "2603.03790",
   "date": "2026-03-05",
-  "category": "Other",
+  "category": "Evaluation",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-05",
   "title": "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning",
@@ -22,7 +22,7 @@
     "Helen Li",
     "Yiran Chen"
   ],
-  "summaryCn": "",
+  "summaryCn": "文本处理是大语言模型落地应用的核心能力，但现有模型在长上下文场景下表现仍不稳定。本文提出Structure of Thought（SoT）提示策略，受人类认知启发，引导模型在回答前将文本显式结构化为节点与链接的JSON图，再基于结构进行推理。实验表明，SoT在多模型、多任务上一致优于Chain-of-Thought和直接回答，平均提升超5%。与此同时，作者构建了T2S-Bench基准，涵盖1.8K样本、6个科学领域、32种结构类型，通过多跳推理（MR）和端到端结构提取（E2E）两条评估路径，全面衡量模型的文本结构化能力。基准测评45个主流模型，Gemini-2.5-Pro以81.4%的多选精度领先，但所有模型在节点语义提取上普遍不超过60%，揭示了当前LLM在结构化理解上的显著短板。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.03790",
   "figures": [

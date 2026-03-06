@@ -1,7 +1,7 @@
 {
   "paperId": "2603.04257",
   "date": "2026-03-05",
-  "category": "Other",
+  "category": "Agent",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-05",
   "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
@@ -11,7 +11,7 @@
     "Jiayun Wang",
     "Wei Wei"
   ],
-  "summaryCn": "",
+  "summaryCn": "长时序任务是LLM智能体面临的核心挑战——随着工具调用与推理步骤累积，上下文窗口很快耗尽，而截断或语义检索等传统方案均存在信息失真或检索歧义的问题。Memex借鉴人类记忆机制，将索引化摘要保留于工作上下文，将完整内容归档于外部键值存储。智能体通过CompressExperience将长轨迹压缩为紧凑索引，通过ReadExperience按需精确恢复任意历史内容，如同在脑中保留检索线索、在笔记本中保存完整证据。更进一步，Memex(RL)将记忆操作纳入统一动作空间，设计融合任务成功与上下文溢出、冗余调用、格式错误惩罚的复合奖励，通过GRPO强化学习端到端优化压缩时机与索引质量。实验表明，该方法在多个长时序基准上显著超越基线，展示了可扩展的智能体记忆管理新范式。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.04257",
   "figures": [
@@ -25,5 +25,5 @@
     }
   ],
   "prevPaperId": "2603.03975",
-  "nextPaperId": "2603.04338"
+  "nextPaperId": "2603.04291"
 }
