@@ -1,0 +1,30 @@
+{
+  "paperId": "2602.23229",
+  "date": "2026-03-06",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-06",
+  "title": "Large Multimodal Models as General In-Context Classifiers",
+  "authors": [
+    "Marco Garosi",
+    "Matteo Farina",
+    "Alessandro Conti",
+    "Massimiliano Mancini",
+    "Elisa Ricci"
+  ],
+  "summaryCn": "长期以来，CLIP等对比式视觉语言模型在图像分类任务中被视为标准范式，而大型多模态模型（LMM）则被认为在判别式任务上存在天然劣势。本文对这一固有认知发起挑战，核心论点是LMM并非能力不足，而是缺乏正确的条件化方式。通过系统性引入In-Context Learning视角，作者发现仅需少量标注样例作为上下文，LMM即可从零样本下的落后状态迅速追上甚至超越基于缓存的VLM适配方法。在开放世界分类场景中，LMM的生成式本质更具优势，但朴素伪标签方法因噪声累积反而拖累性能。为此，作者提出CIRCLE方法，通过leave-one-out式迭代上下文精炼，让上下文样例互相作为彼此的参照，递归修正伪标签质量，无需任何外部监督即可捕获样例间的语义依赖，在多个数据集上显著超越现有开放世界分类基线。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.23229",
+  "figures": [
+    {
+      "src": "/data/papers/images/2602.23229_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2602.23229_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2602.23166",
+  "nextPaperId": "2603.00466"
+}

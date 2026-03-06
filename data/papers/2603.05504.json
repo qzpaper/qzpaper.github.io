@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.05504",
+  "date": "2026-03-06",
+  "category": "Other",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-06",
+  "title": "RoboPocket: Improve Robot Policies Instantly with Your Phone",
+  "authors": [
+    "Junjie Fang",
+    "Wendi Chen",
+    "Han Xue",
+    "Fangyuan Zhou",
+    "Tian Le",
+    "Yi Wang",
+    "Yuting Zhang",
+    "Jun Lv",
+    "Chuan Wen",
+    "Cewu Lu"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.05504",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.05504_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.05504_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.04800",
+  "nextPaperId": null
+}

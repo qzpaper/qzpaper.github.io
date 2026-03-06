@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.04800",
+  "date": "2026-03-06",
+  "category": "Other",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-06",
+  "title": "MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models",
+  "authors": [
+    "Lulu Hu",
+    "Wenhu Xiao",
+    "Xin Chen",
+    "Xinhua Xu",
+    "Bowen Xu",
+    "Kun Li",
+    "Yongliang Tao"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04800",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04800_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04800_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.04743",
+  "nextPaperId": "2603.05504"
+}

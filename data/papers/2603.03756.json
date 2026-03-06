@@ -1,0 +1,27 @@
+{
+  "paperId": "2603.03756",
+  "date": "2026-03-06",
+  "category": "Other",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-06",
+  "title": "MOOSE-Star: Unlocking Tractable Training for Scientific Discovery by Breaking the Complexity Barrier",
+  "authors": [
+    "Zonglin Yang",
+    "Lidong Bing"
+  ],
+  "summaryCn": "",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.03756",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.03756_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.03756_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.02210",
+  "nextPaperId": "2603.04448"
+}
