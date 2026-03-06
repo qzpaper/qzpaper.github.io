@@ -7,15 +7,15 @@
       "paperId": "2603.02482",
       "title": "MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models",
       "summary": "",
-      "category": "LLM",
+      "category": "Other",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02482"
     },
     {
       "paperId": "2603.02604",
       "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
-      "summary": "",
-      "category": "LLM",
+      "summary": "HACRL提出异构智能体协作强化学习框架，通过共享rollout实现多智能体双向知识传递，解决RLVR采样效率低与异构生态利用不足的问题。核心算法HACPO引入能力感知优势估计、指数重要性采样等机制保障跨智能体学习稳定性。",
+      "category": "Reinforcement Learning",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02604"
     },
@@ -23,7 +23,7 @@
       "paperId": "2603.03379",
       "title": "MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning",
       "summary": "",
-      "category": "LLM",
+      "category": "Other",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.03379"
     },
@@ -31,7 +31,7 @@
       "paperId": "2603.03447",
       "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
       "summary": "",
-      "category": "LLM",
+      "category": "Other",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.03447"
     },
@@ -39,15 +39,15 @@
       "paperId": "2603.03790",
       "title": "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning",
       "summary": "",
-      "category": "LLM",
+      "category": "Other",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.03790"
     },
     {
       "paperId": "2603.03975",
       "title": "Phi-4-reasoning-vision-15B Technical Report",
-      "summary": "",
-      "category": "LLM",
+      "summary": "Phi-4-reasoning-vision-15B是一个15B参数的紧凑多模态推理模型，采用中融合架构与动态分辨率编码器，仅用约200B token训练，在数学科学推理和UI理解任务上表现突出，推进了准确率与推理成本的Pareto前沿。",
+      "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.03975"
     },
@@ -55,23 +55,23 @@
       "paperId": "2603.04257",
       "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
       "summary": "",
-      "category": "LLM",
+      "category": "Other",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.04257"
     },
     {
       "paperId": "2603.04338",
       "title": "ArtHOI: Articulated Human-Object Interaction Synthesis by 4D Reconstruction from Video Priors",
-      "summary": "",
-      "category": "LLM",
+      "summary": "ArtHOI是首个零样本铰接式人-物交互合成框架，将交互合成重新表述为4D重建问题。通过光流分割和两阶段解耦优化，实现物理合理的铰接物体（门、抽屉等）交互生成。",
+      "category": "3D Vision",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.04338"
     },
     {
       "paperId": "2603.04379",
       "title": "Helios: Real Real-Time Long Video Generation Model",
-      "summary": "",
-      "category": "LLM",
+      "summary": "Helios是首个在单张H100上达19.5 FPS的14B视频生成模型，支持分钟级长视频生成。通过相对RoPE、历史注入和多尺度压缩解决漂移与效率问题，同时无需KV缓存或量化加速。",
+      "category": "Video Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.04379"
     }

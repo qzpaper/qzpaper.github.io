@@ -1,7 +1,7 @@
 {
   "paperId": "2603.02604",
   "date": "2026-03-05",
-  "category": "LLM",
+  "category": "Reinforcement Learning",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-05",
   "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
@@ -17,7 +17,7 @@
     "Jianxin Li",
     "Yikun Ban"
   ],
-  "summaryCn": "",
+  "summaryCn": "当前基于可验证奖励的强化学习（RLVR）在训练推理模型时面临两大痛点：昂贵的在策略采样开销限制了可扩展性，而现实中多个异构智能体各自独立训练、大量中间rollout仅供自用，造成严重浪费。HACRL框架正是为解决这一问题而生——它让异构智能体在独立执行推理的同时，共享彼此生成的轨迹数据，实现协作优化。与多智能体强化学习（MARL）不同，HACRL推理时只需单个智能体，无需协调部署；与知识蒸馏不同，它支持双向互学而非单向传递。核心算法HACPO在标准RL基础上引入四项关键创新：能力感知优势估计通过滑动窗口估计各智能体相对能力并重加权跨智能体奖励；模型能力差异系数同时承担基线校准与梯度调制双重角色；指数重要性采样配合非对称裁剪，将跨智能体重要性比上界限定为1.0，防止分布严重偏移；逐步裁剪则随mini-batch迭代收紧约束，抑制策略漂移累积。理论上，HACPO的混合基线被证明是无偏估计，跨智能体梯度与同构目标方向正相关，从而保障了学习信号的有效性与稳定性。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.02604",
   "figures": [

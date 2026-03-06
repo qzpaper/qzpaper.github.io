@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.04743",
+  "date": "2026-03-06",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-06",
+  "title": "DARE: Aligning LLM Agents with the R Statistical Ecosystem via Distribution-Aware Retrieval",
+  "authors": [
+    "Maojun Sun",
+    "Yue Wu",
+    "Yifei Xie",
+    "Ruijian Han",
+    "Binyan Jiang",
+    "Defeng Sun",
+    "Yancheng Yuan",
+    "Jian Huang"
+  ],
+  "summaryCn": "现有LLM智能体在数据科学领域严重偏向Python生态，对CRAN上数千个高质量R统计包视而不见。传统RAG方案仅依赖查询与文档的语义相似度，无法区分统计上不兼容但语义相近的函数，导致检索错误蔓延至代码生成。为此，本文提出DARE——一个仅23M参数的轻量级分布感知检索模型。其核心思想是将数据分布画像（包含模态、分布假设、维度等结构化属性）与自然语言文档拼接后联合编码，通过InfoNCE对比学习训练双编码器，使模型同时理解统计语义与数据兼容性约束。作者还构建了覆盖8,191个R函数的知识库RPKB，并设计了端到端的RCodingAgent。实验表明，DARE在NDCG@10上达到93.47%，集成后智能体在16个统计分析任务上的成功率大幅提升，为R语言统计生态与LLM的对齐提供了有效路径。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04743",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04743_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04743_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.02210",
+  "nextPaperId": "2603.04892"
+}
