@@ -6,15 +6,15 @@
     {
       "paperId": "2602.23866",
       "title": "SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale",
-      "summary": "SWE-rebench V2 提出语言无关的自动化管线，从GitHub PR历史挖掘可执行软件工程任务，发布32,000+容器化多语言训练环境，支持强化学习训练SWE智能体。",
-      "category": "Code Generation",
+      "summary": "SWE-rebench V2是一个语言无关的自动化管线，从GitHub PR历史中构建32,000+可执行SWE任务，跨20种语言，专为强化学习训练设计。",
+      "category": "Agent",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.23866"
     },
     {
       "paperId": "2603.00141",
       "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "ADE-CoT针对图像编辑的测试时缩放提出自适应框架，通过难度感知资源分配、编辑特定早期剪枝和深度优先机会性停止，在降低计算成本的同时提升编辑质量。",
+      "summary": "ADE-CoT提出自适应测试时缩放框架用于图像编辑，通过难度感知资源分配、编辑特定早期剪枝和深度优先停止三策略，在保持质量的同时大幅降低计算开销。",
       "category": "Image Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00141"
@@ -22,7 +22,7 @@
     {
       "paperId": "2603.00610",
       "title": "CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction",
-      "summary": "CMI-RewardBench提出首个评估组合多模态指令对齐的音乐奖励模型基准，包含110k伪标注和4,027人工标注偏好对，并设计30M参数的高效奖励模型CMI-RM。",
+      "summary": "CMI-RewardBench是首个针对组合多模态指令的音乐奖励模型评测基准，涵盖文本、歌词和参考音频等多种输入条件。同时提出30M参数的CMI-RM奖励模型，在musicality和对齐评估上超越现有方法。",
       "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00610"
@@ -30,15 +30,15 @@
     {
       "paperId": "2603.00889",
       "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
-      "summary": "CHIMERA是仅含9K样本的紧凑合成推理数据集，覆盖8大学科1179个主题，平均解题轨迹达11121词，用于训练4B模型在GPQA-Diamond等挑战性基准上媲美671B大模型。",
-      "category": "Training",
+      "summary": "CHIMERA是一个仅含9K样本的紧凑合成推理数据集，覆盖8大学科1179个主题，平均解题轨迹长达11121词。用其对4B模型进行SFT+RL后训练，性能接近671B大模型。",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00889"
     },
     {
       "paperId": "2603.00912",
       "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
-      "summary": "VGGT-Det首次提出无传感器几何输入的多视图室内3D目标检测设定，通过挖掘VGGT编码器的注意力语义先验和动态多层级几何特征聚合，在ScanNet和ARKitScenes上分别提升4.4和8.6 mAP。",
+      "summary": "VGGT-Det提出无传感器几何输入的多视图室内3D目标检测框架，挖掘VGGT编码器内部语义和几何先验，在ScanNet和ARKitScenes上分别超越最强方法4.4和8.6 mAP@0.25。",
       "category": "3D Vision",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00912"
@@ -46,7 +46,7 @@
     {
       "paperId": "2603.01562",
       "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
-      "summary": "RubricBench提出1147对成对比较基准，每对配有人工标注的原子化评分标准，专门针对具有欺骗性表面偏差的困难样本，揭示当前模型自生成标准与人类标准之间高达27点的巨大差距。",
+      "summary": "RubricBench是一个包含1147对成对比较的评估基准，通过人工标注的原子化评分标准（rubric）来衡量LLM生成评分标准与人类标准的差距，专注于具有欺骗性表面偏差的高难样本。实验发现，使用人工标注rubric可将裁判模型准确率提升约25-28个百分点，揭示了当前模型在自动生成评分标准方面的显著瓶颈。",
       "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01562"
@@ -54,7 +54,7 @@
     {
       "paperId": "2603.01824",
       "title": "OpenAutoNLU: Open Source AutoML Library for NLU",
-      "summary": "OpenAutoNLU是面向NLU任务的开源AutoML库，根据每类样本数自动选择全量微调、SetFit或少样本方法，集成数据质量诊断、OOD检测和LLM增强，在多个基准上达到最优性能效率比。",
+      "summary": "OpenAutoNLU是面向文本分类与NER的开源AutoML库，根据数据量自动选择训练策略，支持数据质量诊断、OOD检测和LLM增强，以低代码API实现生产级部署。",
       "category": "NLP",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01824"
@@ -62,7 +62,7 @@
     {
       "paperId": "2603.01940",
       "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
-      "summary": "CoVe提出约束引导验证框架合成高质量多轮工具使用智能体训练数据，显式约束同时驱动复杂轨迹生成和确定性验证，支持SFT和RL两种训练范式，在τ²-bench上取得显著提升。",
+      "summary": "CoVe是一个通过显式约束引导数据合成的多轮工具调用智能体训练框架，约束同时用于生成复杂轨迹和确定性验证，支持SFT和RL两种训练范式。",
       "category": "Agent",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01940"
@@ -70,7 +70,7 @@
     {
       "paperId": "2603.02024",
       "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
-      "summary": "MMR-Life提出首个真实生活场景多模态多图推理基准，包含2646道题涵盖7种推理类型，最强模型GPT-5仅达58.69%而人类达72.28%，空间推理是所有模型的共同短板。",
+      "summary": "MMR-Life是首个面向真实生活场景的多模态多图推理基准，含2646题、19108张真实图像，覆盖7种推理类型。最强模型GPT-5仅达58.69%，远低于人类72.28%，揭示当前模型在日常推理上的显著不足。",
       "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02024"
@@ -78,7 +78,7 @@
     {
       "paperId": "2603.02138",
       "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
-      "summary": "OmniLottie提出首个端到端多模态矢量动画生成框架，设计Lottie Tokenizer将JSON压缩为紧凑命令序列，扩展VLM词表后支持文本、图文、视频三种输入，实现5.3倍token压缩。",
+      "summary": "OmniLottie是首个端到端多模态矢量动画生成框架，通过参数化Lottie Tokenizer将JSON压缩5.3倍，支持文本、图文、视频多模态输入生成高质量矢量动画。同时构建了首个百万级Lottie数据集MMLottie-2M。",
       "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02138"

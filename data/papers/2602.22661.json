@@ -1,9 +1,9 @@
 {
   "paperId": "2602.22661",
-  "date": "2026-03-03",
+  "date": "2026-03-02",
   "category": "LLM",
   "source": "Hugging Face Daily",
-  "publishedDate": "2026-03-03",
+  "publishedDate": "2026-03-02",
   "title": "dLLM: Simple Diffusion Language Modeling",
   "authors": [
     "Zhanhui Zhou",
@@ -11,7 +11,7 @@
     "Hanghang Tong",
     "Dawn Song"
   ],
-  "summaryCn": "",
+  "summaryCn": "扩散语言模型作为自回归模型的替代方案，近年来吸引了越来越多的研究关注。然而，LLaDA、Dream等开源模型各自维护独立的临时代码库，训练逻辑与架构高度耦合，推理接口不统一，评估配置千差万别，使得复现与横向对比极为困难。dLLM正是为解决这一痛点而生。它围绕三个核心组件构建统一开发流水线：Trainer模块将扩散建模逻辑与模型架构彻底解耦，仅需一行代码即可在MDLM与BD3LM目标间切换，并深度集成HuggingFace生态，支持FSDP分布式训练与LoRA高效微调；Sampler模块引入轻量抽象接口，让Fast-dLLM等加速算法可作为标准采样器的直接替换；Evaluation模块则扩展lm-evaluation-harness，逐模型匹配官方解码设置，解决了DLM对温度、CFG等超参极度敏感所带来的评估失真问题。基于这一框架，作者还探索了对LLaDA和Dream进行推理能力微调的开放配方，验证了框架在实际研究中的实用价值。",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2602.22661",
   "figures": [
@@ -24,6 +24,6 @@
       "caption": ""
     }
   ],
-  "prevPaperId": null,
-  "nextPaperId": "2602.23866"
+  "prevPaperId": "2602.22207",
+  "nextPaperId": "2602.24233"
 }

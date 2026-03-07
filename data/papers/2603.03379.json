@@ -1,7 +1,7 @@
 {
   "paperId": "2603.03379",
   "date": "2026-03-05",
-  "category": "Other",
+  "category": "Agent",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-05",
   "title": "MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning",
@@ -13,7 +13,7 @@
     "Yiruo Cheng",
     "Ji-Rong Wen"
   ],
-  "summaryCn": "",
+  "summaryCn": "在长时程任务中，如何从海量交互历史中精准检索相关记忆，始终是大模型应用的核心难题。MemSifter提出了一种新颖的解耦架构：将记忆检索任务完全交由一个仅4B参数的轻量代理模型承担，主工作模型只需处理代理筛选后的精炼片段。代理模型通过",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.03379",
   "figures": [

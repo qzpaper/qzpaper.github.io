@@ -1,7 +1,7 @@
 {
   "paperId": "2603.04800",
   "date": "2026-03-06",
-  "category": "Other",
+  "category": "Multimodal",
   "source": "Hugging Face Daily",
   "publishedDate": "2026-03-06",
   "title": "MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models",
@@ -14,7 +14,7 @@
     "Kun Li",
     "Yongliang Tao"
   ],
-  "summaryCn": "",
+  "summaryCn": "多模态大语言模型的量化部署面临一个根本性挑战：视觉、文本、音频等不同模态的激活幅度差异悬殊，视觉token的激活范围往往是文本的十到百倍。传统通道平滑方法（如SmoothQuant）为每个通道计算单一缩放因子，当视觉模态的强激活主导了平滑因子的选择，文本和音频模态便遭受过度平滑，信号被严重压缩，量化误差随之激增。MASQuant将这一现象正式命名为",
   "keyContributions": [],
   "originalUrl": "https://arxiv.org/abs/2603.04800",
   "figures": [

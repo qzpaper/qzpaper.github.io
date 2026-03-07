@@ -6,7 +6,7 @@
     {
       "paperId": "2602.22207",
       "title": "Recovered in Translation: Efficient Pipeline for Automated Translation of Benchmarks and Datasets",
-      "summary": "针对多语言LLM评估基准的翻译质量问题，提出包含SC、BoN、USI、T-RANK四种方法的自动化翻译流水线，通过联合翻译和多轮排名消除位置偏差，显著提升东欧与南欧语言基准的翻译可靠性。",
+      "summary": "本文提出一套自动化基准翻译流程，针对现有多语言评估基准的系统性翻译缺陷，设计了T-RANK和USI两种测试时计算扩展方法，显著提升翻译质量，并将MMLU等基准翻译为8种东欧和南欧语言。",
       "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22207"
@@ -14,15 +14,15 @@
     {
       "paperId": "2602.22661",
       "title": "dLLM: Simple Diffusion Language Modeling",
-      "summary": "dLLM是一个统一扩散语言建模训练、推理和评估的开源框架，解决现有DLM代码库分散、接口不一致、超参敏感难以复现的问题，支持MDLM和BD3LM等目标，并提供可视化工具和标准化评估流水线。",
-      "category": "Diffusion Model",
+      "summary": "dLLM是一个开源框架，统一扩散语言模型的训练、推理和评估流程。通过模块化设计解耦扩散目标与模型架构，支持MDLM、BD3LM等多种扩散目标的即插即用切换，并解决了跨模型评估不一致的问题。",
+      "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.22661"
     },
     {
       "paperId": "2602.24233",
       "title": "Enhancing Spatial Understanding in Image Generation via Reward Modeling",
-      "summary": "针对文本到图像生成中复杂空间关系不准确的问题，构建了80K对抗性偏好对数据集，训练7B参数的SpatialScore奖励模型（准确率95.8%超越GPT-5），并基于GRPO在线强化学习显著提升FLUX模型的空间理解能力。",
+      "summary": "本文针对文本到图像生成中的空间关系理解难题，构建了80K对抗性偏好数据集，训练了7B参数的SpatialScore奖励模型，并结合在线强化学习显著提升了生成模型的空间布局准确性。",
       "category": "Image Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24233"
@@ -30,7 +30,7 @@
     {
       "paperId": "2602.24286",
       "title": "CUDA Agent: Large-Scale Agentic RL for High-Performance CUDA Kernel Generation",
-      "summary": "CUDA Agent是首个大规模智能体强化学习系统，通过可扩展数据合成、技能增强的开发环境和多阶段RL预热，在KernelBench上实现96.8%的整体超越torch.compile速率，解决LLM在高性能CUDA内核生成上的能力缺陷。",
+      "summary": "CUDA Agent是首个大规模智能体强化学习系统，专为高性能CUDA内核生成设计。通过可扩展数据合成、技能增强环境和稳定RL训练，在KernelBench上达到SOTA，整体超越torch.compile的比率为96.8%。",
       "category": "Code Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24286"
@@ -38,7 +38,7 @@
     {
       "paperId": "2602.24289",
       "title": "Mode Seeking meets Mean Seeking for Fast Long Video Generation",
-      "summary": "提出Mode Seeking meets Mean Seeking训练范式，通过解耦扩散Transformer将全局Flow Matching监督与滑动窗口反向KL局部教师对齐解耦，在稀缺长视频上学习分钟级叙事结构的同时继承短视频教师的高保真局部动态。",
+      "summary": "本文提出M3S训练范式，通过解耦扩散Transformer将局部保真度与长程连贯性分离，实现高质量分钟级视频生成。局部分布匹配头对齐短视频教师，全局流匹配头学习长视频叙事结构，推理时仅需少步采样。",
       "category": "Video Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.24289"
@@ -46,7 +46,7 @@
     {
       "paperId": "2603.00141",
       "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "ADE-CoT针对图像编辑中Image-CoT测试时计算范式的三个缺陷，提出难度感知资源分配、编辑特定验证和深度优先机会性停止三策略，在保持质量的同时大幅降低计算开销。",
+      "summary": "ADE-CoT针对图像编辑任务提出自适应测试时缩放框架，通过难度感知资源分配、编辑特定验证和深度优先停止三策略，在保持质量的同时大幅提升编辑效率。",
       "category": "Image Generation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00141"
@@ -54,7 +54,7 @@
     {
       "paperId": "2603.00912",
       "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
-      "summary": "VGGT-Det提出无需传感器几何输入的多视角室内3D目标检测框架，通过注意力引导查询生成和查询驱动特征聚合两个模块挖掘预训练VGGT编码器的内部语义与几何先验，在ScanNet和ARKitScenes上显著超越竞争方法。",
+      "summary": "VGGT-Det是首个无需传感器几何输入的多视角室内3D目标检测框架，通过挖掘VGGT编码器内部注意力与多层级几何先验，实现无位姿、无深度的高效检测。",
       "category": "3D Vision",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.00912"
@@ -62,7 +62,7 @@
     {
       "paperId": "2603.01562",
       "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
-      "summary": "RubricBench构建了含1147对成对比较的基准，每对配有专家标注的原子化评分标准，揭示了模型生成标准与人类标准之间高达27个百分点的巨大差距，并系统评估了奖励模型和LLM-as-a-Judge方法在标准引导评估中的能力层级。",
+      "summary": "RubricBench是一个包含1147对成对偏好比较的基准，配有专家标注的原子化评分标准，用于评估基于评分标准的LLM评估可靠性，揭示了模型生成标准与人类标准之间的显著差距。",
       "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01562"
@@ -70,7 +70,7 @@
     {
       "paperId": "2603.02024",
       "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
-      "summary": "MMR-Life是首个面向真实生活场景的多模态多图像推理综合基准，含2646道题覆盖7种推理类型，人类准确率72.28%而最佳模型GPT-5仅达58.69%，揭示当前MLLM在日常推理上的严重不足。",
+      "summary": "MMR-Life是首个面向真实生活场景的多模态多图像推理基准，涵盖7种推理类型和21个任务，共2646道题。实验表明即使GPT-5最高仅58.69%，远低于人类72.28%，揭示当前MLLMs在日常推理上的显著不足。",
       "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02024"
@@ -78,7 +78,7 @@
     {
       "paperId": "2603.02138",
       "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
-      "summary": "OmniLottie是首个端到端多模态矢量动画生成框架，设计Lottie Tokenizer将JSON压缩5.3倍，构建200万+样本的MMLottie-2M数据集，支持Text/Image/Video到Lottie的生成，并建立标准化评估协议。",
+      "summary": "OmniLottie是首个端到端多模态矢量动画生成框架，通过参数化Lottie Token将JSON压缩5.3倍，支持文本、图像和视频驱动的Lottie动画生成，并构建了200万规模的多模态数据集。",
       "category": "Multimodal",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.02138"
