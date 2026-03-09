@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.05438",
+  "date": "2026-03-09",
+  "category": "Robotics",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-09",
+  "title": "Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model",
+  "authors": [
+    "Dongwon Kim",
+    "Gawon Seo",
+    "Jinsung Lee",
+    "Minsu Cho",
+    "Suha Kwak"
+  ],
+  "summaryCn": "世界模型通过学习环境动态来支持规划，但传统分词器将图像编码为数百个token，注意力机制的二次计算成本使实时控制几乎不可能实现。本文提出CompACT，将每张图像极致压缩为仅8个离散token（约128 bits），较SD-VAE的784个token实现近百倍压缩。核心设计冻结DINOv3作为语义特征提取器，通过可学习的潜在重采样器将高层语义蒸馏至少量query token，再用有限标量量化（FSQ）离散化——消融实验证明微调DINOv3反而有害，冻结才能保留生成解码所依赖的高层抽象。解码阶段以紧凑token为条件，通过掩码生成建模渐进式重建完整图像。理论上，作者定义",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.05438",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.05438_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.05438_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.05369",
+  "nextPaperId": "2603.05706"
+}

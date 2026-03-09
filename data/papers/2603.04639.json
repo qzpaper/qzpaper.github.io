@@ -1,0 +1,34 @@
+{
+  "paperId": "2603.04639",
+  "date": "2026-03-09",
+  "category": "Robotics",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-09",
+  "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
+  "authors": [
+    "Yinpei Dai",
+    "Hongze Fu",
+    "Jayjun Lee",
+    "Yuejiang Liu",
+    "Haoran Zhang",
+    "Jianing Yang",
+    "Chelsea Finn",
+    "Nima Fazeli",
+    "Joyce Chai"
+  ],
+  "summaryCn": "机器人在开放世界中执行操作任务时，往往需要依赖历史信息：记住物体被遮挡前的位置、追踪已完成的操作次数、复现人类示教动作。然而现有评估体系覆盖维度有限、任务近乎已解决且协议不统一，难以系统衡量策略的记忆能力。RoboMME基于Atkinson与Shiffrin经典记忆理论，将记忆划分为时间、空间、对象与程序四个认知维度，设计了16个非马尔可夫任务，所有任务均保证相同观测可能对应不同历史与动作，记忆成为求解的必要条件，并提供1600条高质量示教轨迹。与此同时，研究者在统一骨干上构建MME-VLA套件，实现符号记忆、感知记忆与循环记忆三大类共14种变体的对比实验。实验结果揭示了不同记忆机制在各类认知任务上的优劣规律，为记忆增强型通用机器人策略的研究提供了坚实的评估基础与方法论参考。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.04639",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.04639_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.04639_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.02083",
+  "nextPaperId": "2603.04750"
+}

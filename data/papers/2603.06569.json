@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.06569",
+  "date": "2026-03-09",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-09",
+  "title": "Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders",
+  "authors": [
+    "Boqiang Zhang",
+    "Lei Ke",
+    "Ruihan Yang",
+    "Qi Gao",
+    "Tianyuan Qu",
+    "Rossell Chen",
+    "Dong Yu",
+    " Leoweiliang"
+  ],
+  "summaryCn": "主流视觉语言模型长期依赖CLIP或SigLIP对比预训练来初始化视觉编码器，但这种判别式范式只监督全局摘要token，与语言模型的序列预测目标存在根本性错位，细粒度视觉线索因此被抑制。Penguin-VL另辟蹊径，直接从Qwen3-0.6B纯文本LLM权重初始化视觉编码器，将因果注意力改为双向全注意力，并引入2D-RoPE支持可变分辨率。为弥合视觉与语言表示空间，训练中引入幅度、方向、关系三重蒸馏损失，其中关系损失显式监督patch间交互模式，对性能提升最为关键。视频侧设计时间冗余感知TRA策略，依据帧间相似度动态分配token预算，兼顾关键帧与中间帧的空间一致性。整套系统配合四阶段渐进训练，最终在2B/8B紧凑规模下，于文档理解、视觉知识和视频时序推理等多项基准上超越参数量更大的Qwen3-VL，验证了性能瓶颈根源在视觉骨干而非LLM或数据规模这一核心判断。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.06569",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.06569_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.06569_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.06199",
+  "nextPaperId": null
+}

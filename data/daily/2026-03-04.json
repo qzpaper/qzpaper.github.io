@@ -4,84 +4,12 @@
   "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
   "papers": [
     {
-      "paperId": "2602.23866",
-      "title": "SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale",
-      "summary": "SWE-rebench V2是首个语言无关的大规模软件工程训练数据集，覆盖20种编程语言、32,000+可执行任务，专为强化学习训练设计。通过五阶段流水线从GitHub PR历史自动构建容器化执行环境并验证测试质量。",
-      "category": "Agent",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2602.23866"
-    },
-    {
       "paperId": "2602.23881",
       "title": "LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding",
       "summary": "提出LK Losses，直接优化投机解码的接受率而非KL散度代理目标。通过混合KL与TV距离的自适应损失，解决TV梯度消失问题，在多种草稿架构和目标模型上提升加速效果。",
       "category": "LLM",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2602.23881"
-    },
-    {
-      "paperId": "2603.00141",
-      "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "ADE-CoT提出自适应测试时缩放框架，针对图像编辑任务设计难度感知资源分配、编辑特定验证器和深度优先停止策略，在保持编辑质量的同时显著提升推理效率。",
-      "category": "Image Generation",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.00141"
-    },
-    {
-      "paperId": "2603.00889",
-      "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
-      "summary": "CHIMERA是一个紧凑型合成数据集，通过三阶段流水线（主题扩展、问题生成、解答合成）构建跨学科推理训练数据，仅9225样本即可显著提升小模型推理能力。",
-      "category": "LLM",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.00889"
-    },
-    {
-      "paperId": "2603.00912",
-      "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
-      "summary": "VGGT-Det提出无需传感器几何信息的多视角室内3D目标检测框架，通过挖掘VGGT编码器内部注意力和多层特征先验，实现仅从无位姿图像中完成高质量3D检测。",
-      "category": "3D Vision",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.00912"
-    },
-    {
-      "paperId": "2603.01562",
-      "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
-      "summary": "RubricBench是一个包含1147个成对比较的基准，用于评估模型生成的rubric与人类标注标准的对齐程度。实验表明人类rubric引导的评估准确率远高于模型自生成rubric，揭示了当前奖励模型的核心瓶颈。",
-      "category": "Evaluation",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.01562"
-    },
-    {
-      "paperId": "2603.01824",
-      "title": "OpenAutoNLU: Open Source AutoML Library for NLU",
-      "summary": "OpenAutoNLU是专为NLP设计的开源AutoML库，通过数据感知的训练方案自动选择，在文本分类和NER任务上实现无监督OOD检测，在多数据集上优于现有AutoML框架。",
-      "category": "NLP",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.01824"
-    },
-    {
-      "paperId": "2603.01940",
-      "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
-      "summary": "CoVe是一个多轮交互式工具使用智能体的后训练数据合成框架，通过显式任务约束同时保证数据复杂度和轨迹正确性，利用确定性验证器替代LLM评估，支持SFT和RL两种训练范式。",
-      "category": "Agent",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.01940"
-    },
-    {
-      "paperId": "2603.02024",
-      "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
-      "summary": "MMR-Life是首个评估多模态大模型在真实生活场景下多图推理能力的基准，含2646道题、19108张图片，覆盖7种推理类型。最强模型GPT-5仅达58.69%，远低于人类72.3%的基准。",
-      "category": "Multimodal",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.02024"
-    },
-    {
-      "paperId": "2603.02138",
-      "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
-      "summary": "OmniLottie是首个端到端矢量动画生成框架，通过Lottie Tokenizer将冗余JSON压缩为紧凑序列，基于Qwen2.5-VL实现文本/图文/视频多模态指令驱动的动画生成。",
-      "category": "Multimodal",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.02138"
     }
   ]
 }

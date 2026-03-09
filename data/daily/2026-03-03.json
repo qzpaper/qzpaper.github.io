@@ -12,14 +12,6 @@
       "originalUrl": "https://arxiv.org/abs/2602.23866"
     },
     {
-      "paperId": "2603.00141",
-      "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
-      "summary": "ADE-CoT提出自适应测试时缩放框架用于图像编辑，通过难度感知资源分配、编辑特定早期剪枝和深度优先停止三策略，在保持质量的同时大幅降低计算开销。",
-      "category": "Image Generation",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.00141"
-    },
-    {
       "paperId": "2603.00610",
       "title": "CMI-RewardBench: Evaluating Music Reward Models with Compositional Multimodal Instruction",
       "summary": "CMI-RewardBench是首个针对组合多模态指令的音乐奖励模型评测基准，涵盖文本、歌词和参考音频等多种输入条件。同时提出30M参数的CMI-RM奖励模型，在musicality和对齐评估上超越现有方法。",
@@ -36,22 +28,6 @@
       "originalUrl": "https://arxiv.org/abs/2603.00889"
     },
     {
-      "paperId": "2603.00912",
-      "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
-      "summary": "VGGT-Det提出无传感器几何输入的多视图室内3D目标检测框架，挖掘VGGT编码器内部语义和几何先验，在ScanNet和ARKitScenes上分别超越最强方法4.4和8.6 mAP@0.25。",
-      "category": "3D Vision",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.00912"
-    },
-    {
-      "paperId": "2603.01562",
-      "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
-      "summary": "RubricBench是一个包含1147对成对比较的评估基准，通过人工标注的原子化评分标准（rubric）来衡量LLM生成评分标准与人类标准的差距，专注于具有欺骗性表面偏差的高难样本。实验发现，使用人工标注rubric可将裁判模型准确率提升约25-28个百分点，揭示了当前模型在自动生成评分标准方面的显著瓶颈。",
-      "category": "Evaluation",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.01562"
-    },
-    {
       "paperId": "2603.01824",
       "title": "OpenAutoNLU: Open Source AutoML Library for NLU",
       "summary": "OpenAutoNLU是面向文本分类与NER的开源AutoML库，根据数据量自动选择训练策略，支持数据质量诊断、OOD检测和LLM增强，以低代码API实现生产级部署。",
@@ -66,22 +42,6 @@
       "category": "Agent",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.01940"
-    },
-    {
-      "paperId": "2603.02024",
-      "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
-      "summary": "MMR-Life是首个面向真实生活场景的多模态多图推理基准，含2646题、19108张真实图像，覆盖7种推理类型。最强模型GPT-5仅达58.69%，远低于人类72.28%，揭示当前模型在日常推理上的显著不足。",
-      "category": "Multimodal",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.02024"
-    },
-    {
-      "paperId": "2603.02138",
-      "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
-      "summary": "OmniLottie是首个端到端多模态矢量动画生成框架，通过参数化Lottie Tokenizer将JSON压缩5.3倍，支持文本、图文、视频多模态输入生成高质量矢量动画。同时构建了首个百万级Lottie数据集MMLottie-2M。",
-      "category": "Multimodal",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.02138"
     }
   ]
 }

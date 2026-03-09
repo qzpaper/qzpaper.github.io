@@ -1,0 +1,87 @@
+{
+  "date": "2026-03-09",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.00586",
+      "title": "WildActor: Unconstrained Identity-Preserving Video Generation",
+      "summary": "WildActor针对视频生成中的身份漂移问题，构建含160万视频的Actor-18M数据集，提出基于非对称身份保持注意力与视角自适应采样的生成框架，可在任意视角下维持演员全身一致性。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.00586"
+    },
+    {
+      "paperId": "2603.02083",
+      "title": "$π$-StepNFT: Wider Space Needs Finer Steps in Online RL for Flow-based VLAs",
+      "summary": "针对基于流匹配的VLA模型在线RL微调难题，提出π-StepNFT：用SDE拓宽探索空间，以步级排序监督替代不可行的精确似然计算，实现鲁棒策略优化。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02083"
+    },
+    {
+      "paperId": "2603.04639",
+      "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
+      "summary": "RoboMME是首个针对记忆增强机器人操作策略的大规模仿真基准，基于认知心理学划分时间、空间、对象、程序四类记忆维度，含16个非马尔可夫任务与14种VLA变体对比方案。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04639"
+    },
+    {
+      "paperId": "2603.04750",
+      "title": "HiMAP-Travel: Hierarchical Multi-Agent Planning for Long-Horizon Constrained Travel",
+      "summary": "提出HiMAP-Travel层级多智能体架构，通过战略Coordinator与并行Executor解耦，解决长时域旅行规划中因工具调用轨迹累积导致的约束漂移问题，在TravelPlanner基准上显著提升硬约束满足率。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04750"
+    },
+    {
+      "paperId": "2603.04918",
+      "title": "BandPO: Bridging Trust Regions and Ratio Clipping via Probability-Aware Bounds for LLM Reinforcement Learning",
+      "summary": "BandPO用f-散度信赖域推导概率感知动态裁剪界，解决GRPO固定裁剪对低概率token探索的压制。理论证明低概率动作自动获更大上调空间，高概率动作受更紧约束，数学推理实验验证其优越性。",
+      "category": "Reinforcement Learning",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04918"
+    },
+    {
+      "paperId": "2603.05369",
+      "title": "Progressive Residual Warmup for Language Model Pretraining",
+      "summary": "ProRes为语言模型预训练提出渐进式残差预热机制，对每层残差乘以从0到1的调度标量，深层预热周期更长。该方法兼容多种Transformer归一化变体，在不同规模模型上一致降低困惑度，分布外泛化提升尤为显著。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.05369"
+    },
+    {
+      "paperId": "2603.05438",
+      "title": "Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model",
+      "summary": "CompACT将每张图像压缩为仅8个离散token，相比传统方法实现百倍压缩，极大提升世界模型规划效率。通过冻结DINOv3提取语义特征与有限标量量化，在导航和机器人操控任务中实现实时规划。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.05438"
+    },
+    {
+      "paperId": "2603.05706",
+      "title": "Reasoning Models Struggle to Control their Chains of Thought",
+      "summary": "本文研究推理模型控制自身思维链的能力，发现主流模型CoT可控性普遍低于10%，而输出可控性接近100%。这一差距意味着模型难以刻意隐藏推理过程，CoT监控作为安全机制仍具实际效力。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.05706"
+    },
+    {
+      "paperId": "2603.06199",
+      "title": "FlashPrefill: Instantaneous Pattern Discovery and Thresholding for Ultra-Fast Long-Context Prefilling",
+      "summary": "FlashPrefill提出即时模式发现与动态阈值两项创新，大幅加速LLM长上下文预填充阶段。在256K序列上实现27.78倍算子加速，4K短序列仍有1.71倍提升，近乎无损精度。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06199"
+    },
+    {
+      "paperId": "2603.06569",
+      "title": "Penguin-VL: Exploring the Efficiency Limits of VLM with LLM-based Vision Encoders",
+      "summary": "Penguin-VL提出用纯文本LLM初始化视觉编码器，突破CLIP对比预训练的细粒度对齐瓶颈，在2B/8B规模下于文档理解、视频推理等任务超越Qwen3-VL等主流模型。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06569"
+    }
+  ]
+}
