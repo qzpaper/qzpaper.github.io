@@ -4,33 +4,9 @@
   "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
   "papers": [
     {
-      "paperId": "2603.05888",
-      "title": "PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction",
-      "summary": "PixARMesh将自回归网格生成扩展至单视图场景重建，通过像素对齐特征和场景上下文聚合，无需SDF即可生成紧凑可编辑的艺术家级网格。",
-      "category": "3D Vision",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.05888"
-    },
-    {
-      "paperId": "2603.06351",
-      "title": "Dynamic Chunking Diffusion Transformer",
-      "summary": "DC-DiT将NLP中的动态分块机制适配到二维扩散Transformer，通过可学习路由器自适应生成变长token序列，解决了标准DiT在空间和时间步上均匀分配计算资源的问题，在ImageNet 256×256上实现更优的生成质量。",
-      "category": "Diffusion Model",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.06351"
-    },
-    {
-      "paperId": "2603.06408",
-      "title": "Physical Simulator In-the-Loop Video Generation",
-      "summary": "PSIVG将物理模拟器嵌入视频扩散推理过程，无需额外训练即可生成遵循物理定律的视频。通过感知流水线重建4D场景，结合MPM模拟器引导光流条件生成，并提出TTCO优化纹理一致性。",
-      "category": "Video Generation",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.06408"
-    },
-    {
       "paperId": "2603.04639",
       "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
-      "summary": "RoboMME是首个针对记忆增强机器人操作策略的大规模仿真基准，基于认知心理学划分时间、空间、对象、程序四类记忆维度，含16个非马尔可夫任务与14种VLA变体对比方案。",
+      "summary": "机器人在开放世界中执行操作任务时，往往需要依赖历史信息：记住物体被遮挡前的位置、追踪已完成的操作次数、复现人类示教动作。然而现有评估体系覆盖维度有限、任务近乎已解决且协议不统一，难以系统衡量策略的记忆能力。RoboMME基于Atkinson",
       "category": "Robotics",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.04639"
@@ -38,10 +14,34 @@
     {
       "paperId": "2603.05706",
       "title": "Reasoning Models Struggle to Control their Chains of Thought",
-      "summary": "本文研究推理模型控制自身思维链的能力，发现主流模型CoT可控性普遍低于10%，而输出可控性接近100%。这一差距意味着模型难以刻意隐藏推理过程，CoT监控作为安全机制仍具实际效力。",
+      "summary": "思维链是洞察推理模型意图的窗口，也是AI安全监控的重要防线。若模型能随意压制或伪造推理内容，这道防线便形同虚设。本文构建了CoT-Control评估套件，涵盖五个基准、逾万条测试实例，从信息压制、信息添加和风格修改三个维度，系统衡量十三个前",
       "category": "Evaluation",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.05706"
+    },
+    {
+      "paperId": "2603.05888",
+      "title": "PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction",
+      "summary": "从单张RGB图像重建完整三维场景，长期以来受限于遮挡、视角不足和几何表达能力。现有方法要么依赖体素SDF难以保留细节，要么需要复杂的分割-重建-拼装流程，最终生成的网格面数动辄数百万且难以编辑。PixARMesh另辟蹊径，将预训练的物体级自",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.05888"
+    },
+    {
+      "paperId": "2603.06351",
+      "title": "Dynamic Chunking Diffusion Transformer",
+      "summary": "扩散模型在图像生成领域大放异彩，然而标准Diffusion Transformer将图像切割为等大patch的做法却暗藏隐患——无论是单调的背景还是复杂的纹理边缘，都被平等对待，消耗着等量的计算资源。不仅如此，扩散过程从早期粗结构到晚期精细",
+      "category": "Diffusion Model",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06351"
+    },
+    {
+      "paperId": "2603.06408",
+      "title": "Physical Simulator In-the-Loop Video Generation",
+      "summary": "视频生成模型在视觉质量上突飞猛进，却始终难以摆脱一个根本缺陷：生成的物体运动常常违背重力、惯性与碰撞等基本物理常识。PSIVG正是为解决这一痛点而生。它不修改模型权重，而是在推理阶段将物理模拟器引入扩散过程。整套流水线分四步走：首先由预训练",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06408"
     }
   ]
 }
