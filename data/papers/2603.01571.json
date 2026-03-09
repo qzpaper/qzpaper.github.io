@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.01571",
+  "date": "2026-03-04",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-04",
+  "title": "Beyond Length Scaling: Synergizing Breadth and Depth for Generative Reward Models",
+  "authors": [
+    "Qiyuan Zhang",
+    "Yufei Wang",
+    "Tianhe Wu",
+    "Can Xu",
+    "Qingfeng Sun",
+    "Kai Zheng",
+    "Xue Liu",
+    "Chen Ma"
+  ],
+  "summaryCn": "奖励模型是大语言模型对齐的核心，而生成式奖励模型通过显式推理链赋予判断可解释性。然而，主流方法仅沿",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.01571",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.01571_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.01571_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.00729",
+  "nextPaperId": "2603.02175"
+}

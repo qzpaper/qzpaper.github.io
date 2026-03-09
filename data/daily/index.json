@@ -5,7 +5,11 @@
       "days": [
         {
           "date": "2026-03-09",
-          "paperCount": 10
+          "paperCount": 8
+        },
+        {
+          "date": "2026-03-08",
+          "paperCount": 5
         },
         {
           "date": "2026-03-06",
@@ -17,11 +21,11 @@
         },
         {
           "date": "2026-03-04",
-          "paperCount": 1
+          "paperCount": 10
         },
         {
           "date": "2026-03-03",
-          "paperCount": 5
+          "paperCount": 10
         },
         {
           "date": "2026-03-02",

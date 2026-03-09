@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.06408",
+  "date": "2026-03-08",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-08",
+  "title": "Physical Simulator In-the-Loop Video Generation",
+  "authors": [
+    "Lin Geng Foo",
+    "Mark He Huang",
+    "Alexandros Lattas",
+    "Stylianos Moschoglou",
+    "Thabo Beeler",
+    "Christian Theobalt"
+  ],
+  "summaryCn": "视频生成模型在视觉质量上突飞猛进，却始终难以摆脱一个根本缺陷：生成的物体运动常常违背重力、惯性与碰撞等基本物理常识。PSIVG正是为解决这一痛点而生。它不修改模型权重，而是在推理阶段将物理模拟器引入扩散过程。整套流水线分四步走：首先由预训练模型生成模板视频，提供场景背景与物体外观；接着感知流水线从视频中重建前景物体3D网格、背景几何与相机位姿；然后在基于MPM的物理模拟器中初始化场景状态，利用大语言模型估计物理属性，运行前向仿真生成物理一致的粒子轨迹；最后将模拟轨迹转化为光流，引导光流条件生成模型产出时空物理一致的视频。为进一步解决运动中纹理闪烁的问题，作者提出测试时纹理一致性优化TTCO，通过可学习嵌入和像素对应约束，在推理时轻量微调，让生成帧的外观与首帧保持连贯。这一框架将物理先验与生成模型的视觉能力有机结合，为影视制作与具身智能等对物理可信度要求较高的领域提供了新思路。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.06408",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.06408_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.06408_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.06351",
+  "nextPaperId": null
+}

@@ -1,0 +1,28 @@
+{
+  "paperId": "2603.01068",
+  "date": "2026-03-03",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-03",
+  "title": "LLaDA-o：高效且长度自适应的全能扩散模型",
+  "authors": [
+    "You$^{1",
+    "2",
+    "3"
+  ],
+  "summaryCn": "当文字与图像的世界交汇，扩散模型面临着本质上的张力——文本偏好离散的掩码噪声，图像则沉浸于连续的潜空间流形。LLaDA-o以",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.01068",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.01068_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.01068_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.00541",
+  "nextPaperId": "2603.01223"
+}

@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.02203",
+  "date": "2026-03-03",
+  "category": "Reinforcement Learning",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-03",
+  "title": "T$^3$RL：面向测试时强化学习的工具验证",
+  "authors": [
+    "Liao",
+    "R\\\"ohrich",
+    "Wang",
+    "Zhang",
+    "Samadzadeh",
+    "Tresp",
+    "Yeung-Levy"
+  ],
+  "summaryCn": "测试时强化学习（TTRL）允许大型推理模型在无标注数据上自适应进化，但其依赖多数投票构造伪标签的机制存在根本缺陷：一旦模型存在系统性偏差，错误答案便可能以高频假象胜出，触发奖励信号污染与不可逆的自我强化循环。T³RL针对这一虚假流行模式坍缩问题，将工具验证机制嵌入奖励估计流程。其核心由三部分构成：独立验证器将每条推理轨迹转化为Python程序，代码解释器执行后返回确定性结果，验证通过的rollout获得更高的投票权重，从而将共识从频率主导转向证据主导。验证器系统提示明确要求从问题本身重新推算答案，而非盲目信任推理轨迹，有效缓解确认偏差。实验横跨Qwen、Llama等多类模型，在AIME、AMC、MATH-500三档难度基准上一致验证了T³RL相对标准TTRL的提升，平均准确率提高约3个百分点，在最难的AIME任务上增益尤为显著，证明外部工具验证是打破自一致性闭环的有效手段。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.02203",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.02203_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.02203_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.02049",
+  "nextPaperId": null
+}

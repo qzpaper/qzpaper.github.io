@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.06351",
+  "date": "2026-03-08",
+  "category": "Diffusion Model",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-08",
+  "title": "Dynamic Chunking Diffusion Transformer",
+  "authors": [
+    "Akash Haridas",
+    "Utkarsh Saxena",
+    "Parsa Ashrafi Fashi",
+    "Mehdi Rezagholizadeh",
+    "Vikram Appia",
+    "Emad Barsoum"
+  ],
+  "summaryCn": "扩散模型在图像生成领域大放异彩，然而标准Diffusion Transformer将图像切割为等大patch的做法却暗藏隐患——无论是单调的背景还是复杂的纹理边缘，都被平等对待，消耗着等量的计算资源。不仅如此，扩散过程从早期粗结构到晚期精细细节的渐进特性，也被一视同仁地忽视了。DC-DiT从自然语言处理中汲取灵感，将BLT、H-Net等动态分词思想移植到二维空间处理中，构建了一套encoder-router-decoder支架，将固定长度token序列的束缚彻底打破。路由器通过可学习的相似度评分机制，判断每个token与其空间邻域的相似程度——与周围差异显著的token被视为边界保留，与邻域高度相似的token则被合并压缩。这一过程端到端训练，无需人工设计的分割规则。高信息密度区域自然获得更丰富的token表示，均匀区域被大胆剪枝。去分块阶段采用二维高斯核平滑，将硬离散决策带来的优化不连续性优雅化解，编码器的残差连接则确保细粒度空间信息不被压缩主干遗失。在ImageNet 256×256类条件生成任务上的实验，验证了这一动态计算分配策略的实际价值。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.06351",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.06351_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.06351_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.05888",
+  "nextPaperId": "2603.06408"
+}

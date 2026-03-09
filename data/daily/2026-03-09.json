@@ -20,14 +20,6 @@
       "originalUrl": "https://arxiv.org/abs/2603.02083"
     },
     {
-      "paperId": "2603.04639",
-      "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
-      "summary": "RoboMME是首个针对记忆增强机器人操作策略的大规模仿真基准，基于认知心理学划分时间、空间、对象、程序四类记忆维度，含16个非马尔可夫任务与14种VLA变体对比方案。",
-      "category": "Robotics",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.04639"
-    },
-    {
       "paperId": "2603.04750",
       "title": "HiMAP-Travel: Hierarchical Multi-Agent Planning for Long-Horizon Constrained Travel",
       "summary": "提出HiMAP-Travel层级多智能体架构，通过战略Coordinator与并行Executor解耦，解决长时域旅行规划中因工具调用轨迹累积导致的约束漂移问题，在TravelPlanner基准上显著提升硬约束满足率。",
@@ -58,14 +50,6 @@
       "category": "Robotics",
       "source": "Hugging Face Daily",
       "originalUrl": "https://arxiv.org/abs/2603.05438"
-    },
-    {
-      "paperId": "2603.05706",
-      "title": "Reasoning Models Struggle to Control their Chains of Thought",
-      "summary": "本文研究推理模型控制自身思维链的能力，发现主流模型CoT可控性普遍低于10%，而输出可控性接近100%。这一差距意味着模型难以刻意隐藏推理过程，CoT监控作为安全机制仍具实际效力。",
-      "category": "Evaluation",
-      "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.05706"
     },
     {
       "paperId": "2603.06199",

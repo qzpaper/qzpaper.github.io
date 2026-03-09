@@ -1,0 +1,40 @@
+{
+  "paperId": "2603.03194",
+  "date": "2026-03-04",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-04",
+  "title": "BeyondSWE: Can Current Code Agent Survive Beyond Single-Repo Bug Fixing?",
+  "authors": [
+    "Guoxin Chen",
+    "Fanzhe Meng",
+    "Jiale Zhao",
+    "Minghao Li",
+    "Daixuan Cheng",
+    "Huatong Song",
+    "Jie Chen",
+    "Yuzhi Lin",
+    "Hui Chen",
+    "Xin Zhao",
+    "Ruihua Song",
+    "Chang Liu",
+    "Cheng Chen",
+    "Kai Jia",
+    "Ji-Rong Wen"
+  ],
+  "summaryCn": "现有代码智能体基准长期聚焦于单一仓库内的局部函数缺陷修复，而真实软件工程远不止于此。BeyondSWE从两个正交维度重新定义评估边界：解决范围从局部函数扩展至全仓库级重构生成，知识范围从仓库内信息延伸至跨仓库引用、领域专业知识与外部文档。两个维度的交叉形成四类任务——需参考外部仓库解决方案的CrossRepo、融合科学领域推理的DomainFix、应对大版本依赖迁移的DepMigrate，以及从自然语言规格从零构建完整可运行代码库的Doc2Repo——共涵盖246个GitHub仓库的500个经严格质量控制的真实实例。为应对需要外部知识的场景，论文还提出SearchSWE框架，让智能体在本地Docker环境与全局网络搜索/浏览器工具之间自主切换。实验结果表明，前沿模型在这些超越传统范畴的任务上表现显著下滑，揭示了当前代码智能体在复杂、跨域软件工程场景中尚存的巨大差距。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.03194",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.03194_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.03194_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.03160",
+  "nextPaperId": "2603.03241"
+}

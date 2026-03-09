@@ -1,0 +1,27 @@
+{
+  "paperId": "2603.01223",
+  "date": "2026-03-03",
+  "category": "Reinforcement Learning",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-03",
+  "title": "ReGFT：通过参考解引导微调让 RL 学会困难问题",
+  "authors": [
+    "Wu$^{2",
+    "*"
+  ],
+  "summaryCn": "强化学习驱动的数学推理训练有一道难以逾越的鸿沟：当问题超出模型当前能力时，所有采样轨迹均告失败，梯度信号归零，训练陷入沉默。ReGFT正是为打破这道沉默而生。其核心思路并不复杂却颇具匠心——对模型独立求解成功率不足25%的困难题目，将人工参考解的前80%作为",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.01223",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.01223_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.01223_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.01068",
+  "nextPaperId": "2603.01301"
+}

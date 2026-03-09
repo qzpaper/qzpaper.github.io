@@ -4,12 +4,84 @@
   "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
   "papers": [
     {
-      "paperId": "2602.23881",
-      "title": "LK Losses: Direct Acceptance Rate Optimization for Speculative Decoding",
-      "summary": "提出LK Losses，直接优化投机解码的接受率而非KL散度代理目标。通过混合KL与TV距离的自适应损失，解决TV梯度消失问题，在多种草稿架构和目标模型上提升加速效果。",
+      "paperId": "2603.00729",
+      "title": "Qwen3-Coder-Next Technical Report",
+      "summary": "Qwen3-Coder-Next是基于MoE架构的开源编码智能体模型，总参数80B仅激活3B，通过大规模智能体训练在SWE-Bench等基准上达到百亿级大模型的性能水平。",
+      "category": "Code Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.00729"
+    },
+    {
+      "paperId": "2603.01571",
+      "title": "Beyond Length Scaling: Synergizing Breadth and Depth for Generative Reward Models",
+      "summary": "Mix-GRM提出以广度思维链（B-COT）与深度思维链（D-COT）协同替代单纯CoT长度扩展，实现生成式奖励模型的机制自适应对齐，仅用30K样本在五个基准上达79.4均分，超越更大规模基线。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.01571"
+    },
+    {
+      "paperId": "2603.02175",
+      "title": "Kiwi-Edit: Versatile Video Editing via Instruction and Reference Guidance",
+      "summary": "Kiwi-Edit提出首个开源参考引导视频编辑框架，构建477K高质量四元组数据集RefVIE，通过MLLM-DiT统一架构同时支持文本指令与参考图像引导的视频编辑，达到SOTA性能。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02175"
+    },
+    {
+      "paperId": "2603.02479",
+      "title": "PRISM: Pushing the Frontier of Deep Think via Process Reward Model-Guided Inference",
+      "summary": "PRISM利用过程奖励模型的步骤级信号，通过MCMC式重采样与精炼机制，系统解决DeepThink推理范式中的种群增强瓶颈与多数稀释效应，在数学竞赛及科学推理基准上实现性能提升。",
       "category": "LLM",
       "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2602.23881"
+      "originalUrl": "https://arxiv.org/abs/2603.02479"
+    },
+    {
+      "paperId": "2603.02578",
+      "title": "How Controllable Are Large Language Models? A Unified Evaluation across Behavioral Granularities",
+      "summary": "本文提出SteerEval基准，从语言特征、情感、人格三大域和L1-L3三级粒度层次系统评估大语言模型的行为可控性，揭示粗粒度成功不保证细粒度成功的关键规律。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02578"
+    },
+    {
+      "paperId": "2603.03160",
+      "title": "Kling-MotionControl Technical Report",
+      "summary": "Kling-MotionControl是一个基于DiT的统一角色动画框架，通过多粒度运动编排实现全身动画生成。系统支持跨身份迁移、自由视角相机控制，并通过多阶段蒸馏实现超10倍推理加速。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03160"
+    },
+    {
+      "paperId": "2603.03194",
+      "title": "BeyondSWE: Can Current Code Agent Survive Beyond Single-Repo Bug Fixing?",
+      "summary": "BeyondSWE提出超越单仓库缺陷修复的代码智能体评估基准，沿解决范围与知识范围两维度设计四类任务，共500个真实实例。同时引入集成网络搜索的SearchSWE框架，揭示当前智能体在复杂跨库场景下的显著局限。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03194"
+    },
+    {
+      "paperId": "2603.03241",
+      "title": "UniG2U-Bench: Do Unified Models Advance Multimodal Understanding?",
+      "summary": "UniG2U-Bench是首个系统评估生成能力是否促进多模态理解的大规模基准，涵盖3000实例、30子任务与35+模型，揭示统一模型的能力边界与协同效应。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03241"
+    },
+    {
+      "paperId": "2603.03276",
+      "title": "Beyond Language Modeling: An Exploration of Multimodal Pretraining",
+      "summary": "本文通过从零开始的受控实验，在Transfusion框架下系统探索多模态预训练的五个关键设计轴，发现RAE可统一视觉理解与生成，视觉与语言数据存在协同效应，并验证MoE可高效缩放多模态模型。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03276"
+    },
+    {
+      "paperId": "2603.03283",
+      "title": "Utonia: Toward One Encoder for All Point Clouds",
+      "summary": "Utonia是一个统一点云自监督编码器，通过因果模态遮蔽、感知粒度重缩放和3D RoPE三项设计，实现跨室外LiDAR、室内RGB-D、物体CAD等五大域联合训练，多项基准达SOTA。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03283"
     }
   ]
 }

@@ -1,0 +1,47 @@
+{
+  "date": "2026-03-08",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.05888",
+      "title": "PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction",
+      "summary": "PixARMesh将自回归网格生成扩展至单视图场景重建，通过像素对齐特征和场景上下文聚合，无需SDF即可生成紧凑可编辑的艺术家级网格。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.05888"
+    },
+    {
+      "paperId": "2603.06351",
+      "title": "Dynamic Chunking Diffusion Transformer",
+      "summary": "DC-DiT将NLP中的动态分块机制适配到二维扩散Transformer，通过可学习路由器自适应生成变长token序列，解决了标准DiT在空间和时间步上均匀分配计算资源的问题，在ImageNet 256×256上实现更优的生成质量。",
+      "category": "Diffusion Model",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06351"
+    },
+    {
+      "paperId": "2603.06408",
+      "title": "Physical Simulator In-the-Loop Video Generation",
+      "summary": "PSIVG将物理模拟器嵌入视频扩散推理过程，无需额外训练即可生成遵循物理定律的视频。通过感知流水线重建4D场景，结合MPM模拟器引导光流条件生成，并提出TTCO优化纹理一致性。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06408"
+    },
+    {
+      "paperId": "2603.04639",
+      "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
+      "summary": "RoboMME是首个针对记忆增强机器人操作策略的大规模仿真基准，基于认知心理学划分时间、空间、对象、程序四类记忆维度，含16个非马尔可夫任务与14种VLA变体对比方案。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.04639"
+    },
+    {
+      "paperId": "2603.05706",
+      "title": "Reasoning Models Struggle to Control their Chains of Thought",
+      "summary": "本文研究推理模型控制自身思维链的能力，发现主流模型CoT可控性普遍低于10%，而输出可控性接近100%。这一差距意味着模型难以刻意隐藏推理过程，CoT监控作为安全机制仍具实际效力。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.05706"
+    }
+  ]
+}

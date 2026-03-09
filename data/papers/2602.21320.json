@@ -1,0 +1,31 @@
+{
+  "paperId": "2602.21320",
+  "date": "2026-03-03",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-03",
+  "title": "Tool-R0：零数据自演化 LLM 工具调用智能体",
+  "authors": [
+    "Acikgoz",
+    "Qian",
+    "H\\\"ubotter",
+    "Ji",
+    "Hakkani-T\\\"ur",
+    "Tur"
+  ],
+  "summaryCn": "工具调用是大语言模型走向自主智能体的关键一步，但现有方法普遍依赖人工标注的任务数据集，不仅成本高昂，还限制了模型能力的上限。Tool-R0另辟蹊径，从同一基座模型出发，分化出Generator与Solver两个角色，让它们在自博弈中共同进化。Generator负责合成有挑战性的工具调用任务，Solver负责用真实工具调用来解决这些任务，两者通过互补奖励信号相互驱动。为了避免生成模式坍缩，系统引入轻量级任务规范，动态约束领域、上下文类型、工具数量等维度的采样分布。Generator的奖励设计尤为精巧：除格式与有效性奖励外，还引入带通滤波式的难度奖励，使生成任务始终落在Solver能力前沿，既不过易也不无解。Solver的训练数据经过去重、交叉验证和难度分桶的课程化处理，确保学习信号的质量与梯度的平滑性。整个框架无需任何预存在的任务数据集，实现了真正意义上的零数据自演化，为通用工具调用智能体的可扩展训练提供了新范式。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2602.21320",
+  "figures": [
+    {
+      "src": "/data/papers/images/2602.21320_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2602.21320_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.00541"
+}
