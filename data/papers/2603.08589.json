@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.08589",
+  "date": "2026-03-10",
+  "category": "Image Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing",
+  "authors": [
+    "Yucheng Wang",
+    "Zedong Wang",
+    "Yuetong Wu",
+    "Yue Ma",
+    "Dan Xu"
+  ],
+  "summaryCn": "现有统一扩散编辑模型依赖固定骨干网络处理所有编辑任务，多模态条件信号之间的静态融合方式无法动态协调文本、掩码与参考图像的优先级，导致颜色渗透、身份漂移等典型伪影。CARE-Edit针对这一痛点，设计了条件感知的混合专家路由机制：四个功能各异的轻量专家分别负责语义推理、空间精度、风格迁移和背景保持，一个基于潜在注意力的路由器为每个token计算概率分布并选取Top-K专家处理，使不同任务在扩散轨迹的不同阶段动态激活最相关的计算路径。配合Mask Repaint模块在推理过程中迭代精炼掩码边界，以及时间步自适应的Latent Mixture融合，系统在早期保持全局语义布局、后期专注边界细化，实现了全局一致性与局部精确性的平衡。仅优化适配器与路由参数、骨干冻结的训练策略保证了高效性，课程训练进一步缓解了专家路由坍塌问题。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.08589",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.08589_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.08589_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.08013",
+  "nextPaperId": "2603.08703"
+}

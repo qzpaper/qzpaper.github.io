@@ -4,12 +4,84 @@
   "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
   "papers": [
     {
-      "paperId": "2603.02554",
-      "title": "Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation",
-      "summary": "本文提出GKD框架，通过解耦表征学习与任务学习，将视觉基础模型的域泛化能力蒸馏至轻量学生模型，在F2F和F2L设定下分别取得+1.9和+10.6 mIoU平均增益。",
-      "category": "Training",
+      "paperId": "2603.03269",
+      "title": "LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory",
+      "summary": "LoGeR提出混合记忆模块（SWA+TTT）解决长视频三维重建的上下文瓶颈，以线性计算复杂度实现多尺度几何一致性，在大规模长序列数据集上显著超越现有方法。",
+      "category": "3D Vision",
       "source": "Hugging Face Daily",
-      "originalUrl": "https://arxiv.org/abs/2603.02554"
+      "originalUrl": "https://arxiv.org/abs/2603.03269"
+    },
+    {
+      "paperId": "2603.03825",
+      "title": "From Narrow to Panoramic Vision: Attention-Guided Cold-Start Reshapes Multimodal Reasoning",
+      "summary": "本文从注意力分配视角揭示多模态推理模型冷启动机制，提出VAS指标发现视觉注意力与推理性能强相关（r=0.9616），发现",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03825"
+    },
+    {
+      "paperId": "2603.03872",
+      "title": "Believe Your Model: Distribution-Guided Confidence Calibration",
+      "summary": "提出DistriVoting框架，用高斯混合模型对推理轨迹置信度的双峰分布建模，结合拒绝过滤器和步级置信度干预（SSC），显著提升大型推理模型测试时投票的准确率。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03872"
+    },
+    {
+      "paperId": "2603.07561",
+      "title": "PureCC: Pure Learning for Text-to-Image Concept Customization",
+      "summary": "PureCC提出双分支纯净学习框架，将目标概念引导与原始模型预测解耦，解决文本到图像概念定制中原始模型行为破坏与能力退化两大问题。通过自适应引导尺度动态调节，在高保真概念重现的同时保持预训练模型原有生成质量。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.07561"
+    },
+    {
+      "paperId": "2603.07660",
+      "title": "Holi-Spatial: Evolving Video Streams into Holistic 3D Spatial Intelligence",
+      "summary": "Holi-Spatial是首个全自动大规模3D空间数据集构建框架，将原始视频流转化为高保真几何与语义标注。通过三阶段流水线生成含12K场景、120万空间QA对的数据集，大幅提升模型空间理解能力。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.07660"
+    },
+    {
+      "paperId": "2603.07980",
+      "title": "\\$OneMillion-Bench: How Far are Language Agents from Human Experts?",
+      "summary": "OneMillion-Bench提出含400道专家级开放任务的评测基准，覆盖金融、法律、医疗等五大高风险领域，任务总经济价值超百万美元。评测35个模型发现即使最强的Claude-Opus-4.6搜索智能体Expert Score仅达63%，与人类专家仍存在显著差距。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.07980"
+    },
+    {
+      "paperId": "2603.08013",
+      "title": "PIRA-Bench: A Transition from Reactive GUI Agents to GUI-based Proactive Intent Recommendation Agents",
+      "summary": "本文提出主动意图推荐范式，使GUI智能体从被动指令执行转向主动预测用户意图。构建了PIRA-Bench基准（100条轨迹，300组评估），并设计了PIRF框架通过动态记忆模块处理交错多任务与噪声抑制。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.08013"
+    },
+    {
+      "paperId": "2603.08589",
+      "title": "CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing",
+      "summary": "CARE-Edit提出条件感知专家路由框架，将扩散token动态分配给文本、掩码、参考和基础四个异构专家，解决统一扩散编辑器中多任务干扰、颜色渗透和身份漂移等问题，实现自适应多条件图像编辑。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.08589"
+    },
+    {
+      "paperId": "2603.08703",
+      "title": "HiAR: Efficient Autoregressive Long Video Generation via Hierarchical Denoising",
+      "summary": "HiAR提出层次化去噪策略，通过在每个去噪步内对所有视频块执行因果生成，并引入前向KL正则化，有效缓解自回归长视频生成中的分布漂移与低运动崩塌问题，实现约1.8倍推理加速。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.08703"
+    },
+    {
+      "paperId": "2603.08706",
+      "title": "Agentic Critical Training",
+      "summary": "ACT提出用强化学习训练LLM智能体辨别动作优劣，而非单纯模仿专家演示。通过构建对比训练对并用GRPO优化，模型自主发展批判推理能力，在多个基准上显著超越模仿学习基线。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.08706"
     }
   ]
 }

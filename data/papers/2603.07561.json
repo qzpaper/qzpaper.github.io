@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.07561",
+  "date": "2026-03-10",
+  "category": "Image Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "PureCC: Pure Learning for Text-to-Image Concept Customization",
+  "authors": [
+    "Zhichao Liao",
+    "Xiaole Xian",
+    "Qingyu Li",
+    "Wenyu Qin",
+    "Meng Wang",
+    "Weicheng Xie",
+    "Siyang Song",
+    "Pingfa Feng",
+    "Long Zeng",
+    "Liang Pan"
+  ],
+  "summaryCn": "概念定制让模型记住你的",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.07561",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.07561_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.07561_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.03872",
+  "nextPaperId": "2603.07660"
+}
