@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.05890",
+  "date": "2026-03-10",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "Lost in Stories: Consistency Bugs in Long Story Generation by LLMs",
+  "authors": [
+    "Junjie Li",
+    "Xinrui Guo",
+    "Yuhao Wu",
+    "Roy Ka-Wei Lee",
+    "Hongzhi Li",
+    "Yutao Xie"
+  ],
+  "summaryCn": "长篇叙事生成是大语言模型的重要应用场景，但模型在维持全局一致性方面存在系统性缺陷。本文构建了ConStory-Bench，涵盖2000条提示词、四种任务类型和五类19种细粒度一致性错误分类体系，涉及时间线逻辑、角色塑造、世界观设定、事实细节和叙事风格等维度。作者设计了ConStory-Checker自动检测流水线，通过四阶段LLM-as-judge方案生成带证据链的结构化报告，总体F1达0.678，远超人类专家的0.281。实验评估了商用、开源、能力增强和智能体等多类模型，发现GPT-5-Reasoning以CED 0.113大幅领先，而事实细节追踪与时序推理是所有模型的核心短板。研究还发现错误片段的token熵显著高于正常文本，揭示了模型不确定性与一致性错误之间的内在联系，为后续改进长篇生成质量提供了重要方向。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.05890",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.05890_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.05890_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.06713"
+}

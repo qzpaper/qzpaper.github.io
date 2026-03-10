@@ -1,0 +1,29 @@
+{
+  "paperId": "2603.07700",
+  "date": "2026-03-10",
+  "category": "Diffusion Model",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "TDM-R1: Reinforcing Few-Step Diffusion Models with Non-Differentiable Reward",
+  "authors": [
+    "Yihong Luo",
+    "Tianyang Hu",
+    "Weijian Luo",
+    "Jing Tang"
+  ],
+  "summaryCn": "扩散模型的少步蒸馏技术虽大幅加速了图像生成，却在指令跟随、文字渲染和空间定位等任务上表现欠佳。强化学习本可弥补这一短板，但现有方法都依赖可微分奖励，将标准RL直接套用于少步模型则会导致图像模糊退化。TDM-R1另辟蹊径，将学习过程拆解为三个模块：利用确定性ODE轨迹的零方差特性精确估计中间步奖励；将奖励参数化为扩散形式的代理模型，并以组级Bradley-Terry偏好优化替代逐对比较；以及采用边际分布级KL约束来正则化生成器，而非逐实例限制每步轨迹。动态EMA参考模型进一步平衡了探索与稳定性。实验证明，基于SD3.5-M的TDM-R1在GenEval上从0.61跳升至0.82，以4步推理超越了GPT-4o及原版80步模型，同时不损害域外评测指标。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.07700",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.07700_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.07700_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.07223",
+  "nextPaperId": "2603.08309"
+}

@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.07223",
+  "date": "2026-03-10",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "Unlocking Data Value in Finance: A Study on Distillation and Difficulty-Aware Training",
+  "authors": [
+    "Chuxue Cao",
+    "Honglin Lin",
+    "Zhanping Zhong",
+    "Xin Gao",
+    "Mengzhang Cai",
+    "Conghui He",
+    "Sirui Han",
+    "Lijun Wu"
+  ],
+  "summaryCn": "金融领域的大语言模型面临专业术语密集、数值推理严格、幻觉零容忍等独特挑战。本文另辟蹊径，不追求架构创新，而是深入挖掘数据本身的价值。作者构建了两个互补数据集：ODA-Fin-SFT-318k通过语义去重、CoT推理链合成、长度自适应验证等四阶段流水线从25个开源数据仓库提炼而来；ODA-Fin-RL-12k则专注于筛选",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.07223",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.07223_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.07223_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.06713",
+  "nextPaperId": "2603.07700"
+}

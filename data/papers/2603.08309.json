@@ -1,0 +1,28 @@
+{
+  "paperId": "2603.08309",
+  "date": "2026-03-10",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness",
+  "authors": [
+    "Yehonatan Elisha",
+    "Oren Barkan",
+    "Noam Koenigstein"
+  ],
+  "summaryCn": "深度视觉模型在标准基准上表现亮眼，却往往在分布偏移下暴露出致命弱点——它们学会了依赖背景纹理和上下文噪声，而非对象本身的语义特征。CFT（概念引导微调）正是为破解这一困局而生。其核心思路是：先用GPT-4o-mini为每个类别自动生成判别性语义概念（如",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.08309",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.08309_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.08309_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.07700",
+  "nextPaperId": "2603.08397"
+}

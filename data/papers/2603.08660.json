@@ -1,0 +1,46 @@
+{
+  "paperId": "2603.08660",
+  "date": "2026-03-10",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "How Far Can Unsupervised RLVR Scale LLM Training?",
+  "authors": [
+    "Bingxiang He",
+    "Yuxin Zuo",
+    "Zeyuan Liu",
+    "Shangziqi Zhao",
+    "Zixuan Fu",
+    "Junlin Yang",
+    "Cheng Qian",
+    "Kaiyan Zhang",
+    "Yuchen Fan",
+    "Ganqu Cui",
+    "Xiusi Chen",
+    "Youbang Sun",
+    "Xingtai Lv",
+    "Xuekai Zhu",
+    "Li Sheng",
+    "Ran Li",
+    "Huan-ang Gao",
+    "Yuchen Zhang",
+    "Bowen Zhou",
+    "Zhiyuan Liu",
+    "Ning Ding"
+  ],
+  "summaryCn": "强化学习与可验证奖励（RLVR）推动了近期大模型推理能力的飞跃，但获取可靠真值标签的监督瓶颈制约着其进一步规模化。无监督RLVR试图摆脱对人类标注的依赖，利用模型内在信号（置信度、多数投票等）或外部可验证结构（代码测试、形式验证器）作为奖励。本文对URLVR进行全面梳理，提出系统分类框架，并从理论上证明：所有内在奖励方法本质上都在锐化模型的初始分布——当模型初始置信度与正确性对齐时训练有益，失配时则系统性放大错误直至崩溃。实验在Qwen3等模型上验证了这一",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.08660",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.08660_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.08660_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.08652",
+  "nextPaperId": "2603.08708"
+}
