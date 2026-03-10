@@ -1,0 +1,15 @@
+{
+  "date": "2026-03-10",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.02554",
+      "title": "Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation",
+      "summary": "本文提出GKD框架，通过解耦表征学习与任务学习，将视觉基础模型的域泛化能力蒸馏至轻量学生模型，在F2F和F2L设定下分别取得+1.9和+10.6 mIoU平均增益。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.02554"
+    }
+  ]
+}

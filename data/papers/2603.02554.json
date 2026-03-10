@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.02554",
+  "date": "2026-03-10",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-10",
+  "title": "Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation",
+  "authors": [
+    "Chonghua Lv",
+    "Dong Zhao",
+    "Shuang Wang",
+    "Dou Quan",
+    "Ning Huyan",
+    "Nicu Sebe",
+    "Zhun Zhong"
+  ],
+  "summaryCn": "语义分割领域的模型压缩长期依赖知识蒸馏，却鲜少关注压缩后模型在未见域的泛化能力。随着DINOv2等视觉基础模型的崛起，这一矛盾愈发突出——传统蒸馏方法会悄然破坏基础模型精心构建的域不变表征，使学生模型沦为源域的过拟合者。本文揭示了根本冲突所在：任务损失驱动学生拟合源域决策边界，而蒸馏损失要求学生逼近教师的泛化表征，梯度对立导致收敛不稳定、泛化退化。为此，作者提出GKD框架，将表征学习与任务学习显式解耦为多阶段流程：先在ImageNet代理数据集上进行任务无关蒸馏，再在源域图像上进行域无关蒸馏，最后冻结编码器专门训练下游解码器。创新的Query-based Soft Distillation机制通过注意力重构，令每个空间位置既保留局部信息，又聚合教师的全局语义关系，从而内化教师的域不变结构而非简单模仿局部激活。实验表明GKD有效弥合了基础模型与轻量部署模型之间的泛化鸿沟。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.02554",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.02554_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.02554_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": null
+}
