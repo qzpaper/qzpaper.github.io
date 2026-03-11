@@ -1,0 +1,87 @@
+{
+  "date": "2026-03-11",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.03143",
+      "title": "Geometry-Guided Reinforcement Learning for Multi-view Consistent 3D Scene Editing",
+      "summary": "提出RL3DEdit框架，利用强化学习优化2D编辑器实现多视角一致的3D场景编辑。以VGGT置信度图为奖励信号，无需配对数据即可训练。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.03143"
+    },
+    {
+      "paperId": "2603.06577",
+      "title": "Omni-Diffusion: Unified Multimodal Understanding and Generation with Masked Discrete Diffusion",
+      "summary": "Omni-Diffusion是首个基于掩码离散扩散模型的any-to-any多模态语言模型，统一文本、语音和图像的理解与生成，无需模态特定优化。通过三阶段渐进训练和自建SDVI数据集，实现跨模态语义对齐与高效并行解码。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06577"
+    },
+    {
+      "paperId": "2603.06854",
+      "title": "Are Audio-Language Models Listening? Audio-Specialist Heads for Adaptive Audio Steering",
+      "summary": "本文针对大型音频-语言模型中文本主导问题，提出专家头引导方法SGS，通过发现音频专家注意力头并在推理时施加干预，提升模型对音频信息的利用能力。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.06854"
+    },
+    {
+      "paperId": "2603.07888",
+      "title": "VLM-SubtleBench: How Far Are VLMs from Human-Level Subtle Comparative Reasoning?",
+      "summary": "VLM-SubtleBench是一个专注于细微比较推理的视觉语言模型基准，包含13K图像对，覆盖10种差异类型和6个图像域。实验表明，即使最强模型GPT-5-thinking在多项指标上仍比人类低30多个百分点。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.07888"
+    },
+    {
+      "paperId": "2603.09095",
+      "title": "Reading, Not Thinking: Understanding and Bridging the Modality Gap When Text Becomes Pixels in Multimodal LLMs",
+      "summary": "本文系统研究多模态大语言模型中文本图像与文本token间的",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.09095"
+    },
+    {
+      "paperId": "2603.09206",
+      "title": "MM-Zero: Self-Evolving Multi-Model Vision Language Models From Zero Data",
+      "summary": "MM-Zero提出三角色自我进化框架，通过代码生成合成视觉数据，无需任何预收集图像即可训练视觉语言模型，实现真正的零数据自我进化。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.09206"
+    },
+    {
+      "paperId": "2603.09652",
+      "title": "MiniAppBench: Evaluating the Shift from Text to Interactive HTML Responses in LLM-Powered Assistants",
+      "summary": "MiniAppBench是首个评估LLM生成交互式HTML应用能力的基准，包含500条任务，涵盖意图、静态和动态三维度评估，并配套自主智能体评估框架MiniAppEval。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.09652"
+    },
+    {
+      "paperId": "2603.09877",
+      "title": "InternVL-U: Democratizing Unified Multimodal Models for Understanding, Reasoning, Generation and Editing",
+      "summary": "InternVL-U是一个仅4B参数的统一多模态模型，集成理解、推理、生成和编辑能力。通过统一上下文建模、模态特定模块化和解耦视觉表示三大原则，以更小参数量超越BAGEL 14B等更大模型。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.09877"
+    },
+    {
+      "paperId": "2603.09896",
+      "title": "Stepping VLMs onto the Court: Benchmarking Spatial Intelligence in Sports",
+      "summary": "本文提出CourtSI和CourtSI-Bench，首个面向体育场景的大规模空间智能数据集与基准，覆盖羽毛球、网球、乒乓球三种运动，评估VLM的3D空间推理能力。实验显示当前最优模型与人类表现仍存在显著差距。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.09896"
+    },
+    {
+      "paperId": "2603.09906",
+      "title": "Thinking to Recall: How Reasoning Unlocks Parametric Knowledge in LLMs",
+      "summary": "研究推理型大语言模型在单跳事实问答中的增益机制，发现计算缓冲效应和事实启发效应是两大关键驱动力，但推理过程中的幻觉中间事实也会放大最终答案的幻觉风险。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.09906"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "paperId": "2603.06854",
+  "date": "2026-03-11",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-11",
+  "title": "Are Audio-Language Models Listening? Audio-Specialist Heads for Adaptive Audio Steering",
+  "authors": [
+    "Neta Glazer",
+    "Lenny Aharon",
+    "Ethan Fetaya"
+  ],
+  "summaryCn": "大型音频-语言模型将音频编码器与语言模型融合，却常陷入",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.06854",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.06854_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.06854_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.06577",
+  "nextPaperId": "2603.07888"
+}

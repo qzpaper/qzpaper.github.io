@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.09095",
+  "date": "2026-03-11",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-11",
+  "title": "Reading, Not Thinking: Understanding and Bridging the Modality Gap When Text Becomes Pixels in Multimodal LLMs",
+  "authors": [
+    "Kaiser Sun",
+    "Xiaochuang Yuan",
+    "Hongjun Liu",
+    "Chen Zhao",
+    "Cheng Zhang",
+    "Mark Dredze",
+    "Fan Bai"
+  ],
+  "summaryCn": "当文字印在纸上，人类用眼睛阅读；当文字输入模型，多模态大语言模型却要先将图像压缩成视觉token，再与语言表示融合。这条",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.09095",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.09095_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.09095_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.07888",
+  "nextPaperId": "2603.09206"
+}

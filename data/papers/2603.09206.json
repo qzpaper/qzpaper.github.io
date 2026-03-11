@@ -1,0 +1,36 @@
+{
+  "paperId": "2603.09206",
+  "date": "2026-03-11",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-11",
+  "title": "MM-Zero: Self-Evolving Multi-Model Vision Language Models From Zero Data",
+  "authors": [
+    "Zongxia Li",
+    "Hongyang Du",
+    "Chengsong Huang",
+    "Xiyang Wu",
+    "Lantao Yu",
+    "Yicheng He",
+    "Jing Xie",
+    "Xiaomin Wu",
+    "Zhichao Liu",
+    "Jiarui Zhang",
+    "Fuxiao Liu"
+  ],
+  "summaryCn": "现有视觉语言模型的自我进化方法始终依赖预收集的静态图像数据集，这既是工程瓶颈，也限制了模型进化的边界。MM-Zero另辟蹊径，以代码生成为桥梁——模型将抽象概念转化为可执行的SVG或Python代码，渲染出合成图像，从而彻底摆脱对外部图像数据的依赖。框架设计了Proposer、Coder、Solver三个角色，均从同一基座模型初始化并通过GRPO强化学习各自优化：Proposer负责生成包含场景描述与难易问题的四元组，Coder将描述渲染为图像，Solver在合成图像上进行多模态推理训练。奖励体系精心设计了可解性、难度、多样性等多维信号，既防止问题过于简单，又鼓励跨领域生成。在Qwen3-VL和MiMo-VL等基座上的实验表明，该方法可带来稳定的性能提升，验证了零数据自我进化路径的可行性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.09206",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.09206_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.09206_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.09095",
+  "nextPaperId": "2603.09652"
+}

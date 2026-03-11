@@ -1,0 +1,36 @@
+{
+  "paperId": "2603.03143",
+  "date": "2026-03-11",
+  "category": "3D Vision",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-11",
+  "title": "Geometry-Guided Reinforcement Learning for Multi-view Consistent 3D Scene Editing",
+  "authors": [
+    "Jiyuan Wang",
+    "Chunyu Lin",
+    "Lei Sun",
+    "Zhi Cao",
+    "Yuyang Yin",
+    "Lang Nie",
+    "Zhenlong Yuan",
+    "Xiangxiang Chu",
+    "Yunchao Wei",
+    "Kang Liao",
+    "Guosheng Lin"
+  ],
+  "summaryCn": "3D场景编辑长期面临多视角一致性难题——几何条件法无法处理几何变化，迭代优化法效率低下，注意力操纵法在不连续区域累积误差。RL3DEdit另辟蹊径，借助",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.03143",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.03143_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.03143_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.06577"
+}
