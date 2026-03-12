@@ -1,0 +1,43 @@
+{
+  "paperId": "2603.10160",
+  "date": "2026-03-12",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "ReMix: Reinforcement routing for mixtures of LoRAs in LLM finetuning",
+  "authors": [
+    "Ruizhong Qiu",
+    "Hanqing Zeng",
+    "Yinglong Xia",
+    "Yiwen Meng",
+    "Ren Chen",
+    "Jiarui Feng",
+    "Dongqi Fu",
+    "Qifan Wang",
+    "Jiayi Liu",
+    "Jun Xiao",
+    "Xiangjun Fan",
+    "Benyu Zhang",
+    "Hong Li",
+    "Zhining Liu",
+    "Hyunsik Yoo",
+    "Zhichen Zeng",
+    "Tianxin Wei",
+    "Hanghang Tong"
+  ],
+  "summaryCn": "大语言模型参数高效微调领域，将多个LoRA组合为混合专家架构本是提升表达能力的自然延伸，却暗藏致命缺陷——路由权重坍塌。作者从理论与实验两个维度揭示这一现象：即便激活多个LoRA，路由权重也会在训练中迅速集中于单一适配器，令其余计算资源付诸东流。信息论视角下的有效支撑大小分析表明，在常见初始化条件下，坍塌以极高概率发生。\n\nReMix的解法颇具匠心。它放弃可学习的连续路由权重，转而为所有激活的LoRA赋予常数权重，从根本上保证有效支撑大小恒等于k。常数权重使路由器不可微，作者将其重构为强化学习问题：以SFT损失为负奖励，以路由分布为策略，采用RLOO梯度估计器进行无偏训练。理论证明推理时取top-k即为最优选择，设计兼顾训练稳定性与推理高效性。\n\n在Llama 3 8B上，ReMix以仅0.070B参数量在GSM8K、HumanEval、ARC-c三项基准上平均超越最强基线近3个百分点，充分验证了这一简洁设计的有效性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.10160",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.10160_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.10160_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.09827",
+  "nextPaperId": "2603.10165"
+}

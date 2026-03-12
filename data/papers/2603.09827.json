@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.09827",
+  "date": "2026-03-12",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "MA-EgoQA: Question Answering over Egocentric Videos from Multiple Embodied Agents",
+  "authors": [
+    "Kangsan Kim",
+    "Yanlai Yang",
+    "Suji Kim",
+    "Woongyeong Yeo",
+    "Youngwan Lee",
+    "Mengye Ren",
+    "Sung Ju Hwang"
+  ],
+  "summaryCn": "多智能体协同工作的未来图景中，人类管理者如何高效查询分散于各智能体视角中的海量信息？MA-EgoQA正是为此而生的首个多智能体长时第一人称视频问答基准。研究者基于EgoLife数据集——六人共居七天、累计266小时的第一人称视频——精心构建了1741个问答对，覆盖社交互动、任务协调、心智理论、时间推理与环境交互五大类别。每道题目均要求跨越至少两个智能体视角进行联合推理，单一视角的信息不足以支撑完整答案，真正考验系统的跨视角整合能力。数据生成融合GPT驱动的自动生成与严格的四阶段质量过滤，确保每个问题具备充分的多智能体信息依赖性。为提供有效基线，论文同步提出无需训练的EgoMAS系统：以4W1H格式构建事件级共享记忆，再通过两阶段BM25检索动态聚合跨智能体信息生成答案。实验对比16种基线方法，揭示当前模型在该任务上的明显不足，为具身AI通信与协同研究奠定了重要基础。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.09827",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.09827_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.09827_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.09229",
+  "nextPaperId": "2603.10160"
+}

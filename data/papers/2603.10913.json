@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.10913",
+  "date": "2026-03-12",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "LLM2Vec-Gen: Generative Embeddings from Large Language Models",
+  "authors": [
+    "Parishad BehnamGhader",
+    "Vaibhav Adlakha",
+    "Fabian David Schmidt",
+    "Nicolas Chapados",
+    "Marius Mosbach",
+    "Siva Reddy"
+  ],
+  "summaryCn": "文本嵌入长期依赖",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.10913",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.10913_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.10913_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.10757",
+  "nextPaperId": null
+}

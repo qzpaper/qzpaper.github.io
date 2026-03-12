@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.08561",
+  "date": "2026-03-12",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "RetroAgent: From Solving to Evolving via Retrospective Dual Intrinsic Feedback",
+  "authors": [
+    "Xiaoying Zhang",
+    "Zichen Liu",
+    "Yipeng Zhang",
+    "Xia Hu",
+    "Wenqi Shao"
+  ],
+  "summaryCn": "基于大语言模型的强化学习智能体在复杂交互任务中潜力巨大，但长期困于两大痼疾：偏向利用而忽视探索，以及习得知识深藏参数无法显式调用。RetroAgent正是针对这一鸿沟而生——每轮结束后触发自我反思机制，从轨迹中析出三元组：潜力分数、成败预测与自然语言教训。数值侧，框架以单调递增的历史基线为锚，仅当当前表现突破历史峰值时才释放内在奖励，迫使智能体持续精进而非满足于偶发成功。语言侧，可复用经验被提炼入记忆缓冲区，检索时由SimUtil-UCB策略综合语义相关性、反思效用与探索覆盖三项准则，兼顾经验复用与独立探索。在ALFWorld、WebShop、Sokoban、MineSweeper四项基准上，RetroAgent相较GRPO基线取得显著提升，WebShop成功率超越最强基线约六个百分点。测试时移除记忆检索后性能仅微降，印证知识已有效内化至模型权重，真正实现了从求解到进化的跨越。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.08561",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.08561_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.08561_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.08068",
+  "nextPaperId": "2603.09229"
+}

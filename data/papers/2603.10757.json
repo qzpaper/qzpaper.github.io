@@ -1,0 +1,38 @@
+{
+  "paperId": "2603.10757",
+  "date": "2026-03-12",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "CodePercept: Code-Grounded Visual STEM Perception for MLLMs",
+  "authors": [
+    "Tongkun Guan",
+    "Zhibo Yang",
+    "Jianqiang Wan",
+    "Mingkun Yang",
+    "Zhengtao Guo",
+    "Zijian Hu",
+    "Ruilin Luo",
+    "Ruize Chen",
+    "Songtao Jiang",
+    "Peng Wang",
+    "Wei Shen",
+    "Junyang Lin",
+    "Xiaokang Yang"
+  ],
+  "summaryCn": "在多模态大语言模型处理STEM视觉推理任务时，感知不足远比推理受限更为关键——这是CodePercept的出发点。作者通过系统性缩放实验证明，提升感知能力带来的收益始终优于提升推理能力，从而将研究聚焦于视觉感知的根本改进。\\n\\n传统方案依赖强大模型蒸馏生成描述性文本，却难逃幻觉与",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.10757",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.10757_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.10757_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.10705",
+  "nextPaperId": "2603.10913"
+}

@@ -1,0 +1,34 @@
+{
+  "paperId": "2603.10705",
+  "date": "2026-03-12",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "Prism-$Δ$: Differential Subspace Steering for Prompt Highlighting in Large Language Models",
+  "authors": [
+    "Yuyao Ge",
+    "Shenghua Liu",
+    "Yiwei Wang",
+    "Tianyu Liu",
+    "Baolong Bi",
+    "Lingrui Mei",
+    "Jiayu Yao",
+    "Jiafeng Guo",
+    "Xueqi Cheng"
+  ],
+  "summaryCn": "在大语言模型的注意力机制中，信息传递由路由通道（Key）与内容通道（Value）共同决定，然而现有提示高亮方法长期只关注前者。Prism-Δ从这一盲区出发，构建了首个双通道联合引导框架。研究者首先发现了一个被忽视的现象：Value通道的偏移量与Key通道相当，约半数注意力头存在显著的Value判别信号，且两者在网络深度上呈互补分布——Key信号集中于中间层，Value信号峰值出现在更深的后层。基于此，Prism-Δ构造对比QA三元组，提取正负条件下的表示差异，对差分交叉协方差矩阵进行奇异值分解，从数学上保证了两种条件共享方向被自动消除，仅保留真正具有判别力的子空间方向。SVD过程同时自然产出每个注意力头的判别强度度量，经softplus映射转化为连续权重，避免了硬阈值带来的信息截断。推理时对高亮token同时扰动Key和Value的子空间投影，将注意力分配与内容表达协同增强。在Qwen3和Gemma3两类架构的多尺度模型上，Prism-Δ在知识冲突纠正、长上下文检索和代词替换等任务中均展现出竞争力，双通道版本进一步验证了Value引导的额外增益。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.10705",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.10705_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.10705_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.10165",
+  "nextPaperId": "2603.10757"
+}

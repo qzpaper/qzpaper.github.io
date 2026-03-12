@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.10165",
+  "date": "2026-03-12",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-12",
+  "title": "OpenClaw-RL: Train Any Agent Simply by Talking",
+  "authors": [
+    "Yinjie Wang",
+    "Xuyang Chen",
+    "Xiaolong Jin",
+    "Mengdi Wang",
+    "Ling Yang"
+  ],
+  "summaryCn": "智能体每次执行动作后都会收到环境反馈，但现有系统往往将其仅视为下一步的上下文，白白浪费了其中蕴藏的训练价值。OpenClaw-RL的核心洞察在于：这些下一状态信号既包含对当前动作的隐式评价（测试通过、用户不满、错误日志），也包含具体的修正指引（",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.10165",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.10165_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.10165_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.10160",
+  "nextPaperId": "2603.10705"
+}
