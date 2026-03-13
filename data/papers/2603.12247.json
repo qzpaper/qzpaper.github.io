@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.12247",
+  "date": "2026-03-13",
+  "category": "Image Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-13",
+  "title": "Trust Your Critic: Robust Reward Modeling and Reinforcement Learning for Faithful Image Editing and Generation",
+  "authors": [
+    "Xiangyu Zhao",
+    "Peiyuan Zhang",
+    "Junming Lin",
+    "Tianhao Liang",
+    "Yuchen Duan",
+    "Shengyuan Ding",
+    "Changyao Tian",
+    "Yuhang Zang",
+    "Junchi Yan",
+    "Xue Yang"
+  ],
+  "summaryCn": "图像编辑与文本生成领域的强化学习优化高度依赖奖励模型的可靠性，然而通用多模态大模型在零样本奖励场景下频繁出现幻觉、忽略细节和空间判断失准等问题，严重误导优化方向。FIRM框架针对这一核心瓶颈，设计了两套专门的数据构建流水线：针对图像编辑的",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.12247",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.12247_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.12247_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.12201",
+  "nextPaperId": "2603.12250"
+}

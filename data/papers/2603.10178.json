@@ -1,0 +1,34 @@
+{
+  "paperId": "2603.10178",
+  "date": "2026-03-13",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-13",
+  "title": "Video-Based Reward Modeling for Computer-Use Agents",
+  "authors": [
+    "Linxin Song",
+    "Jieyu Zhang",
+    "Huanxin Sheng",
+    "Taiwei Shi",
+    "Gupta Rahul",
+    "Yang Liu",
+    "Ranjay Krishna",
+    "Jian Kang",
+    "Jieyu Zhao"
+  ],
+  "summaryCn": "计算机使用智能体（CUA）在真实界面执行复杂任务的能力日益增强，但如何自动评估其是否真正完成用户指令仍是核心难题。本文提出仅依赖界面状态序列（执行视频关键帧）进行奖励建模的新范式，彻底摆脱对智能体内部推理格式的依赖，天然跨平台、跨方法通用。为解决负样本稀缺问题，作者创新性地提出对抗性指令翻译方法，利用视觉语言模型从成功轨迹中生成语义不匹配却视觉合理的硬负例，经人工验证准确率达100%。面对视频输入的巨大计算开销，本文设计了时空Token剪枝机制：空间上通过UI连通图剔除静态背景区域，时间上通过余弦相似度追踪逐帧变化，精准保留光标移动、菜单展开等决定成功与否的微妙UI线索。在此基础上构建的53k规模数据集ExeVR-53k和基于Qwen3-VL微调的ExeVRM模型，在评测基准上以84.7%准确率全面超越GPT-5.2、Gemini 3 Pro等商业大模型，为CUA评估提供了一条可扩展的自动化路径。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.10178",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.10178_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.10178_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.11421"
+}
