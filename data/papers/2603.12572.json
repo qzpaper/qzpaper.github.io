@@ -1,0 +1,37 @@
+{
+  "paperId": "2603.12572",
+  "date": "2026-03-16",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-16",
+  "title": "LMEB: Long-horizon Memory Embedding Benchmark",
+  "authors": [
+    "Xinping Zhao",
+    "Xinshuo Hu",
+    "Jiaxin Xu",
+    "Danyu Tang",
+    "Xin Zhang",
+    "Mengjia Zhou",
+    "Yan Zhong",
+    "Yao Zhou",
+    "Zifei Shan",
+    "Meishan Zhang",
+    "Baotian Hu",
+    "Min Zhang"
+  ],
+  "summaryCn": "记忆是智能体系统的灵魂，然而如何衡量模型",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.12572",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.12572_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.12572_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.12266",
+  "nextPaperId": "2603.12793"
+}

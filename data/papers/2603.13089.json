@@ -1,0 +1,28 @@
+{
+  "paperId": "2603.13089",
+  "date": "2026-03-16",
+  "category": "Image Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-16",
+  "title": "V-Bridge: Bridging Video Generative Priors to Versatile Few-shot Image Restoration",
+  "authors": [
+    "Shenghe Zheng",
+    "Junpeng Jiang",
+    "Wenbo Li"
+  ],
+  "summaryCn": "V-Bridge提出一种全新范式，将传统图像复原任务重新诠释为渐进式视频生成过程。其核心思路是将低质量图像作为起始帧、高质量图像作为终止帧，通过像素空间线性插值构造伪时序序列，借助视频生成大模型（Wan2.2-TI2V-5B）内隐的时空一致性先验来学习完整复原轨迹。为弥合预训练分辨率与高分辨率复原需求之间的差距，方法设计了三阶段渐进课程训练策略（512→720→960分辨率），使模型从全局结构逐步过渡到高频细节建模；并引入轻量级漂移校正模块，学习从系统性分布偏移输出到真值的短校正轨迹，高效消除分辨率偏置。实验表明，V-Bridge仅使用1000个多任务训练样本，在FoundIR测试集上以25.18 dB的平均PSNR超越使用百万样本训练的FoundIR-G，并在HQ-NightRain域外基准上以27.70 dB大幅领先第二名AgenticIR达11.4 dB，展现出卓越的数据效率与跨域泛化能力。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.13089",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.13089_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.13089_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.13032",
+  "nextPaperId": "2603.13224"
+}

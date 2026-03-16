@@ -1,0 +1,39 @@
+{
+  "paperId": "2603.13023",
+  "date": "2026-03-16",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-16",
+  "title": "daVinci-Env: Open SWE Environment Synthesis at Scale",
+  "authors": [
+    "Dayuan Fu",
+    "Shenyu Wu",
+    "Yunze Wu",
+    "Zerui Peng",
+    "Yaxing Huang",
+    "Jie Sun",
+    "Ji Zeng",
+    "Mohan Jiang",
+    "Lin Zhang",
+    "Yukun Li",
+    "Jiarui Hu",
+    "Liming Liu",
+    "Jinlong Hou",
+    "Pengfei Liu"
+  ],
+  "summaryCn": "软件工程智能体的训练长期受制于可执行环境的匮乏——现有开源数据集规模小、仓库单一，而工业方案的基础设施又不对外开放。OpenSWE（即daVinci-Env）以45,320个可执行Docker环境、覆盖超过12,800个GitHub仓库的规模，打破了这一壁垒，并将全套Dockerfile、评估脚本与分布式构建基础设施完整开源。其核心是一条六阶段多智能体合成流水线：从GitHub PR筛选出发，经仓库探索智能体、Dockerfile构建智能体、评估脚本生成智能体，到严格的双条件验证与测试分析智能体，每一环节均针对现实失败模式精心设计。为解决",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.13023",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.13023_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.13023_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.12793",
+  "nextPaperId": "2603.13032"
+}

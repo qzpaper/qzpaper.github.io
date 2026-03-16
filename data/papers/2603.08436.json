@@ -1,0 +1,27 @@
+{
+  "paperId": "2603.08436",
+  "date": "2026-03-16",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-16",
+  "title": "Can Vision-Language Models Solve the Shell Game?",
+  "authors": [
+    "Tiedong Liu",
+    "Wee Sun Lee"
+  ],
+  "summaryCn": "人类本能地能追踪杯子下隐藏的球，而视觉语言模型却在这一看似简单的任务上彻底失败。本文以经典",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.08436",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.08436_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.08436_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.11647"
+}
