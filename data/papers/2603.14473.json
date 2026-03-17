@@ -1,0 +1,48 @@
+{
+  "paperId": "2603.14473",
+  "date": "2026-03-17",
+  "category": "AI for Science",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-17",
+  "title": "AI Can Learn Scientific Taste",
+  "authors": [
+    "Jingqi Tong",
+    "Mingzhe Li",
+    "Hangcheng Li",
+    "Yongzhuo Yang",
+    "Yurong Mou",
+    "Weijie Ma",
+    "Zhiheng Xi",
+    "Hongji Chen",
+    "Xiaoran Liu",
+    "Qinyuan Cheng",
+    "Ming Zhang",
+    "Qiguang Chen",
+    "Weifeng Ge",
+    "Qipeng Guo",
+    "Tianlei Ying",
+    "Tianxiang Sun",
+    "Yining Zheng",
+    "Xinchi Chen",
+    "Jun Zhao",
+    "Ning Ding",
+    "Xuanjing Huang",
+    "Yugang Jiang",
+    "Xipeng Qiu"
+  ],
+  "summaryCn": "科学品味——判断哪些研究方向真正值得追求——是顶尖科学家区别于普通研究者的核心素质。本文将其拆解为两项可量化的能力：判断能力（评估研究想法的潜在影响力）与构思能力（提出高影响力的研究方向）。作者以Hume与Kant的美学哲学为依据，认为科学社区通过引用所形成的集体判断正是「品味标准」的现代体现。基于此，他们提出RLCF（社区反馈强化学习）训练范式：构建70万对领域与时间匹配的论文摘要对作为偏好数据，训练生成式奖励模型Scientific Judge；再以该Judge为奖励信号，通过Comparison-Based GRPO训练Scientific Thinker生成高潜力研究想法。实验表明，经过RLCF训练的模型在判断准确率上大幅超越同规模基座模型，部分指标甚至逼近GPT与Gemini等顶级闭源模型，展现出AI习得科学品味的可行性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.14473",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.14473_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.14473_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.13594",
+  "nextPaperId": "2603.15031"
+}

@@ -1,0 +1,34 @@
+{
+  "paperId": "2603.13594",
+  "date": "2026-03-17",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-17",
+  "title": "EnterpriseOps-Gym: Environments and Evaluations for Stateful Agentic Planning and Tool Use in Enterprise Settings",
+  "authors": [
+    "Shiva Krishna Reddy Malay",
+    "Shravan Nayak",
+    "Jishnu Sethumadhavan Nair",
+    "Sagar Davasam",
+    "Aman Tiwari",
+    "Sathwik Tejaswi Madhusudhan",
+    "Sridhar Krishna Nemala",
+    "Srinivas Sunkara",
+    "Sai Rajeswar"
+  ],
+  "summaryCn": "EnterpriseOps-Gym是一个专为企业自动化场景设计的智能体基准，旨在弥补现有评估框架的根本性不足。它覆盖客户服务、HR、IT运维、邮件、日历、Teams、云盘及跨域混合任务共8个互联领域，搭建了包含164张数据库表、512个功能工具的容器化沙箱环境，规模远超前任基准。平台共收录1150个任务，平均需要9.15步工具调用，最多达34步，并设置严格的策略合规验证。研究团队联合160余名领域专家与工程师，经四阶段流水线构建任务：场景设计、轨迹执行、终态验证和多轮质量审查，确保每个任务的约束性与唯一终态。实验对14个前沿模型进行测评，最强的Claude Opus 4.5也仅实现37.4%的任务通过率，而不可行任务的安全拒绝率更是不足54%，随任务步长增加性能单调衰减。这一结果有力表明，当前LLM在长程状态维护、跨系统编排和策略感知规划方面与企业级实用部署之间仍存在显著鸿沟。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.13594",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.13594_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.13594_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.14473"
+}
