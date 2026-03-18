@@ -1,0 +1,87 @@
+{
+  "date": "2026-03-18",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.08262",
+      "title": "FinToolBench: Evaluating LLM Agents for Real-World Financial Tool Use",
+      "summary": "FinToolBench是首个真实世界可运行的金融工具评测基准，包含760个工具和295个查询，提出时效性、意图约束、域对齐三类合规指标，系统评估LLM智能体的金融工具调用能力。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.08262"
+    },
+    {
+      "paperId": "2603.13366",
+      "title": "Thinking in Uncertainty: Mitigating Hallucinations in MLRMs with Latent Entropy-Aware Decoding",
+      "summary": "本文提出LEAD解码策略，通过监测token级熵值自适应切换离散与潜在推理模式，并注入视觉锚点，有效缓解多模态推理模型中的幻觉问题。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.13366"
+    },
+    {
+      "paperId": "2603.13398",
+      "title": "Qianfan-OCR: A Unified End-to-End Model for Document Intelligence",
+      "summary": "Qianfan-OCR是一个4B参数的统一端到端文档智能模型，融合文档解析、布局分析与理解于单一视觉语言架构，通过Layout-as-Thought机制在保持推理效率的同时恢复显式布局分析能力。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.13398"
+    },
+    {
+      "paperId": "2603.15726",
+      "title": "MiroThinker-1.7 & H1: Towards Heavy-Duty Research Agents via Verification",
+      "summary": "MiroThinker-1.7与H1提出通过验证中心推理提升重度研究智能体性能。核心创新包括智能体中间训练强化原子能力，以及局部/全局双层验证机制抑制长链推理中的误差累积。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.15726"
+    },
+    {
+      "paperId": "2603.16448",
+      "title": "TRUST-SQL: Tool-Integrated Multi-Turn Reinforcement Learning for Text-to-SQL over Unknown Schemas",
+      "summary": "TRUST-SQL针对真实企业数据库的未知模式问题，设计四阶段交互协议抑制LLM幻觉，并提出Dual-Track GRPO训练策略精确解耦模式探索与SQL生成的信用分配，显著提升Text-to-SQL性能。",
+      "category": "Code Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.16448"
+    },
+    {
+      "paperId": "2603.16669",
+      "title": "Kinema4D: Kinematic 4D World Modeling for Spatiotemporal Embodied Simulation",
+      "summary": "Kinema4D将机器人-世界交互分解为确定性运动学控制与随机性环境反应生成，通过URDF驱动的4D轨迹投影与DiT扩散模型实现时空一致的具身仿真，并构建了20万规模4D数据集。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.16669"
+    },
+    {
+      "paperId": "2603.16790",
+      "title": "InCoder-32B: Code Foundation Model for Industrial Scenarios",
+      "summary": "InCoder-32B是首个面向工业代码场景的32B参数基础模型，覆盖芯片设计、GPU优化、嵌入式系统等五大领域。通过三阶段Code-Flow流水线和仿真环境驱动的数据生成，在工业代码基准上显著超越现有模型。",
+      "category": "Code Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.16790"
+    },
+    {
+      "paperId": "2603.16856",
+      "title": "Online Experiential Learning for Language Models",
+      "summary": "本文提出在线经验学习（OEL）框架，使LLM能从部署中积累的文本交互轨迹持续自我改进，无需人工标注或奖励函数。通过经验提取与上下文蒸馏两阶段迭代，模型在文本游戏任务上实现跨迭代性能稳步提升。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.16856"
+    },
+    {
+      "paperId": "2603.16870",
+      "title": "Demystifing Video Reasoning",
+      "summary": "本文揭示扩散视频模型的推理机制并非逐帧展开（CoF），而是沿去噪步骤逐步涌现（CoS）。模型在早期步骤并行探索多条推理路径，逐步收敛至最终决策，并展现出工作记忆、自纠错和感知先于行动等涌现行为。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.16870"
+    },
+    {
+      "paperId": "2603.16871",
+      "title": "WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation",
+      "summary": "WorldCam提出以相机位姿为统一几何表示，构建交互式3D游戏世界模型。通过Lie代数映射用户动作、位姿锚定长期记忆和渐进式自回归推理，首次同时实现精确动作控制与长时程3D一致性。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.16871"
+    }
+  ]
+}

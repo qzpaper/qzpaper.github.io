@@ -1,0 +1,37 @@
+{
+  "paperId": "2603.16871",
+  "date": "2026-03-18",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-18",
+  "title": "WorldCam: Interactive Autoregressive 3D Gaming Worlds with Camera Pose as a Unifying Geometric Representation",
+  "authors": [
+    "Jisu Nam",
+    "Yicong Hong",
+    "Chun-Hao Paul Huang",
+    "Feng Liu",
+    "JoungBin Lee",
+    "Jiyoung Kim",
+    "Siyoon Jin",
+    "Yunsung Lee",
+    "Jaeyoon Jung",
+    "Suhwan Choi",
+    "Seungryong Kim",
+    "Yang Zhou"
+  ],
+  "summaryCn": "交互式游戏世界生成一直面临两大顽疾：动作控制不精确与3D空间一致性缺失。WorldCam洞见到，相机位姿恰是连接两者的天然几何纽带——它既是用户操作在三维空间中的真实投影，也是场景记忆的空间锚点。系统将键鼠输入映射为se(3)扭量，在SE(3)流形上联合积分线速度与角速度，彻底规避了线性近似带来的轨迹漂移；长期记忆池通过位置筛选与朝向匹配双重检索历史潜变量，使模型在重访旧场景时能够召回一致的视觉记忆；渐进式自回归调度则让早期帧作为低噪锚点稳定长序列生成。配套构建的WorldCam-50h数据集涵盖50小时多样化第一人称射击游戏录像，弥补了领域内真实动作标注数据的空白。实验表明，该方法在动作可控性与3D一致性指标上均大幅领先现有方法，为可控世界模型研究树立了新基准。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.16871",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.16871_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.16871_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.16870",
+  "nextPaperId": null
+}

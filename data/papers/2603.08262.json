@@ -1,0 +1,37 @@
+{
+  "paperId": "2603.08262",
+  "date": "2026-03-18",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-18",
+  "title": "FinToolBench: Evaluating LLM Agents for Real-World Financial Tool Use",
+  "authors": [
+    "Jiaxuan Lu",
+    "Kong Wang",
+    "Yemin Wang",
+    "Qingmei Tang",
+    "Hongwei Zeng",
+    "Xiang Chen",
+    "Jiahao Pi",
+    "Shujian Deng",
+    "Lingzhi Chen",
+    "Yi Fu",
+    "Kehua Yang",
+    "Xiao Sun"
+  ],
+  "summaryCn": "金融领域的LLM智能体正从知识检索走向主动工具调用，但现有评测体系对金融特有的风险视而不见——错误的API调用往往比错误的文字回答更具迷惑性。FinToolBench正是为填补这一空白而生。研究团队从RapidAPI与AkShare两大生态筛选出760个可执行工具，构建295道严格依赖工具的查询题目，覆盖单工具与多工具两类场景。基准的核心创新在于三维合规评估：时效性检验智能体是否使用了频率匹配的数据源，意图约束防止信息查询被错误升级为交易执行，域对齐确保工具选择与监管市场域严格对应。评估框架同时记录能力指标（工具调用率、执行成功率、软分数）与合规指标（三类不匹配率），从同一可审计工具轨迹中双轨提取。实验揭示主流LLM在金融合规维度普遍存在盲区，为构建更可靠的金融智能体提供了系统性评测基础。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.08262",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.08262_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.08262_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.13366"
+}

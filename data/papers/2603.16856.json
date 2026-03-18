@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.16856",
+  "date": "2026-03-18",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-18",
+  "title": "Online Experiential Learning for Language Models",
+  "authors": [
+    "Tianzhu Ye",
+    "Li Dong",
+    "Qingxiu Dong",
+    "Xun Wu",
+    "Shaohan Huang",
+    "Furu Wei"
+  ],
+  "summaryCn": "当模型完成训练、作为静态制品投入部署，它与真实世界之间便形成一道无形的屏障——无数宝贵的交互经验就此流逝。在线经验学习（OEL）试图打破这道屏障。它的核心洞见在于：真实交互中环境返回的文本反馈，本身已蕴含足够丰富的学习信号，无需转化为标量奖励，无需人工介入标注。框架分为两个交替迭代的阶段：首先在用户侧收集多轮轨迹，在服务器端以累积方式提取可迁移的经验知识；继而通过在线上下文蒸馏，让不携带经验的学生模型向携带经验知识的教师模型学习，以逆向KL散度驱动知识内化，使模型能在推理时无需上下文便复现经验带来的行为改进。两阶段形成良性闭环：更好的模型产生更具信息量的轨迹，更丰富的轨迹滋养下一轮知识提取，提炼出的知识又催生更强的模型。实验在Frozen Lake与Sokoban文本游戏上验证了这一循环的有效性，Qwen3系列模型的通过率随迭代轮次持续攀升，展现出从交互经验中真正学习的潜力。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.16856",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.16856_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.16856_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.16790",
+  "nextPaperId": "2603.16870"
+}
