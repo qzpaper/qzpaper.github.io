@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.14935",
+  "date": "2026-03-19",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-19",
+  "title": "Video-CoE: Reinforcing Video Event Prediction via Chain of Events",
+  "authors": [
+    "Qile Su",
+    "Jing Tang",
+    "Rui Chen",
+    "Lei Sun",
+    "Xiangxiang Chu"
+  ],
+  "summaryCn": "视频事件预测（VEP）要求模型基于视频内容预测未来事件，但现有多模态大语言模型普遍存在两大缺陷：一是依赖文本选项线索而非视频证据进行推理，形成",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.14935",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.14935_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.14935_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.15618"
+}

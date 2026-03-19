@@ -1,0 +1,71 @@
+{
+  "date": "2026-03-19",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.14935",
+      "title": "Video-CoE: Reinforcing Video Event Prediction via Chain of Events",
+      "summary": "提出Chain of Events（CoE）范式，通过构建时序事件链增强多模态大模型的视频未来事件预测能力，结合SFT与GRPO强化学习两阶段训练，显著提升模型对视觉内容的关注与逻辑推理。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.14935"
+    },
+    {
+      "paperId": "2603.15618",
+      "title": "Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models",
+      "summary": "本文分析VLA模型中视觉信息逐层衰减的问题，提出DeepVision-VLA，通过VL-MoT框架向深层注入多级视觉特征，并用动作引导的视觉剪枝策略提升机器人操作性能。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.15618"
+    },
+    {
+      "paperId": "2603.17117",
+      "title": "MosaicMem: Hybrid Spatial Memory for Controllable Video World Models",
+      "summary": "MosaicMem提出混合空间记忆机制，以patch为基本单元融合显式几何与隐式神经记忆，实现可控长时视频生成中的时空一致性。通过Patch-and-Compose和双重Warping机制，兼顾相机运动精度与动态场景生成能力。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.17117"
+    },
+    {
+      "paperId": "2603.17187",
+      "title": "MetaClaw: Just Talk -- An Agent That Meta-Learns and Evolves in the Wild",
+      "summary": "MetaClaw提出双时间尺度持续适应框架：快速技能蒸馏（秒级）与机会主义RL策略优化（分钟到小时级）协同演化，解决部署后智能体能力漂移问题。通过技能代版本控制避免数据污染，在全新持续智能体基准上验证有效性。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.17187"
+    },
+    {
+      "paperId": "2603.17218",
+      "title": "Alignment Makes Language Models Normative, Not Descriptive",
+      "summary": "对齐使大语言模型学会预测人类",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.17218"
+    },
+    {
+      "paperId": "2603.17240",
+      "title": "GigaWorld-Policy: An Efficient Action-Centered World--Action Model",
+      "summary": "GigaWorld-Policy提出以动作为中心的世界-动作模型，训练时用未来视觉动态作密集监督，推理时可直接输出动作，兼顾物理一致性与低延迟控制。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.17240"
+    },
+    {
+      "paperId": "2603.17541",
+      "title": "Temporal Gains, Spatial Costs: Revisiting Video Fine-Tuning in Multimodal Large Language Models",
+      "summary": "本文揭示视频监督微调（Video-SFT）普遍存在",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.17541"
+    },
+    {
+      "paperId": "2603.17995",
+      "title": "LoST: Level of Semantics Tokenization for 3D Shapes",
+      "summary": "LoST提出按语义显著性排序3D形状token，使早期前缀即可解码为完整可信形状。通过RIDA损失对齐3D潜空间与DINO语义特征，以极少token实现SOTA自回归3D生成。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.17995"
+    }
+  ]
+}

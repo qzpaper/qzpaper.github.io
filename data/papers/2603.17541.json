@@ -1,0 +1,40 @@
+{
+  "paperId": "2603.17541",
+  "date": "2026-03-19",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-19",
+  "title": "Temporal Gains, Spatial Costs: Revisiting Video Fine-Tuning in Multimodal Large Language Models",
+  "authors": [
+    "Linghao Zhang",
+    "Jungang Li",
+    "Yonghua Hei",
+    "Sicheng Tao",
+    "Song Dai",
+    "Yibo Yan",
+    "Zihao Dongfang",
+    "Weiting Liu",
+    "Chenxi Qin",
+    "Hanqian Li",
+    "Xin Zou",
+    "Jiahao Zhang",
+    "Shuhang Xun",
+    "Haiyun Jiang",
+    "Xuming Hu"
+  ],
+  "summaryCn": "多模态大模型在经历视频微调后，视频理解能力确实得到提升，但研究者发现这背后隐藏着一个被长期忽视的代价——静态图像理解能力的系统性退化。这一现象被称为",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.17541",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.17541_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.17541_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.17240",
+  "nextPaperId": "2603.17995"
+}
