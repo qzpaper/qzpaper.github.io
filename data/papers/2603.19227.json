@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.19227",
+  "date": "2026-03-20",
+  "category": "Diffusion Model",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-20",
+  "title": "Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer",
+  "authors": [
+    "Chenyang Gu",
+    "Mingyuan Zhang",
+    "Haozhe Xie",
+    "Zhongang Cai",
+    "Lei Yang",
+    "Ziwei Liu"
+  ],
+  "summaryCn": "人体运动生成长期面临语义条件与运动学控制难以兼顾的困境：连续扩散模型擅长轨迹跟踪却缺乏灵活的语言接口，而离散token方法在处理细粒度运动学约束时往往与语义信息相互竞争。本文提出MoTok框架，以",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.19227",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.19227_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.19227_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.19223",
+  "nextPaperId": "2603.19228"
+}

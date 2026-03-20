@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.19235",
+  "date": "2026-03-20",
+  "category": "3D Vision",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-20",
+  "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
+  "authors": [
+    "Xianjin Wu",
+    "Dingkang Liang",
+    "Tianrui Feng",
+    "Kui Xia",
+    "Yumeng Zhang",
+    "Xiaofan Li",
+    "Xiao Tan",
+    "Xiang Bai"
+  ],
+  "summaryCn": "空间理解一直是多模态大语言模型的短板。VEGA-3D另辟蹊径，不依赖点云或深度图等显式3D数据，而是挖掘视频生成模型在训练过程中隐式习得的几何先验——生成模型为合成时序一致的视频，必然内化了遮挡、视差、动力学等空间规律，这些规律沉淀为潜在表示中的3D结构知识。框架以冻结的Wan2.1视频扩散模型为",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.19235",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.19235_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.19235_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.19232",
+  "nextPaperId": null
+}

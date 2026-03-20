@@ -1,0 +1,87 @@
+{
+  "date": "2026-03-20",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.18524",
+      "title": "3DreamBooth: High-Fidelity 3D Subject-Driven Video Generation Model",
+      "summary": "3DreamBooth提出将3D先验注入视频扩散模型的框架，通过1帧训练范式和多视角条件注入模块3Dapter，实现从少量参考图像生成视角一致的定制化主体视频。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.18524"
+    },
+    {
+      "paperId": "2603.18743",
+      "title": "Memento-Skills: Let Agents Design Agents",
+      "summary": "Memento-Skills提出让智能体自主设计智能体的框架，通过Read-Write反思循环和可执行技能库实现无需参数更新的持续学习，在HLE和GAIA基准上验证了自进化效果。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.18743"
+    },
+    {
+      "paperId": "2603.19199",
+      "title": "FASTER: Rethinking Real-Time Flow VLAs",
+      "summary": "FASTER提出感知-执行延迟优化方案，通过Horizon-Aware Schedule将首个动作采样压缩为单步，使VLA模型反应时间提升10倍，无需修改架构或额外训练。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19199"
+    },
+    {
+      "paperId": "2603.19217",
+      "title": "LVOmniBench: Pioneering Long Audio-Video Understanding Evaluation for Omnimodal LLMs",
+      "summary": "LVOmniBench是首个专注于长时音视频联合理解的评估基准，包含275个平均34分钟的长视频和1014个人工标注的多选题，填补了现有基准在长时序跨模态推理评估上的空白。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19217"
+    },
+    {
+      "paperId": "2603.19223",
+      "title": "F2LLM-v2: Inclusive, Performant, and Efficient Embeddings for a Multilingual World",
+      "summary": "F2LLM-v2发布支持200+语言的多语言嵌入模型家族（80M-14B），基于6000万开源数据训练，14B模型在17个MTEB基准中11个排名第一，同时完全开源模型、数据与代码。",
+      "category": "NLP",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19223"
+    },
+    {
+      "paperId": "2603.19227",
+      "title": "Bridging Semantic and Kinematic Conditions with Diffusion-based Discrete Motion Tokenizer",
+      "summary": "提出MoTok框架，将人体运动生成分为语义规划（离散token）和运动学控制（扩散解码）两阶段，以更少token实现更高质量的可控运动生成。",
+      "category": "Diffusion Model",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19227"
+    },
+    {
+      "paperId": "2603.19228",
+      "title": "SAMA: Factorized Semantic Anchoring and Motion Alignment for Instruction-Guided Video Editing",
+      "summary": "SAMA提出语义锚定与运动对齐的分解框架，用于指令引导视频编辑。通过稀疏锚定帧提取语义token辅助扩散模型收敛，并用运动中心变换预训练提升时序一致性，无需外部VLM或结构先验。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19228"
+    },
+    {
+      "paperId": "2603.19231",
+      "title": "MonoArt: Progressive Structural Reasoning for Monocular Articulated 3D Reconstruction",
+      "summary": "MonoArt提出从单张图像重建铰接3D物体的渐进结构推理框架，通过部件感知语义推理、双查询运动解码和运动学估计器，实现稳定可解释的铰接参数预测。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19231"
+    },
+    {
+      "paperId": "2603.19232",
+      "title": "Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens",
+      "summary": "CubiD提出面向高维表征token的离散扩散生成模型，通过逐维量化和三维立方mask机制，实现视觉理解与生成的统一token空间，在ImageNet生成任务上达到领先性能。",
+      "category": "Diffusion Model",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19232"
+    },
+    {
+      "paperId": "2603.19235",
+      "title": "Generation Models Know Space: Unleashing Implicit 3D Priors for Scene Understanding",
+      "summary": "VEGA-3D利用预训练视频生成模型中的隐式3D先验，通过噪声注入提取时空特征并与语义表示融合，无需显式3D监督即可提升多模态大语言模型的空间理解能力。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19235"
+    }
+  ]
+}
