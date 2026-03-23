@@ -1,0 +1,15 @@
+{
+  "date": "2026-03-23",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.19466",
+      "title": "ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models",
+      "summary": "ProactiveBench是首个评估多模态大模型主动性的基准，涵盖19种主动行为和18k样本。研究发现当前模型普遍缺乏主动性，但强化学习微调可使其习得并泛化该能力。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19466"
+    }
+  ]
+}

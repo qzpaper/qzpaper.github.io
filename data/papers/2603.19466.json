@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.19466",
+  "date": "2026-03-23",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-23",
+  "title": "ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models",
+  "authors": [
+    "Thomas De Min",
+    "Subhankar Roy",
+    "Stéphane Lathuilière",
+    "Elisa Ricci",
+    "Massimiliano Mancini"
+  ],
+  "summaryCn": "人类面对遮挡或模糊信息时会本能地寻求帮助，而当前多模态大语言模型却只会弃权或产生幻觉。ProactiveBench正是为弥补这一鸿沟而生——它将",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.19466",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.19466_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.19466_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": null
+}
