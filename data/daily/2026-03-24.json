@@ -1,0 +1,87 @@
+{
+  "date": "2026-03-24",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.20278",
+      "title": "OpenResearcher: A Fully Open Pipeline for Long-Horizon Deep Research Trajectory Synthesis",
+      "summary": "OpenResearcher提出全开源深度研究轨迹合成流水线，通过离线语料构建与显式浏览器原语，以低成本可复现方式生成97K+长程轨迹，训练的30B模型在BrowseComp-Plus上达54.8%，超越GPT-4.1等闭源模型。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.20278"
+    },
+    {
+      "paperId": "2603.21065",
+      "title": "LongCat-Flash-Prover: Advancing Native Formal Reasoning via Agentic Tool-Integrated Reinforcement Learning",
+      "summary": "LongCat-Flash-Prover是560B参数的开源MoE模型，将形式化定理证明（Lean4）分解为自动形式化、引理草图和定理证明三个原子能力，通过智能体工具集成强化学习在MiniF2F-Test上以72次推理达到97.1%的开源SOTA。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21065"
+    },
+    {
+      "paperId": "2603.21304",
+      "title": "F4Splat: Feed-Forward Predictive Densification for Feed-Forward 3D Gaussian Splatting",
+      "summary": "F4Splat在前馈3D高斯泼溅框架中引入可学习的预测性致密化机制，通过多尺度分数图自适应分配高斯基元，无需重新训练即可匹配任意高斯预算，显著提升重建质量。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21304"
+    },
+    {
+      "paperId": "2603.21606",
+      "title": "mSFT: Addressing Dataset Mixtures Overfiting Heterogeneously in Multi-task SFT",
+      "summary": "mSFT提出迭代式异构早停策略，解决多任务SFT中不同子数据集过拟合速度不一致的问题，在6个模型上平均准确率达63.7%，超越标准SFT的61.9%。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21606"
+    },
+    {
+      "paperId": "2603.21872",
+      "title": "Manifold-Aware Exploration for Reinforcement Learning in Video Generation",
+      "summary": "SAGE-GRPO通过流形感知SDE、梯度均衡器和双信赖域优化，将GRPO稳定应用于视频生成对齐，解决了高维视频空间中随机探索导致的训练不稳定问题。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21872"
+    },
+    {
+      "paperId": "2603.21944",
+      "title": "Group3D: MLLM-Driven Semantic Grouping for Open-Vocabulary 3D Object Detection",
+      "summary": "Group3D将MLLM驱动的语义分组机制集成到3D片段合并过程中，解决纯几何合并导致的过度合并与碎片化问题，实现开放词汇3D目标检测。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21944"
+    },
+    {
+      "paperId": "2603.21986",
+      "title": "Speed by Simplicity: A Single-Stream Architecture for Fast Audio-Video Generative Foundation Model",
+      "summary": "daVinci-MagiHuman提出单流Transformer架构，将文本、视频、音频统一为单一token序列处理，避免多流设计的复杂性，在视觉质量和推理效率上超越现有开源模型。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21986"
+    },
+    {
+      "paperId": "2603.22057",
+      "title": "SpatialBoost: Enhancing Visual Representation through Language-Guided Reasoning",
+      "summary": "SpatialBoost通过语言引导的空间推理，将2D视觉编码器增强为具备3D空间感知能力的模型。利用深度估计和3D重建构建多轮推理数据集，并引入双通道注意力机制避免灾难性遗忘，在深度估计、语义分割和3D场景理解等任务上均取得显著提升。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.22057"
+    },
+    {
+      "paperId": "2603.22212",
+      "title": "Omni-WorldBench: Towards a Comprehensive Interaction-Centric Evaluation for World Models",
+      "summary": "Omni-WorldBench是首个以交互响应能力为核心的世界模型综合评估基准，包含1068条层次化提示集与基于智能体的多维评估框架，系统评估视频生成模型在动作驱动下的时空状态转换能力。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.22212"
+    },
+    {
+      "paperId": "2603.22285",
+      "title": "VideoDetective: Clue Hunting via both Extrinsic Query and Intrinsic Relevance for Long Video Understanding",
+      "summary": "VideoDetective通过联合建模外部查询相关性与视频内在片段关联，利用图扩散在稀疏观测下估计全局相关性分布，实现长视频的高效理解。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.22285"
+    }
+  ]
+}

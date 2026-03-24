@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.21304",
+  "date": "2026-03-24",
+  "category": "3D Vision",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-24",
+  "title": "F4Splat: Feed-Forward Predictive Densification for Feed-Forward 3D Gaussian Splatting",
+  "authors": [
+    "Injae Kim",
+    "Chaehyeon Kim",
+    "Minseong Bae",
+    "Minseok Joo",
+    "Hyunwoo J. Kim"
+  ],
+  "summaryCn": "三维高斯泼溅技术以其高保真渲染能力著称，但传统方法依赖逐场景迭代优化与自适应密度控制，部署成本高昂。前馈方法虽能单次推理完成重建，却面临高斯分配低效的困境：像素对齐方案导致跨视角冗余，体素方案则只能均匀分配，简单区域浪费、复杂区域不足。F4Splat正是为弥合这一鸿沟而生。其核心贡献在于将自适应密度控制的思想移植至前馈框架：网络在预测多尺度高斯参数图的同时，学习预测每个空间区域的",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.21304",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.21304_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.21304_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.21065",
+  "nextPaperId": "2603.21606"
+}

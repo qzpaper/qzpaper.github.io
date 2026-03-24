@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.20278",
+  "date": "2026-03-24",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-24",
+  "title": "OpenResearcher: A Fully Open Pipeline for Long-Horizon Deep Research Trajectory Synthesis",
+  "authors": [
+    "Zhuofeng Li",
+    "Dongfu Jiang",
+    "Xueguang Ma",
+    "Haoxiang Zhang",
+    "Ping Nie",
+    "Yuyu Zhang",
+    "Kai Zou",
+    "Jianwen Xie",
+    "Yu Zhang",
+    "Wenhu Chen"
+  ],
+  "summaryCn": "深度研究智能体的训练长期受制于高质量长程轨迹数据的匮乏。现有方案要么交互轮次过短，要么依赖昂贵且不可复现的在线搜索API。OpenResearcher通过两项关键设计突破了这一瓶颈：其一，将语料构建与轨迹生成解耦，仅在引导阶段进行一次性在线检索，此后所有合成完全在本地离线环境中运行，大幅降低成本并保证可复现性；其二，引入search、open、find三个显式浏览器原语，模拟人类从宽泛检索到精确定位证据的真实研究行为。系统基于MiroVerse问题集，构建了包含1500万文档的离线语料与稠密检索引擎，由GPT-OSS-120B教师模型生成97K+条轨迹。经拒绝采样筛选后，以55K条正确轨迹对Nemotron-30B-A3B进行SFT，最终在BrowseComp-Plus基准上达到54.8%，显著超越GPT-4.1（36.4%）和Claude-4-Opus（36.8%）等顶级闭源模型，验证了开源可控流水线在深度研究任务上的巨大潜力。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.20278",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.20278_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.20278_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.21065"
+}

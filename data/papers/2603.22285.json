@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.22285",
+  "date": "2026-03-24",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-24",
+  "title": "VideoDetective: Clue Hunting via both Extrinsic Query and Intrinsic Relevance for Long Video Understanding",
+  "authors": [
+    "Ruoliu Yang",
+    "Chu Wu",
+    "Caifeng Shan",
+    "Ran He",
+    "Chaoyou Fu"
+  ],
+  "summaryCn": "长视频理解要求模型在有限上下文预算内从海量帧中定位稀疏关键信息，现有方法往往只做单向的查询-帧匹配，忽略了视频帧间的时序因果结构。VideoDetective提出",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.22285",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.22285_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.22285_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.22212",
+  "nextPaperId": null
+}
