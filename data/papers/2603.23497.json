@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.23497",
+  "date": "2026-03-25",
+  "category": "Other",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "WildWorld: A Large-Scale Dataset for Dynamic World Modeling with Actions and Explicit State toward Generative ARPG",
+  "authors": [
+    "Zhen Li",
+    "Zian Meng",
+    "Shuwei Shi",
+    "Wenshuo Peng",
+    "Yuwei Wu",
+    "Bo Zheng",
+    "Chuanhao Li",
+    "Kaipeng Zhang"
+  ],
+  "summaryCn": "现有视频世界模型数据集普遍存在动作语义贫乏、缺乏显式状态标注的问题，导致模型难以学习结构化的世界动力学。WildWorld通过自动化管线从3A级游戏《怪物猎人：荒野》中采集了1.08亿帧数据，涵盖450余种语义动作（攻击、闪避、技能等）与逐帧119列显式状态标注（骨骼姿态、相机位姿、深度图、HP等），首次将",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.23497",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.23497_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.23497_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.23483",
+  "nextPaperId": "2603.23499"
+}

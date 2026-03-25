@@ -1,0 +1,79 @@
+{
+  "date": "2026-03-25",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.20422",
+      "title": "PEARL: Personalized Streaming Video Understanding Model",
+      "summary": "PEARL首次提出个性化流式视频理解任务，构建双粒度记忆系统与概念感知检索算法，支持动态概念注册与多轮交互查询，并发布首个PSVU基准PEARL-Bench。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.20422"
+    },
+    {
+      "paperId": "2603.21064",
+      "title": "2Xplat: Two Experts Are Better Than One Generalist",
+      "summary": "2Xplat提出双专家架构解耦无位姿前馈3D高斯泼溅，几何专家估计相机位姿，外观专家生成高斯表示，无需逐场景优化即可实现高保真新视角合成。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.21064"
+    },
+    {
+      "paperId": "2603.22458",
+      "title": "MinerU-Diffusion: Rethinking Document OCR as Inverse Rendering via Diffusion Decoding",
+      "summary": "MinerU-Diffusion将文档OCR重新定义为视觉条件逆渲染问题，用并行扩散去噪替代自回归顺序解码。采用块级扩散架构与两阶段课程学习，在2.5B参数下超越多数大型AR模型。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.22458"
+    },
+    {
+      "paperId": "2603.23386",
+      "title": "SIMART: Decomposing Monolithic Meshes into Sim-ready Articulated Assets via MLLM",
+      "summary": "SIMART提出统一MLLM框架，将单体3D网格分解为仿真就绪的铰接资产。核心创新是稀疏3D VQ-VAE，通过零token机制将token数量减少约70%，同时联合预测部件分割与URDF运动学参数。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23386"
+    },
+    {
+      "paperId": "2603.23462",
+      "title": "RealMaster: Lifting Rendered Scenes into Photorealistic Video",
+      "summary": "RealMaster将渲染场景转化为逼真视频，通过稀疏到稠密数据生成管线和IC-LoRA蒸馏，在保持结构精度的同时实现全局真实感变换。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23462"
+    },
+    {
+      "paperId": "2603.23483",
+      "title": "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning",
+      "summary": "SpecEyes提出将投机解码从token级提升至智能体级，用轻量模型快速筛选无需工具调用的查询，大幅降低多模态智能体的端到端延迟，平均加速80%以上，精度几乎无损。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23483"
+    },
+    {
+      "paperId": "2603.23497",
+      "title": "WildWorld: A Large-Scale Dataset for Dynamic World Modeling with Actions and Explicit State toward Generative ARPG",
+      "summary": "WildWorld是从《怪物猎人：荒野》采集的1.08亿帧大规模数据集，包含450+语义动作和119列显式状态标注，用于动作条件世界模型研究，并附WildBench评估基准。",
+      "category": "Other",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23497"
+    },
+    {
+      "paperId": "2603.23499",
+      "title": "DA-Flow: Degradation-Aware Optical Flow Estimation with Diffusion Models",
+      "summary": "DA-Flow提出退化感知光流估计任务，将图像修复扩散模型提升至视频域，提取退化感知特征与CNN特征融合，在严重退化输入下准确估计光流。",
+      "category": "Other",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23499"
+    },
+    {
+      "paperId": "2603.23500",
+      "title": "UniGRPO: Unified Policy Optimization for Reasoning-Driven Visual Generation",
+      "summary": "UniGRPO提出统一强化学习框架，通过GRPO联合优化自回归文本推理与Flow Matching图像生成，将交错生成建模为MDP，去除CFG并引入速度场正则化以防止奖励黑客行为。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23500"
+    }
+  ]
+}

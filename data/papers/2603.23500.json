@@ -1,0 +1,36 @@
+{
+  "paperId": "2603.23500",
+  "date": "2026-03-25",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "UniGRPO: Unified Policy Optimization for Reasoning-Driven Visual Generation",
+  "authors": [
+    "Jie Liu",
+    "Zilyu Ye",
+    "Linxiao Yuan",
+    "Shenhan Zhu",
+    "Yu Gao",
+    "Jie Wu",
+    "Kunchang Li",
+    "Xionghui Wang",
+    "Xiaonan Nie",
+    "Weilin Huang",
+    "Wanli Ouyang"
+  ],
+  "summaryCn": "多模态统一模型的交错生成能力是当前研究的前沿方向，但如何同时优化文本推理与图像合成两种异质模态一直是难题。UniGRPO将这一过程建模为具有稀疏终端奖励的马尔可夫决策过程，文本动作为离散token预测，图像动作为连续流匹配的latent推进，二者共享组相对优势信号，以统一的GRPO框架联合训练。方法论上，论文秉持极简主义，将成熟的Text GRPO与FlowGRPO无缝整合，避免过度设计。两项关键创新确保了可扩展性：其一是完全去除Classifier-Free Guidance，消除分支计算图，同时依靠RL训练将文图对齐能力内化到策略权重中；其二是引入均匀速度场MSE正则化取代带时间步加权的KL惩罚，防止优化器利用高噪声时间步的惩罚漏洞。实验以Bagel为骨干，在文图一致性等多项指标上超越ReFL、FPO等基线，验证了框架在推理驱动视觉生成中的有效性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.23500",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.23500_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.23500_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.23499",
+  "nextPaperId": null
+}

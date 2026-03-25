@@ -1,0 +1,31 @@
+{
+  "paperId": "2603.23483",
+  "date": "2026-03-25",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "SpecEyes: Accelerating Agentic Multimodal LLMs via Speculative Perception and Planning",
+  "authors": [
+    "Haoyu Huang",
+    "Jinfa Huang",
+    "Zhongwei Wan",
+    "Xiawu Zheng",
+    "Rongrong Ji",
+    "Jiebo Luo"
+  ],
+  "summaryCn": "智能体多模态大模型在细粒度视觉任务上表现出色，但其反复调用视觉工具的顺序循环结构导致延迟随智能体深度线性增长，GPU并行能力被严重浪费。SpecEyes洞察到大量查询其实无需多步工具辅助，提出一种",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.23483",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.23483_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.23483_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.23462",
+  "nextPaperId": "2603.23497"
+}

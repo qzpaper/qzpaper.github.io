@@ -1,0 +1,38 @@
+{
+  "paperId": "2603.20422",
+  "date": "2026-03-25",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "PEARL: Personalized Streaming Video Understanding Model",
+  "authors": [
+    "Yuanhong Zheng",
+    "Ruichuan An",
+    "Xiaopeng Lin",
+    "Yuxing Liu",
+    "Sihan Yang",
+    "Huanyu Zhang",
+    "Haodong Li",
+    "Qintong Zhang",
+    "Renrui Zhang",
+    "Guopeng Li",
+    "Yifan Zhang",
+    "Yuheng Li",
+    "Wentao Zhang"
+  ],
+  "summaryCn": "人类认知新事物是一个流式、渐进的过程，而现有多模态个性化模型却仍困于静态图像或离线短视频的藩篱。PEARL正是在这一现实鸿沟中诞生的工作——它首次形式化定义了个性化流式视频理解任务，让模型能够像人一样在连续涌入的视频流中随时认识新面孔、记住新动作，并在此后任意时刻响应针对这些概念的多轮查询。框架的核心是一套双粒度记忆系统：流式记忆以场景片段为单位记录视觉历史，概念记忆则在用户定义新概念的瞬间同步存储视觉证据与文字描述；检索时通过概念感知算法将查询中的概念名替换为其语义描述，从而有效bridging检索嵌入与流式片段之间的语义鸿沟。更难得的是，整个框架免于重新训练，可即插即用于现有多模态大模型。配套推出的PEARL-Bench涵盖132段长视频、逾两千条精标注问答，首次将Frame-level与Video-level个性化、长程时序推理与多轮交互融为一体，为该领域提供了坚实的评测基石。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.20422",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.20422_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.20422_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.21064"
+}

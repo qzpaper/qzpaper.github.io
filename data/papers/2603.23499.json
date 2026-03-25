@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.23499",
+  "date": "2026-03-25",
+  "category": "Other",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "DA-Flow: Degradation-Aware Optical Flow Estimation with Diffusion Models",
+  "authors": [
+    "Jaewon Min",
+    "Jaeeun Lee",
+    "Yeji Choi",
+    "Paul Hyunbin Cho",
+    "Jin Hyeon Kim",
+    "Tae-Young Lee",
+    "Jongsik Ahn",
+    "Hwayeong Lee",
+    "Seonghyun Park",
+    "Seungryong Kim"
+  ],
+  "summaryCn": "光流估计在真实世界中面临运动模糊、噪声、压缩伪影等退化挑战，现有方法在干净输入上表现优异，却难以应对严重退化场景。DA-Flow提出「退化感知光流估计」新任务，核心思路是借助图像修复扩散模型天然具备的退化感知能力。作者将基于DiT的图像修复模型通过全时空注意力机制扩展至视频域，在多帧序列上联合建模退化与帧间对应，同时保留每帧独立的空间潜变量以支持逐像素匹配。从提升后模型的注意力层中提取Query/Key特征，经DPT上采样头恢复空间分辨率后，与RAFT的CNN局部特征融合，形成兼具全局退化感知与局部细节保留的混合编码器。实验证明，这种扩散先验与传统匹配流水线的结合，能在退化严重的输入下显著提升光流精度。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.23499",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.23499_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.23499_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.23497",
+  "nextPaperId": "2603.23500"
+}

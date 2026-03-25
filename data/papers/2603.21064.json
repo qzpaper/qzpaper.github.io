@@ -1,0 +1,32 @@
+{
+  "paperId": "2603.21064",
+  "date": "2026-03-25",
+  "category": "3D Vision",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "2Xplat: Two Experts Are Better Than One Generalist",
+  "authors": [
+    "Hwasik Jeong",
+    "Seungryong Lee",
+    "Gyeongjin Kang",
+    "Seungkwon Yang",
+    "Xiangyu Sun",
+    "Seungtae Nam",
+    "Eunbyung Park"
+  ],
+  "summaryCn": "三维高斯泼溅技术近年来在实时新视角合成领域大放异彩，但传统方法依赖耗时的逐场景优化，前馈方法虽快却多依赖已知相机位姿。2Xplat的核心洞见简洁而有力：几何重建与外观渲染本是两件事，强行用一个网络同时完成，注定两头兼顾、两头受限。论文因此提出双专家架构——几何专家借助Depth Anything 3从未标定图像中估计相机参数，外观专家则基于预测位姿，运用先进的位姿条件化机制生成像素对齐的三维高斯。两位专家各司其职，解耦带来的不只是分工明确，更让外观专家得以自由接入PRoPE等精心设计的位姿编码技术，而这在单体架构中几乎无从实现。更令人印象深刻的是训练效率：直接复用两个成熟预训练模型，无需引入随机初始化模块，仅需8块GPU跑2000至5000步即可收敛，与竞争方法动辄16块GH200、15万步的代价相比，堪称轻盈。实验结果表明，2Xplat在无位姿条件下不仅超越所有无位姿基线，甚至在多数指标上胜过使用真值位姿的方法，充分印证了",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.21064",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.21064_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.21064_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.20422",
+  "nextPaperId": "2603.22458"
+}

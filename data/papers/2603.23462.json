@@ -1,0 +1,33 @@
+{
+  "paperId": "2603.23462",
+  "date": "2026-03-25",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-25",
+  "title": "RealMaster: Lifting Rendered Scenes into Photorealistic Video",
+  "authors": [
+    "Dana Cohen-Bar",
+    "Ido Sobol",
+    "Raphael Bensadoun",
+    "Shelly Sheynin",
+    "Oran Gafni",
+    "Or Patashnik",
+    "Daniel Cohen-Or",
+    "Amit Zohar"
+  ],
+  "summaryCn": "RealMaster针对sim-to-real视频翻译这一核心难题提出新范式——将视频扩散模型作为3D渲染引擎之上的学习型第二阶段渲染器。其方法分两阶段：首先通过图像级编辑模型生成关键帧锚点，再借助VACE将真实感外观传播至中间帧，构建配对训练数据；然后在Wan2.2预训练模型上训练IC-LoRA适配器，将管线能力蒸馏为具有更强泛化力的模型。仅需1216个训练片段、单张H200训练数小时，RealMaster便在真实感（GPT评分7.33）和结构保持（DINO距离30.28）两项核心指标上大幅超越Runway、LucyEdit、Editto等强基线，展现了轻量训练与高质量输出的良好平衡。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.23462",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.23462_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.23462_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.23386",
+  "nextPaperId": "2603.23483"
+}
