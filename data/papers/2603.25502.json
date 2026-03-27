@@ -1,0 +1,36 @@
+{
+  "paperId": "2603.25502",
+  "date": "2026-03-27",
+  "category": "Image Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-27",
+  "title": "RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models",
+  "authors": [
+    "Yufeng Yang",
+    "Xianfang Zeng",
+    "Zhangqi Jiang",
+    "Fukun Yin",
+    "Jianzhuang Liu",
+    "Wei Cheng",
+    "jinghong lan",
+    "Shiyu Liu",
+    "Yuqi Peng",
+    "Gang YU",
+    "Shifeng Chen"
+  ],
+  "summaryCn": "真实世界图像复原长期面临单退化范式局限与合成-真实域差距的双重困境。RealRestorer另辟蹊径，将目光投向大规模图像编辑模型积累的强大生成先验。研究团队以开源的Step1X-Edit（Diffusion Transformer架构）为基座，精心构建了约165万对训练样本：156万对合成退化数据涵盖模糊、雨、噪声、低光照、莫尔纹、雾、压缩伪影、反射、眩光九类退化，并引入颗粒噪声建模与分割感知扰动等精细化设计；另有8.8万对从互联网收集的真实退化数据，经VLM质量筛选与内容对齐过滤确保可靠性。训练分两阶段推进：第一阶段以合成数据将编辑先验迁移至复原任务，第二阶段引入真实数据进行监督微调，并采用渐进式混合策略（合成:真实=2:8）防止过拟合。为填补评估空白，团队提出RealIR-Bench，包含464张真实退化图像与无参考评估协议。实验表明，RealRestorer在泛化能力上首次追平甚至超越Nano Banana Pro等闭源商业系统，为开源社区提供了可复现的强基线。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.25502",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.25502_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.25502_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.25040",
+  "nextPaperId": "2603.25728"
+}
