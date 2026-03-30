@@ -1,0 +1,27 @@
+{
+  "paperId": "2603.25750",
+  "date": "2026-03-30",
+  "category": "Speech",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-30",
+  "title": "Sommelier：面向全双工语音语言模型的可扩展开源多轮音频预处理流水线",
+  "authors": [
+    "Jung$^{1",
+    "2"
+  ],
+  "summaryCn": "全双工语音交互系统需要同时处理听和说，而现有数据处理方案难以应对真实对话中的重叠语音、反馈语和打断现象。Sommelier正是为此而生的开源流水线，其核心哲学是保留而非剥离这些对话特征，让模型真正学习对话的展开方式。流水线包含音频标准化、VAD与说话人分割、重叠语音分离、背景音乐移除和集成ASR等模块，每个组件可独立配置。其中说话人分割采用NVIDIA Sortformer替代pyannote，在短话语场景下表现更优；ASR则融合Whisper、Canary和Parakeet三模型以减少幻觉。用83小时处理数据对Moshi进行LoRA微调后，模型在反馈语、轮替和打断处理上均大幅提升，打断响应GPT-4o评分从0.765跃升至3.684，验证了该流水线的实用价值。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.25750",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.25750_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.25750_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.25746",
+  "nextPaperId": "2603.25804"
+}

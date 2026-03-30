@@ -1,0 +1,30 @@
+{
+  "paperId": "2603.25723",
+  "date": "2026-03-30",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-30",
+  "title": "Natural-Language Agent Harnesses：自然语言智能体控制框架",
+  "authors": [
+    "Pan",
+    "Zou",
+    "Guo",
+    "Ni",
+    "Zheng$^{1*"
+  ],
+  "summaryCn": "现代智能体系统的性能瓶颈往往不在于模型本身，而在于管理多步推理、工具调用与任务委托的控制框架。然而现有框架存在严重缺陷：控制逻辑散落于代码、适配器和运行时假设之中，既难以迁移，又难以公平比较与消融分析。本文提出自然语言智能体控制框架（NLAH），将契约、角色、阶段结构、状态语义与失败分类等编排逻辑统一表达为结构化自然语言制品。配套的智能运行时IHR将LLM置于执行循环内，逐步解释harness逻辑并驱动决策，同时通过文件支持的状态模块将持久状态外部化为路径可寻址制品。在SWE-bench Verified与OSWorld基准上的实验验证了该框架在行为效应、模块可组合性与跨运行时迁移三方面的有效性，为智能体控制逻辑的标准化与可复现研究提供了基础。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.25723",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.25723_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.25723_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.25716",
+  "nextPaperId": "2603.25730"
+}

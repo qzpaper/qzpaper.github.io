@@ -1,0 +1,79 @@
+{
+  "date": "2026-03-30",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.22782",
+      "title": "Know3D：利用视觉-语言模型知识引导3D生成",
+      "summary": "Know3D提出以视觉语言模型为桥梁，将语义先验注入单视图3D生成，解决不可见区域的语义偏离与结构不合理问题，显著提升生成质量。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.22782"
+    },
+    {
+      "paperId": "2603.23607",
+      "title": "KITScenes LongTail：面向长尾驾驶场景的推理轨迹数据集",
+      "summary": "KITScenes LongTail是专注于自动驾驶长尾场景的推理轨迹数据集，提供多视角视频、多语言专家推理轨迹及新型评价指标，支持端到端驾驶的上下文泛化与可解释决策研究。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.23607"
+    },
+    {
+      "paperId": "2603.24649",
+      "title": "MedOpenClaw：面向未整理完整影像研究的可审计医学影像智能体推理",
+      "summary": "MedOpenClaw是一个可审计的医学影像智能体运行时，让VLM能在3D Slicer中动态操作完整影像研究。配套的MedFlow-Bench是首个要求智能体执行全研究交互的医学影像基准，涵盖脑MRI和肺CT/PET两个临床模块及三条评估赛道。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.24649"
+    },
+    {
+      "paperId": "2603.25716",
+      "title": "Out of Sight but Not Out of Mind：面向动态视频世界模型的混合记忆",
+      "summary": "提出混合记忆范式HyDRA，解决视频世界模型中动态主体出入视野时的冻结、畸变和消失问题，并构建首个大规模混合记忆数据集HM-World（59K视频片段）。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25716"
+    },
+    {
+      "paperId": "2603.25723",
+      "title": "Natural-Language Agent Harnesses：自然语言智能体控制框架",
+      "summary": "提出自然语言智能体控制框架（NLAH），将编排逻辑外部化为可移植、可执行的自然语言制品。通过智能运行时IHR解释执行，解决了控制框架不可移植、不可比较、不可消融的根本性问题。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25723"
+    },
+    {
+      "paperId": "2603.25730",
+      "title": "PackForcing：短视频训练即可实现长视频采样与长上下文推理",
+      "summary": "PackForcing提出三分区KV缓存设计，解决自回归视频扩散模型的误差累积与内存瓶颈，仅用5秒短视频训练即可零样本生成2分钟连贯视频，实现24倍时间外推。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25730"
+    },
+    {
+      "paperId": "2603.25746",
+      "title": "ShotStream：面向交互式叙事的流式多镜头视频生成",
+      "summary": "ShotStream提出因果式多镜头视频生成框架，支持流式prompt输入与实时交互叙事。通过师生蒸馏将双向教师模型压缩为4步因果学生模型，在H200上实现16FPS生成速度。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25746"
+    },
+    {
+      "paperId": "2603.25750",
+      "title": "Sommelier：面向全双工语音语言模型的可扩展开源多轮音频预处理流水线",
+      "summary": "Sommelier是首个面向全双工语音语言模型的开源数据预处理流水线，通过模块化设计处理重叠语音、反馈语和打断等真实对话现象，显著提升模型全双工交互能力。",
+      "category": "Speech",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25750"
+    },
+    {
+      "paperId": "2603.25804",
+      "title": "RealChart2Code：基于真实数据与多任务评估的图表转代码生成",
+      "summary": "RealChart2Code是一个包含2896个实例的图表转代码基准，基于真实Kaggle数据，涵盖图表复制、再现与修正三大任务，系统评估视觉语言模型在复杂可视化场景下的代码生成能力。",
+      "category": "Code Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25804"
+    }
+  ]
+}
