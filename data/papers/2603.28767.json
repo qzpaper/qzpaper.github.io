@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.28767",
+  "date": "2026-03-31",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-31",
+  "title": "Gen-Searcher: Reinforcing Agentic Search for Image Generation",
+  "authors": [
+    "Kaituo Feng",
+    "Manyuan Zhang",
+    "Shuang Chen",
+    "Yunlong Lin",
+    "Kaixuan Fan",
+    "Yilei Jiang",
+    "Hongyu Li",
+    "Dian Zheng",
+    "Chenyang Wang",
+    "Xiangyu Yue"
+  ],
+  "summaryCn": "当前文生图模型受限于训练时冻结的参数化知识，难以生成涉及时效性或知识密集型内容的图像。Gen-Searcher提出了一种全新范式：训练一个基于Qwen3-VL-8B的搜索智能体，通过多跳推理迭代调用文本搜索、图像搜索与网页浏览工具，聚合多源证据后输出",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.28767",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.28767_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.28767_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.28547",
+  "nextPaperId": null
+}

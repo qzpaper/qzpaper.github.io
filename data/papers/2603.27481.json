@@ -1,0 +1,29 @@
+{
+  "paperId": "2603.27481",
+  "date": "2026-03-31",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-31",
+  "title": "On Token's Dilemma: Dynamic MoE with Drift-Aware Token Assignment for Continual Learning of Large Vision Language Models",
+  "authors": [
+    "Chongyang Zhao",
+    "Mingsong Li",
+    "Haodong Lu",
+    "Dong Gong"
+  ],
+  "summaryCn": "大型视觉语言模型在持续学习场景下面临灾难性遗忘的挑战，现有基于混合专家的方法虽通过扩展专家并冻结旧参数实现隔离，但训练新组件时仍会导致路由漂移——新路由参数扭曲旧任务token的专家分配。本文深入分析了这一现象，将token分为新token、旧token和模糊token三类，揭示了",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.27481",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.27481_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.27481_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.27304",
+  "nextPaperId": "2603.27646"
+}

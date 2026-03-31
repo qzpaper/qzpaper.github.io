@@ -1,0 +1,35 @@
+{
+  "paperId": "2603.28547",
+  "date": "2026-03-31",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-31",
+  "title": "GEditBench v2: A Human-Aligned Benchmark for General Image Editing",
+  "authors": [
+    "Zhangqi Jiang",
+    "Zheng Sun",
+    "Xianfang Zeng",
+    "Yufeng Yang",
+    "Xuanyang Zhang",
+    "Yongliang Wu",
+    "Wei Cheng",
+    "Gang Yu",
+    "Xu Yang",
+    "Bihan Wen"
+  ],
+  "summaryCn": "图像编辑模型日趋强大，但评估体系严重滞后。GEditBench v2针对现有基准三大痛点——任务覆盖窄、视觉一致性评估弱、评估范式与人类判断脱节——构建了一套完整的评估生态系统。基准收录1200条来自Reddit、X等平台的真实用户编辑查询，涵盖局部编辑、全局编辑、参考编辑、混合编辑及开放集编辑共23类任务，首次将分布外泛化能力纳入考量。评估范式上，作者通过实证对比证明成对比较显著优于逐点绝对评分，更贴近人类相对判断的认知习惯，且不易产生天花板效应。为解决视觉一致性评估的核心难题，团队提出PVC-Judge——基于Qwen3-VL-8B微调的开源成对评估模型，采用区域解耦管线分别处理物体中心与人体中心任务，动态剥离编辑区域后对非目标区域施加严格一致性约束。该模型在VCReward-Bench元基准上以81.82%准确率超越GPT-5.1的76.89%，为开放可复现的图像编辑评估提供了坚实基础。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.28547",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.28547_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.28547_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.27813",
+  "nextPaperId": "2603.28767"
+}

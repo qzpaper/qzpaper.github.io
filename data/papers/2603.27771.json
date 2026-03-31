@@ -1,0 +1,40 @@
+{
+  "paperId": "2603.27771",
+  "date": "2026-03-31",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-03-31",
+  "title": "Emergent Social Intelligence Risks in Generative Multi-Agent Systems",
+  "authors": [
+    "Yue Huang",
+    "Yu Jiang",
+    "Wenjie Wang",
+    "Haomin Zhuang",
+    "Xiaonan Luo",
+    "Yuchen Ma",
+    "Zhangchen Xu",
+    "Zichen Chen",
+    "Nuno Moniz",
+    "Zinan Lin",
+    "Pin-Yu Chen",
+    "Nitesh V Chawla",
+    "Nouha Dziri",
+    "Huan Sun",
+    "Xiangliang Zhang"
+  ],
+  "summaryCn": "当大语言模型驱动的智能体开始以群体形式协作，一些未被设计、未被预期的",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.27771",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.27771_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.27771_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.27646",
+  "nextPaperId": "2603.27813"
+}
