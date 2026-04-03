@@ -1,0 +1,26 @@
+{
+  "paperId": "2603.19835",
+  "date": "2026-04-01",
+  "category": "Reinforcement Learning",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-01",
+  "title": "FIPO：基于未来KL散度的密集优势策略优化以激发深度推理",
+  "authors": [
+    "Qwen Pilot Team"
+  ],
+  "summaryCn": "大规模强化学习驱动的测试时扩展已成为提升复杂推理能力的核心范式，但开源社区主流的GRPO框架存在一个根本缺陷：它将序列级的标量优势信号均匀广播到每个token，完全忽视了不同推理步骤的差异性贡献。这种粗粒度的信用分配使模型推理链长度停滞在中等水平，无法突破性能天花板。FIPO（基于未来KL散度的密集优势策略优化）提出了一种优雅的解决方案：定义每个token处当前策略与旧策略在对数空间的概率偏移，并向后累积折扣求和，得到",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.19835",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.19835_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.19835_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2603.25240"
+}

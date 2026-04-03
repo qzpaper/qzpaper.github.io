@@ -1,0 +1,29 @@
+{
+  "paperId": "2603.29620",
+  "date": "2026-04-01",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-01",
+  "title": "Unify-Agent：面向世界知识锚定图像合成的统一多模态智能体",
+  "authors": [
+    "Chen",
+    "Shou",
+    "Chen",
+    "Zhou 等"
+  ],
+  "summaryCn": "当前文生图模型在视觉质量上已相当出色，却在涉及真实人物、稀有IP、历史场景等长尾概念时频频失误——根源在于模型只能依赖参数化记忆，无法在推理时主动获取外部知识。Unify-Agent正是为解决这一",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.29620",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.29620_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.29620_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.28590",
+  "nextPaperId": "2603.29664"
+}

@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-03",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.26164",
+      "title": "DataFlex：面向大语言模型的统一数据中心动态训练框架",
+      "summary": "DataFlex是面向LLM的统一数据中心动态训练框架，整合数据选择、领域混合和样本重加权三大范式，基于LLaMA-Factory构建，支持在线/离线算法的即插即用集成。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.26164"
+    },
+    {
+      "paperId": "2604.01001",
+      "title": "EgoSim：面向具身交互生成的自我中心世界模拟器",
+      "summary": "EgoSim是一个闭环自我中心世界模拟器，通过可更新的3D场景状态和几何-动作感知视频生成，实现空间一致的具身交互视频模拟，并从大规模单目视频中提取训练数据。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.01001"
+    },
+    {
+      "paperId": "2604.01007",
+      "title": "OMNI-SIMPLEMEM：自主研究驱动的终身多模态智能体记忆发现",
+      "summary": "OMNI-SIMPLEMEM利用自主研究管线AUTORESEARCHCLAW发现终身多模态记忆框架，通过选择性摄入、混合检索和知识图谱，在LoCoMo基准上F1提升+411%。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.01007"
+    },
+    {
+      "paperId": "2604.02029",
+      "title": "The Latent Space：基础、演化、机制、能力与展望",
+      "summary": "本文系统综述了语言模型潜在空间的基础、演化、机制与能力，提出机制轴与能力轴双维度分类法，覆盖推理、规划、感知、记忆、协作、具身等七大能力领域。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02029"
+    },
+    {
+      "paperId": "2604.02097",
+      "title": "LatentUM：通过潜在空间统一模型释放交错跨模态推理潜力",
+      "summary": "LatentUM提出将所有模态嵌入共享语义潜在空间，消除理解与生成表征之间的像素空间中介，天然支持交错跨模态推理。通过MBAQ视觉分词器、MoME双分支架构和GRPO强化学习，实现空间规划、自我反思生成等复杂跨模态任务。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02097"
+    },
+    {
+      "paperId": "2604.02268",
+      "title": "SKILL0：面向技能内化的上下文智能体强化学习",
+      "summary": "SKILL0提出通过课程强化学习将智能体技能内化到模型参数中，消除推理时技能检索需求。训练从有技能指导逐步过渡到零技能，实现真正的自主执行能力。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02268"
+    },
+    {
+      "paperId": "2604.02296",
+      "title": "VOID：视频物体及其交互删除——物理合理的反事实视频编辑",
+      "summary": "VOID提出物理合理的反事实视频编辑框架，不仅移除目标物体，还通过因果推理消除其对场景的物理交互影响。利用四色掩码和两遍扩散生成，在真实与合成视频上显著优于现有方法。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02296"
+    },
+    {
+      "paperId": "2604.02327",
+      "title": "Steerable Visual Representations：用自然语言引导视觉表征",
+      "summary": "SteerViT在冻结ViT内插入门控交叉注意力层，用自然语言引导视觉表征关注非显著概念，仅需21M参数即可实现早期视觉语言融合，同时保持通用表征质量。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02327"
+    },
+    {
+      "paperId": "2604.02329",
+      "title": "Generative World Renderer：面向真实场景的可扩展生成式双向渲染",
+      "summary": "本文提出从AAA游戏采集大规模G-buffer数据集，用于训练双向渲染模型。包含4M帧连续视频与5通道同步G-buffer，并提出基于VLM的真实场景评估协议，显著提升DiffusionRenderer在真实场景的泛化性能。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02329"
+    }
+  ]
+}

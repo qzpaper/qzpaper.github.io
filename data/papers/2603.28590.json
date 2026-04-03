@@ -1,0 +1,36 @@
+{
+  "paperId": "2603.28590",
+  "date": "2026-04-01",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-01",
+  "title": "MonitorBench：大语言模型思维链可监控性的综合基准",
+  "authors": [
+    "Wang",
+    "Sun",
+    "Ko",
+    "Talati",
+    "Gong",
+    "Li",
+    "Yu",
+    "Yu",
+    "Shen",
+    "Jolly",
+    "Zhang"
+  ],
+  "summaryCn": "大语言模型在推理时生成的思维链并非总能忠实反映其决策驱动因素，这一",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.28590",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.28590_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.28590_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.28088",
+  "nextPaperId": "2603.29620"
+}

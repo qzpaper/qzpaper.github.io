@@ -1,0 +1,27 @@
+{
+  "paperId": "2603.29664",
+  "date": "2026-04-01",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-01",
+  "title": "CutClaw：基于音乐同步的智能体式长视频自动编辑",
+  "authors": [
+    "Zhao$^{1",
+    "2"
+  ],
+  "summaryCn": "视频剪辑是一门融合视觉与听觉的叙事艺术，而从数小时原始素材中剪辑出节奏流畅、情感饱满的短片，历来是极度依赖人工审美的高耗时工作。CutClaw试图以多智能体协作的方式打破这一瓶颈。系统架构分为三层：底层对视频和音乐进行结构化解构，将连续的视觉流切分为语义场景，将音乐波形解析为节拍与曲式单元；Playwriter智能体以音乐结构为不变锚点，将叙事进程严格绑定到听觉骨架，生成兼顾时长与语义的镜头规划；Editor智能体在规划约束下执行细粒度视觉定位，通过假设-验证循环找到最优片段；最终由Reviewer进行质量复核。整个流程将全局联合优化转化为一系列有约束的局部检索任务，既解决了超长上下文的计算瓶颈，也实现了视觉切点与音乐节拍的精确对齐。这一工作代表了AI辅助创意生产的新范式探索。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.29664",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.29664_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.29664_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2603.29620",
+  "nextPaperId": null
+}

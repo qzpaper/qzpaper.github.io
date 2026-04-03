@@ -1,0 +1,87 @@
+{
+  "date": "2026-04-01",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.19835",
+      "title": "FIPO：基于未来KL散度的密集优势策略优化以激发深度推理",
+      "summary": "FIPO通过折扣未来KL散度将稀疏奖励转化为密集逐token监督信号，无需价值网络即可实现细粒度信用分配，在AIME2024上显著超越DAPO等基线，并激发更长推理链。",
+      "category": "Reinforcement Learning",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.19835"
+    },
+    {
+      "paperId": "2603.25240",
+      "title": "Lingshu-Cell：面向转录组建模与虚拟细胞的生成式细胞世界模型",
+      "summary": "Lingshu-Cell是一个基于掩码离散扩散模型的细胞世界模型，在离散token空间直接建模全转录组表达分布，支持无条件生成与扰动预测等生成式细胞模拟任务。",
+      "category": "AI for Science",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.25240"
+    },
+    {
+      "paperId": "2603.26599",
+      "title": "VGGRPO：基于4D潜空间几何奖励的世界一致性视频生成",
+      "summary": "VGGRPO通过潜空间几何模型将视频扩散模型的VAE潜表示直接连接至几何基础模型，在潜空间内利用GRPO强化学习优化相机平滑度与跨视角几何一致性，无需RGB解码，支持动态场景。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.26599"
+    },
+    {
+      "paperId": "2603.27164",
+      "title": "daVinci-LLM：迈向预训练科学",
+      "summary": "daVinci-LLM 结合工业算力与研究自由，通过200+消融实验和Data Darwinism数据框架，将LLM预训练从经验艺术转化为循证科学，完整开放权重、数据与训练过程。",
+      "category": "LLM",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.27164"
+    },
+    {
+      "paperId": "2603.27538",
+      "title": "LongCat-Next：将多模态词汇化为离散 Token",
+      "summary": "LongCat-Next提出DiNA范式，将文本、视觉、音频统一为离散token在共享空间自回归建模。核心创新dNaViT通过SAE+RVQ实现高质量视觉离散化，兼顾理解与生成，达到工业级多模态性能。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.27538"
+    },
+    {
+      "paperId": "2603.28032",
+      "title": "CARLA-Air：在 CARLA 世界中飞行无人机——面向空地具身智能的统一仿真基础设施",
+      "summary": "CARLA-Air 在单一 Unreal Engine 进程中整合 CARLA 与 AirSim，构建空地联合仿真平台，解决无人机与地面交通协同仿真的基础设施缺口，支持具身智能研究。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.28032"
+    },
+    {
+      "paperId": "2603.28088",
+      "title": "GEMS：基于记忆与技能的智能体原生多模态生成框架",
+      "summary": "GEMS是一个智能体原生多模态生成框架，通过Agent Loop、Agent Memory和Agent Skill三大支柱提升图像生成质量，在复杂指令和专业下游任务上显著超越基线方法。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.28088"
+    },
+    {
+      "paperId": "2603.28590",
+      "title": "MonitorBench：大语言模型思维链可监控性的综合基准",
+      "summary": "MonitorBench是首个全面评估LLM思维链可监控性的开源基准，包含1514个测试实例，覆盖7类19项任务，系统评估CoT能否忠实反映模型决策驱动因素。研究发现闭源模型可监控性普遍低于开源模型，压力测试下各模型可监控性显著下降。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.28590"
+    },
+    {
+      "paperId": "2603.29620",
+      "title": "Unify-Agent：面向世界知识锚定图像合成的统一多模态智能体",
+      "summary": "Unify-Agent将文本到图像生成重构为推理时序列决策，通过Think、Research、Recaption、Generate四阶段主动获取外部世界知识，解决长尾概念图像合成的事实性问题。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.29620"
+    },
+    {
+      "paperId": "2603.29664",
+      "title": "CutClaw：基于音乐同步的智能体式长视频自动编辑",
+      "summary": "CutClaw是一个多智能体协作框架，通过音乐结构驱动自动完成长视频剪辑，实现视听节奏同步与叙事连贯性。系统由Playwriter、Editor、Reviewer三个智能体协作，将视频编辑形式化为层级搜索与优化问题。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.29664"
+    }
+  ]
+}

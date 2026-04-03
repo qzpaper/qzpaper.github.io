@@ -1,0 +1,27 @@
+{
+  "paperId": "2604.02329",
+  "date": "2026-04-03",
+  "category": "Image Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-03",
+  "title": "Generative World Renderer：面向真实场景的可扩展生成式双向渲染",
+  "authors": [
+    "Huang$^{1",
+    "2"
+  ],
+  "summaryCn": "数字世界建模中的正向与逆向渲染长期受限于高质量训练数据的匮乏。现有合成数据集场景单一、缺乏时间连续性，导致模型在真实场景中表现欠佳。本文从《赛博朋克2077》和《黑神话：悟空》两款AAA游戏中策划了一个包含4M帧、720p/30fps连续视频的大规模数据集，配备深度、法线、反照率、金属度、粗糙度五通道同步G-buffer真值。数据采集采用图形API拦截技术，创新性地利用双屏拼接解决多通道同步录制难题。数据集覆盖多样化城市与自然环境、多种天气条件，并由Qwen3-VL-235B完成细粒度语义标注。此外，论文提出基于Gemini的VLM评估协议，从语义正确性、空间质量和时间一致性三个维度评估真实场景下的渲染质量，有效弥补了传统逐帧指标的不足。在此数据集上微调的DiffusionRenderer在跨游戏泛化测试中取得显著提升，验证了数据驱动方法在缩小域间隙方面的有效性。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.02329",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.02329_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.02329_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.02327",
+  "nextPaperId": null
+}

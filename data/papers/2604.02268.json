@@ -1,0 +1,27 @@
+{
+  "paperId": "2604.02268",
+  "date": "2026-04-03",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-03",
+  "title": "SKILL0：面向技能内化的上下文智能体强化学习",
+  "authors": [
+    "Lu$^{1",
+    "2"
+  ],
+  "summaryCn": "传统LLM智能体依赖推理时动态检索技能库来增强能力，但这带来检索噪声、Token开销和知识外置三大问题——模型只是在",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.02268",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.02268_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.02268_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.02097",
+  "nextPaperId": "2604.02296"
+}

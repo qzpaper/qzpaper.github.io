@@ -1,0 +1,26 @@
+{
+  "paperId": "2604.02029",
+  "date": "2026-04-03",
+  "category": "LLM",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-03",
+  "title": "The Latent Space：基础、演化、机制、能力与展望",
+  "authors": [
+    "Xu 等 (30+ 位作者)"
+  ],
+  "summaryCn": "现代大语言模型的许多核心计算过程并非发生在人类可读的离散token空间，而是在连续的潜在空间中展开。本文以",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.02029",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.02029_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.02029_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.01007",
+  "nextPaperId": "2604.02097"
+}

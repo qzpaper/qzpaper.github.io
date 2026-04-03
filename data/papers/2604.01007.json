@@ -1,0 +1,37 @@
+{
+  "paperId": "2604.01007",
+  "date": "2026-04-03",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-03",
+  "title": "OMNI-SIMPLEMEM：自主研究驱动的终身多模态智能体记忆发现",
+  "authors": [
+    "Liu",
+    "Ling",
+    "Qiu",
+    "Liu",
+    "Han",
+    "Xia",
+    "Tu",
+    "Zheng",
+    "Xie",
+    "Fleming",
+    "Ding",
+    "Yao"
+  ],
+  "summaryCn": "随着AI智能体需要在长时间跨度中处理文本、图像、音频、视频等多模态信息流，如何构建有效的终身记忆系统成为核心挑战。本文提出OMNI-SIMPLEMEM，并通过23阶段自主研究管线AUTORESEARCHCLAW在约72小时内完成约50次实验，替代人工研究者约4周的工作量。系统围绕三个核心原则设计：选择性摄入通过新颖度过滤创建多模态原子单元（MAU），避免存储膨胀；混合稠密-稀疏检索结合FAISS语义搜索与BM25关键词匹配，采用集合并集而非分数重排；金字塔渐进检索在三个层级按需加载内容，控制token开销。知识图谱进一步支持跨事实的多跳推理。值得注意的是，管线自主发现的Bug修复、架构变更和提示工程优化，每项单独贡献均超过全部超参调优的累计效果，证明自主研究能力根本超越传统AutoML范畴。最终系统在LoCoMo上F1从0.117提升至0.598，在Mem-Gallery上从0.254提升至0.797。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.01007",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.01007_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.01007_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.01001",
+  "nextPaperId": "2604.02029"
+}

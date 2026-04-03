@@ -1,0 +1,29 @@
+{
+  "paperId": "2603.26164",
+  "date": "2026-04-03",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-03",
+  "title": "DataFlex：面向大语言模型的统一数据中心动态训练框架",
+  "authors": [
+    "Liang",
+    "Zhao",
+    "Qiang",
+    "Chen 等"
+  ],
+  "summaryCn": "大语言模型的训练质量不仅取决于模型架构，更深刻地受制于训练数据的选择与组成。然而现有数据中心训练方法各自为战，接口迥异，难以公平比较。DataFlex正是在这一背景下应运而生——它将数据提升为与模型参数并列的一等优化变量，在统一框架下融合了动态数据选择、领域混合优化与样本重加权三大范式。框架以LLaMA-Factory为基础层，通过可插拔的训练器与组件架构，让LESS、DoReMi、ODM等算法得以在同一屋檐下共存与比较。面对DeepSpeed ZeRO-3下梯度分片的工程挑战，DataFlex专门提供了安全的梯度重建接口，并以缓存与间隔调度降低运行时开销。实验表明，在Mistral-7B上，LESS策略较静态基线提升近6个百分点，验证了动态数据策略的有效性。DataFlex的价值不仅在于算法集成，更在于为社区提供了一个可复现、可扩展的系统性研究平台。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2603.26164",
+  "figures": [
+    {
+      "src": "/data/papers/images/2603.26164_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2603.26164_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2604.01001"
+}
