@@ -4,6 +4,10 @@
       "month": "2026-04",
       "days": [
         {
+          "date": "2026-04-06",
+          "paperCount": 10
+        },
+        {
           "date": "2026-04-03",
           "paperCount": 9
         },

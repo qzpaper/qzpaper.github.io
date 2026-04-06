@@ -1,0 +1,40 @@
+{
+  "paperId": "2604.03016",
+  "date": "2026-04-06",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-06",
+  "title": "Agentic-MME：智能体能力究竟为多模态智能带来了什么？",
+  "authors": [
+    "Wei",
+    "Yang",
+    "Wang",
+    "Chen",
+    "Wang",
+    "Wang",
+    "Chen",
+    "Li",
+    "Shi",
+    "Tang",
+    "Wang",
+    "Yu",
+    "Fu",
+    "Li",
+    "Zhang"
+  ],
+  "summaryCn": "随着多模态大语言模型从被动感知走向主动行动，如何科学评估其智能体能力成为关键挑战。Agentic-MME应运而生，提出了一套涵盖418个真实任务的过程验证基准，横跨6大领域、3个难度等级，配备超过2000个人工精细标注的逐步检查点。基准同时支持代码生成与结构化函数调用两种工具接口，并引入S轴（搜索策略验证）与V轴（视觉证据验证）双维度过程指标，还设计了衡量冗余推理的Overthink效率度量。实验显示，最强模型Gemini 3 Pro仅达56.3%准确率，远低于人类的93.8%，尤其在需要视觉操作与网络检索深度协同的Level 3任务上差距悬殊。该工作系统揭示了感知失败、工具跳过、错误裁剪等具体瓶颈，为未来多模态智能体研究指明了方向。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.03016",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.03016_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.03016_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.02947",
+  "nextPaperId": "2604.03128"
+}

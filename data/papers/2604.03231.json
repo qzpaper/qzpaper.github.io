@@ -1,0 +1,32 @@
+{
+  "paperId": "2604.03231",
+  "date": "2026-04-06",
+  "category": "Multimodal",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-06",
+  "title": "CoME-VL：面向互补多编码器视觉-语言模型的可扩展融合框架",
+  "authors": [
+    "Deria",
+    "Kumar",
+    "He",
+    "Razzak",
+    "Cholakkal",
+    "Khan",
+    "Khan"
+  ],
+  "summaryCn": "现有视觉-语言模型长期依赖单一对比学习编码器，在细粒度空间感知和密集语义理解方面存在明显短板。CoME-VL针对这一局限，设计了一套模块化的互补多编码器融合框架。其核心思路是将SigLIP2的全局语义表征与DINOv3的空间结构特征进行有机融合——前者擅长捕捉高层语义多样性，后者从中间层即展现出以物体为中心的强空间一致性。为避免多层特征直接拼接引入的冗余问题，框架引入正交层投影，通过Cayley变换参数化正交矩阵，强制不同层的表征贡献互补的子空间方向。在跨编码器对齐上，CoME-VL采用RoPE增强的交叉注意力机制，以SigLIP2 token为query、DINOv3 token为key/value，并借助门控残差连接渐进式引入空间信息，既保持了token数量不变，又实现了几何感知的特征融合。整套方案在Molmo基础上构建，并扩展了边界框自回归生成能力，在多项视觉理解与接地任务上取得显著性能提升。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.03231",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.03231_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.03231_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.03144",
+  "nextPaperId": null
+}

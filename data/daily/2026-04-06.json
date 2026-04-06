@@ -1,0 +1,87 @@
+{
+  "date": "2026-04-06",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2603.22078",
+      "title": "世界动作模型比VLA更具鲁棒性吗？一项系统性研究",
+      "summary": "本文系统比较了VLA与WAM在视觉和语言扰动下的鲁棒性，基于LIBERO-Plus和RoboTwin 2.0-Plus两个基准进行评估，发现WAM并未在所有扰动类型上显著优于VLA。",
+      "category": "Robotics",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2603.22078"
+    },
+    {
+      "paperId": "2604.01487",
+      "title": "AgentSocialBench：以人为中心的智能体社交网络中的隐私风险评估",
+      "summary": "AgentSocialBench是首个评估以人为中心智能体社交网络隐私风险的基准，涵盖352个场景和8个LLM后端，揭示跨域协调是最强泄露压力来源。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.01487"
+    },
+    {
+      "paperId": "2604.02317",
+      "title": "SimpleStream：流式视频理解的简单强基线",
+      "summary": "SimpleStream提出仅用最近N帧的滑动窗口基线用于流式视频理解，无需复杂记忆机制即可超越现有流式模型，揭示了感知与记忆之间的权衡关系。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02317"
+    },
+    {
+      "paperId": "2604.02368",
+      "title": "XpertBench：基于评分量规的专家级任务LLM评估基准",
+      "summary": "XpertBench是一个基于专家量规的LLM评估基准，涵盖七大专业领域1346个开放式任务，通过ShotJudge范式实现细粒度自动评分，揭示当前SOTA模型的性能天花板。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02368"
+    },
+    {
+      "paperId": "2604.02870",
+      "title": "Token Warping：通过 Token 变换使 MLLM 从邻近视角观察场景",
+      "summary": "提出Token Warping方法，通过对ViT图像token而非像素进行视角变换，使MLLM获得稳健的跨视角空间推理能力，并构建ViewBench基准评测。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02870"
+    },
+    {
+      "paperId": "2604.02947",
+      "title": "AgentHazard：计算机使用智能体有害行为评估基准",
+      "summary": "AgentHazard是首个面向计算机使用智能体执行级有害行为的评估基准，包含2653个实例、10类风险类别和10种攻击策略，揭示主流模型在轨迹级安全上的普遍脆弱性。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02947"
+    },
+    {
+      "paperId": "2604.03016",
+      "title": "Agentic-MME：智能体能力究竟为多模态智能带来了什么？",
+      "summary": "Agentic-MME是一个过程验证的多模态智能体基准，含418个任务和2000+人工标注检查点，评估视觉扩展与知识扩展的协同能力，揭示当前模型与人类仍存在巨大差距。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.03016"
+    },
+    {
+      "paperId": "2604.03128",
+      "title": "Self-Distilled RLVR：自蒸馏驱动的可验证奖励强化学习",
+      "summary": "本文提出RLSD方法，通过理论证明在策略自蒸馏（OPSD）存在不可消除的特权信息泄漏问题，并将自蒸馏重新定位为RLVR的token级信用分配信号，而非生成目标。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.03128"
+    },
+    {
+      "paperId": "2604.03144",
+      "title": "InCoder-32B-Thinking：面向工业代码的思维增强世界模型",
+      "summary": "InCoder-32B-Thinking 通过错误驱动思维链与工业代码世界模型，解决CUDA优化、Verilog设计等工业代码生成难题，在多个工业基准上取得开源最优成绩。",
+      "category": "Code Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.03144"
+    },
+    {
+      "paperId": "2604.03231",
+      "title": "CoME-VL：面向互补多编码器视觉-语言模型的可扩展融合框架",
+      "summary": "CoME-VL提出多编码器视觉-语言融合框架，结合SigLIP2与DINOv3的互补特征，通过正交投影和RoPE交叉注意力实现高效对齐，在视觉理解任务上平均提升+4.9%。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.03231"
+    }
+  ]
+}
