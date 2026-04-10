@@ -1,0 +1,79 @@
+{
+  "date": "2026-04-10",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2604.06628",
+      "title": "重新审视推理 SFT 的泛化能力：优化、数据与模型能力的条件分析",
+      "summary": "本文系统性挑战",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.06628"
+    },
+    {
+      "paperId": "2604.07430",
+      "title": "HY-Embodied-0.5：面向真实世界智能体的具身基础模型",
+      "summary": "HY-Embodied-0.5是面向真实世界智能体的具身基础模型族，包含边缘高效版MoT-2B和强力版MoE-A32B，通过新颖架构设计与亿级具身数据在22个基准上达到SOTA性能。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.07430"
+    },
+    {
+      "paperId": "2604.07823",
+      "title": "LPM 1.0：基于视频的角色表演大模型",
+      "summary": "LPM 1.0是面向虚拟角色表演的视频大模型，解决表现力、实时推理与长时稳定性的三难困境，支持说话与倾听的多模态联合建模，实现无限时长身份一致的对话角色生成。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.07823"
+    },
+    {
+      "paperId": "2604.08224",
+      "title": "LLM 智能体中的外化：记忆、技能、协议与 Harness 工程的统一综述",
+      "summary": "本文以认知制品理论为框架，将LLM智能体的记忆、技能、协议与Harness工程统一为",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08224"
+    },
+    {
+      "paperId": "2604.08364",
+      "title": "MegaStyle：通过一致的文本到图像风格映射构建多样化可扩展风格数据集",
+      "summary": "MegaStyle利用T2I模型构建大规模风格数据集，解决现有风格迁移训练数据风格内一致性差、多样性不足的问题，并提出风格编码器与迁移模型。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08364"
+    },
+    {
+      "paperId": "2604.08377",
+      "title": "SkillClaw：通过智能体进化器实现技能集体演化",
+      "summary": "SkillClaw提出智能体技能集体演化框架，通过分析多用户交互轨迹自动更新共享技能库，使技能随使用经验持续改进。实验在WildClawBench上验证了跨多类任务的显著性能提升。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08377"
+    },
+    {
+      "paperId": "2604.08455",
+      "title": "KnowU-Bench：面向交互式、主动式、个性化移动智能体的评估基准",
+      "summary": "KnowU-Bench是首个评估移动GUI智能体个性化、交互式偏好获取与主动服务能力的基准，揭示当前模型在模糊指令下成功率骤降至50%以下的核心缺陷。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08455"
+    },
+    {
+      "paperId": "2604.08523",
+      "title": "ClawBench：AI 智能体能否完成日常在线任务？",
+      "summary": "ClawBench在144个真实网站上评估AI智能体完成153个写密集型日常在线任务的能力，通过拦截机制安全测试，发现顶尖模型成功率仅约20%。",
+      "category": "Agent",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08523"
+    },
+    {
+      "paperId": "2604.08546",
+      "title": "When Numbers Speak：文本数词与视觉实例在T2V扩散模型中的对齐",
+      "summary": "NUMINA是一个免训练框架，通过两阶段识别-引导范式解决文本到视频扩散模型中数词与视觉实例数量不对齐问题，无需重训练即可跨模型使用。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08546"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "paperId": "2604.08455",
+  "date": "2026-04-10",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-10",
+  "title": "KnowU-Bench：面向交互式、主动式、个性化移动智能体的评估基准",
+  "authors": [
+    "Chen",
+    "Lu",
+    "Xu",
+    "Shao",
+    "Zhao 等"
+  ],
+  "summaryCn": "移动GUI智能体在明确任务上表现亮眼，却在真实部署场景中频频失手——当用户说",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.08455",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.08455_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.08455_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.08377",
+  "nextPaperId": "2604.08523"
+}

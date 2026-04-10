@@ -1,0 +1,27 @@
+{
+  "paperId": "2604.06628",
+  "date": "2026-04-10",
+  "category": "Training",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-10",
+  "title": "重新审视推理 SFT 的泛化能力：优化、数据与模型能力的条件分析",
+  "authors": [
+    "Ren$^{1",
+    "2"
+  ],
+  "summaryCn": "在大模型后训练领域，",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.06628",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.06628_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.06628_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": null,
+  "nextPaperId": "2604.07430"
+}

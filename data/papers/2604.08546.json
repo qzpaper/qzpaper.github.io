@@ -1,0 +1,32 @@
+{
+  "paperId": "2604.08546",
+  "date": "2026-04-10",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-10",
+  "title": "When Numbers Speak：文本数词与视觉实例在T2V扩散模型中的对齐",
+  "authors": [
+    "Sun",
+    "Chen",
+    "Zhou",
+    "Li",
+    "Chen",
+    "Liang",
+    "Bai"
+  ],
+  "summaryCn": "文本到视频生成模型在画质和语义对齐上日趋成熟，却在一个看似简单的任务上屡屡失手——数数。当提示词写着",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.08546",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.08546_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.08546_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.08523",
+  "nextPaperId": null
+}

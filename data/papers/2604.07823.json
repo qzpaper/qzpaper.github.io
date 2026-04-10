@@ -1,0 +1,41 @@
+{
+  "paperId": "2604.07823",
+  "date": "2026-04-10",
+  "category": "Video Generation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-10",
+  "title": "LPM 1.0：基于视频的角色表演大模型",
+  "authors": [
+    "Zeng",
+    "Yang",
+    "Ge",
+    "Zhang",
+    "Xu",
+    "Lin",
+    "Gu",
+    "Pi",
+    "Li",
+    "Shi",
+    "Bi",
+    "Tang",
+    "Hang",
+    "Guo",
+    "Li",
+    "Tong 等"
+  ],
+  "summaryCn": "虚拟角色的「表演」——将情感、意图与个性通过视觉和时序行为外化——长期依赖传统3D管线，难以扩展至开放场景。LPM 1.0另辟蹊径，从海量视频中直接学习表演能力，直面所谓「Performance Trilemma」：表现力、实时推理与长时稳定性三者难以兼得。系统构建了完整全栈框架：数据管线四阶段过滤（保留率不足10%）、帧级说话/倾听/空闲三状态标注、身份感知多参考图体系；在17B参数的DiT基座上，以交错双音频交叉注意力分别驱动说话与倾听行为，用3D RoPE段式位置编码融合多视角与多表情参考图；在线推理阶段将生成解耦为Backbone轨迹稳定化与Refiner细节重建，并通过流式音频编码与KV缓存实现低延迟因果生成，最终支持十分钟以上无明显身份漂移的连续对话角色视频合成。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.07823",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.07823_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.07823_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.07430",
+  "nextPaperId": "2604.08224"
+}

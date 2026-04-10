@@ -1,0 +1,33 @@
+{
+  "paperId": "2604.08377",
+  "date": "2026-04-10",
+  "category": "Agent",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-10",
+  "title": "SkillClaw：通过智能体进化器实现技能集体演化",
+  "authors": [
+    "Ma",
+    "Yang",
+    "Ji",
+    "Wang",
+    "Wang",
+    "Hu",
+    "Huang",
+    "Chu"
+  ],
+  "summaryCn": "当前基于LLM的智能体系统普遍面临技能静态化困境——技能在部署后便固化，无法从真实使用中积累经验。SkillClaw通过构建",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.08377",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.08377_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.08377_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.08364",
+  "nextPaperId": "2604.08455"
+}
