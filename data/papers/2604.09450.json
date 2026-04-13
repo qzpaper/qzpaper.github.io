@@ -1,0 +1,36 @@
+{
+  "paperId": "2604.09450",
+  "date": "2026-04-13",
+  "category": "Diffusion Model",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-13",
+  "title": "ECHO: Efficient Chest X-ray Report Generation with One-step Block Diffusion",
+  "authors": [
+    "Lifeng Chen",
+    "Tianqi You",
+    "Hao Liu",
+    "Zhimin Bao",
+    "Jile Jiao",
+    "Xiao Han",
+    "Zhicai Ou",
+    "Tao Sun",
+    "Xiaofeng Mou",
+    "Xiaojie Jin",
+    "Yi Xu"
+  ],
+  "summaryCn": "医学影像报告的自动生成长期受制于自回归模型逐token顺序解码的推理瓶颈，难以满足高通量临床部署需求。ECHO系统性地解决了这一挑战，提出以块扩散模型为基础的三阶段训练流水线，在不牺牲报告质量的前提下将解码压缩至单步，逼近吞吐量的理论上界。第一阶段通过大规模策展的胸部X光语料对Lingshu-7B进行全参数持续预训练，建立领域专精的视觉语言基础。第二阶段的响应非对称扩散适配仅复制响应部分构造块因果目标，训练FLOPs降低约72%，同时完整保留视觉上下文的注意力覆盖。第三阶段直接条件蒸馏是本文核心贡献：收集教师模型的置信度驱动去噪轨迹，构建非分解联合监督目标，以前向KL散度对齐学生单步预测，从机制上消除均场偏差引发的文本连贯性退化。针对放射报告的隐式负性偏差导致的幻觉与终止符置信度低引发的重复循环，ECHO分别通过数据归一化与终止符显式监督加以缓解，融合块KV缓存进一步将推理前向次数减半。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.09450",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.09450_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.09450_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.09168",
+  "nextPaperId": "2604.09531"
+}

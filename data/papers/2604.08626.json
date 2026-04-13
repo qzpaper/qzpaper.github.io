@@ -1,0 +1,42 @@
+{
+  "paperId": "2604.08626",
+  "date": "2026-04-13",
+  "category": "3D Vision",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-13",
+  "title": "WildDet3D: Scaling Promptable 3D Detection in the Wild",
+  "authors": [
+    "Weikai Huang",
+    "Jieyu Zhang",
+    "Sijun Li",
+    "Taoyang Jia",
+    "Jiafei Duan",
+    "Yunqian Cheng",
+    "Jaemin Cho",
+    "Mattew Wallingford",
+    "Rustin Soraki",
+    "Chris Dongjoo Kim",
+    "Donovan Clay",
+    "Taira Anderson",
+    "Winson Han",
+    "Ali Farhadi",
+    "Bharath Hariharan",
+    "Zhongzheng Ren",
+    "Ranjay Krishna"
+  ],
+  "summaryCn": "单目3D目标检测长期受限于类别覆盖窄、提示方式单一和几何线索利用僵化三大瓶颈。WildDet3D从模型与数据两个维度同时突破：架构上，采用解耦双视觉编码器分别提取语义与几何特征，以ControlNet风格残差注入可选深度信号，统一接受文本、点击、框和示例四类提示，并通过球谐函数编码相机内参、深度监督解码器头实现精准3D框预测；数据上，从四大2D数据集出发，融合五种互补的3D候选生成方法，经规则过滤与人工质检，构建了迄今规模最大的开放3D检测数据集WildDet3D-Data，涵盖超百万图像与13500个类别。实验表明，该方法在多个3D检测基准上取得显著提升，展现出面向真实开放世界场景的强大泛化能力。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.08626",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.08626_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.08626_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.07413",
+  "nextPaperId": "2604.08644"
+}

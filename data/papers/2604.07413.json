@@ -1,0 +1,41 @@
+{
+  "paperId": "2604.07413",
+  "date": "2026-04-13",
+  "category": "Evaluation",
+  "source": "Hugging Face Daily",
+  "publishedDate": "2026-04-13",
+  "title": "FORGE:Fine-grained Multimodal Evaluation for Manufacturing Scenarios",
+  "authors": [
+    "Xiangru Jian",
+    "Hao Xu",
+    "Wei Pang",
+    "Xinjian Zhao",
+    "Chengyu Tao",
+    "Qixin Zhang",
+    "Xikun Zhang",
+    "Chao Zhang",
+    "Guanzhi Deng",
+    "Alex Xue",
+    "Juan Du",
+    "Tianshu Yu",
+    "Garth Tarr",
+    "Linqi Song",
+    "Qiuzhuang Sun",
+    "Dacheng Tao"
+  ],
+  "summaryCn": "制造业数字化转型对智能系统提出了越来越高的要求，然而现有多模态大语言模型的评估体系在制造场景下几乎是空白。FORGE正是为填补这一空缺而生——它是首个整合真实2D图像与3D点云、标注精确型号级别细粒度语义的大规模制造业多模态基准。数据集覆盖14类工件、90个精确型号，共计近13000个样本，涵盖工件验证、表面缺陷检测与装配验证三类核心任务。针对通用模型缺乏原生3D理解能力的现实，FORGE采用三视图正交投影策略将点云转化为可视化输入。通过对18个前沿模型的系统性评测，研究揭示了几个关键规律：模型普遍擅长宏观语义识别，却在微观表面形态分析上表现薄弱；缺乏领域知识而非感知能力，才是性能瓶颈所在；3D空间理解能力有限，过多上下文反而干扰推理。FORGE为制造业AI系统的能力边界提供了清晰画像，也为未来的模型改进指明了方向。",
+  "keyContributions": [],
+  "originalUrl": "https://arxiv.org/abs/2604.07413",
+  "figures": [
+    {
+      "src": "/data/papers/images/2604.07413_1.jpg",
+      "caption": ""
+    },
+    {
+      "src": "/data/papers/images/2604.07413_2.jpg",
+      "caption": ""
+    }
+  ],
+  "prevPaperId": "2604.06870",
+  "nextPaperId": "2604.08626"
+}

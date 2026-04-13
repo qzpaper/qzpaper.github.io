@@ -1,0 +1,87 @@
+{
+  "date": "2026-04-13",
+  "title": "今日 AI 论文精选",
+  "intro": "每日精选高价值 AI 论文，帮助你快速把握最新进展。",
+  "papers": [
+    {
+      "paperId": "2604.02372",
+      "title": "Backdoor Attacks on Decentralised Post-Training",
+      "summary": "本文首次提出针对流水线并行去中心化后训练的定向后门攻击，攻击者仅控制中间流水线阶段即可在SFT中隐蔽注入安全对齐后门，触发词存在时模型绕过对齐、否则行为正常。",
+      "category": "Training",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.02372"
+    },
+    {
+      "paperId": "2604.04415",
+      "title": "Structured Causal Video Reasoning via Multi-Objective Alignment",
+      "summary": "本文提出Structure-First范式，在视频推理前先提取结构化事件事实，并用P-FAB算法解决RL多目标冲突，训练出Factum-4B模型，显著提升视频因果推理的准确性与效率。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.04415"
+    },
+    {
+      "paperId": "2604.06870",
+      "title": "RefineAnything: Multimodal Region-Specific Refinement for Perfect Local Details",
+      "summary": "RefineAnything是首个专为区域精修设计的多模态扩散模型，通过VLM编码器、VAE潜空间条件及Focus-and-Refine策略，精准修复图像局部细节同时保持背景不变。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.06870"
+    },
+    {
+      "paperId": "2604.07413",
+      "title": "FORGE:Fine-grained Multimodal Evaluation for Manufacturing Scenarios",
+      "summary": "FORGE是首个面向制造业场景的细粒度多模态评估基准，整合真实2D图像与3D点云，覆盖12,972个样本、14类工件、90个型号，系统评估多模态大语言模型在物料分拣、质量检测与装配识别三大任务上的推理能力。",
+      "category": "Evaluation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.07413"
+    },
+    {
+      "paperId": "2604.08626",
+      "title": "WildDet3D: Scaling Promptable 3D Detection in the Wild",
+      "summary": "WildDet3D提出统一的可提示单目3D检测框架，支持文本/点击/框多模态提示与可选深度输入，并构建了含100万+图像、13500类的开放3D检测数据集，显著提升开放世界3D检测能力。",
+      "category": "3D Vision",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08626"
+    },
+    {
+      "paperId": "2604.08644",
+      "title": "EXAONE 4.5 Technical Report",
+      "summary": "EXAONE 4.5是LG首个开源权重视觉语言模型，融合1.2B视觉编码器与32B语言骨干，支持256K上下文和六种语言，面向工业多模态理解场景。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08644"
+    },
+    {
+      "paperId": "2604.08995",
+      "title": "Matrix-Game 3.0: Real-Time and Streaming Interactive World Model with Long-Horizon Memory",
+      "summary": "Matrix-Game 3.0提出数据-模型-推理协同设计的交互式世界模型，通过记忆增强DiT和误差注入机制，在720p分辨率下实现40FPS实时生成并保持分钟级长时记忆一致性。",
+      "category": "Video Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.08995"
+    },
+    {
+      "paperId": "2604.09168",
+      "title": "ELT: Elastic Looped Transformers for Visual Generation",
+      "summary": "ELT通过循环复用共享Transformer层实现高参数效率的视觉生成，提出ILSD训练策略使模型在任意循环深度均可输出高质量结果，支持推理时弹性调节计算量，参数减少4倍仍达同等生成质量。",
+      "category": "Image Generation",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.09168"
+    },
+    {
+      "paperId": "2604.09450",
+      "title": "ECHO: Efficient Chest X-ray Report Generation with One-step Block Diffusion",
+      "summary": "ECHO提出三阶段训练流水线，将扩散语言模型压缩为单步解码用于胸部X光报告生成。通过响应非对称扩散适配与直接条件蒸馏，在消除均场偏差的同时大幅提升推理吞吐量。",
+      "category": "Diffusion Model",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.09450"
+    },
+    {
+      "paperId": "2604.09531",
+      "title": "VisionFoundry: Teaching VLMs Visual Perception with Synthetic Images",
+      "summary": "VisionFoundry是一个合成数据生成流水线，仅需任务关键词即可自动生成高质量VQA训练数据，用于弥补视觉语言模型在底层视觉感知任务上的短板。在MMVP等基准上提升最高+7个百分点。",
+      "category": "Multimodal",
+      "source": "Hugging Face Daily",
+      "originalUrl": "https://arxiv.org/abs/2604.09531"
+    }
+  ]
+}
